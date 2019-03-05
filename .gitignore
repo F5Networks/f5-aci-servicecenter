@@ -1,0 +1,6 @@
+# Ignore sphinx build directories
+_build/
+docs/_build/
+
+# Ignore PyCharm artifacts
+.idea/

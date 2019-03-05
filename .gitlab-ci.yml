@@ -1,0 +1,66 @@
+image: quay.pdsea.f5net.com/doc-ops/containthedocs:8bbed5bb63
+
+stages:
+  - build
+  - review
+  - deploy
+
+build docs:
+  script:
+    - make html
+  tags:
+    - docker-executor
+  stage: build
+  artifacts:
+    paths: 
+    - docs/_build/html
+
+# Test docs
+test grammar:
+  stage: review
+  tags:
+    - docker-executor
+  script:
+    - vale --glob='*.{md,rst}' .  
+
+test links:
+  stage: review
+  tags:
+    - docker-executor
+  script:
+    - make linkcheck
+
+
+# Publish ONLY staging branch to clouddocs.f5networks.net.
+Publish docs to staging:
+  stage: deploy
+  environment: 
+    name: staging
+    url: https://clouddocs.f5networks.net/f5-aci-servicecenter/latest
+  tags:
+    - cm-official-docker-executor
+  only:
+    - staging@f5-aci-servicecenter
+  dependencies:
+    - build docs
+  script:
+    - aws s3 sync docs/_build/html s3://clouddocs.f5networks.net/f5-aci-servicecenter/latest
+    # create invalidation to clear cloudfront cache
+    - aws cloudfront create-invalidation --distribution-id $AWS_DIST --paths /f5-aci-servicecenter/latest
+
+# Publish ONLY master branch to clouddocs.f5.com
+Publish docs to internet:
+  stage: deploy
+  environment: 
+    name: production
+    url: https://clouddocs.f5.com/f5-aci-servicecenter/latest
+  tags:
+    - cm-official-docker-executor
+  only:
+  - master@f5-aci-servicecenter
+  dependencies:
+  - build docs
+  script:
+  - publish-cloud-docs-to-prod f5-aci-servicecenter latest
+  # create invalidation to clear cloudfront cache
+  - aws cloudfront create-invalidation --distribution-id $AWS_DIST --paths /f5-aci-servicecenter/latest
