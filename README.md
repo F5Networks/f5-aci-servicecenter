@@ -6,8 +6,8 @@ F5 app is powered by ACI App Center. This app provides a direct, easy, and effic
 F5 ACI ServiceCenter runs natively in APIC, providing administrator a single point of automation and visibility for L2-L3, plus L4-L7 infrastructures.
 
 ## Documentation
-[Get Started] (https://aci...) 
-[User and deployment guide](https://) 
+[Get Started](https://aci...)  
+[User and deployment guide](https://)  
 [Reference Video](https://) 
 
 ## Filing Issues and Getting Help
