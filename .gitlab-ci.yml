@@ -57,10 +57,10 @@ Publish docs to internet:
   tags:
     - cm-official-docker-executor
   only:
-  - master@f5-aci-servicecenter
+    - master@f5-aci-servicecenter
   dependencies:
-  - build docs
+    - build docs
   script:
-  - publish-cloud-docs-to-prod f5-aci-servicecenter latest
+    - aws s3 sync docs/_build/html s3://clouddocs.f5.com/f5-aci-servicecenter/latest
   # create invalidation to clear cloudfront cache
-  - aws cloudfront create-invalidation --distribution-id $AWS_DIST --paths /f5-aci-servicecenter/latest
+    - aws cloudfront create-invalidation --distribution-id $AWS_DIST --paths /f5-aci-servicecenter/latest
