@@ -36,12 +36,3 @@ jobs:
         bucket: ak-poc-clouddocs-ci
         local_dir: docs/_build/html
         upload_dir: travis-ci-site
-        on:
-          branch: master
-          repo: andreykashcheev/f5-aci-servicecenter
-
-
-
-notifications:
-  email: false
-  webhooks: https://outlook.office.com/webhook/ef7d7702-cc7e-496c-9408-0768c9221005@dd3dfd2f-6a3b-40d1-9be0-bf8327d81c50/TravisCI/5ba7ab8c94df45dbb50df90430d2b961/b13eeba0-6263-4ea3-b582-48a8fd612f47
