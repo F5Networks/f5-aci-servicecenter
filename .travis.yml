@@ -8,7 +8,6 @@ services:
 
 stages:
   - name: build_deploy_docs
-    #if: branch = devel AND type = pull_request
 
 
 before_install:
@@ -28,7 +27,7 @@ jobs:
       skip_cleanup: true
       name: build_docs_site
       script:
-        - make docker-test
+        - make docker-test && make docker-html
       deploy:
         skip_cleanup: true
         provider: s3
@@ -40,9 +39,6 @@ jobs:
         on:
           branch: master
           repo: andreykashcheev/travis-ci-playground
-    - stage: review
-      script:
-        - make docker-test && make docker-html
 
 
 
