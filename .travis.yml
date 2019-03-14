@@ -38,7 +38,7 @@ jobs:
         upload_dir: travis-ci-site
         on:
           branch: master
-          repo: andreykashcheev/travis-ci-playground
+          repo: andreykashcheev/f5-aci-servicecenter
 
 
 
