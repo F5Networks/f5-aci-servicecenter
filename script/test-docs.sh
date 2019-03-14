@@ -10,9 +10,8 @@ exec docker run -i \
 set -e
 #echo "Installing project dependencies"
 pip install --user -r requirements.txt
-export PATH=$PATH:/root/.local/bin
 echo "Building docs with Sphinx"
 make clean
 echo "Checking links"
-make -C docs/ linkcheck
+make linkcheck
 EOF
