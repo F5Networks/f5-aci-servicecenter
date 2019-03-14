@@ -28,6 +28,7 @@ jobs:
       skip_cleanup: true
       name: build_docs_site
       script:
+        - ls -la
         - chmod -R 755 script
         - make docker-test && make docker-html
       deploy:
