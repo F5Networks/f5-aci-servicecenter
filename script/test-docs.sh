@@ -10,11 +10,9 @@ exec docker run -i \
 set -e
 #echo "Installing project dependencies"
 pip install --user -r requirements.txt
-# - needed to put the inv command in path
 export PATH=$PATH:/root/.local/bin
 echo "Building docs with Sphinx"
-make -C docs/ clean
-inv docs.build
+make clean
 echo "Checking links"
 make -C docs/ linkcheck
 EOF
