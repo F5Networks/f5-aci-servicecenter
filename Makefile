@@ -246,7 +246,7 @@ docker-preview:
 .PHONY: docker-test
 docker-test:
 	rm -rf ./_build
-	./script/docker-docs.sh ./scripts/test-docs.sh
+	./script/test-docs.sh
 
 # one-time html build in a docker container
 .PHONY: docker-html

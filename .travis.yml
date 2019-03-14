@@ -1,0 +1,51 @@
+sudo: required
+
+language: python
+
+
+services:
+  - docker
+
+stages:
+  - name: build_deploy_docs
+    #if: branch = devel AND type = pull_request
+
+
+before_install:
+  - docker pull f5devcentral/containthedocs:latest
+  - git config --global user.email "a.kashcheev@f5.com"
+  - git config --global user.name "Travis F5 ACI Service Center"
+
+
+install:
+  - travis_retry pip install awscli --upgrade
+
+
+
+jobs:
+  include:
+    - stage: build_deploy_docs
+      skip_cleanup: true
+      name: build_docs_site
+      script:
+        - make docker-test
+      deploy:
+        skip_cleanup: true
+        provider: s3
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key: $AWS_SECRET_ACCESS_KEY
+        bucket: ak-poc-clouddocs-ci
+        local_dir: docs/_build/html
+        upload_dir: travis-ci-site
+        on:
+          branch: master
+          repo: andreykashcheev/travis-ci-playground
+    - stage: review
+      script:
+        - make docker-test && make docker-html
+
+
+
+notifications:
+  email: false
+  webhooks: https://outlook.office.com/webhook/ef7d7702-cc7e-496c-9408-0768c9221005@dd3dfd2f-6a3b-40d1-9be0-bf8327d81c50/TravisCI/5ba7ab8c94df45dbb50df90430d2b961/b13eeba0-6263-4ea3-b582-48a8fd612f47
