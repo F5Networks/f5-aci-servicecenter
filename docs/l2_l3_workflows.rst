@@ -1,0 +1,155 @@
+L2-L3 Stitching Workflows
+=========================
+
+In the top-left of L2-L3 tab, the :guilabel:`Logical Device` list filters devices based on high availability type (standalone or HA) and on device type (physical or virtual). If someone is logged in to a physical standalone BIG-IP device, the list shows only APIC logical devices of devtype :guilabel:`physical`, which have a single APIC Concrete device entry (CDEV) associated with them.
+
+VLAN, Self IP, and Default Gateway Tasks
+----------------------------------------
+
+
+Create VLAN and Self IP
+``````````````````````````
+
+1. Click the L2-L3 Stitching tab.
+
+2. From the :guilabel:`Logical Device` list, click the logical device (LDEV) that you want to perform L2-L3 stitching on (for the current BIG-IP device).
+
+   The APIC information is displayed: Tenant, Concrete Devices and Interfaces, and Device Type (Physical/Virtual). You can also view a list of VLANs configured under the APIC Logical Device in the :guilabel:`Available` box.
+
+3. Select one or more devices and move them to the :guilabel:`Selected` box.
+
+   The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name.
+
+4. You can select one or more VLANs by clicking their check-box, and then clicking :guilabel:`Continue`.
+
+   .. note::
+      - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Tag (2) Interface. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
+      - Whether the interface is tagged or untagged depends on its device type. For a Physical device, VLANs are tagged and for virtual devices, VLANs are untagged. This option isn’t configurable or supported.
+      - The only options available for port lockdown are All, None, and Default.
+      - ACI ServiceCenter doesn’t support custom port lockdown (which is supported by BIG-IP).
+
+5. Click :guilabel:`Submit`.
+
+The BIG-IP device has the same VLANs configured as the APIC LDEV VLAN and L2-L3 stitching is complete.
+
+Update VLAN and/or Self-IPs
+````````````````````````````
+
+There are two options for updating VLAN/self IPs.
+
+1. Follow the steps from the previous task and edit the values in the VLAN configuration.
+
+   The only difference is, when you click Continue, the VLAN form is pre-populated with information from the existing VLAN/self IP configuration.
+   **Or**
+   For VLAN edit: From L2-L3 stitching section, select the VLAN and use the :guilabel:`Edit` icon in the top right of the VLAN card.
+
+2. For self IP edit: From the L2-L3 stitching tab, select the VLAN and use the :guilabel:`Edit` icon, located next to the Self IP under Action.
+
+Delete VLAN
+````````````
+
+1. In the top right of the VLAN card, click :guilabel:`Delete` icon.
+
+2. When prompted, click :guilabel:`Confirm`.
+
+The VLAN and all corresponding Self-IPs are deleted from the BIG-IP device, as well as from the application database.
+
+Delete Self-IPs
+````````````````
+
+1. Next to the self IP entry you want to delete on a specific VLAN card, click the :guilabel:`Delete` icon.
+
+2. When prompted, click :guilabel:`Confirm`.
+
+The Self-IP is deleted from the BIG-IP device, as well as from the application database.
+   
+Create Default Gateway
+``````````````````````
+
+1. Click the L2-L3 Stitching tab.
+
+2. In the Default Gateway section, click :guilabel:`+Add Default Gateway`.
+
+   A form is displayed.
+
+3. In the :guilabel:`Gateway IP` field, enter the default gateway IP address. All other
+   fields are disabled for user configuration, but are displayed in
+   the Default Gateway form.
+
+4. Click :guilabel:`Submit`.
+
+The default gateway is created on the BIG-IP device and is added to the application database.
+
+Update Default Gateway
+``````````````````````
+
+1. Next the Default Gateway entry on the L2-L3 Stitching tab, click the :guilabel:`Pencil` icon.
+
+   The Default Gateway form opens.
+
+2. Follow same steps as Workflow 17, steps 3 and 4.
+
+Delete Default Gateway
+```````````````````````
+
+1. Next to the Default Gateway entry, click the :guilabel:`Delete` icon.
+
+2. When prompted, confirm you want to delete the Default Gateway.
+
+The Default Gateway is deleted from the BIG-IP device, as well as from the application database.
+
+
+Sync Tasks
+-----------
+
+When you complete the following tasks, the F5 ACI ServiceCenter and BIG-IP device may become out of sync if any VLAN/self IP operations are carried out from the BIG-IP Configuration utility or CLI. If this happens, the app will detect the sync status between app data and BIG-IP data. But this feature will work only for VLAN names and self IP names that were originally created through the app, and not for other network elements with different naming conventions.
+
+VLANs, self IPs, and default gateways that were created with a different naming convention will be detected, but the only operation allowed will be to delete them from the BIG-IP device to proceed with VLAN configuration.
+
+Sync VLAN Data from ACI ServiceCenter to BIG-IP
+```````````````````````````````````````````````
+
+1. If there is an :guilabel:`Out-of-Sync` link on the VLAN card, click it.
+
+   A window shows ACI ServiceCenter data and BIG-IP data (VLAN and self IP details).
+
+2. Click :guilabel:`Sync to BIG-IP`.
+
+For the specified VLAN, the BIG-IP has the same VLAN details as the F5 ACI ServiceCenter.
+
+Sync VLAN Data from BIG-IP to ACI ServiceCenter
+```````````````````````````````````````````````
+
+1. If there is an :guilabel:`Out-of-Sync` link on the VLAN card, click it.
+
+   A window shows ACI ServiceCenter data and BIG-IP data (VLAN and Self-IP details).
+
+3. Click the :guilabel:`Sync to ACI ServiceCenter` button.
+
+The ACI ServiceCenter is updated to have the same VLAN details and self IPs for the specific VLAN.
+
+Sync route data from ACI ServiceCenter to BIG-IP
+````````````````````````````````````````````````
+
+1. If there is an :guilabel:`Out-of-Sync` link on Default Gateway, click it.
+
+   A window shows ACI ServiceCenter data and BIG-IP data (Gateway IP).
+
+2. Click :guilabel:`Sync to BIG-IP` to sync the BIG-IP default route information to ACI ServiceCenter.
+
+Sync route data from BIG-IP To ACI ServiceCenter
+````````````````````````````````````````````````
+
+1. If there is an :guilabel:`Out-of-Sync` link on Default Gateway, click it.
+
+   A window shows ACI ServiceCenter data and BIG-IP data (Gateway IP).
+
+2. Click :guilabel:`Sync to ACI ServiceCenter` to sync BIG-IP default
+   route information to the ACI ServiceCenter.
+
+Refresh L2-L3 Stitching tab
+```````````````````````````
+
+- In the top right of the L2-L3 Stitching tab, click the :guilabel:`Refresh` icon.
+
+All the content on this tab is refreshed, including Ldevs in the LDEV list: Default Gateway, VLANs and Self-IPs.

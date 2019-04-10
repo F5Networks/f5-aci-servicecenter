@@ -1,0 +1,131 @@
+L4-L7 App Services Workflows
+============================
+
+For information on how to define a declaration, see https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/.
+
+.. note::
+   When you click the L4-L7 App Service tab, two subtabs are displayed (BIG-IP and ACI ServiceCenter). The Application tab is selected by default. It has a box that displays the current AS3 declaration on this BIG-IP device.
+
+Dry-Run declaration (BIG-IP subtab)
+------------------------------------
+
+1. The text box should include a valid AS3 declaration.
+
+   .. note::
+      You can upload a .txt or .json file instead of pasting a declaration in the text box.
+
+2. Click :guilabel:`Dry Run`.
+
+BIG-IP validates the JSON declaration and if it's valid, a success message appears. If it's not valid, the F5 ACI ServiceCenter displays an error message and you can fix errors and re-validate.
+
+Submit an AS3 declaration (BIG-IP subtab)
+------------------------------------------
+
+1. The text box should include a valid AS3 declaration.
+
+2. You can upload a .txt or .json file instead of pasting a
+   declaration in the text box.
+
+3. Click :guilabel:`Submit`.
+
+If successful, BIG-IP includes all the partitions, applications, pools, and nodes as specified in the AS3 declaration.
+
+View the current AS3 declaration
+--------------------------------
+
+1. in the top right of the L4-L7 Configuration tab, click the :guilabel:`Details` icon.
+
+2. A window with the current AS3 declaration is displayed.
+
+3. To copy the declaration to the text box under the BIG-IP subtab, click :guilabel:`Copy-to-Text Box`.
+
+The window also has a :guilabel:`Delete` button, so you can delete the entire AS3 declaration from the BIG-IP device.
+
+Create a partition (Application subtab)
+----------------------------------------
+
+1. From the :guilabel:`Partition` list, click :guilabel:`Create New Partition`.
+   The Application list is disabled.
+
+2. Application stub code is displayed in the text box.
+
+3. Two new fields, :guilabel:`Partition Name` and :guilabel:`Application Name`, are
+   displayed. Enter valid input for both. The new partition can’t be
+   created without providing an application name.
+
+4. Click :guilabel:`Submit`.
+
+A new partition is created on the BIG-IP device.
+
+New partitions and applications are listed in the Partition and Application lists.
+
+Delete a partition (Application subtab)
+----------------------------------------
+
+1. From the :guilabel:`Partition` list, click the partition you want to
+   delete.
+
+2. Click the X next to the menu.
+
+3. When prompted, confirm that you want to delete the partition.
+
+The partition from this BIG-IP device is no longer listed in the Partition list.
+
+Create an application (Application subtab)
+-------------------------------------------
+
+1. From the :guilabel:`Partition` list, click the partition you want to
+   create the new app in.
+
+2. From the :guilabel:`Application` list, click :guilabel:`Create New Application`.
+
+   .. note::
+      Application stub code is displayed in the text box.
+
+3. In the :guilabel:`Application Name` field, enter a valid application name.
+
+4. Click :guilabel:`Submit`.
+
+The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list.
+
+Update an application (Application subtab)
+-------------------------------------------
+
+1. From the :guilabel:`Partition` list, click the partition you want to
+   create the new app in.
+
+2. From the :guilabel:`Application` list, click the application you want
+   to update.
+
+   .. note::
+      Application contents is retrieved through AS3 APIs from the BIG-IP device and displayed in the text box.
+
+3. Update the application JSON.
+
+4. Click :guilabel:`Submit`.
+
+The application is updated on the BIG-IP device.
+
+Delete an application (Application subtab)
+-------------------------------------------
+
+1. From the :guilabel:`Partition` list, click the partition you want to
+   delete an app from.
+
+2. From the :guilabel:`Application` list, click the application you want to
+   delete.
+
+3. Click the X next to the :guilabel:`Application` list.
+
+4. When prompted, click :guilabel:`Confirm`.
+
+The application is deleted from the BIG-IP device and won’t be listed in the :guilabel:`Application` list.
+
+When you delete the last application, the corresponding partition is automatically deleted.
+
+Refresh L4-L7 Configuration tab
+-------------------------------
+
+- In the top right of L4-L7 Configuration tab, click :guilabel:`Refresh`.
+
+The content on the tab is refreshed.
