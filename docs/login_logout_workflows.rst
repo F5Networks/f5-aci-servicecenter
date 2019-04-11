@@ -1,5 +1,5 @@
-Install and Uninstall the F5 ACI ServiceCenter App
-==================================================
+Install and Uninstall
+=====================
 
 Install F5 ACI ServiceCenter 
 ----------------------------
