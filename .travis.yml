@@ -43,8 +43,9 @@ jobs:
       skip_cleanup: true
       name: deploy_to_stage
       script:
-        - echo "Starting stagging deploy"
-        - ls -la
+        - echo "Building docs sites"
+        - make docker-html
+        - echo "Done with buildng docs site. Starting stagging deploy"
       deploy:
         skip_cleanup: true
         provider: s3
@@ -56,6 +57,10 @@ jobs:
     - stage: prod_deploy
       skip_cleanup: true
       name: deploy_to_prod
+      script:
+        - echo "Building docs sites"
+        - make docker-html
+        - echo "Done with buildng docs site. Starting stagging deploy"
       deploy:
         skip_cleanup: true
         provider: s3
