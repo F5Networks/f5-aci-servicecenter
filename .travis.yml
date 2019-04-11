@@ -9,10 +9,9 @@ services:
 stages:
   - name: build_docs
   - name: stage_deploy
-    if: branch = staging AND type = pull_request
+    if: branch = staging
   - name: prod_deploy
-    if:  branch = master AND type = pull_request
-
+    if:  branch = master
 
 
 before_install:
