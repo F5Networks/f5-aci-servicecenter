@@ -9,9 +9,9 @@ services:
 stages:
   - name: build_docs
   - name: stage_deploy
-    if: branch = staging AND tag = deploy
+    if: branch = staging AND tag =~ /^release-d+$/
   - name: prod_deploy
-    if:  branch = master AND tag = deploy
+    if:  branch = master AND tag =~ /^release-d+$/
 
 
 
