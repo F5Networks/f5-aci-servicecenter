@@ -1,10 +1,10 @@
-Visibility Workflows
---------------------
+Navigate the F5 ACI ServiceCenter
+=================================
 
-In the :guilabel:`Partition` list, :guilabel:`Common Partition` is selected by default. If any other partition is selected, for example the :guilabel:`Sample Partition`, the selected table shows entries that belong to both the sample partition and common partition.
+In the F5 ACI ServiceCenter :guilabel:`Partition` list, :guilabel:`Common Partition` is selected by default. If any other partition is selected, for example the :guilabel:`Sample Partition`, the selected table shows entries that belong to both the sample partition and common partition.
 
 View VLAN table
-```````````````
+---------------
 
 1. Click the Visibility tab.
 
@@ -17,7 +17,7 @@ View VLAN table
    The table does not show VLANs from BIG-IPs that don't have corresponding APIC entries.
 
 View VIP table
-``````````````
+---------------
 
 1. Click the Visibility tab, and then from the :guilabel:`Table` list, click the :guilabel:`Visibility` table.
 
@@ -33,7 +33,7 @@ View VIP table
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in the VIP table.
 
 View Node table
-```````````````
+---------------
 
 1. Click the Visibility tab, and then click the :guilabel:`Node` table from the Table list.
 
@@ -49,7 +49,7 @@ View Node table
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in any of the entries in the Node table.
 
 Download report
-```````````````
+---------------
 
 1. Click the table you're interested in: VLAN, VIP, or Node.
 
@@ -58,7 +58,7 @@ Download report
 A report, in the form of an Excel sheet, is downloaded.
 
 Refresh Visibility tab
-``````````````````````
+----------------------
 
 1. Select the table you're interested in: VLAN, VIP, or Node.
 
