@@ -7,24 +7,25 @@ services:
   - docker
 
 stages:
-  - name: build_deploy_docs
-    #if: branch = master AND type = pull_request
+  - name: build_docs
+  - name: stage_deploy
+    if: branch = staging AND type = pull_request
+  - name: prod_deploy
+    if:  branch = master AND type = pull_request
+
 
 
 before_install:
-  - docker pull f5devcentral/containthedocs:latest
-  - git config --global user.email "a.kashcheev@f5.com"
-  - git config --global user.name "Travis F5 ACI Service Center"
+  - docker pull f5devcentral/containthedocs:1.0.8
 
 
 install:
   - travis_retry pip install awscli --upgrade
 
 
-
 jobs:
   include:
-    - stage: build_deploy_docs
+    - stage: build_docs
       skip_cleanup: true
       name: build_docs_site
       script:
@@ -35,15 +36,30 @@ jobs:
         provider: s3
         access_key_id: $AWS_ACCESS_KEY_ID
         secret_access_key: $AWS_SECRET_ACCESS_KEY
-        bucket: ak-poc-clouddocs-ci
+        bucket: $AWS_S3_TEST_BUCKET
         local_dir: docs/_build/html
-        upload_dir: travis-ci-site
-        on:
-          branch: master
-          repo: andreykashcheev/f5-aci-servicecenter
+        upload_dir: f5-aci-servicecenter/latest
+    - stage: stage_deploy
+      skip_cleanup: true
+      name: deploy_to_stage
+      deploy:
+        skip_cleanup: true
+        provider: s3
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key: $AWS_SECRET_ACCESS_KEY
+        bucket: $AWS_S3_STAGE_BUCKET
+        local_dir: docs/_build/html
+        upload_dir: f5-aci-servicecenter/latest
+    - stage: prod_deploy
+      skip_cleanup: true
+      name: deploy_to_prod
+      deploy:
+        skip_cleanup: true
+        provider: s3
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key: $AWS_SECRET_ACCESS_KEY
+        bucket: $AWS_S3_PROD_BUCKET
+        local_dir: docs/_build/html
+        upload_dir: f5-aci-servicecenter/latest
 
 
-
-notifications:
-  email: false
-  webhooks: https://outlook.office.com/webhook/ef7d7702-cc7e-496c-9408-0768c9221005@dd3dfd2f-6a3b-40d1-9be0-bf8327d81c50/TravisCI/5ba7ab8c94df45dbb50df90430d2b961/b13eeba0-6263-4ea3-b582-48a8fd612f47
