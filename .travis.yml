@@ -54,6 +54,8 @@ jobs:
         bucket: $AWS_S3_STAGE_BUCKET
         local_dir: docs/_build/html
         upload_dir: f5-aci-servicecenter/latest
+        on:
+          branch: staging
     - stage: prod_deploy
       skip_cleanup: true
       name: deploy_to_prod
@@ -70,5 +72,7 @@ jobs:
         bucket: $AWS_S3_PROD_BUCKET
         local_dir: docs/_build/html
         upload_dir: f5-aci-servicecenter/latest
+        on:
+          branch: master
 
 
