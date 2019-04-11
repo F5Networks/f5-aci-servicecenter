@@ -14,6 +14,64 @@ To create a Tech-Support policy, complete the following steps.
 
 3. From the list, select the F5 app and click :guilabel:`Submit`.
 
+.. note::
+   In APIC 3.2 release if there is an issue creating the policy then use the REST API post to APIC to create the tech-support policy and    use it to collect tech-support. One time effort to create policy.
+   
+   Login to apic using following post
+   
+   - Endpoint URL : "https://<APIC IP>/api/aaaLogin.xml"
+   - Payload : <aaaUser name="<<apic-admin-name>>" pwd="<<password>>"/>
+	  
+   Create the Tech-Support policy using following
+
+   - Endpoint URL: "https://<APIC IP>/api/mo/uni/fabric.json"
+   - Payload to create policy named "F5-App-Tech-Support"
+   
+   .. code-block:: json
+		
+      {
+	    "fabricInst": {
+		  "attributes": {
+		    "dn": "uni/fabric",
+			"status": "modified"
+		  },
+		  "children": [{
+		    "fabricFuncP": {
+			  "attributes": {
+				"dn": "uni/fabric/funcprof",
+				"status": "modified"
+			  },
+			    "children": [{
+				  "fabricCtrlrPGrp": {
+				    "attributes": {
+					  "dn": "uni/fabric/funcprof/ctrlrgrp-default",
+					  "status": "modified"
+					},
+					  "children": [{
+					    "fabricRsApplTechSupOnD": {
+					      "attributes": {
+						    "tnDbgexpTechSupOnDName": "F5-App-Tech-Support"
+						  }
+					    }
+					  }]
+					}
+				 }]
+			  }
+			},
+			{
+			   "dbgexpTechSupOnD": {
+			     "attributes": {
+				   "dn": "uni/fabric/tsod-F5-App-Tech-Support",
+				     "name": "F5-App-Tech-Support",
+					 "exportToController": "true",
+				     "vendorName": "F5Networks",
+				     "appName": "F5ACIServiceCenter"
+				  }
+				}
+			 }
+		 ]}
+      }
+
 Download logs
 -------------
 
