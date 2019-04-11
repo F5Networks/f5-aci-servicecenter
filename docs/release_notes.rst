@@ -120,6 +120,7 @@ all operation. (Use View AS3 Declaration followed by Delete button
 press.)
 
 **Application GUI stops showing loader before API call returns**
+
 On certain app UI operations such as tab switch, or login to a new BIG-IP device, multiple REST API calls are triggered simultaneously from the GUI to load the contents of the page. Until the API calls return the App UI shows the “Loading” sign and also a help message saying “Retrieving information from APIC and F5 BIG-IP. This may take a few seconds.” But the current UI behavior is such that as soon as one of the simultaneous API calls returns, the UI loader stops showing the “Loading” sign even before some of the data (such as drop-down boxes) are populated.
 
 Workaround: Please wait for few more seconds to re-check the data on the page to get updates. This may be especially true on scale setups 
@@ -127,6 +128,7 @@ Workaround: Please wait for few more seconds to re-check the data on the page to
 -	With large number of BIG-IP partitions on the Applications sub-tab of L4-L7 App Services page
 
 **Operations on “L4-L7 App Services” tab of a scale setup**
+
 AS3 3.7.0 introduces new behavior for asynchronous mode. Even if you have asynchronous mode set to false (which is the mode used by F5 ACI ServiceCenter application), after 45 seconds AS3 sets asynchronous mode to true, and returns an async response. This typically occurs only with very large declarations to BIG-IP; if the declaration completes in less than 45 seconds, AS3 does not fall back to asynchronous mode. 
 
 Currently the application is not handling this above mentioned async AS3 behavior. For example, in scale setups with 100 partitions in the AS3 declaration, it might take more than 45 seconds to delete the AS3 declaration through the application. In such cases, the partition drop-down list of L4-L7 App Services may show old set of partitions, or the view declaration button of the tab may keep showing the old declaration. 
