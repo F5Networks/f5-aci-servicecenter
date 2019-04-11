@@ -79,9 +79,9 @@ BIG-IP session of the application for 10 minutes, the user will see the
 above error. This timeout check is triggered only on tab switch, or on
 left-hand menu item click for logged in BIG-IP devices.
 
-**Q8. If my DB is corrupted how can I recover the data?**
+**Q8. If my database is corrupted, how can I recover the data?**
 
-1. Configure a tech-support policy for the F5 ACI ServiceCenter application as explained 'other workflows' section. This will ensure that the application database is backed up periodically.  
+1. Configure a tech-support policy for the F5 ACI ServiceCenter application as explained here: :doc:`Tech Support Policies and Logs <other_workflows>`. This ensures that the application database is backed up periodically.  
 2. Disable the application from APIC UI.
 3. Replace the application db file located at /data2/gluster/gv0/F5Networks_F5ACIServiceCenter/f5.db with the correct f5.db backup file from tech-support.
 4. Enable the application from APIC UI.
