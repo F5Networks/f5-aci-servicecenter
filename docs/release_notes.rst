@@ -20,6 +20,8 @@ a. If a Floating Self IP is configured on one of the peers of the HA
 
 b. Same behavior as a. will be observed for default gateway in HA
    cluster which are synced between peer devices.
+   
+Workaround: Once the HA route or floating Self IP is seen as Out-of-sync on the VLAN card, click on the link and sync it to the application    
 
 **L2-L3 Stitching - VLAN Naming Convention and its effect on VLAN tag
 change**
@@ -48,6 +50,20 @@ the VLAN tag from application for this VLAN to match the APIC VLAN, the
 application will delete and recreate VLAN/Self IPs with the new name and
 tag to match the above VLAN naming convention. There will be traffic
 loss during such a configuration change.
+
+.. note:: 
+   BIG-IP version 12.1 behavior for Delete VLANs
+   In the above scenario of VLAN tag change, if VLAN has an associated Self IP say 192.168.10.10/24 and there are pool members in the   
+   same subnet with IP 192.168.10.X, then the user will see an error similar to: “Cannot delete IP 192.168.10.10 because it would leave    a pool member (pool Common/web-pool) unreachable”. 
+
+   This error is seen due to the VLAN/Self IP delete and recreate during VLAN change and BIG-IP not allowing original Self IP create    
+   because it has pool members in the same subnet. This is specific to BIG-IP version 12.X and will not be seen in BIG-IP releases 13.1 
+   and above. 
+
+   Workaround: 
+   (1) Delete the corresponding pool member from BIG-IP 
+   (2) Do the VLAN tag change from app 
+   (3) Recreate the pool member on BIG-IP
 
 .. note::
    The VLAN naming convention has the VLAN tag since that is
@@ -102,3 +118,22 @@ BIG-IP device.**
 upload one more AS3 sample declaration to App and then perform Delete
 all operation. (Use View AS3 Declaration followed by Delete button
 press.)
+
+**Application GUI stops showing loader before API call returns**
+
+On certain app UI operations such as tab switch, or login to a new BIG-IP device, multiple REST API calls are triggered simultaneously from the GUI to load the contents of the page. Until the API calls return the App UI shows the “Loading” sign and also a help message saying “Retrieving information from APIC and F5 BIG-IP. This may take a few seconds.” But the current UI behavior is such that as soon as one of the simultaneous API calls returns, the UI loader stops showing the “Loading” sign even before some of the data (such as drop-down boxes) are populated.
+
+Workaround: Please wait for few more seconds to re-check the data on the page to get updates. This may be especially true on scale setups 
+-	With large number of APIC logical devices on the L2-L3 Stitching page
+-	With large number of BIG-IP partitions on the Applications sub-tab of L4-L7 App Services page
+
+**Operations on “L4-L7 App Services” tab of a scale setup**
+
+AS3 3.7.0 introduces new behavior for asynchronous mode. Even if you have asynchronous mode set to false (which is the mode used by F5 ACI ServiceCenter application), after 45 seconds AS3 sets asynchronous mode to true, and returns an async response. This typically occurs only with very large declarations to BIG-IP; if the declaration completes in less than 45 seconds, AS3 does not fall back to asynchronous mode. 
+
+Currently the application is not handling this above mentioned async AS3 behavior. For example, in scale setups with 100 partitions in the AS3 declaration, it might take more than 45 seconds to delete the AS3 declaration through the application. In such cases, the partition drop-down list of L4-L7 App Services may show old set of partitions, or the view declaration button of the tab may keep showing the old declaration. 
+
+Please check F5 cloud docs for more details on the async behavior:
+https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/refguide/as3-api.html
+
+Workaround: Wait for the few minutes after performing an AS3 API call through the app (on a scaled BIG-IP setup) for the AS3 update to be reflected in the GET call of AS3 declaration. 
