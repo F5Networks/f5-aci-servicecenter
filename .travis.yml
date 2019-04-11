@@ -42,6 +42,9 @@ jobs:
     - stage: stage_deploy
       skip_cleanup: true
       name: deploy_to_stage
+      script:
+        - echo "Starting stagging deploy"
+        - ls -la
       deploy:
         skip_cleanup: true
         provider: s3
