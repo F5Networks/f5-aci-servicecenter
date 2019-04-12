@@ -62,6 +62,6 @@ Refresh Visibility tab
 
 1. Select the table you're interested in: VLAN, VIP, or Node.
 
-2. In the top right of the Visibility tab, click :guilabel`Refresh`.
+2. In the top right of the Visibility tab, click :guilabel:`Refresh`.
 
 The contents of the visibility table are refreshed.

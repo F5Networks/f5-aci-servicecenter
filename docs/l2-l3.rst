@@ -32,7 +32,7 @@ Create VLAN and Self IP
 
 The BIG-IP device has the same VLANs configured as the APIC LDEV VLAN and L2-L3 stitching is complete.
 
-Update VLAN and/or Self-IPs
+Update VLAN and/or Self IPs
 ````````````````````````````
 
 There are two options for updating VLAN/self IPs.
@@ -43,7 +43,7 @@ There are two options for updating VLAN/self IPs.
    **Or**
    For VLAN edit: From L2-L3 stitching section, select the VLAN and use the :guilabel:`Edit` icon in the top right of the VLAN card.
 
-2. For self IP edit: From the L2-L3 stitching tab, select the VLAN and use the :guilabel:`Edit` icon, located next to the Self IP under Action.
+2. For self IP edit: From the L2-L3 stitching tab, select the VLAN and use the :guilabel:`Edit` icon, located next to the self IP under Action.
 
 Delete VLAN
 ````````````
@@ -52,16 +52,16 @@ Delete VLAN
 
 2. When prompted, click :guilabel:`Confirm`.
 
-The VLAN and all corresponding Self-IPs are deleted from the BIG-IP device, as well as from the application database.
+The VLAN and all corresponding self IPs are deleted from the BIG-IP device, as well as from the application database.
 
-Delete Self-IPs
+Delete Self IPs
 ````````````````
 
 1. Next to the self IP entry you want to delete on a specific VLAN card, click the :guilabel:`Delete` icon.
 
 2. When prompted, click :guilabel:`Confirm`.
 
-The Self-IP is deleted from the BIG-IP device, as well as from the application database.
+The self IP is deleted from the BIG-IP device, as well as from the application database.
    
 Create Default Gateway
 ``````````````````````
@@ -122,7 +122,7 @@ Sync VLAN Data from BIG-IP to ACI ServiceCenter
 
 1. If there is an :guilabel:`Out-of-Sync` link on the VLAN card, click it.
 
-   A window shows ACI ServiceCenter data and BIG-IP data (VLAN and Self-IP details).
+   A window shows ACI ServiceCenter data and BIG-IP data (VLAN and self IP details).
 
 3. Click the :guilabel:`Sync to ACI ServiceCenter` button.
 
@@ -152,4 +152,4 @@ Refresh L2-L3 Stitching tab
 
 - In the top right of the L2-L3 Stitching tab, click the :guilabel:`Refresh` icon.
 
-All the content on this tab is refreshed, including Ldevs in the LDEV list: Default Gateway, VLANs and Self-IPs.
+All the content on this tab is refreshed, including Ldevs in the LDEV list: Default Gateway, VLANs and self IPs.
