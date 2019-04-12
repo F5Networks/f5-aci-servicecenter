@@ -39,11 +39,11 @@ L4-L7 App Services    Create custom application definitions, with the ability to
    :maxdepth: 2
    :hidden:
 
-   pre_req.rst
-   login_logout_workflows.rst
-   l4_l7_workflows.rst
-   l2_l3_workflows.rst
-   visibility_workflows.rst
-   other_workflows.rst
+   pre-req.rst
+   install.rst
+   l4-l7.rst
+   l2-l3.rst
+   navigate.rst
+   tech-support-and-logs.rst
    faq.rst
-   release_notes.rst
+   release-notes.rst
