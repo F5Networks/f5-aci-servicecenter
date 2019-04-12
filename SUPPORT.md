@@ -1,6 +1,6 @@
 ## Support Information
 
-Currently supported versions:
+The following versions of BIG-IP and APIC are currently supported for the F5 ACI ServiceCenter:
  
 | Package Version | BIG-IP Version  | APIC Version  | 
 |-----------------|-----------------|---------------|
