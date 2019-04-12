@@ -29,7 +29,7 @@ jobs:
       name: build_docs_site
       script:
         - chmod -R 755 script
-        - make docker-test && make docker-html
+        - make docker-html
       deploy:
         skip_cleanup: true
         provider: s3
