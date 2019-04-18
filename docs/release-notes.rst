@@ -4,6 +4,18 @@ Release Notes
 Version 1.0
 ```````````
 
+**I/O Error**
+
+When you try to access the App through the UI you might see the following error: ``disk I/O error (sqlite OperationError)``. You will not be able to perform any additional actions. 
+
+To fix this issue, the underlying server must be restarted and the file system remounted. These actions require root access to the APIC.
+
+`Create an issue on GitHub <https://github.com/F5Networks/f5-aci-servicecenter/issues>`_ for assistance. 
+
+
+
+------
+
 **L2-L3 Stitching - Out-of-sync floating self IPs and default route in HA cluster**
 
 When there are two BIG-IP devices in an HA cluster, the application shows them under a cluster name.
