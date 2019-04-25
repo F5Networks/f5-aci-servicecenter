@@ -28,34 +28,7 @@ This same bevavior is true for default gateways in an HA cluster.
 
 ------
 
-**L2-L3 Stitching - VLAN naming convention and its affect on VLAN tag change**
-
-.. note::
-   At any point in time, if a VLAN tag is changed through the application, it may overwrite a pre-existing VLAN on the BIG-IP device.
-
-The application auto-generates names for VLANs, self IPs, and default gateways.
-
-The naming conventions is:
-
-VLANs: ``apic-vlan-<Logical Device Name>-<VLAN tag>``
-
-Self IPs: ``apic-vlan-<Logical Device Name>-<Logical Interface Name>-<Self
-IP Address>``
-
-Default Gateway: ``apic-default-gateway``
-
-When APIC VLAN tag changes on the APIC for some logical interface
-(either due to manual change by administrator or due to APIC
-snapshot-revert or any other reason), the app detects this change and
-displays a warning for the corresponding VLAN. If you decide to change
-the VLAN tag from the application for this VLAN to match the APIC VLAN, the
-application deletes and recreates the VLAN/self IPs with the new name and
-tag to match the above VLAN naming convention. There will be traffic
-loss during this configuration change.
-
-------
-
-**BIG-IP version 12.1 behavior for deleting VLANs**
+**BIG-IP version 12.1 behavior for deleting VLANs** (To be discussed)
 
 In the above scenario of VLAN tag change, if a VLAN has an associated self IP of ``192.168.10.10/24`` and there are pool members in the same subnet with IP ``192.168.10.X``, then you will see an error similar to: `“Cannot delete IP 192.168.10.10 because it would leave a pool member (pool Common/web-pool) unreachable”`. 
 
@@ -77,41 +50,6 @@ This error is due to the VLAN/self IP delete and recreate during VLAN change and
    hence other unique properties from APIC such as Ldev+Logical Interface
    or Ldev + Logical Interface Context cannot be included in the name since
    they have longer Max Lengths than 64 characters.
-
-------
-
-**Out-of-sync cases for same APIC logical device name under different
-tenants with same VLAN tag**
-
-*Example 1:* There are two logical devices with the name ``ldevCommon``, one
-under TenantA and one under TenantB. Also, ``ldevCommon`` has the same set of
-VLANs configured: ``internal: vlan-24``, ``external: vlan-25``. Both these
-logical devices can be seen in L2-L3 stitching list and can be
-selected for stitching with BIG-IP. TenantA LDEV is stitched to BIG-IP,
-the names of the VLANs created on the BIG-IP will be:
-
-``apic-vlan-ldevCommon-24``
-
-``apic-vlan-ldevCommon-25``
-
-Because these are the same as names that would have been generated for
-TenantB LDEV vlans as well, they will appear as Out-of-sync on the other
-LDEV list for that BIG-IP login. If synced to App, the VLAN from the
-app database will be moved from one LDEV to other.
-
-*Example 2:* In the above case, the self IPs configured with one LDEV
-may appear as Out-of-band self IPs on the second LDEV list for the
-same BIG-IP device.
-
-*Example 3:* There are two logical devices with different names that
-share the same VLAN tag, say ``vlan-24``, and the VLAN is stitched for one of
-the LDEVs. The other LDEV’s info page will show the first VLAN as an
-out-of-band VLAN.
-
-.. note::
-   To avoid this, the LDEV VLANs that are to be stitched with the same BIG-IP device should have a
-   different set of VLAN tags, because BIG-IP only supports one set of VLAN
-   tags.
 
 ------
 
@@ -145,3 +83,11 @@ Check this site for more details on the async behavior:
 https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/refguide/as3-api.html
 
 **Workaround**: On a scaled BIG-IP setup, wait a few minutes after performing an AS3 API call through the app. This allows the AS3 update to be reflected in the GET call of the AS3 declaration. 
+
+---------
+
+**Simultaneous editing of multiple BIG-IP's through a browser**
+
+If 2 different BIG-IPs A and B are being accessed on neighbouring browser tabs, it is possible that the A's tab will display data from B. 
+
+**Workaround**: Use separate browser windows to work on separate BIG-IP devices in parallel. 

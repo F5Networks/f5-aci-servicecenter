@@ -4,7 +4,7 @@ Use L4-L7 App Services
 For information on how to define a declaration, see https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/.
 
 .. note::
-   When you click the L4-L7 App Service tab, two subtabs are displayed (BIG-IP and ACI ServiceCenter). The Application tab is selected by default. It has a box that displays the current AS3 declaration on this BIG-IP device.
+   When you click the L4-L7 App Service tab, two subtabs are displayed (BIG-IP and Application). The Application tab is selected by default. It has a box that displays the current AS3 declaration on this BIG-IP device.
 
 Dry-Run declaration (BIG-IP subtab)
 ------------------------------------
@@ -65,7 +65,7 @@ Delete a partition (Application subtab)
 1. From the :guilabel:`Partition` list, click the partition you want to
    delete.
 
-2. Click the X next to the menu.
+2. Click the :guilabel:`Delete` next to the menu.
 
 3. When prompted, confirm that you want to delete the partition.
 
