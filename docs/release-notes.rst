@@ -59,7 +59,6 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 **Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
 
-
 ------
 
 **Application GUI stops showing loader before API call returns**
@@ -90,4 +89,20 @@ https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/refguid
 
 If 2 different BIG-IPs A and B are being accessed on neighbouring browser tabs, it is possible that the A's tab will display data from B. 
 
-**Workaround**: Use separate browser windows to work on separate BIG-IP devices in parallel. 
+**Workaround**: Use separate browser windows to work on separate BIG-IP devices in parallel OR use 2 incognito browser tabs to access 2 BIG-IP devices in parallel.
+
+---------
+
+**Default drop-down selections in self IP creation don't work in IE browser** 
+Submit button stays disabled for vlan create/edit action
+Affected Browsers : Internet Explorer v11
+
+**Workaround**: User has to change the default selection for Traffic Group and Port Lockdown atleast once to enable Submit button
+
+---------
+
+**Time to populate the logical device selection drop-down**
+While switching over to the L2-L3 stictching tab it could take a while for the logical device cluster drop down to populate
+
+**Workaround** - no workaround. Give the loader sometime to populate after switching to the L2-L3 tab or after refreshing 
+
