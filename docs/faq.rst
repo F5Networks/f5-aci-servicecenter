@@ -27,7 +27,7 @@ For the L4-L7 configuration tab to work correctly, f5-appsvcs RPM version 3.7.0 
 
 **Q3. Why is there a warning about "f5-appsvcs package" installation when I log in to my BIG-IP device?**
 
-See the answer to Q1.
+See the answer to Q2.
 
 ------
 
@@ -55,7 +55,7 @@ For virtual ADC logical devices, if you did the following steps
 2. Delete service graph template
 3. Revert to snapshot config
 
-The VLAN encap values associated with logical interfaces of the LDEV change and do not remain same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag. This leads to deletion and re-creation of VLAN and associated self IPs, and there will be traffic loss. 
+The VLAN encap values associated with logical interfaces of the LDEV change and do not remain same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag.
 
 After a VLAN tag is updated on BIG-IP, the visibility vlan table will start showing the VLANs again. 
 
@@ -63,7 +63,7 @@ After a VLAN tag is updated on BIG-IP, the visibility vlan table will start show
 
 **Q7. Why don’t I see the pre-existing BIG-IP VLANs and self IPs that have a different naming convention than the application?**
 
-The application does not support pre-existing VLANs Network configuration (L2-L3 configuration) that have a different naming convention than the app. It is able to detect VLANs that have been created and managed from the application only. Although, after uninstalling and reinstalling an application, if the app database is lost, the application will be able to detect the previously created VLANs by reading BIG-IP information and show them as Out-of-sync VLANs. They will also be able to sync it to the application to rebuild App Database. Please see Release Note 1 for more details.
+The application does not support pre-existing VLANs Network configuration (L2-L3 configuration) that have a different naming convention than the app. It is able to detect VLANs that have been created and managed from the application only. Although, after uninstalling and reinstalling an application, if the app database is lost, the application will be able to detect the previously created VLANs by reading BIG-IP information and show them as Out-of-sync VLANs. They will also be able to sync it to the application to rebuild App Database.
 
 The application displays APIC VLAN tags for a particular Logical Device Cluster on the L2-L3 stitching page. If there is an out-of-band VLAN with different naming convention but same VLAN tag on the BIG-IP device, the application detects it and shows it in the Out-of-sync information too. But the only action available for the VLAN or self IP will be deletion of that object from BIG-IP. It cannot sync to application, since it has a different naming convention. The application also does not detect out-of-band information for any of the other VLAN tags that are not a part of APIC VLAN list. 
 
@@ -77,7 +77,7 @@ If there is a single application in a particular partition, and if that applicat
 
 **Q9. What is the best way to delete LDEV from APIC?**
 
-Do not delete self IPs, VLANs and devices from APIC directly. Instead, as a first step, delete self IPs, VLANs and routes from the BIG-IP device by using the application. When you are done, you can delete the Logical Device from APIC. This ensures there are no stale self IP, VLAN, and route entries on BIG-IP.
+Do not delete Logical devices from APIC directly. Instead, as a first step, delete self IPs, VLANs and routes from the BIG-IP device by using the application. When you are done, you can delete the Logical Device from APIC. This ensures there are no stale self IP, VLAN, and route entries on BIG
 
 ------
 
@@ -87,7 +87,7 @@ Every BIG-IP session on the app has an operation-idle time out of ten minutes. I
 
 ------
 
-**Q11. Why do I get an error for VLAN tag change/VLAN Delete/SelfIP Delete operation from the App?**
+**Q11. Why do I get an error for VLAN Delete/SelfIP Delete operation from the App?**
 
 This is a known issue for BIG-IP v 12.x. If a pool with nodes is associated with a self IP of the same subnet, BIG-IP doesn’t allow user to delete that self IP. As a result, the VLAN delete operation also fails with the error.
 

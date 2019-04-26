@@ -20,7 +20,7 @@ Create VLAN and Self IP
 
    The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name.
 
-4. You can select one or more VLANs by clicking their check-box, and then clicking :guilabel:`Continue`.
+4. You can select one or more VLANs by clicking their check-box, and then clicking :guilabel:`Manage Selected`.
 
    .. note::
       - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Tag (2) Interface. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
@@ -87,7 +87,7 @@ Update Default Gateway
 
    The Default Gateway form opens.
 
-2. Follow same steps as Workflow 17, steps 3 and 4.
+2. Follow same steps as Workflow Create Default Gateway, steps 3 and 4.
 
 Delete Default Gateway
 ```````````````````````
@@ -124,7 +124,7 @@ Sync VLAN Data from BIG-IP to ACI ServiceCenter
 
    A window shows ACI ServiceCenter data and BIG-IP data (VLAN and self IP details).
 
-3. Click the :guilabel:`Sync to ACI ServiceCenter` button.
+3. Click the :guilabel:`Sync to App` button.
 
 The ACI ServiceCenter is updated to have the same VLAN details and self IPs for the specific VLAN.
 

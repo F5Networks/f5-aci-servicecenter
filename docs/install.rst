@@ -24,13 +24,13 @@ Install F5 ACI ServiceCenter
 Add a new BIG-IP device (Device Login)
 --------------------------------------
 
-1. In the top left of the F5 ACI ServiceCenter, click :guilabel`+ NEW DEVICE`. A login prompt appears.
+1. In the top left of the F5 ACI ServiceCenter, click :guilabel:`+ NEW DEVICE`. A login prompt appears.
 
 2. Enter the BIG-IP device credentials.
 
 3. The newly-added device is displayed under the left menu bar.
 
-   - If the device is standalone, it is visible under :guilabel`Standalone BIG-IP Devices`.
+   - If the device is standalone, it is visible under :guilabel:`Standalone BIG-IP Devices`.
 
    - If the device is part of a highly-available (HA) pair, the F5 ACI ServiceCenter prompts for a cluster name. After you enter a cluster name, the device and its peer are added under the cluster name on the left menu bar. The peer device is in a logged-out state and you must log in to it separately.
 
@@ -81,4 +81,4 @@ When you uninstall the F5 ACI ServiceCenter, the data from the database is remov
 However, if the VLANs and self IPs, which were created through the F5 ACI ServiceCenter, are still intact on the corresponding BIG-IP devices, you can click :guilabel:`Out-of-sync` to view your resources and sync them back to the F5 ACI ServiceCenter, and the application database is rebuilt.
 
 .. note::
-   You might encounter L2-L3 operation errors due to BIG-IP's existing configuration. If you do, use Sync Workflows (Workflows 20 to 23) wherever applicable. If errors persist, delete the VLAN, self IP, and route entries from the BIG-IP device by logging in to the BIG-IP Configuration utility directly (rather than using the F5 ACI ServiceCenter).
+   You might encounter L2-L3 operation errors due to BIG-IP's existing configuration. If you do, use `Sync Workflows <https://clouddocs.f5networks.net/f5-aci-servicecenter/latest/l2-l3.html#sync-tasks>`_ wherever applicable. If errors persist, delete the VLAN, self IP, and route entries from the BIG-IP device by logging in to the BIG-IP Configuration utility directly (rather than using the F5 ACI ServiceCenter).
