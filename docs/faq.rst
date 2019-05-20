@@ -38,9 +38,9 @@ Visibility
 **Q. Why do VLANs from the F5 ACI ServiceCenter application visibility table vanish if I destroy and re-create service graph template of my VIRTUAL Logical Device on Cisco APIC?**
 
 For virtual ADC logical devices, if you did the following steps 
-1. Take snapshot 
-2. Delete service graph template 
-3. Revert to snapshot config. 
+-  Take snapshot 
+-  Delete service graph template 
+-  Revert to snapshot config. 
 
 The VLAN encap values associated with logical interfaces of the LDEV change and do not remain the same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag. 
 
