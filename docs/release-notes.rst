@@ -5,8 +5,7 @@ Version 1.0
 ```````````
 
 General
--------
--------
+=======
 
 **File system convergence**
 
