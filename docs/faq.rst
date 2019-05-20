@@ -38,9 +38,12 @@ Visibility
 **Q. Why do VLANs from the F5 ACI ServiceCenter application visibility table vanish if I destroy and re-create service graph template of my VIRTUAL Logical Device on Cisco APIC?**
 
 For virtual ADC logical devices, if you did the following steps 
+
 -  Take snapshot 
+
 -  Delete service graph template 
--  Revert to snapshot config. 
+
+-  Revert to snapshot config
 
 The VLAN encap values associated with logical interfaces of the LDEV change and do not remain the same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag. 
 
@@ -54,8 +57,11 @@ L2-L3 stitching
 This is a known issue for BIG-IP v 12.x. If a pool with nodes is associated with a self IP of the same subnet, BIG-IP doesn’t allow user to delete that self IP. As a result, the VLAN delete operation also fails with the error.
 
 **Workaround:**
+
 - Delete the corresponding pool member from BIG-IP.
+
 - Perform the VLAN/self IP delete from App.
+
 - Recreate the pool member on BIG-IP.
 
 ------
