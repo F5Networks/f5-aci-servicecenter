@@ -1,8 +1,5 @@
-Release Notes 
-=============
-
-Version 1.0
-```````````
+Release Notes (Version 1.0)
+==========================
 
 General
 -------
@@ -30,7 +27,10 @@ When trying to access the App through the UI, following error might occur: "(sql
 
 ------
 
-**L2-L3 Stitching - Out-of-sync floating self IPs and default route in HA cluster**
+L2-L3 stitching
+---------------
+
+**Out-of-sync floating self IPs and default route in HA cluster**
 
 When there are two BIG-IP devices in an HA cluster, the application shows them under a cluster name.
 
@@ -42,9 +42,12 @@ This same behavior is true for default gateways in an HA cluster.
 
 ------
 
-**L4-L7 App Services - AS3 declaration not deleted**
+L4-L7 App Services
+------------------
 
-If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the AS3 configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
+**Application services declaration not deleted**
+
+If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the Application Services configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
 
 **Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
 
