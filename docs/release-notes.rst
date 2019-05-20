@@ -3,6 +3,11 @@ Release Notes
 
 Version 1.0
 ```````````
+
+General
+-------
+-------
+
 **File system convergence**
 
 APIC Filesystem Glusterfs takes 15 to 20 Minutes to recover when APIC cluster goes unhealthy
