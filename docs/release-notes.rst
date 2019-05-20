@@ -25,7 +25,6 @@ When trying to access the App through the UI, following error might occur: "(sql
 
 **Workaround**: Wait for 10-15 minutes and try to access the application again. This issue should get resolved automatically and the application should be accessible again. 
 
-------
 
 L2-L3 stitching
 ---------------
@@ -40,7 +39,6 @@ This same behavior is true for default gateways in an HA cluster.
    
 **Workaround**: After the HA route or floating self IP is seen as Out-of-sync on the VLAN card, click the link and sync it to the application.   
 
-------
 
 L4-L7 App Services
 ------------------
@@ -51,7 +49,7 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 **Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
 
-------
+-------
 
 **Operations on “L4-L7 App Services” tab of a scale setup**
 
@@ -63,5 +61,3 @@ Check this site for more details on the async behavior:
 https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/refguide/as3-api.html
 
 **Workaround**: On a scaled BIG-IP setup, wait a few minutes after performing an AS3 API call through the app. This allows the AS3 update to be reflected in the GET call of the AS3 declaration. 
-
----------
