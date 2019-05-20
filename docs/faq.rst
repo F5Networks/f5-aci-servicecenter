@@ -23,17 +23,20 @@ Expected downtime:
 ------
 
 **Q. In the app, why do I see the error “BIG-IP session timed out. Please log in again.”?**
+
 Every BIG-IP session on the app has an operation-idle time out of 10 minutes. If you do not carry out any operations on a BIG-IP session of the application for 10 minutes, you will see the above error. This timeout check is triggered only on tab switch, or on left-hand menu item click for logged in BIG-IP devices.
 
 ------
 
 **Q. In the app, why do I see the error “ERROR : Request failed due to server side error” on APIC?**
+
 After login to App UI and then keeping it idle for 10+ minutes will generate this error: “ERROR : Request failed due to server side error”. The APIC session expires, however user does not get logged out automatically. As a result, even after closing the App UI, the same error is observed on 
 
 Visibility
 ----------
 
 **Q. Why do VLANs from the F5 ACI ServiceCenter application visibility table vanish if I destroy and re-create service graph template of my VIRTUAL Logical Device on Cisco APIC?**
+
 For virtual ADC logical devices, if you did the following steps 
 1. Take snapshot 
 2. Delete service graph template 
@@ -43,10 +46,11 @@ The VLAN encap values associated with logical interfaces of the LDEV change and 
 
 After a VLAN tag is updated on BIG-IP, the visibility vlan table will start showing the VLANs again.
 
-L3-L3 stitching
+L2-L3 stitching
 ---------------
 
 **Q. Why do I get an error for VLAN Delete/self IP delete operation from the App?**
+
 This is a known issue for BIG-IP v 12.x. If a pool with nodes is associated with a self IP of the same subnet, BIG-IP doesn’t allow user to delete that self IP. As a result, the VLAN delete operation also fails with the error.
 
 **Workaround:**
