@@ -30,7 +30,9 @@ Every BIG-IP session on the app has an operation-idle time out of 10 minutes. If
 
 **Q. In the app, why do I see the error “ERROR : Request failed due to server side error” on APIC?**
 
-After login to App UI and then keeping it idle for 10+ minutes will generate this error: “ERROR : Request failed due to server side error”. The APIC session expires, however user does not get logged out automatically. As a result, even after closing the App UI, the same error is observed on 
+After login to App UI and keeping it idle for 10+ minutes will generate this error: “ERROR : Request failed due to server side error”. The APIC session expires, however user does not get logged out automatically. As a result, even after closing the App UI, the same error is observed.
+
+**Workaround:** Login to APIC again
 
 Visibility
 ----------
@@ -52,7 +54,7 @@ After a VLAN tag is updated on BIG-IP, the visibility vlan table will start show
 L2-L3 stitching
 ---------------
 
-**Q. Why do I get an error for VLAN Delete/self IP delete operation from the App?**
+**Q. Why do I get an error for VLAN/self IP delete operation from the App?**
 
 This is a known issue for BIG-IP v 12.x. If a pool with nodes is associated with a self IP of the same subnet, BIG-IP doesn’t allow user to delete that self IP. As a result, the VLAN delete operation also fails with the error.
 
@@ -98,7 +100,7 @@ See above.
 
 ------
 
-**Q. I deleted a application services declaration from the F5 ACI ServiceCenter application. Why do I still see partitions in the declaration?**
+**Q. I deleted an application services declaration from the F5 ACI ServiceCenter application. Why do I still see partitions in the declaration?**
 
 If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the AS3 configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
 
@@ -119,13 +121,13 @@ Do not delete Logical devices from APIC directly. Instead, as a first step, dele
 
 ------
 
-**Q. Which browsers are supported?**
+**Q. What browsers are supported?**
 
 The app has been tested with IE11, Mozilla FireFox 56 and Google Chrome v72.
 
 ------
 
-**Q. Which scale numbers were tested with the app?**
+**Q. What scale numbers were tested with the app?**
 
 +-----------------------------------+----------------+
 | Particulars                       | Scale          | 
@@ -141,5 +143,4 @@ The app has been tested with IE11, Mozilla FireFox 56 and Google Chrome v72.
 | Per BIG-IP nodes members          | 4              | 
 +-----------------------------------+----------------+
 | Concurrent app operations         | 4 BIG-IPs      | 
-+-----------------------------------+----------------+  
-
++-----------------------------------+----------------+
