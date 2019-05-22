@@ -8,7 +8,7 @@ F5 ACI ServiceCenter runs natively in APIC, providing administrators a single po
 ## Documentation
 - Download, install and [get started](https://f5.com/cisco)  
 - View the [product documentation](https://clouddocs.f5networks.net/f5-aci-servicecenter/latest/)
-- Learn more about the [integration solution](https://f5.com/cisco) 
+- Learn more about the [F5 and Cisco Joint Solutions](https://f5.com/cisco) 
 
 ## Filing Issues and Getting Help
 If you come across a bug or other issue when using the F5 ACI ServiceCenter, use [GitHub Issues](https://github.com/F5Networks/f5-aci-servicecenter/issues) to submit an issue for the F5 team.  You can also see the current known issues on that page, which are tagged with a purple Known Issue label.  
