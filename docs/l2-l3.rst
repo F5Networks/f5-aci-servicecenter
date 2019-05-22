@@ -20,7 +20,7 @@ Create VLAN and Self IP
 
    The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name.
 
-4. You can select one or more VLANs by clicking their check-box, and then clicking :guilabel:`Continue`.
+4. You can select one or more VLANs by clicking their check-box, and then clicking :guilabel:`Manage Selected`.
 
    .. note::
       - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Tag (2) Interface. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
@@ -32,7 +32,7 @@ Create VLAN and Self IP
 
 The BIG-IP device has the same VLANs configured as the APIC LDEV VLAN and L2-L3 stitching is complete.
 
-Update VLAN and/or Self-IPs
+Update VLAN and/or Self IPs
 ````````````````````````````
 
 There are two options for updating VLAN/self IPs.
@@ -43,7 +43,7 @@ There are two options for updating VLAN/self IPs.
    **Or**
    For VLAN edit: From L2-L3 stitching section, select the VLAN and use the :guilabel:`Edit` icon in the top right of the VLAN card.
 
-2. For self IP edit: From the L2-L3 stitching tab, select the VLAN and use the :guilabel:`Edit` icon, located next to the Self IP under Action.
+2. For self IP edit: From the L2-L3 stitching tab, select the VLAN and use the :guilabel:`Edit` icon, located next to the self IP under Action.
 
 Delete VLAN
 ````````````
@@ -52,16 +52,16 @@ Delete VLAN
 
 2. When prompted, click :guilabel:`Confirm`.
 
-The VLAN and all corresponding Self-IPs are deleted from the BIG-IP device, as well as from the application database.
+The VLAN and all corresponding self IPs are deleted from the BIG-IP device, as well as from the application database.
 
-Delete Self-IPs
+Delete Self IPs
 ````````````````
 
 1. Next to the self IP entry you want to delete on a specific VLAN card, click the :guilabel:`Delete` icon.
 
 2. When prompted, click :guilabel:`Confirm`.
 
-The Self-IP is deleted from the BIG-IP device, as well as from the application database.
+The self IP is deleted from the BIG-IP device, as well as from the application database.
    
 Create Default Gateway
 ``````````````````````
@@ -87,7 +87,7 @@ Update Default Gateway
 
    The Default Gateway form opens.
 
-2. Follow same steps as Workflow 17, steps 3 and 4.
+2. Follow same steps as Workflow Create Default Gateway, steps 3 and 4.
 
 Delete Default Gateway
 ```````````````````````
@@ -122,9 +122,9 @@ Sync VLAN Data from BIG-IP to ACI ServiceCenter
 
 1. If there is an :guilabel:`Out-of-Sync` link on the VLAN card, click it.
 
-   A window shows ACI ServiceCenter data and BIG-IP data (VLAN and Self-IP details).
+   A window shows ACI ServiceCenter data and BIG-IP data (VLAN and self IP details).
 
-3. Click the :guilabel:`Sync to ACI ServiceCenter` button.
+3. Click the :guilabel:`Sync to App` button.
 
 The ACI ServiceCenter is updated to have the same VLAN details and self IPs for the specific VLAN.
 
@@ -152,4 +152,4 @@ Refresh L2-L3 Stitching tab
 
 - In the top right of the L2-L3 Stitching tab, click the :guilabel:`Refresh` icon.
 
-All the content on this tab is refreshed, including Ldevs in the LDEV list: Default Gateway, VLANs and Self-IPs.
+All the content on this tab is refreshed, including Ldevs in the LDEV list: Default Gateway, VLANs and self IPs.
