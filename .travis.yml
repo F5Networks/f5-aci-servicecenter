@@ -8,6 +8,7 @@ services:
 
 stages:
   - name: build_docs
+    if: branch = draft
   - name: stage_deploy
     if: branch = staging
   - name: prod_deploy
