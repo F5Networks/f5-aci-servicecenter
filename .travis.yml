@@ -66,5 +66,3 @@ jobs:
         upload_dir: f5-aci-servicecenter/latest
         on:
           branch: master
-
-
