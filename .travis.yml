@@ -8,6 +8,7 @@ services:
 
 stages:
   - name: build_docs
+    if: branch = draft
   - name: stage_deploy
     if: branch = staging
   - name: prod_deploy
@@ -30,6 +31,16 @@ jobs:
       script:
         - chmod -R 755 script
         - make docker-html
+      deploy:
+        skip_cleanup: true
+        provider: s3
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key: $AWS_SECRET_ACCESS_KEY
+        bucket: $AWS_S3_TEST_BUCKET
+        local_dir: docs/_build/html
+        upload_dir: f5-aci-servicecenter/latest
+        on:
+          branch: draft
     - stage: stage_deploy
       skip_cleanup: true
       name: deploy_to_stage
