@@ -11,7 +11,7 @@ stages:
   - name: stage_deploy
     if: branch = staging
   - name: prod_deploy
-    if:  branch = master
+    if: branch = master
 
 
 before_install:
