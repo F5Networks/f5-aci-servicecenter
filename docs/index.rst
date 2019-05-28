@@ -1,4 +1,4 @@
-F5 ACI ServiceCenter user and deployment guide
+F5 ACI ServiceCenter User and Deployment Guide
 ==============================================
 
 The F5 ACI ServiceCenter enables visibility, L2-L3 stitching, and L4-L7 app services between BIG-IP and Cisco Application Centric Infrastructure (ACI).
@@ -33,6 +33,8 @@ L4-L7 App Services    Create custom application definitions, with the ability to
 For support for the F5 ACI ServiceCenter app, `file an issue on Github <https://github.com/F5Networks/f5-aci-servicecenter/issues>`_.
 
 For details on supported versions, see :doc:`Support <support>`.
+
+:fonticon:`fa fa-download` :download:`Attributions.pdf <./Attributions.pdf>`
 
 |
 
