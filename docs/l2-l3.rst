@@ -16,11 +16,11 @@ Create VLAN and Self IP
 
    The APIC information is displayed: Tenant, Concrete Devices and Interfaces, and Device Type (Physical/Virtual). You can also view a list of VLANs configured under the APIC Logical Device in the :guilabel:`Available` box.
 
-3. Select one or more devices and move them to the :guilabel:`Selected` box.
+3. Select one or more vlans and move them to the :guilabel:`Selected` box.
 
    The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name.
 
-4. You can select one or more VLANs by clicking their check-box, and then clicking :guilabel:`Manage Selected`.
+4. After selecting the VLANS click :guilabel:`Manage Selected`.
 
    .. note::
       - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Tag (2) Interface. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
@@ -39,7 +39,7 @@ There are two options for updating VLAN/self IPs.
 
 1. Follow the steps from the previous task and edit the values in the VLAN configuration.
 
-   The only difference is, when you click Continue, the VLAN form is pre-populated with information from the existing VLAN/self IP configuration.
+   The only difference is, when you click Manage Selected, the VLAN form is pre-populated with information from the existing VLAN/self IP configuration.
    **Or**
    For VLAN edit: From L2-L3 stitching section, select the VLAN and use the :guilabel:`Edit` icon in the top right of the VLAN card.
 
@@ -83,7 +83,7 @@ The default gateway is created on the BIG-IP device and is added to the applicat
 Update Default Gateway
 ``````````````````````
 
-1. Next the Default Gateway entry on the L2-L3 Stitching tab, click the :guilabel:`Pencil` icon.
+1. Click the :guilabel:`Pencil` icon besides default Gateway entry to open the default gateway form.
 
    The Default Gateway form opens.
 
@@ -124,7 +124,7 @@ Sync VLAN Data from BIG-IP to ACI ServiceCenter
 
    A window shows ACI ServiceCenter data and BIG-IP data (VLAN and self IP details).
 
-3. Click the :guilabel:`Sync to App` button.
+2. Click the :guilabel:`Sync to App` button.
 
 The ACI ServiceCenter is updated to have the same VLAN details and self IPs for the specific VLAN.
 
