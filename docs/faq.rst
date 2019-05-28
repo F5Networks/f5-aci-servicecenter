@@ -24,8 +24,9 @@ Expected downtime:
 
 **Q. In the app, why do I see the error “BIG-IP session timed out. Please log in again.”?**
 
-Every BIG-IP session on the app has an operation-idle time out of 10 minutes. If you do not carry out any operations on a BIG-IP session of the application for 10 minutes, you will see the above error. This timeout check is triggered only on tab switch, or on left-hand menu item click for logged in BIG-IP devices.
+If App UI is accessed from 2 parallel browser tabs with certificate warnings enabled from only one of the tabs, it may generate this error: "Error: Request failed due to server side error"
 
+**Workaround** - Login to APIC again
 ------
 
 **Q. In the app, why do I see the error “ERROR : Request failed due to server side error” on APIC?**
@@ -115,7 +116,7 @@ If there is a single application in a particular partition, and if that applicat
 Other
 -----
 
-**Q.What is the best way to delete LDEV from APIC?**
+**Q. What is the best way to delete LDEV from APIC?**
 
 Do not delete Logical devices from APIC directly. Instead, as a first step, delete self IPs, VLANs and routes from the BIG-IP device by using the application. When you are done, you can delete the Logical Device from APIC. This ensures there are no stale self IP, VLAN, and route entries on BIG
 

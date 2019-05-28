@@ -6,7 +6,7 @@ In the F5 ACI ServiceCenter :guilabel:`Partition` list, :guilabel:`Common Partit
 View VLAN table
 ---------------
 
-1. Click the Visibility tab.
+1. Click the Visibility tab 
 
    In the :guilabel:`Table` list, the VLAN table is selected by default.
 
@@ -19,7 +19,7 @@ View VLAN table
 View VIP table
 ---------------
 
-1. Click the Visibility tab, and then from the :guilabel:`Table` list, click the :guilabel:`Visibility` table.
+1. Click the Visibility tab, and then from the :guilabel:`Table` list, click the :guilabel:`VIP` table.
 
 2. From the :guilabel:`Partition` list, click the partition you're interested in.
 
