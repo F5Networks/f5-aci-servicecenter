@@ -24,14 +24,13 @@ Expected downtime:
 
 **Q. In the app, why do I see the error “BIG-IP session timed out. Please log in again.”?**
 
-If App UI is accessed from 2 parallel browser tabs with certificate warnings enabled from only one of the tabs, it may generate this error: "Error: Request failed due to server side error"
+Every BIG-IP session on the app has an operation-idle time out of 10 minutes. If you do not carry out any operations on a BIG-IP session of the application for 10 minutes, you will see the above error. This timeout check is triggered only on tab switch, or on left-hand menu item click for logged in BIG-IP devices.
 
-**Workaround** - Login to APIC again
 ------
 
 **Q. In the app, why do I see the error “ERROR : Request failed due to server side error” on APIC?**
 
-After login to App UI and keeping it idle for 10+ minutes will generate this error: “ERROR : Request failed due to server side error”. The APIC session expires, however user does not get logged out automatically. As a result, even after closing the App UI, the same error is observed.
+If App UI is accessed from 2 parallel browser tabs with certificate warnings enabled from only one of the tabs, it may generate this error: “Error: Request failed due to server side error”
 
 **Workaround:** Login to APIC again
 
