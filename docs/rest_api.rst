@@ -1,19 +1,13 @@
-.. vim: syntax=rst
+Introduction
+============
 
-***Table of Contents***
+This document specifies the REST APIs supported by F5 ACI ServiceCenter application.
 
-**Introduction**
-================
+*1. REST API Endpoint*
 
-    This document specifies the REST APIs supported by F5 ACI
-    ServiceCenter application.
+The REST calls can be made to APIC endpoint
 
-    *1. REST API Endpoint*
-
-    The REST calls can be made to APIC endpoint
-
-    https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter
-    /<REST-API>
+https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter/<REST-API>
 
     Example:
 
