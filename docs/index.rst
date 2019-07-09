@@ -55,3 +55,4 @@ For details on supported versions, see :doc:`Support <support>`.
    faq.rst
    release-notes.rst
    support.rst
+   rest_api.rst
