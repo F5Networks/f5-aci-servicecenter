@@ -3,54 +3,32 @@ Introduction
 
 This document specifies the REST APIs supported by F5 ACI ServiceCenter application.
 
-*1. REST API Endpoint*
+REST API Endpoint
+-----------------
 
 The REST calls can be made to APIC endpoint
-
 https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter/<REST-API>
 
-    Example:
+Example: https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplist.json
 
-    https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplist.json
+Request Headers
+---------------
 
-    *2. Request Headers*
+For all the F5 ACI ServiceCenter API calls following request header parameters are required:
 
-    For all the F5 ACI ServiceCenter API calls, two request header
-    parameters are required:
+Header Parameter 1 => **DevCookie** which can be retrieved as below:
 
-    **(1) DevCookie**
+a. POST: https://<APIC-URL>/api/aaaLogin.xml
 
-    1. DevCookie can be retrieved as below: Obtain login “token”
-    parameter by REST call:
+b. Body for the POST request
 
-a. POST
-       `*https://<APIC-URL>/api/aaaLogin.xml* <https://apic-url/api/aaaLogin.xml>`__
+   data: <aaaUser name="apic-username" pwd="apic-password"/>
 
-b. In Postman, in the Body section, select raw-text, and put the
-       following content and POST:
+c. In the “Headers” section of any further REST API requests, add a key-value pair. Key name is “DevCookie”, and its value should be the token obtained by first step
 
-    data: <aaaUser name="apic-username" pwd="apic-password"/>
+    Example: DevCookie=<token value>
 
-    2. In the “Headers” section of any further REST API requests, add a
-    key-value pair. Key name is “DevCookie”, and its value should be the
-    token obtained by first step
-
-    DevCookie=<token value>
-
-    **(2) Content-Type : application/json **
-
-    Request Body has to be in JSON format
-
-    Example Headers section:
-
-    {
-
-    “DevCookie”:
-    “i0UBAAAAAAAAAAAAAAAAAOkBhpjUtVpkqMmgeBiUKo6waomiucZld5V7qLHSZcuu91Wu83tPMdfEHgGnrPCDe5GrLnhuElM6sY9N6gytHZLo926KvpWLjM9nZd7QFwoAc8AR6BNbCWfvnXHWMItv+QHuKGR/VbCEm3u7X7UuTGGdgpF1XoOO6mc9oLTA/G1WTbW/tygNV8Yk5oIx8Zflyg==”,
-
-    “Content-Type” : “application/json”
-
-    }
+Header Paramter 2 => **Content-Type : application/json**
 
 **Input Parameters**
 ====================
