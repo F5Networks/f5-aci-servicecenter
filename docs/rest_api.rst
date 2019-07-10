@@ -10,36 +10,38 @@ The REST calls can be made to APIC endpoint
 
 https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter/<REST-API>
 
-.. code-block:: json
+.. code-block::
    https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplist.json
 
 Request Headers
-```````````````
+---------------
 
 For all the F5 ACI ServiceCenter API calls following request header parameters are required:
 
-Header Parameter 1 => **DevCookie** which can be retrieved as below:
+Header: DevCookie
+`````````````````
+Can be retrived as follows:
 
-a. POST a request to the following API endpoint
+1. POST a request to the following API endpoint
 
-.. code-block:: json
+.. code-block::
    https://<APIC-URL>/api/aaaLogin.xml
 
-b. Body for the POST request
+2. Body for the POST request
 
-.. code-block:: json
+.. code-block::
    data: <aaaUser name="apic-username" pwd="apic-password"/>
 
-c. From the result of the POST, save the token returned
+3. From the result of the POST, save the token returned
 
-d. In the “Headers” section of any further REST API requests, add a key-value pair. Key name is “DevCookie”, and its value should be the token obtained in the previous step
+4. In the “Headers” section of any further REST API requests, add a key-value pair. Key name is “DevCookie”, and its value should be the token obtained in the previous step
 
-.. code-block:: json
+.. code-block::
    Key       Value    
    DevCookie <token value>
 
-Header Paramter 2 => **Content-Type**
-
+Header: Content-Type
+````````````````````
 .. code-block:: json
    Key           Value    
    Content-Type  application/json
@@ -47,7 +49,9 @@ Header Paramter 2 => **Content-Type**
 Input Parameters
 ----------------
 
-There are multiple F5 ACI ServiceCenter APIs which require input parameters to be retrieved for the APIC Logical Device. These input parameters can be retrieved from APIC object browser known as visore.html (It can be accessed at https://<APIC_IP>/visore.html).
+There are multiple F5 ACI ServiceCenter APIs which require input parameters to be retrieved for the APIC Logical Device. These input parameters can be retrieved from APIC object browser known as visore.html
+
+APIC managed objects can be accessed at https://<APIC_IP>/visore.html.
 
 Below is a table of such parameters and steps on how to retrieve them.
 These parameters will be required for L2-L3 Stitching tab.
@@ -80,12 +84,9 @@ These parameters will be required for L2-L3 Stitching tab.
 |             | 4. Search for vnsRtEPgDefToLIf, and use the tDn property of that entry for lIfCtxDn                                            |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-The other way to go about this is to call the /getldevinfo.json API and
+The other way to retreive the values is to call the getldevinfo.json API and
 use the returned values for lif, lIfCtxDn, ldev and use them as input
-parameters in the L2-L3 Stitching APIs; For example
-createbigipvlans.json,
-`vlansynctobigip.json <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.ma7rxet48qmu>`__,
-`vlansynctodb.json <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.ma7rxet48qmu>`__
+parameters in the L2-L3 Stitching APIs. 
 
 Login, Status and Miscellaneous APIs
 ------------------------------------
