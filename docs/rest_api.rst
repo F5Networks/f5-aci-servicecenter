@@ -11,6 +11,7 @@ The REST calls can be made to APIC endpoint
 https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter/<REST-API>
 
 .. code-block::
+
    https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplist.json
 
 Request Headers
@@ -24,27 +25,37 @@ Can be retrived as follows:
 
 1. POST a request to the following API endpoint
 
-.. code-block:: rst
+.. code-block:: 
+
    https://<APIC-URL>/api/aaaLogin.xml
 
 2. Body for the POST request
 
-.. code-block::
-   data: <aaaUser name="apic-username" pwd="apic-password"/>
+.. code-block:: json
+
+   <aaaUser name="apic-username" pwd="apic-password"/>
 
 3. From the result of the POST, save the token returned
 
 4. In the “Headers” section of any further REST API requests, add a key-value pair. Key name is “DevCookie”, and its value should be the token obtained in the previous step
 
 .. code-block::
-   Key       Value    
-   DevCookie <token value>
+   
+   +------------------+-----------------+
+   | Key              | Value           |
+   +==================+=================+
+   | DevCookie        | < token value > |
+   +------------------+-----------------+
 
 Header: Content-Type
 ````````````````````
 .. code-block:: json
-   Key           Value    
-   Content-Type  application/json
+   
+   +------------------+-----------------+
+   | Key              | Value           |
+   +==================+=================+
+   | Content-Type     | application/json|
+   +------------------+-----------------+
    
 Input Parameters
 ----------------
