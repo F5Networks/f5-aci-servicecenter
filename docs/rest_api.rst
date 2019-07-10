@@ -1,16 +1,14 @@
-Introduction
-============
+REST API
+========
 
-This document specifies the REST APIs supported by F5 ACI ServiceCenter application.
+This section will go over the specifies of the REST APIs supported by F5 ACI ServiceCenter application.
 
-REST API Endpoint
------------------
-
-The REST calls can be made to APIC endpoint
+The REST calls can be made to the following APIC endpoint
 
 https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter/<REST-API>
 
-.. code-block::
+Example:
+.. code-block:: json
 
    https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplist.json
 
@@ -25,7 +23,7 @@ Can be retrived as follows:
 
 1. POST a request to the following API endpoint
 
-.. code-block:: 
+.. code-block:: json 
 
    https://<APIC-URL>/api/aaaLogin.xml
 
@@ -39,7 +37,7 @@ Can be retrived as follows:
 
 4. In the “Headers” section of any further REST API requests, add a key-value pair. Key name is “DevCookie”, and its value should be the token obtained in the previous step
 
-.. code-block::
+.. code-block:: json
    
    +------------------+-----------------+
    | Key              | Value           |
@@ -169,8 +167,8 @@ loginbigip.json
 | Notes              |                                                                        |
 +--------------------+------------------------------------------------------------------------+
 
-2. /logoutbigip.json
---------------------
+logoutbigip.json
+````````````````
 
 +--------------------+-----------------------------------------------------------------------+
 | Title              | Logs out from a BIG-IP device                                         |
@@ -210,8 +208,8 @@ loginbigip.json
 | Notes              |                                                                       |
 +--------------------+-----------------------------------------------------------------------+
 
-3. /deletebigip.json
---------------------
+deletebigip.json
+````````````````
 
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title             | Deletes a BIG-IP device from F5 ACI ServiceCenter Application (Note: The device is soft deleted, and once added back to the app, all data for the device is restored)   |
@@ -247,8 +245,8 @@ loginbigip.json
 | Notes             |                                                                                                                                                                         |
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-4. /setclustername.json
------------------------
+setclustername.json
+```````````````````
 
 +--------------------+--------------------------------------------------------------------+
 | Title              | Sets cluster name for a high availability pair of BIG-IP devices   |
@@ -282,8 +280,8 @@ loginbigip.json
 | Notes              |                                                                    |
 +--------------------+--------------------------------------------------------------------+
 
-5. /getbigiplist.json
----------------------
+getbigiplist.json
+`````````````````
 
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Gets list of BIG-IP devices which are added to the F5 ACI ServiceCenter. Also returns user and login status for each BIG-IP.   |
@@ -401,8 +399,8 @@ loginbigip.json
 | Notes              |                                                                                                                                |
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-6. /checkbigipfailoverstate.json
---------------------------------
+checkbigipfailoverstate.json
+````````````````````````````
 
 +--------------------+---------------------------------------------------------------------------------+
 | Title              | Check whether currently logged in BIG-IP device is in active or standby mode.   |
@@ -446,8 +444,8 @@ loginbigip.json
 | Notes              |                                                                                 |
 +--------------------+---------------------------------------------------------------------------------+
 
-7. /checkbigipsyncstatus.json
------------------------------
+checkbigipsyncstatus.json
+`````````````````````````
 
 +--------------------+----------------------------------------------------------------------------------------+
 | Title              | Check current BIG-IP’s sync status (For example: Standalone, In sync, Awaiting Sync)   |
@@ -499,8 +497,8 @@ loginbigip.json
 | Notes              |                                                                                        |
 +--------------------+----------------------------------------------------------------------------------------+
 
-8. /checkbigiptimeout.json
---------------------------
+checkbigiptimeout.json
+``````````````````````
 
 +--------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Checks if F5 ACI ServiceCenter application backend’s BIG-IP session has timed out for a specific BIG-IP device                |
@@ -554,11 +552,11 @@ loginbigip.json
 | Notes              |                                                                                                                               |
 +--------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
-**L4-L7 App Services APIs**
-===========================
+L4-L7 App Services APIs
+-----------------------
 
-9. /dryrunas3declaration.json
------------------------------
+dryrunas3declaration.json
+```````````````````
 
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Submits AS3 declaration to BIG-IP with changed action “dry-run”. This ensures that the declaration is validated by BIG-IP but does not actually create the resources.                                                                                    |
