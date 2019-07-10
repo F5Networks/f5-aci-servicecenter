@@ -106,15 +106,15 @@ loginbigip.json
 +--------------------+------------------------------------------------------------------------+
 | Method             | POST                                                                   |
 +--------------------+------------------------------------------------------------------------+
-| Request Body       | {                                                                   |
+| Request Body       | {                                                                      |
 |                    |                                                                        |
-|                    |   "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",|
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",   |
 |                    |                                                                        |
-|                    |   "user": "<Username>",                                               |
+|                    | "user": "<Username>",                                                  |
 |                    |                                                                        |
-|                    |   "password": "<Password>"                                            |
+|                    | "password": "<Password>"                                               |
 |                    |                                                                        |
-|                    |  }                                                                   |
+|                    | }                                                                      |
 +--------------------+------------------------------------------------------------------------+
 | Example Request    | {                                                                      |
 |                    |                                                                        |
