@@ -4,7 +4,7 @@ Introduction
 This document specifies the REST APIs supported by F5 ACI ServiceCenter application.
 
 REST API Endpoint
-`````````````````
+-----------------
 
 The REST calls can be made to APIC endpoint
 
@@ -24,7 +24,7 @@ Can be retrived as follows:
 
 1. POST a request to the following API endpoint
 
-.. code-block::
+.. code-block:: rst
    https://<APIC-URL>/api/aaaLogin.xml
 
 2. Body for the POST request
