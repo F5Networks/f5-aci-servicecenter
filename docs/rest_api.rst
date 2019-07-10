@@ -40,16 +40,16 @@ Can be retrived as follows:
 
 .. code-block:: json
    
-   **Key              Value**          
-     DevCookie        < token value > 
+   Key         Value        
+   DevCookie : < token value > 
    
 
 Header: Content-Type
 ````````````````````
 .. code-block:: json
    
-   **Key              Value**           
-     Content-Type     application/json
+   Key           Value           
+   Content-Type: application/json
    
 Input Parameters
 ----------------
@@ -106,15 +106,16 @@ loginbigip.json
 +--------------------+------------------------------------------------------------------------+
 | Method             | POST                                                                   |
 +--------------------+------------------------------------------------------------------------+
-| Request Body       | {                                                                      |
+| Request Body       | .. code-block:: json                                                   |
+|                    |    {                                                                   |
 |                    |                                                                        |
-|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",   |
+|                    |    "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",|
 |                    |                                                                        |
-|                    | "user": "<Username>",                                                  |
+|                    |    "user": "<Username>",                                               |
 |                    |                                                                        |
-|                    | "password": "<Password>"                                               |
+|                    |    "password": "<Password>"                                            |
 |                    |                                                                        |
-|                    | }                                                                      |
+|                    |    }                                                                   |
 +--------------------+------------------------------------------------------------------------+
 | Example Request    | {                                                                      |
 |                    |                                                                        |
