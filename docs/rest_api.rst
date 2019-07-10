@@ -5,10 +5,11 @@ This section will go over the specifies of the REST APIs supported by F5 ACI Ser
 
 The REST calls can be made to the following APIC endpoint
 
-https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter/<REST-API>
-
-Example:
 .. code-block:: json
+
+   https://<APIC-URL>/appcenter/F5Networks/F5ACIServiceCenter/<REST-API>
+
+   Example:
 
    https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplist.json
 
@@ -39,21 +40,16 @@ Can be retrived as follows:
 
 .. code-block:: json
    
-   +------------------+-----------------+
-   | Key              | Value           |
-   +==================+=================+
-   | DevCookie        | < token value > |
-   +------------------+-----------------+
+   **Key              Value**          
+     DevCookie        < token value > 
+   
 
 Header: Content-Type
 ````````````````````
 .. code-block:: json
    
-   +------------------+-----------------+
-   | Key              | Value           |
-   +==================+=================+
-   | Content-Type     | application/json|
-   +------------------+-----------------+
+   **Key              Value**           
+     Content-Type     application/json
    
 Input Parameters
 ----------------
@@ -556,7 +552,7 @@ L4-L7 App Services APIs
 -----------------------
 
 dryrunas3declaration.json
-```````````````````
+`````````````````````````
 
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Submits AS3 declaration to BIG-IP with changed action “dry-run”. This ensures that the declaration is validated by BIG-IP but does not actually create the resources.                                                                                    |
@@ -668,8 +664,8 @@ dryrunas3declaration.json
 | Notes              | As can be seen, the json provided has action "deploy”, and in the application, the json remains the same, except for the action attribute, which is changed to “dry-run” and a POST request is sent to <BIG-IP IP address>/mgmt/shared/appsvcs/declare   |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-10. /submitas3declaration.json
-------------------------------
+submitas3declaration.json
+`````````````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------+
 | Title              | Submits AS3 declaration to specified BIG-IP device’s AS3 endpoint                                                     |
@@ -781,8 +777,8 @@ dryrunas3declaration.json
 | Notes              | The json from above dictionary is posted to the BIG IP AS3 endpoint <BIG-IP IP address>/mgmt/shared/appsvcs/declare   |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------+
 
-11. /getas3declaration.json
----------------------------
+getas3declaration.json
+``````````````````````
 
 +--------------------+------------------------------------------------------------------------------------------------------------+
 | Title              | Get AS3 declaration JSON from given BIG-IP device                                                          |
@@ -952,8 +948,8 @@ dryrunas3declaration.json
 | Notes              | Get AS3 declaration from specified BIG-IP’s AS3 endpoint <BIG-IP IP address>/mgmt/shared/appsvcs/declare   |
 +--------------------+------------------------------------------------------------------------------------------------------------+
 
-12. /deleteas3declaration.json
-------------------------------
+deleteas3declaration.json
+`````````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
 | Title              | Deletes the entire AS3 declaration from a BIG-IP device               |
@@ -989,8 +985,8 @@ dryrunas3declaration.json
 | Notes              |                                                                       |
 +--------------------+-----------------------------------------------------------------------+
 
-13. /getas3data.json
---------------------
+getas3data.json
+```````````````
 
 +--------------------+--------------------------------------------------------------------------------------------+
 | Title              | Gets AS3 data JSON from BIG-IP device                                                      |
@@ -1160,8 +1156,8 @@ dryrunas3declaration.json
 | Notes              | Get AS3 data JSON from given BIG-IP AS3 endpoint to load partition, application and json   |
 +--------------------+--------------------------------------------------------------------------------------------+
 
-14. /updateas3data.json
------------------------
+updateas3data.json
+``````````````````
 
 +--------------------+--------------------------------------------------------------------------------+
 | Title              | Updates AS3 declaration for a BIG-IP device to achieve one of the following:   |
@@ -1333,8 +1329,8 @@ dryrunas3declaration.json
 | Notes              |                                                                                |
 +--------------------+--------------------------------------------------------------------------------+
 
-15. /deleteas3partition.json
-----------------------------
+deleteas3partition.json
+```````````````````````
 
 +--------------------+-------------------------------------------------------------------------+
 | Title              | Deletes AS3 partition from a specified BIG-IP Device                    |
@@ -1374,8 +1370,8 @@ dryrunas3declaration.json
 | Notes              |                                                                         |
 +--------------------+-------------------------------------------------------------------------+
 
-16. /deleteas3application.json
-------------------------------
+deleteas3application.json
+`````````````````````````
 
 +--------------------+-------------------------------------------------------------------------+
 | Title              | Deletes an application from BIG-IP AS3 declaration                      |
@@ -1419,11 +1415,11 @@ dryrunas3declaration.json
 | Notes              |                                                                         |
 +--------------------+-------------------------------------------------------------------------+
 
-**L2-L3 Stitching APIs**
-========================
+L2-L3 Stitching APIs
+--------------------
 
-17. /getldevs.json
-------------------
+getldevs.json
+`````````````
 
 +--------------------+-----------------------------------------------------------------------+
 | Title              | Gets list of L4-L7 devices of type ADC (Load balancer) from APIC      |
@@ -1489,8 +1485,8 @@ dryrunas3declaration.json
 | Notes              |                                                                       |
 +--------------------+-----------------------------------------------------------------------+
 
-18. /getldevinfo.json
----------------------
+getldevinfo.json
+````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Gets Logical Device (L4-L7 device) information for specified Logical Device (Distinguished Name of Logical Device required)                                                 |
@@ -1677,11 +1673,11 @@ dryrunas3declaration.json
 |                    |                                                                                                                                                                             |
 |                    | Content: {error: Bad request}                                                                                                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | See `*Input Parameters* <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.cnzg26fqotvr>`__ section for ldev input parameter   |
+| Notes              | See *Input Parameters* section for ldev input parameter   |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-19. /getinterfaces.json
------------------------
+getinterfaces.json
+``````````````````
 
 +--------------------+-----------------------------------------------------------------------+
 | Title              | Gets available interfaces from a BIG-IP device                        |
@@ -1761,8 +1757,8 @@ dryrunas3declaration.json
 | Notes              |                                                                       |
 +--------------------+-----------------------------------------------------------------------+
 
-20. /getportlockdown.json
--------------------------
+getportlockdown.json
+````````````````````
 
 +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Gets port lockdown options from BIG-IP device                                                                                                                                                   |
@@ -1860,8 +1856,8 @@ dryrunas3declaration.json
 | Notes              | Even though this API is available, the application is using only the special protocols Allow All, Allow None and Allow Default, and other protocols are not supported by F5 ACI ServiceCenter   |
 +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-21. /gettrafficgroups.json
---------------------------
+gettrafficgroups.json
+`````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
 | Title              | Gets available traffic groups from BIG-IP device                      |
@@ -1909,8 +1905,8 @@ dryrunas3declaration.json
 | Notes              |                                                                       |
 +--------------------+-----------------------------------------------------------------------+
 
-22. /createbigipvlans.json
---------------------------
+createbigipvlans.json
+`````````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title                        | Creates VLANs on a BIG-IP device                                                                                                                                                           |
@@ -2051,11 +2047,11 @@ dryrunas3declaration.json
 |                              |                                                                                                                                                                                            |
 |                              | Content: {error: <Error Message from F5 BIG-IP>}                                                                                                                                           |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes                        | See `*Input Parameters* <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.cnzg26fqotvr>`__ section for ldev, lif, lICtxDn input parameters   |
+| Notes                        | See *Input Parameters* section for ldev, lif, lICtxDn input parameters   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-23. /deletebigipselfips.json
-----------------------------
+deletebigipselfips.json
+```````````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title                        | Deletes Self IPs from BIG-IP device                                                                                                                                                        |
@@ -2152,11 +2148,11 @@ dryrunas3declaration.json
 |                              |                                                                                                                                                                                            |
 |                              | Content: {error: Bad request}                                                                                                                                                              |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes                        | See `*Input Parameters* <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.cnzg26fqotvr>`__ section for ldev, lif, lICtxDn input parameters   |
+| Notes                        | See *Input Parameters* section for ldev, lif, lICtxDn input parameters   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-24. /deletebigipvlans.json
---------------------------
+deletebigipvlans.json
+`````````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title                        | Deletes VLANs from a BIG-IP device                                                                                                                                                         |
@@ -2225,11 +2221,11 @@ dryrunas3declaration.json
 |                              |                                                                                                                                                                                            |
 |                              | Content: {error: <Error Message from F5 BIG-IP>}                                                                                                                                           |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes                        | See `*Input Parameters* <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.cnzg26fqotvr>`__ section for ldev, lif, lICtxDn input parameters   |
+| Notes                        | See *Input Parameters* section for ldev, lif, lICtxDn input parameters   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-25. /vlansynctobigip.json
--------------------------
+vlansynctobigip.json
+````````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title                        | Synchronizes vlan information for specific vlan from F5 ACI ServiceCenter database to BIG-IP Device                                                                                        |
@@ -2294,11 +2290,11 @@ dryrunas3declaration.json
 |                              |                                                                                                                                                                                            |
 |                              | Content: {error: Bad request}                                                                                                                                                              |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes                        | See `*Input Parameters* <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.cnzg26fqotvr>`__ section for ldev, lif, lICtxDn input parameters   |
+| Notes                        | See *Input Parameters* section for ldev, lif, lICtxDn input parameters   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-26. /vlansynctodb.json
-----------------------
+vlansynctodb.json
+`````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title                        | Synchronizes vlan information for specific vlan from BIG-IP Device to F5 ACI ServiceCenter database                                                                                        |
@@ -2363,11 +2359,11 @@ dryrunas3declaration.json
 |                              |                                                                                                                                                                                            |
 |                              | Content: {error: Bad request}                                                                                                                                                              |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes                        | See `*Input Parameters* <https://docs.google.com/document/d/1OMy7rwHbqmm8iyurWdI_5y2JSzAmMVAYiWEAow795cc/edit#heading=h.cnzg26fqotvr>`__ section for ldev, lif, lICtxDn input parameters   |
+| Notes                        | See *Input Parameters* section for ldev, lif, lICtxDn input parameters   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-27. /getrouteinfo.json
-----------------------
+getrouteinfo.json
+`````````````````
 
 +--------------------+-----------------------------------------------------------------------+
 | Title              | Gets default gateway information for a BIG-IP Device                  |
@@ -2435,8 +2431,8 @@ dryrunas3declaration.json
 | Notes              |                                                                       |
 +--------------------+-----------------------------------------------------------------------+
 
-28. /createbigiproutes.json
----------------------------
+createbigiproutes.json
+``````````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | Title              | Creates default gateway on BIG-IP device                                                                                    |
@@ -2478,8 +2474,8 @@ dryrunas3declaration.json
 | Notes              | Currently this API only supports default gateway creation, and cannot be used to create other routes on the BIG-IP device   |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
-29. /deletebigiproutes.json
----------------------------
+deletebigiproutes.json
+``````````````````````
 
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Deletes default gateway from BIG-IP device                                                                                     |
@@ -2531,8 +2527,8 @@ dryrunas3declaration.json
 | Notes              | Currently this API only supports deletion of default gateway, and cannot be used to delete other routes on the BIG-IP device   |
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-30. /routesynctodb.json
------------------------
+routesynctodb.json
+``````````````````
 
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Synchronizes default gateway information from BIG-IP device to F5 ACI ServiceCenter database                                                            |
@@ -2564,8 +2560,8 @@ dryrunas3declaration.json
 | Notes              | Currently this API only supports default gateway synchronization, and cannot be used for synchronizing any other route information from BIG-IP device   |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-31. /routesynctobigip.json
---------------------------
+routesynctobigip.json
+``````````````````````
 
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Synchronizes default gateway information from F5 ACI ServiceCenter database to BIG-IP device                                                            |
@@ -2597,11 +2593,11 @@ dryrunas3declaration.json
 | Notes              | Currently this API only supports default gateway synchronization, and cannot be used for synchronizing any other route information from BIG-IP device   |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**Visibility APIs**
-===================
+Visibility APIs
+---------------
 
-32. /getbigippartitions.json
-----------------------------
+getbigippartitions.json
+```````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
 | Title              | Gets list of partitions for a BIG-IP device                           |
@@ -2643,8 +2639,8 @@ dryrunas3declaration.json
 | Notes              |                                                                       |
 +--------------------+-----------------------------------------------------------------------+
 
-33. /getvlanstats.json
-----------------------
+getvlanstats.json
+`````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Gets VLANs from BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information                                             |
@@ -2740,8 +2736,8 @@ dryrunas3declaration.json
 | Notes              | If Partition other than Common is selected, for example Sample\_1, the API will return information for both partitions Sample\_1 and Common partitions.   |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-34. /getvipstats.json
----------------------
+getvipstats.json
+````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Gets VIP:port (Virtual server) information from BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information             |
@@ -2847,8 +2843,8 @@ dryrunas3declaration.json
 | Notes              | If Partition other than Common is selected, for example Sample\_1, the API will return information for both partitions Sample\_1 and Common partitions.   |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-35. /getnodestats.json
-----------------------
+getnodestats.json
+`````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Title              | Gets node information from BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information                                  |
