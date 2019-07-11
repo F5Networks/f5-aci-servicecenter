@@ -106,8 +106,8 @@ loginbigip.json
 +--------------------+------------------------------------------------------------------------+
 | Method             | POST                                                                   |
 +--------------------+------------------------------------------------------------------------+
-| Request Body       | .. code-block:: json                                                  |
-|                    |    
+| Request Body       | .. code-block:: json                                                   |
+|                    |                                                                          |
 |                    |     {                                                                      |
 |                    |                                                                        |
 |                    |      "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",   |
