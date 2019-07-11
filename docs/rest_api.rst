@@ -107,13 +107,9 @@ loginbigip.json
 | Method             | POST                                                                   |
 +--------------------+------------------------------------------------------------------------+
 | Request Body       | {                                                                      |
-|                    |                                                                        |
-|                    |  "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |
-|                    |                                                                        |
+|                    |  "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |                                         
 |                    |  "user": "<Username>",                                                 |
-|                    |                                                                        |
 |                    |  "password": "<Password>"                                              |
-|                    |                                                                        |
 |                    | }                                                                      |
 +--------------------+------------------------------------------------------------------------+
 | Example Request    | {                                                                      |
