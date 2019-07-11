@@ -106,15 +106,17 @@ loginbigip.json
 +--------------------+------------------------------------------------------------------------+
 | Method             | POST                                                                   |
 +--------------------+------------------------------------------------------------------------+
-| Request Body       | {                                                                      |
+| Request Body       | .. code-block:: json                                                   |
 |                    |                                                                        |
-|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",   |
+|                    |   {                                                                    |
 |                    |                                                                        |
-|                    | "user": "<Username>",                                                  |
+|                    |    "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",|
 |                    |                                                                        |
-|                    | "password": "<Password>"                                               |
+|                    |    "user": "<Username>",                                               |
 |                    |                                                                        |
-|                    | }                                                                      |
+|                    |    "password": "<Password>"                                            |
+|                    |                                                                        |
+|                    |   }                                                                    |
 +--------------------+------------------------------------------------------------------------+
 | Example Request    | {                                                                      |
 |                    |                                                                        |
