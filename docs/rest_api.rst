@@ -13,6 +13,8 @@ The REST calls can be made to the following APIC endpoint
 
    https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplist.json
 
+_`Download the API POSTMAN collection < https://github.com/F5Networks/f5-aci-servicecenter/tree/master/api_collection>`_.
+
 Request Headers
 ---------------
 
