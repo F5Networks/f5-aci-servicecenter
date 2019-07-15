@@ -550,6 +550,74 @@ checkbigiptimeout.json
 | Notes              |                                                                                                                               |
 +--------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
+checkbigipstatus.json
+``````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Check failover state, sync status and also check whether F5 BIG-IP    |
+|                    | license has expired.                                                  |
++====================+=======================================================================+
+| URL                | /checkbigipstatus.json                                                |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.47:443"                                              |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "failoverstate": {                                                    |
+|                    |                                                                       |
+|                    | "color": "green",                                                     |
+|                    |                                                                       |
+|                    | "status": "ACTIVE"                                                    |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "syncstatus": {                                                       |
+|                    |                                                                       |
+|                    | "color": "green",                                                     |
+|                    |                                                                       |
+|                    | "details": [                                                          |
+|                    |                                                                       |
+|                    | "bigip46.localdomain.com: connected",                                 |
+|                    |                                                                       |
+|                    | "deviceGroup1 (In Sync): All devices in the device group are in sync",|                                         
+|                    |                                                                       |
+|                    | "device_trust_group (In Sync): All devices in the device group are    |
+|                    | in sync"                                                              |  
+|                    |                                                                       |
+|                    | ],                                                                    |
+|                    |                                                                       |
+|                    | "mode": "high-availability",                                          |
+|                    |                                                                       |
+|                    | "status": "In Sync"                                                   |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+
 L4-L7 App Services APIs
 -----------------------
 
@@ -1417,6 +1485,126 @@ deleteas3application.json
 | Notes              |                                                                         |
 +--------------------+-------------------------------------------------------------------------+
 
+getas3templates.json  
+`````````````````````
+
++--------------------+-------------------------------------------------------------------------+
+| Title              | Get list of AS3 templates from the application database                 |
++====================+=========================================================================+
+| URL                | /getas3templates.json                                                   |
++--------------------+-------------------------------------------------------------------------+
+| Method             | GET                                                                     |
++--------------------+-------------------------------------------------------------------------+
+| Example Response   | [{                                                                      |                                       
+|                    | "allowDelete": true,                                                    |
+|                    | "mst": "{\"class\": \"AS3\",\"action\": \"deploy\", \"persist\": true,  |
+|                    | \"declaration\": {\"class\": \"ADC\", \"schemaVersion\": \"3.0.0\",     |
+|                    | \"id\": \"template-simple-http\"\"label\": \"Sample 1\",                |
+|                    | \"remark\": \"Basic HTTP with Monitor\",\"{{tenant_name}}\": {\"class\":| 
+|                    | \"Tenant\", \"{{application_name}}\": { \"class\": \"Application\",     |
+|                    | \"template\": \"http\", \"serviceMain\": { \"class\": \"Service_HTTP\", |
+|                    | \"virtualPort\": {{virtual_port::number}},\"virtualAddresses\":         |
+|                    | [\"{{virtual_address}}\"], \"pool\": \"web_pool\"}, \"web_pool\":       | 
+|                    | { \"class\": \"Pool\", \"monitors\": [ \"http\" ],\"members\":          |
+|                    | [{ \"servicePort\": {{server_port::number}}, \"serverAddresses \":      |
+|                    | {{server_addresses::array}}} ] }} }}}",                                 |
+|                    | "name": "test_template"                                                 | 
+|                    | }]                                                                      |
++--------------------+-------------------------------------------------------------------------+
+| Error Response     | Code: 400                                                               |
+|                    |                                                                         |
+|                    | Content: {error: Bad request}                                           |
++--------------------+-------------------------------------------------------------------------+
+| Notes              |                                                                         |
++--------------------+-------------------------------------------------------------------------+
+
+createas3template.json
+`````````````````````````
+
++--------------------+-------------------------------------------------------------------------+
+| Title              | Create AS3 template                                                     |
++====================+=========================================================================+
+| URL                | /createas3template.json                                                 |
++--------------------+-------------------------------------------------------------------------+
+| Method             | POST                                                                    |
++--------------------+-------------------------------------------------------------------------+
+| Request Body       | {                                                                       |
+|                    |                                                                         |
+|                    | "name": "<Template Name>",                                              |
+|                    |                                                                         |
+|                    | "mst": "<AS3 Template>",                                                |
+|                    |                                                                         |
+|                    | }                                                                       |
++--------------------+-------------------------------------------------------------------------+
+| Example Request    | {                                                                       |
+|                    | "name": "test_template",                                                |
+|                    | "mst": "{\"class\": \"AS3\",\"action\": \"deploy\", \"persist\": true,  |
+|                    | \"declaration\": {\"class\": \"ADC\", \"schemaVersion\": \"3.0.0\",     |
+|                    | \"id\": \"template-simple-http\"\"label\": \"Sample 1\",                |
+|                    | \"remark\": \"Basic HTTP with Monitor\",\"{{tenant_name}}\": {\"class\":| 
+|                    | \"Tenant\", \"{{application_name}}\": { \"class\": \"Application\",     |
+|                    | \"template\": \"http\", \"serviceMain\": { \"class\": \"Service_HTTP\", |
+|                    | \"virtualPort\": {{virtual_port::number}},\"virtualAddresses\":         |
+|                    | [\"{{virtual_address}}\"], \"pool\": \"web_pool\"}, \"web_pool\":       | 
+|                    | { \"class\": \"Pool\", \"monitors\": [ \"http\" ],\"members\":          |
+|                    | [{ \"servicePort\": {{server_port::number}}, \"serverAddresses \":      |
+|                    | {{server_addresses::array}}} ] }} }}}"                                  |
+|                    | }                                                                       |
++--------------------+-------------------------------------------------------------------------+
+| Example Response   | {                                                                       |
+|                    |                                                                         |
+|                    | "code": 200,                                                            |
+|                    |                                                                         |
+|                    | "message":  “Template test_template created successfully."              |
+|                    |                                                                         |
+|                    | }                                                                       |
++--------------------+-------------------------------------------------------------------------+
+| Error Response     | Code: 400                                                               |
+|                    |                                                                         |
+|                    | Content: {error: Bad request}                                           |
++--------------------+-------------------------------------------------------------------------+
+| Notes              |                                                                         |
++--------------------+-------------------------------------------------------------------------+
+
+deleteas3template.json
+`````````````````````````
+
++--------------------+-------------------------------------------------------------------------+
+| Title              | Delete AS3 template                                                     |
++====================+=========================================================================+
+| URL                | /deleteas3template.json                                                 |
++--------------------+-------------------------------------------------------------------------+
+| Method             | POST                                                                    |
++--------------------+-------------------------------------------------------------------------+
+| Request Body       | {                                                                       |
+|                    |                                                                         |
+|                    | "name": "<Template Name>"                                               |
+|                    |                                                                         |
+|                    | }                                                                       |
++--------------------+-------------------------------------------------------------------------+
+| Example Request    | {                                                                       |
+|                    |                                                                         |
+|                    | "name": "test_template"                                                 |
+|                    |                                                                         |
+|                    | }                                                                       |
++--------------------+-------------------------------------------------------------------------+
+| Example Response   | {                                                                       |
+|                    |                                                                         |
+|                    | "code": 200,                                                            |
+|                    |                                                                         |
+|                    | "message": "test_template template deleted successfully"                |
+|                    |                                                                         |
+|                    | }                                                                       |
++--------------------+-------------------------------------------------------------------------+
+| Error Response     | Code: 400                                                               |
+|                    |                                                                         |
+|                    | Content: {error: Bad request}                                           |
++--------------------+-------------------------------------------------------------------------+
+| Notes              | This API does not permit deletion of default templates.                 |
++--------------------+-------------------------------------------------------------------------+
+
+
+
 L2-L3 Stitching APIs
 --------------------
 
@@ -1515,7 +1703,7 @@ getldevinfo.json
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Example Response   | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "cdevs": [                                                                                                                                                                  |
+|                    | "cdevs": [                                                                                                                                                                   |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
@@ -1523,53 +1711,53 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "path": "Pod-1/Node-101/eth1/1",                                                                                                                                            |
+|                    | "path": "Pod-1/Node-101/eth1/1",                                                                                                                                             |
 |                    |                                                                                                                                                                             |
-|                    | "name": "internal"                                                                                                                                                          |
+|                    | "name": "internal"                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                          |
+|                    | },                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "path": "Pod-1/Node-101/eth1/2",                                                                                                                                            |
+|                    | "path": "Pod-1/Node-101/eth1/2",                                                                                                                                             |
 |                    |                                                                                                                                                                             |
-|                    | "name": "external"                                                                                                                                                          |
+|                    | "name": "external"                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                          |
+|                    | ],                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "vmName": "",                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | "name": "Device1",                                                                                                                                                          |
+|                    | "name": "Device1",                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "vcenterName": ""                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                          |
+|                    | ],                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "svctype": "ADC",                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "devtype": "PHYSICAL",                                                                                                                                                      |
+|                    | "devtype": "PHYSICAL",                                                                                                                                                       |
 |                    |                                                                                                                                                                             |
-|                    | "vlans": [                                                                                                                                                                  |
+|                    | "vlans": [                                                                                                                                                                   |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External",                                                                                                                       |
 |                    |                                                                                                                                                                             |
-|                    | "disableConfig": {                                                                                                                                                          |
+|                    | "disableConfig": {                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "disable": false,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "ldev": null,                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | "tenant": null                                                                                                                                                              |
+|                    | "tenant": null                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                          |
+|                    | },                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "appinfo": {                                                                                                                                                                |
+|                    | "appinfo": {                                                                                                                                                                 |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External",                                                                                                                       |
 |                    |                                                                                                                                                                             |
@@ -1585,7 +1773,7 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                          |
+|                    | ],                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "bigip": "10.107.0.22:443",                                                                                                                                                 |
 |                    |                                                                                                                                                                             |
@@ -1595,35 +1783,35 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | "selfips": []                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                          |
+|                    | },                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "insync": true,                                                                                                                                                             |
 |                    |                                                                                                                                                                             |
 |                    | "deployed": true,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "encap": "vlan-300",                                                                                                                                                        |
+|                    | "encap": "vlan-300",                                                                                                                                                         |
 |                    |                                                                                                                                                                             |
 |                    | "lIfCtxDn": null,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "lifName": "External"                                                                                                                                                       |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                          |
+|                    | },                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-Internal",                                                                                                                       |
 |                    |                                                                                                                                                                             |
-|                    | "disableConfig": {                                                                                                                                                          |
+|                    | "disableConfig": {                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "disable": false,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "ldev": null,                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | "tenant": null                                                                                                                                                              |
+|                    | "tenant": null                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                          |
+|                    | },                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "appinfo": {                                                                                                                                                                |
+|                    | "appinfo": {                                                                                                                                                                 |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-Internal",                                                                                                                       |
 |                    |                                                                                                                                                                             |
@@ -1639,7 +1827,7 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                          |
+|                    | ],                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "bigip": "10.107.0.22:443",                                                                                                                                                 |
 |                    |                                                                                                                                                                             |
@@ -1649,13 +1837,13 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | "selfips": []                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                          |
+|                    | },                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "insync": true,                                                                                                                                                             |
 |                    |                                                                                                                                                                             |
 |                    | "deployed": true,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "encap": "vlan-301",                                                                                                                                                        |
+|                    | "encap": "vlan-301",                                                                                                                                                         |
 |                    |                                                                                                                                                                             |
 |                    | "lIfCtxDn": null,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
@@ -1663,7 +1851,7 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                          |
+|                    | ],                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "ldev": "uni/tn-f5-gs/lDevVip-f5-gsldev",                                                                                                                                   |
 |                    |                                                                                                                                                                             |
@@ -2361,7 +2549,7 @@ vlansynctodb.json
 |                              |                                                                                                                                                                                            |
 |                              | Content: {error: Bad request}                                                                                                                                                              |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes                        | See *Input Parameters* section for ldev, lif, lICtxDn input parameters   |
+| Notes                        | See *Input Parameters* section for ldev, lif, lICtxDn input parameters                                                                                                                     |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getrouteinfo.json
@@ -2594,6 +2782,513 @@ routesynctobigip.json
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Notes              | Currently this API only supports default gateway synchronization, and cannot be used for synchronizing any other route information from BIG-IP device   |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+createbigipselfips.json
+```````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Create Self IPs on F5 BIG-IP device of type vCMP Guest                |
++====================+=======================================================================+
+| URL                | /createbigipselfips.json                                              |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |
+|                    |                                                                       |
+|                    | "vlans": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "name": "<Vlan Name>",                                                |
+|                    |                                                                       |
+|                    | "tag": <Vlan Tag>,                                                    |
+|                    |                                                                       |
+|                    | "selfips": [                                                          |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "address": "<IP Address>",                                            |
+|                    |                                                                       |
+|                    | "netmask": "<Netmask>",                                               |
+|                    |                                                                       |
+|                    | "traffic_group": "<traffic-group-local-only>" OR “<traffic-group-1>”, |
+|                    |                                                                       |
+|                    | "allow_service": "<all>" OR “<none>” OR  “<default>”                  |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |  
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.47:443",                                             |
+|                    |                                                                       |
+|                    | "vlans": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "name": "apic-vlan-9bad6eb5",                                         |
+|                    |                                                                       |
+|                    | "tag": 25,                                                            |
+|                    |                                                                       |
+|                    | "selfips": [                                                          |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "address": "10.10.10.35",                                             |
+|                    |                                                                       |
+|                    | "netmask": "255.255.255.0",                                           |
+|                    |                                                                       |
+|                    | "traffic_group": "traffic-group-local-only”,                          |
+|                    |                                                                       |
+|                    | "allow_service": "all”                                                |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |  
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |  
+|                    |                                                                       | 
+|                    | "message": "Created Self IPs successfully" ,                          |
+|                    |                                                                       |
+|                    | "warning":null                                                        |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | This API is applicable only for vCMP Guest.                           |
++--------------------+-----------------------------------------------------------------------+
+
+getvcmpguestvlans.json
+``````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Get list of vCMP guests and vlans assigned/available for each from    |
+|                    | vCMP Host F5 BIG-IP                                                   |
++====================+=======================================================================+
+| URL                | /getvcmpguestvlans.json                                               |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.40:443"                                              |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | [                                                                     |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.46",                                                 |
+|                    |                                                                       |
+|                    | "status": {                                                           |
+|                    |                                                                       |
+|                    | "state": "deployed",                                                  |
+|                    |                                                                       |
+|                    | "vmStatus": "running"                                                 |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "login": true,                                                        |
+|                    |                                                                       |
+|                    | "vlans": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "vlan": "apic-vlan-9bad6eb5",                                         |
+|                    |                                                                       |
+|                    | "tag": 25,                                                            |
+|                    |                                                                       |
+|                    | "partition": "Common"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ],                                                                    |
+|                    |                                                                       |
+|                    | "name": "bigip40_46"                                                  |
+|                    |                                                                       |
+|                    | }                                                                     | 
+|                    |                                                                       |
+|                    | ]                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | This API is applicable only for vCMP Host.                            |
++--------------------+-----------------------------------------------------------------------+
+
+getvcmpvlaninfo.json
+``````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Get VLAN information from F5 BIG-IP of type vCMP Guest                |
++====================+=======================================================================+
+| URL                | /getvcmpvlaninfo.json                                                 |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.47:443"                                              |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "deleteselfips": [],                                                  |
+|                    |                                                                       |
+|                    | "vlans": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "bigipinfo": {                                                        |
+|                    |                                                                       |
+|                    | "selfips": [                                                          |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "name": "apic-selfip-10.10.35.36",                                    |
+|                    |                                                                       |
+|                    | "vlan": "apic-vlan-ac6aeaff",                                         |
+|                    |                                                                       |
+|                    | "allow_service": "all",                                               |
+|                    |                                                                       |
+|                    | "netmask": "255.255.255.0",                                           |
+|                    |                                                                       |
+|                    | "address": "10.10.35.36",                                             |
+|                    |                                                                       |
+|                    | "traffic_group": "traffic-group-local-only"                           |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "appinfo": {                                                          |
+|                    |                                                                       |
+|                    | "selfips": []                                                         |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "name": "apic-vlan-ac6aeaff",                                         |
+|                    |                                                                       |
+|                    | "interfaces": [],                                                     | 
+|                    |                                                                       |
+|                    | "insync": false,                                                      |
+|                    |                                                                       |
+|                    | "tag": 500                                                            |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | This API is applicable only for vCMP Guest.                           |
++--------------------+-----------------------------------------------------------------------+
+
+getbigipvlans.json
+```````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Get list of BIG-IP VLANs                                              |
++====================+=======================================================================+
+| URL                | /getbigipvlans.json                                                   |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.47:443"                                              |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | [                                                                     |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "vlan": "HA",                                                         |
+|                    |                                                                       |
+|                    | "tag": 4093,                                                          |
+|                    |                                                                       |
+|                    | "partition": "Common"                                                 |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "vlan": "HA-40-41",                                                   |
+|                    |                                                                       |
+|                    | "tag": 4092,                                                          |
+|                    |                                                                       |
+|                    | "partition": "Common"                                                 |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "vlan": "apic-vlan-3dc1d93a",                                         |
+|                    |                                                                       |
+|                    | "tag": 25,                                                            |
+|                    |                                                                       |
+|                    | "partition": "Common"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | Currently being used only by vCMP Guests                              |
++--------------------+-----------------------------------------------------------------------+
+
+assignvcmpguestvlans.json
+``````````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Assign selected VLANs from vCMP Host to vCMP Guest F5 BIG-IPs         |
++====================+=======================================================================+
+| URL                | /assignvcmpguestvlans.json                                            |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | "guest": {                                                            |
+|                    |                                                                       |
+|                    | "name": "<vCMP Guest name>",                                          |
+|                    |                                                                       |
+|                    | "url": "<vCMP Guest  IP or IP:port or hostname or hostname:port>"     |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "deleteGuestVlans": <false or true>,                                  |
+|                    |                                                                       |
+|                    | "vlans": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "vlan": "<Vlan Name>",                                                |
+|                    |                                                                       |
+|                    | "tag": <Vlan tag>,                                                    |
+|                    |                                                                       |
+|                    | "partition": "Common"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.40:443"                                              |
+|                    |                                                                       |
+|                    | "guest": {                                                            |
+|                    |                                                                       |
+|                    | "name": "bigip40_46",                                                 |
+|                    |                                                                       |
+|                    | "url": "10.107.0.46"                                                  |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "deleteGuestVlans": false,                                            |
+|                    |                                                                       |
+|                    | "vlans": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "vlan": "apic-vlan-9bad6eb5",                                         |
+|                    |                                                                       |
+|                    | "tag": 25,                                                            |
+|                    |                                                                       |
+|                    | "partition": "Common"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |  
+|                    |                                                                       | 
+|                    | "message": "Vlan assignment successful." ,                            |
+|                    |                                                                       |
+|                    | "warning":null                                                        |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | This is used for assign and unassign of Vlan. During unassignment if  | 
+|                    | deleteGuestVlans = true , then it deletes the vlan from guest BIG-IP  |
+|                    | otherwise after unassignment it keeps as it is.                       |
+|                    | This API is applicable only for vCMP Host.                            |
++--------------------+-----------------------------------------------------------------------+
+
+selfipsynctobigip.json
+``````````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Sync Self-IP information from DB to F5 BIG-IP (for vCMP Guests)       |
++====================+=======================================================================+
+| URL                | /selfipsynctobigip.json                                               |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | "name": "<Vlan Name>"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.47:443"                                              |
+|                    |                                                                       |
+|                    | "name": "apic-vlan-3dc1d93a"                                          |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |  
+|                    |                                                                       | 
+|                    | "message": "Self IP sync from App to BIG-IP successful." ,            |
+|                    |                                                                       |
+|                    | "warning":null                                                        |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              |This API is applicable only for vCMP Guest.                            |
++--------------------+-----------------------------------------------------------------------+
+
+selfipsynctodb.json
+``````````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Sync Self-IP  information from F5 BIG-IP to DB (for vCMP Guests))     |
++====================+=======================================================================+
+| URL                | /selfipsynctobigip.json                                               |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | "name": "<Vlan Name>"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.47:443"                                              |
+|                    |                                                                       |
+|                    | "name": "apic-vlan-3dc1d93a"                                          |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content": “Self IP sync from BIG-IP to App successful”               |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              |This API is applicable only for vCMP Guest.                            |
++--------------------+-----------------------------------------------------------------------+
+
+
 
 Visibility APIs
 ---------------
@@ -2873,7 +3568,7 @@ getnodestats.json
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Success Response   | Code: 200                                                                                                                                                 |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Example Response   | [                                                                                                                                                         |
+|Example Response    | [                                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
@@ -3001,3 +3696,4 @@ getnodestats.json
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Notes              | If Partition other than Common is selected, for example Sample\_1, the API will return information for both partitions Sample\_1 and Common partitions.   |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
