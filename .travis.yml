@@ -76,4 +76,4 @@ jobs:
         local_dir: docs/_build/html
         upload_dir: f5-aci-servicecenter/latest
         on:
-          branch: master
+          branch: master@F5Networks/f5-aci-servicecenter
