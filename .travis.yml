@@ -16,7 +16,7 @@ stages:
 
 
 before_install:
-  - docker pull f5devcentral/containthedocs:1.0.8
+  - docker pull f5devcentral/containthedocs:latest
 
 
 install:
@@ -58,7 +58,7 @@ jobs:
         local_dir: docs/_build/html
         upload_dir: f5-aci-servicecenter/latest
         on:
-          branch: staging
+          branch: staging@F5Networks/f5-aci-servicecenter
     - stage: prod_deploy
       skip_cleanup: true
       name: deploy_to_prod
@@ -66,7 +66,7 @@ jobs:
         - echo "Building docs sites"
         - chmod -R 755 script
         - make docker-html
-        - echo "Done with buildng docs site. Starting stagging deploy"
+        - echo "Done with buildng docs site. Starting production deploy"
       deploy:
         skip_cleanup: true
         provider: s3
@@ -76,4 +76,4 @@ jobs:
         local_dir: docs/_build/html
         upload_dir: f5-aci-servicecenter/latest
         on:
-          branch: master
+          branch: master@F5Networks/f5-aci-servicecenter
