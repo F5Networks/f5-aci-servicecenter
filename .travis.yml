@@ -16,7 +16,7 @@ stages:
 
 
 before_install:
-  - docker pull f5devcentral/containthedocs:1.0.8
+  - docker pull f5devcentral/containthedocs:latest
 
 
 install:
