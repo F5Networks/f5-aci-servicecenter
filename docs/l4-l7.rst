@@ -41,86 +41,212 @@ View the current AS3 declaration
 
 The window also has a :guilabel:`Delete` button, so you can delete the entire AS3 declaration from the BIG-IP device.
 
-Create a partition (Application subtab)
-----------------------------------------
+Create a partition using Advanced mode (Application subtab)
+-----------------------------------------------------------
 
-1. From the :guilabel:`Partition` list, click :guilabel:`Create New Partition`.
+1. Select the Advanced mode on Application subtab.
+
+2. From the :guilabel:`Partition` list, click :guilabel:`Create New Partition`.
    The Application list is disabled.
 
-2. Application stub code is displayed in the text box.
+3. Application stub code is displayed in the text box.
 
-3. Two new fields, :guilabel:`Partition Name` and :guilabel:`Application Name`, are
+4. Two new fields, :guilabel:`Partition Name` and :guilabel:`Application Name`, are
    displayed. Enter valid input for both. The new partition can’t be
    created without providing an application name.
 
-4. Click :guilabel:`Submit`.
+5. Update the stub code with valid inputs.
+
+6. Click :guilabel:`Submit`.
 
 A new partition is created on the BIG-IP device.
 
 New partitions and applications are listed in the Partition and Application lists.
 
-Delete a partition (Application subtab)
-----------------------------------------
+Delete a partition using Advanced mode (Application subtab)
+-----------------------------------------------------------
 
-1. From the :guilabel:`Partition` list, click the partition you want to
+1. Select the Advanced mode on the Application subtab.
+
+2. From the :guilabel:`Partition` list, click the partition you want to
    delete.
 
-2. Click the :guilabel:`Delete` next to the menu.
+3. Click the :guilabel:`Delete` next to the menu.
 
-3. When prompted, confirm that you want to delete the partition.
+4. When prompted, confirm that you want to delete the partition.
 
 The partition from this BIG-IP device is no longer listed in the Partition list.
 
-Create an application (Application subtab)
--------------------------------------------
+Create an application using Advanced mode (Application subtab)
+--------------------------------------------------------------
 
-1. From the :guilabel:`Partition` list, click the partition you want to
+1. Select the Advanced mode on the Application subtab.
+
+2. From the :guilabel:`Partition` list, click the partition you want to
    create the new app in.
 
-2. From the :guilabel:`Application` list, click :guilabel:`Create New Application`.
+3. From the :guilabel:`Application` list, click :guilabel:`Create New Application`.
 
    .. note::
       Application stub code is displayed in the text box.
 
-3. In the :guilabel:`Application Name` field, enter a valid application name.
+4. In the :guilabel:`Application Name` field, enter a valid application name.
 
-4. Click :guilabel:`Submit`.
+5. Update the stub code which appears in the JSON box with appropriate values.
+
+6. Click :guilabel:`Submit`.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list.
 
-Update an application (Application subtab)
--------------------------------------------
+Update an application using Advanced mode (Application subtab)
+--------------------------------------------------------------
 
-1. From the :guilabel:`Partition` list, click the partition to which the application belongs.
+1. Select the Advanced mode on the Application subtab.
 
-2. From the :guilabel:`Application` list, click the application you want
+2. From the :guilabel:`Partition` list, click the partition to which the application belongs.
+
+3. From the :guilabel:`Application` list, click the application you want
    to update.
 
    .. note::
       Application contents is retrieved through AS3 APIs from the BIG-IP device and displayed in the text box.
 
-3. Update the application JSON.
+4. Update the application JSON.
 
-4. Click :guilabel:`Submit`.
+5. Click :guilabel:`Submit`.
 
 The application is updated on the BIG-IP device.
 
-Delete an application (Application subtab)
--------------------------------------------
+Delete an application using Advanced mode (Application subtab)
+--------------------------------------------------------------
 
-1. From the :guilabel:`Partition` list, click the partition you want to
+1. Select the Advanced mode on the Application subtab.
+
+2. From the :guilabel:`Partition` list, click the partition you want to
    delete an app from.
 
-2. From the :guilabel:`Application` list, click the application you want to
+3. From the :guilabel:`Application` list, click the application you want to
    delete.
 
-3. Click the Delete Icon next to the :guilabel:`Application` list.
+4. Click the Delete Icon next to the :guilabel:`Application` list.
 
-4. When prompted, click :guilabel:`Confirm`.
+5. When prompted, click :guilabel:`Confirm`.
 
 The application is deleted from the BIG-IP device and won’t be listed in the :guilabel:`Application` list.
 
 When you delete the last application, the corresponding partition is automatically deleted.
+
+Create a partition using Basic mode (Application subtab)
+--------------------------------------------------------
+
+1. Select the Basic mode on Application subtab.
+
+2. From the Partition list, click :guilabel:`Create New Partition`. The Application list is disabled.
+
+3. Two new fields, :guilabel:`Partition` and :guilabel:`Application`, are displayed. Enter valid input for both. The new partition can’t be created without providing an application name.
+
+4. Choose a template from the template drop-down. Fox example :guilabel:`simple http`. A form will be displayed. Fill the form with appropriate values.
+
+5. Click Submit.
+
+A new partition is created on the BIG-IP device.
+
+New partitions and applications are listed in the Partition and Application drop-downs respectively, on this tab.
+
+Delete a partition using  Basic mode (Application subtab)
+---------------------------------------------------------
+
+1. Select the Basic mode on the Application subtab.
+
+2. From the :guilabel:`Partition` list, click the partition you want to delete.
+
+3. Click the Delete icon next to the partition name.
+
+4. When prompted, confirm that you want to delete the partition.
+
+5. The partition from this BIG-IP device is no longer listed in the Partition list.
+
+Create an application using Basic mode (Application subtab)
+-----------------------------------------------------------
+
+1. Select the Basic mode on the Application subtab.
+
+2. From the :guilabel:`Partition` list, click the partition you want to create a new app in.
+
+3. From the :guilabel:`Application` list, click Create New Application.
+
+4. In the Application Name field, enter a valid application name.
+
+5. Choose a template from the template drop-down. Fox example :guilabel:`simple http`. A form will be displayed. Fill the form with appropriate values.
+
+6. Click Submit.
+
+The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list on this tab.
+
+Update an application using Basic mode (Application subtab)
+-----------------------------------------------------------
+
+1. Select the Basic mode on the Application subtab.
+
+2. From the :guilabel:`Partition` list, click the partition to which the application belongs.
+
+3. From the :guilabel:`Application` list, click the application you want to update.
+
+4. Template name and corresponding pre-filled form will appear on the UI. Update the form values.
+
+5. Click Submit.
+
+The application is updated on the BIG-IP device.
+
+Delete an application using Basic mode (Application subtab)
+-----------------------------------------------------------
+
+1. Select the Basic mode on the Application subtab.
+
+2. From the :guilabel:`Partition` list, click the partition you want to delete an app from.
+
+3. From the :guilabel:`Application` list, click the application you want to delete.
+
+4. Click the Delete Icon next to the Application list.
+
+5. When prompted, click Confirm.
+
+Upload a new AS3 Template using Basic mode (Application subtab)
+---------------------------------------------------------------
+
+1. Select the Basic mode on Application subtab.
+
+2. From the :guilabel:`Template` list, click Upload New Template. An input file browser will appear on the UI.
+
+3. Select a valid AS3 template file from the system.
+
+4. Click Upload.
+
+5. F5 ACI ServiceCenter will validate the template and upload it if valid. This template will be accessible for all BIG-IP devices to be used.
+
+Delete custom AS3 Template using Basic mode (Application subtab)
+----------------------------------------------------------------
+
+1. Select the Basic mode on Application subtab.
+
+2. From the :guilabel:`Template` list, click the template which is to be deleted.
+
+3. Click the Delete icon besides template name.
+
+4. The template will get deleted from F5 ACI ServiceCenter application. It will not be accessible to any of the BIG-IP devices when accessed from F5 ACI ServiceCenter.
+
+View AS3 Applications (Application Inventory sub-tab)
+-----------------------------------------------------
+
+1. Click the Application Inventory tab on the L4-L7 App Services tab.
+
+2. This will display a list of all the AS3 applications present on the BIG-IP device. The list will have the following columns:
+Partition   - Displays BIG-IP partition of the application
+Application - Displays application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
+Template    - Displays the name of the template used. If the application was created using Advanced mode, this column will display ---.
+Pool        - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has hyperlink to BIG-IP UI to the same pool.
+Action      - View details icon - Shows the raw JSON of the AS3 application
+
 
 Refresh L4-L7 Configuration tab
 -------------------------------
