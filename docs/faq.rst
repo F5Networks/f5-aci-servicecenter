@@ -90,7 +90,7 @@ L4-L7 Application Services
 
 **Q. Why is my L4-L7 Configuration tab disabled?**
 
-For the L4-L7 configuration tab to work correctly, f5-appsvcs RPM version 3.7.0 or later is required. Installation steps are available here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html#installation
+For the L4-L7 configuration tab to work correctly, f5-appsvcs RPM version 3.14.0 or later is required. Installation steps are available here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html#installation
 
 ------
 
@@ -111,6 +111,20 @@ Workaround: Upload one more AS3 sample declaration to the app and then perform a
 **Q. For L4-L7 App Service tab, why does the partition get deleted when I delete the last application belonging to that partition?**
 
 If there is a single application in a particular partition, and if that application is deleted through the application, the partition that has no other applications under it will be deleted from the BIG-IP device. This is standard F5 BIG-IP behavior. You will be warned about this in the delete confirmation prompt.
+
+------
+
+**Q. When I create an AS3 application using the L4-L7 Application Services → Application → Basic tab, I don’t see this application listed under L4-L7 Application Services → Application → Advanced tab. How shall I view the raw JSON of this AS3 application?**
+
+The Basic and Advanced sub-tabs of 'L4-L7 Application Services → Application' tab list only the applications created from the respective tabs. If you wish to view details (raw JSON) of any AS3 application, please go to L4-L7 Application Services → Application Inventory tab which lists all the applications. Traverse to row with the application of interest and click on the “View Application JSON” icon in the “Action” column to view the raw JSON.
+
+------
+
+**Q. When I create an AS3 application using the L4-L7 Application Services → Application → Basic tab, can I update this application via Application Services → BIG-IP tab?**
+
+The application created through the L4-L7 Application Services → Application → Basic tab should be updated through the same tab. If for some reason it needs to be updated via the BIG-IP tab; For example, if the virtual server address is to be updated from X to Y, then the same value needs to get updated from X to Y in the Constants → appsvcsFormData section of the application JSON from the BIG-IP tab. If the constants section is not updated, it will show inconsistent values when traversed back to Basic tab.
+
+------
 
 Other
 -----
@@ -144,3 +158,31 @@ The app has been tested with IE11, Mozilla FireFox 56 and Google Chrome v72.
 +-----------------------------------+----------------+
 | Concurrent app operations         | 4 BIG-IPs      | 
 +-----------------------------------+----------------+
+
+------
+
+**Q. What is the Compatibility Matrix for the various features supported by F5 ACI ServiceCenter?**
+
+Note:
+
+1. APIC minimum version supported for 3.2.x: 3.2(7f)
+
+2. APIC minimum version supported for 4.1.x: 4.1(1k)
+
+Note: For L4-L7 App Services tab to get enabled, minimum AS3 plugin version required is 3.14
+
++--------------------------------+-----------------+------------------------------+--------------------+
+| BIG-IP Type                    | Visibility      | L2-L3 Network Management     | L4-L7 App Services |
++================================+=================+==============================+====================+
+| Physical/VE Standalone         | Yes             | Yes                          | Yes                |
++--------------------------------+-----------------+------------------------------+--------------------+
+| Physical/VE High Availability  | Yes             | Yes                          | Yes                |
++--------------------------------+---+-------------+------------------------------+--------------------+
+| vCMP Host Standalone           | VLAN table only | VLAN only                    | No                 |
++--------------------------------+---+-------------+------------------------------+--------------------+
+| vCMP Host High Availability    | No              | No                           | No                 |
++--------------------------------+-----------------+------------------------------+--------------------+
+| vCMP Guest Standalone          | Yes             | Self IP/Default Gateway only | Yes                |
++--------------------------------+-----------------+------------------------------+--------------------+
+| vCMP Guest High Availability   | Yes             | Self IP/Default Gateway only | Yes                |
++--------------------------------+-----------------+------------------------------+--------------------+
