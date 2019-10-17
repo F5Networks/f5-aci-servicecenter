@@ -16,7 +16,7 @@ Create VLAN and Self IP
 
    The APIC information is displayed: Tenant, Concrete Devices and Interfaces, and Device Type (Physical/Virtual). You can also view a list of VLANs configured under the APIC Logical Device in the :guilabel:`Available` box.
 
-3. Select one or more vlans and move them to the :guilabel:`Selected` box.
+3. Select one or more VLANs and move them to the :guilabel:`Selected` box.
 
    The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name.
 
@@ -171,7 +171,7 @@ Create a VLAN for HA setup
 
 3. The APIC information is displayed: Tenant, Concrete Devices and Interfaces, and Device Type (Physical/Virtual). You can also view a list of VLANs configured under the APIC Logical Device in the Available box.
 
-4. Select one or more vlans and move them to the Selected box.
+4. Select one or more VLANs and move them to the Selected box.
 
 5. The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name.
 After selecting the VLANS click Manage Selected.

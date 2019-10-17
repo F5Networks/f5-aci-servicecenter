@@ -22,7 +22,7 @@ For all the F5 ACI ServiceCenter API calls following request header parameters a
 
 Header: DevCookie
 `````````````````
-Can be retrived as follows:
+Can be retrieved as follows:
 
 1. POST a request to the following API endpoint
 
@@ -91,7 +91,7 @@ These parameters will be required for L2-L3 Stitching tab.
 |             | 4. Search for vnsRtEPgDefToLIf, and use the tDn property of that entry for lIfCtxDn                                            |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-The other way to retreive the values is to call the getldevinfo.json API and
+The other way to retrieve the values is to call the getldevinfo.json API and
 use the returned values for lif, lIfCtxDn, ldev and use them as input
 parameters in the L2-L3 Stitching APIs. 
 
@@ -1703,7 +1703,7 @@ getldevinfo.json
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Example Response   | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "cdevs": [                                                                                                                                                                   |
+|                    | "cdevs": [                                                                                                                                                                  |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
@@ -1711,53 +1711,53 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "path": "Pod-1/Node-101/eth1/1",                                                                                                                                             |
+|                    | "path": "Pod-1/Node-101/eth1/1",                                                                                                                                            |
 |                    |                                                                                                                                                                             |
-|                    | "name": "internal"                                                                                                                                                           |
+|                    | "name": "internal"                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                           |
+|                    | },                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "path": "Pod-1/Node-101/eth1/2",                                                                                                                                             |
+|                    | "path": "Pod-1/Node-101/eth1/2",                                                                                                                                            |
 |                    |                                                                                                                                                                             |
-|                    | "name": "external"                                                                                                                                                           |
+|                    | "name": "external"                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                           |
+|                    | ],                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "vmName": "",                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | "name": "Device1",                                                                                                                                                           |
+|                    | "name": "Device1",                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "vcenterName": ""                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                           |
+|                    | ],                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "svctype": "ADC",                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "devtype": "PHYSICAL",                                                                                                                                                       |
+|                    | "devtype": "PHYSICAL",                                                                                                                                                      |
 |                    |                                                                                                                                                                             |
-|                    | "vlans": [                                                                                                                                                                   |
+|                    | "vlans": [                                                                                                                                                                  |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External",                                                                                                                       |
 |                    |                                                                                                                                                                             |
-|                    | "disableConfig": {                                                                                                                                                           |
+|                    | "disableConfig": {                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "disable": false,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "ldev": null,                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | "tenant": null                                                                                                                                                               |
+|                    | "tenant": null                                                                                                                                                              |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                           |
+|                    | },                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
-|                    | "appinfo": {                                                                                                                                                                 |
+|                    | "appinfo": {                                                                                                                                                                |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External",                                                                                                                       |
 |                    |                                                                                                                                                                             |
@@ -1773,7 +1773,7 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                           |
+|                    | ],                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "bigip": "10.107.0.22:443",                                                                                                                                                 |
 |                    |                                                                                                                                                                             |
@@ -1783,35 +1783,35 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | "selfips": []                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                           |
+|                    | },                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "insync": true,                                                                                                                                                             |
 |                    |                                                                                                                                                                             |
 |                    | "deployed": true,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "encap": "vlan-300",                                                                                                                                                         |
+|                    | "encap": "vlan-300",                                                                                                                                                        |
 |                    |                                                                                                                                                                             |
 |                    | "lIfCtxDn": null,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "lifName": "External"                                                                                                                                                       |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                           |
+|                    | },                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | {                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-Internal",                                                                                                                       |
 |                    |                                                                                                                                                                             |
-|                    | "disableConfig": {                                                                                                                                                           |
+|                    | "disableConfig": {                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "disable": false,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
 |                    | "ldev": null,                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | "tenant": null                                                                                                                                                               |
+|                    | "tenant": null                                                                                                                                                              |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                           |
+|                    | },                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
-|                    | "appinfo": {                                                                                                                                                                 |
+|                    | "appinfo": {                                                                                                                                                                |
 |                    |                                                                                                                                                                             |
 |                    | "lif": "uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-Internal",                                                                                                                       |
 |                    |                                                                                                                                                                             |
@@ -1827,7 +1827,7 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                           |
+|                    | ],                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "bigip": "10.107.0.22:443",                                                                                                                                                 |
 |                    |                                                                                                                                                                             |
@@ -1837,13 +1837,13 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | "selfips": []                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
-|                    | },                                                                                                                                                                           |
+|                    | },                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "insync": true,                                                                                                                                                             |
 |                    |                                                                                                                                                                             |
 |                    | "deployed": true,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | "encap": "vlan-301",                                                                                                                                                         |
+|                    | "encap": "vlan-301",                                                                                                                                                        |
 |                    |                                                                                                                                                                             |
 |                    | "lIfCtxDn": null,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
@@ -1851,7 +1851,7 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | }                                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
-|                    | ],                                                                                                                                                                           |
+|                    | ],                                                                                                                                                                          |
 |                    |                                                                                                                                                                             |
 |                    | "ldev": "uni/tn-f5-gs/lDevVip-f5-gsldev",                                                                                                                                   |
 |                    |                                                                                                                                                                             |
@@ -1863,7 +1863,7 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | Content: {error: Bad request}                                                                                                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | See *Input Parameters* section for ldev input parameter   |
+| Notes              | See *Input Parameters* section for ldev input parameter                                                                                                                     |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getinterfaces.json
