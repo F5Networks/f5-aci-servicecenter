@@ -39,4 +39,4 @@ deploy:
     repo: F5Networks/f5-aci-servicecenter
 
 after_deploy:
-  - aws cloudfront create-invalidation --distribution-id $AWS_DIST_ID --paths $AWS_DIR
+- aws cloudfront create-invalidation --distribution-id $AWS_DIST_ID --paths $AWS_DIR
