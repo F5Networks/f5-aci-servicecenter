@@ -37,5 +37,6 @@ deploy:
   on:
     branch: test-kinch
     repo: F5Networks/f5-aci-servicecenter
+
 after_deploy:
   - aws cloudfront create-invalidation --distribution-id $AWS_DIST_ID --paths $AWS_DIR
