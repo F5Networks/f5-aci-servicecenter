@@ -1,79 +1,42 @@
+language: python
 sudo: required
 
-language: python
-
-
 services:
-  - docker
-
-stages:
-  - name: build_docs
-    if: branch = draft
-  - name: stage_deploy
-    if: branch = staging
-  - name: prod_deploy
-    if: branch = master
-
+- docker
 
 before_install:
-  - docker pull f5devcentral/containthedocs:latest
+- docker pull f5devcentral/containthedocs:latest
 
+install: 
+- pip install awscli --upgrade
 
-install:
-  - travis_retry pip install awscli --upgrade
+script:
+- ./scripts/docker-docs.sh ./scripts/test-docs.sh
 
+deploy:
+# DEPLOY TO STAGING
+- provider: s3
+  skip_cleanup: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $AWS_S3_STAGE_BUCKET
+  local_dir: docs/_build/html
+  upload_dir: $AWS_DIR
+  on:
+    branch: staging
+    repo: F5Networks/f5-aci-servicecenter
 
-jobs:
-  include:
-    - stage: build_docs
-      skip_cleanup: true
-      name: build_docs_site
-      script:
-        - chmod -R 755 script
-        - make docker-html
-      deploy:
-        skip_cleanup: true
-        provider: s3
-        access_key_id: $AWS_ACCESS_KEY_ID
-        secret_access_key: $AWS_SECRET_ACCESS_KEY
-        bucket: $AWS_S3_TEST_BUCKET
-        local_dir: docs/_build/html
-        upload_dir: f5-aci-servicecenter/latest
-        on:
-          branch: draft
-    - stage: stage_deploy
-      skip_cleanup: true
-      name: deploy_to_stage
-      script:
-        - echo "Building docs sites"
-        - chmod -R 755 script
-        - make docker-html
-        - echo "Done with buildng docs site. Starting stagging deploy"
-      deploy:
-        skip_cleanup: true
-        provider: s3
-        access_key_id: $AWS_ACCESS_KEY_ID
-        secret_access_key: $AWS_SECRET_ACCESS_KEY
-        bucket: $AWS_S3_STAGE_BUCKET
-        local_dir: docs/_build/html
-        upload_dir: f5-aci-servicecenter/latest
-        on:
-          branch: staging@F5Networks/f5-aci-servicecenter
-    - stage: prod_deploy
-      skip_cleanup: true
-      name: deploy_to_prod
-      script:
-        - echo "Building docs sites"
-        - chmod -R 755 script
-        - make docker-html
-        - echo "Done with buildng docs site. Starting production deploy"
-      deploy:
-        skip_cleanup: true
-        provider: s3
-        access_key_id: $AWS_ACCESS_KEY_ID
-        secret_access_key: $AWS_SECRET_ACCESS_KEY
-        bucket: $AWS_S3_PROD_BUCKET
-        local_dir: docs/_build/html
-        upload_dir: f5-aci-servicecenter/latest
-        on:
-          branch: master@F5Networks/f5-aci-servicecenter
+# DEPLOY TO PRODUCTION
+- provider: s3
+  skip_cleanup: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $AWS_S3_PROD_BUCKET
+  local_dir: docs/_build/html
+  upload_dir: $AWS_DIR
+  on:
+    branch: master
+    repo: F5Networks/f5-aci-servicecenter
+
+after_deploy:
+- aws cloudfront create-invalidation --distribution-id $AWS_DIST_ID --paths $AWS_DIR
