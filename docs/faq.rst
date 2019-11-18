@@ -126,8 +126,42 @@ The application created through the L4-L7 Application Services → Application �
 
 ------
 
+**Q. When new endpoints get added on APIC, why aren't the endpoints getting updated on BIG-IP device.** (Applicable to Version 2.1+)
+
+There is a websocket connection between the F5 ACI ServiceCenter and APIC to listen to new endpoint creation and endpoint deletion. If there is an issue with the websocket or the endpoint notification subscriptions, those errors will get logged in the log files on APIC. So please check the files for more details about end point attach detach.
+
+- User may observe the error ““Unrecoverable error occurred while creating APIC webosocket….” in websocket error log file: /data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_websocket.log
+
+OR
+
+- User may observe the error: “Failed to get a new subscription. Subscription Refresh Thread stopped for APIC for…“ in subscription errors log file: /data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_subscription.log
+
+**Workaround**: For any of the above errors in log files: please disable and re-enable the F5 ACI ServiceCenter application to fix the dynamic endpoint attach detach functionality. This will not affect the state of the F5 ACI ServiceCenter and all the data and configuration will still be intact after the disable and re-enable steps.
+
+OR
+
+- User may observe the error: "Websocket error: [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:727)"
+
+**Workaround**: Decomission and recomission the APIC on which F5 ACI ServiceCenter is running. The APIC on which the app is running can be found by going to System --> Controllers --> Controllers --> (APIC name) --> Containers and checking if the F5Networks_F5ACIServiceCenter is present. 
+
+------
+
+
 Other
 -----
+
+**Q. F5 ACI SeviceCenter is taking longer time to respond or has hanged.**
+
+If F5 ACI ServiceCenter UI is taking more than 3 minutes to display response, then check f5.log file, which may display a warning:
+"Acquiring a bigipdict RWlock has taken more than 180  seconds. Executing reader_release() to unlock the lock". Once this warning is observed, F5 ACI ServiceCenter will resume the stuck operation become responsive again.
+
+------
+
+**Q. F5 ACI ServiceCenter throws ‘Database is locked’ error.**
+
+If F5 ACI ServiceCenter throws database is locked error, then retry the operation that caused this error and the operation should proceed without errors.
+
+------
 
 **Q. What is the best way to delete LDEV from APIC?**
 
@@ -171,18 +205,20 @@ Note:
 
 Note: For L4-L7 App Services tab to get enabled, minimum AS3 plugin version required is 3.14
 
-+--------------------------------+-----------------+------------------------------+--------------------+
-| BIG-IP Type                    | Visibility      | L2-L3 Network Management     | L4-L7 App Services |
-+================================+=================+==============================+====================+
-| Physical/VE Standalone         | Yes             | Yes                          | Yes                |
-+--------------------------------+-----------------+------------------------------+--------------------+
-| Physical/VE High Availability  | Yes             | Yes                          | Yes                |
-+--------------------------------+---+-------------+------------------------------+--------------------+
-| vCMP Host Standalone           | VLAN table only | VLAN only                    | No                 |
-+--------------------------------+---+-------------+------------------------------+--------------------+
-| vCMP Host High Availability    | No              | No                           | No                 |
-+--------------------------------+-----------------+------------------------------+--------------------+
-| vCMP Guest Standalone          | Yes             | Self IP/Default Gateway only | Yes                |
-+--------------------------------+-----------------+------------------------------+--------------------+
-| vCMP Guest High Availability   | Yes             | Self IP/Default Gateway only | Yes                |
-+--------------------------------+-----------------+------------------------------+--------------------+
+Note: Endpoint attach detach feature is supported only for BIG-IP v13.0 and higher
+
++--------------------------------+-----------------+------------------------------+--------------------+------------------------+
+| BIG-IP Type                    | Visibility      | L2-L3 Network Management     | L4-L7 App Services | Endpoint Attach Detach |
++================================+=================+==============================+====================+========================+
+| Physical/VE Standalone         | Yes             | Yes                          | Yes                | Yes (Version 2.1+)     |
++--------------------------------+-----------------+------------------------------+--------------------+------------------------+
+| Physical/VE High Availability  | Yes             | Yes                          | Yes                | No                     |
++--------------------------------+---+-------------+------------------------------+--------------------+------------------------+
+| vCMP Host Standalone           | VLAN table only | VLAN only                    | No                 | No                     |
++--------------------------------+---+-------------+------------------------------+--------------------+------------------------+
+| vCMP Host High Availability    | No              | No                           | No                 | No                     |
++--------------------------------+-----------------+------------------------------+--------------------+------------------------+
+| vCMP Guest Standalone          | Yes             | Self IP/Default Gateway only | Yes                | Yes (Version 2.1+)     |
++--------------------------------+-----------------+------------------------------+--------------------+------------------------+
+| vCMP Guest High Availability   | Yes             | Self IP/Default Gateway only | Yes                | No                     |
++--------------------------------+-----------------+------------------------------+--------------------+------------------------+

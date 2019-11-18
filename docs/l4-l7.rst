@@ -254,3 +254,29 @@ Refresh L4-L7 Configuration tab
 - In the top right of L4-L7 Configuration tab, click :guilabel:`Refresh`.
 
 The content on the tab is refreshed.
+
+
+Dynamic Endpoint Attach Detach
+-------------------------------
+
+This feature is supported in F5 ACI ServiceCenter version 2.1 onwards. The recommended AS3 plugin version is 3.15 which is available for download at https://github.com/F5Networks/f5-appsvcs-extension/releases
+
+This feature adds support to dynamically update endpoints on BIG-IP pools whenever endpoints get attached or detached from APIC EPGs (Endpoint Groups). The F5 ACI ServiceCenter application provides a way to create a mapping between the APIC EPG and BIG-IP Application.
+
+**Adding a mapping between APIC Endpoint Group and BIG-IP pool**
+
+1. Go to L4-L7 App Services → Application → Basic/Advanced tab
+
+2. Follow the workflows for creating/updating application
+
+3. Click on :guilabel:`Manage Endpoint Mappings`. This will open a dialog box and a card per pool of the application. Select the Tenant|Application Profile|Endpoint Group from the given drop-downs corresponding to the APIC EPG you want to associate with the application pool. 
+
+4. Click on the :guilabel:`Save` button. This will record the response in UI
+
+5. Click on :guilabel:`Submit` to actually create the application on the BIG-IP and also add the dynamic endpoint mapping. 
+
+Henceforth whenever a new endpoint gets attached or detached from the selected APIC Endpoint Group, the update should get reflected on the Application’s pool on BIG-IP, and the pool should have the same list of endpoints. 
+
+Note: We can have only 1 Tenant|App|EPG|Port entry against each Pool. Multiple endpoint mappings cannot be added against a single pool. 
+
+Note: Update or delete of Dynamic endpoint mappings is not supported. Please check Release Notes. 
