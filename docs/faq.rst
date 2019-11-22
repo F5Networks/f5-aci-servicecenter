@@ -129,6 +129,19 @@ The application created through the L4-L7 Application Services → Application �
 Other
 -----
 
+**Q. F5 ACI SeviceCenter is taking longer time to respond or has hanged.**
+
+If F5 ACI ServiceCenter UI is taking more than 3 minutes to display response, then check f5.log file, which may display a warning:
+"Acquiring a bigipdict RWlock has taken more than 180  seconds. Executing reader_release() to unlock the lock". Once this warning is observed, F5 ACI ServiceCenter will resume the stuck operation become responsive again.
+
+------
+
+**Q. F5 ACI ServiceCenter throws ‘Database is locked’ error.**
+
+If F5 ACI ServiceCenter throws database is locked error, then retry the operation that caused this error and the operation should proceed without errors.
+
+------
+
 **Q. What is the best way to delete LDEV from APIC?**
 
 Do not delete Logical devices from APIC directly. Instead, as a first step, delete self IPs, VLANs and routes from the BIG-IP device by using the application. When you are done, you can delete the Logical Device from APIC. This ensures there are no stale self IP, VLAN, and route entries on BIG

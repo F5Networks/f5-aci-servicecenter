@@ -46,6 +46,18 @@ There are two options for updating VLAN/self IPs.
 
 2. For self IP edit: From the L2-L3 stitching tab, select the VLAN and use the :guilabel:`Edit` icon, located next to the self IP under Action. For an HA setup, the floating self IPs will automatically sync to the BIG-IP peer device.
 
+Floating IP Automatic Sync
+````````````````````````````
+
+In a BIG-IP HA setup, the recommended workflow of Network configuration is as follows:
+1. Create a VLAN and at least 1 local self IP on each of the devices of the BIG-IP. Ensure that both the BIG-IPs have the same VLAN name. If not, delete either of the VLANs and recreate it. F5 ACI ServiceCenter should take care of creating the same VLAN name. 
+
+2. Create any number of additional local and floating self IPs on either of the BIG-IPs. When floating IP synchronizes from 1 BIG-IP to the other out of band, it F5 ACI ServiceCenter will automatically sync it to database. 
+
+Note: It is important to create VLAN on both the devices before a floating IP can be created. If this prerequisite is not met, the HA devices can enter the ‘Sync Failed’ state. 
+
+
+
 Delete VLAN
 ````````````
 
@@ -182,7 +194,7 @@ After selecting the VLANS click Manage Selected.
         - Create VLAN on vCMP host 1
         - Copy VLAN name from host 1 and create VLAN on host 2 with same name
         - Assign these VLANs to corresponding vCMP Guests vCMP guest 1 (on host 1) and vCMP guest 2 (on host 2)
-        - Create local and floating ips for these VLANs
+        - Create local and floating ips for these VLANs. VLAN and local Self IP should be present on both the BIG-IP devices of the HA pair before Floating Self IPs can be created.
         - Click Submit.
 
 6. The BIG-IP device has the same VLANs configured as the APIC LDEV VLAN and L2-L3 stitching is complete.
