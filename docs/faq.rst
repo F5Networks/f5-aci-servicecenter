@@ -22,7 +22,7 @@ Expected downtime:
 
 ------
 
-**Q. In the app, why do I see the error “BIG-IP session timed out. Please log in again.”?**
+**Q. In the app, why do I see the error “BIG-IP session timed out. Please log in again.”?** (Only applicable to v1.0)
 
 Every BIG-IP session on the app has an operation-idle time out of 10 minutes. If you do not carry out any operations on a BIG-IP session of the application for 10 minutes, you will see the above error. This timeout check is triggered only on tab switch, or on left-hand menu item click for logged in BIG-IP devices.
 
@@ -33,6 +33,15 @@ Every BIG-IP session on the app has an operation-idle time out of 10 minutes. If
 If App UI is accessed from 2 parallel browser tabs with certificate warnings enabled from only one of the tabs, it may generate this error: “Error: Request failed due to server side error”
 
 **Workaround:** Login to APIC again
+
+------
+
+**Q. For an app operation, why do I see a ConnectTimeout or Timeout error?**
+
+All F5 ACI ServiceCenter operations in-turn perform REST API calls to BIG-IP or APIC. If any of those API calls take longer than 1 minute, the app will timeout those calls and display the timeout error on the UI.
+
+**Workaround:** 1. Try the operation again. 2. Ensure that BIG-IP is up and responding properly to UI login. 
+
 
 Visibility
 ----------
