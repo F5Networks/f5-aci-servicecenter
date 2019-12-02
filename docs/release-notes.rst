@@ -40,6 +40,15 @@ Root-cause: During vlan creation using createbigipvlan.json API, the VLAN table 
 
 ------
 
+**F5 ACI ServiceCenter does not allow duplicate Self IP creation even after deleting it from BIG-IP**
+
+If VLAN and Self IPs are created using F5 ACI ServiceCenter, and then deleted out of band from the BIG-IP GUI/CLI directly, stale entries remain within the F5 ACI ServiceCenter state. Hence, if the same Self IPs are created from the app later, user encounters a duplicate error for the Self IPs even if they are not present anymore on the BIG-IP.
+
+**Workaround**: If any L2-L3 configuration is created using the F5 ACI ServiceCenter to stitch an APIC Logical Device with a BIG-IP, ensure that this configuration is deleted from the ServiceCenter UI itself, before making any further changes or deletions from APIC Logical Device or BIG-IP. 
+
+------
+
+
 L4-L7 App Services
 ------------------
 
@@ -48,6 +57,14 @@ L4-L7 App Services
 If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the Application Services configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
 
 **Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
+
+-------
+
+**Success message for AS3 declaration submission is hidden behind the UI loader**
+
+For big AS3 declarations with multiple partitions or applications, it is observed that the success response message is observed in the background of the UI loader. 
+
+**Workaround**: Check the L4-L7 App Services --> Application Inventory sub-tab to see if the application add/remove/update operation was successful. If the submitted applications are not added/removed from application inventory as expected, please click on the "Pending Tasks" icon to see if the task is still being processed by the BIG-IP.
 
 -------
 
