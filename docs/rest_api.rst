@@ -1629,7 +1629,7 @@ getasynctaskresponse.json
 |                    | }                                                                       |
 |                    |                                                                         |
 +--------------------+-------------------------------------------------------------------------+
-| Example Response   | Code: 200                                                               |
+| Success Response   | Code: 200                                                               |
 |                    |                                                                         |
 |                    | "message": {                                                            |
 |                    |                                                                         |
@@ -1651,11 +1651,11 @@ getasynctaskresponse.json
 |                    |                                                                         |
 |                    | "statuscode": <Status_Code>,                                            |
 |                    |                                                                         |
-|                    | "taskId": <Task_Id>                                                     |
+|                    | "taskId": <Task_Id>,                                                    |
 |                    |                                                                         |
 |                    | "as3data": [<as3_data>],                                                |
 |                    |                                                                         |
-|                    | "as3declaration": <as3_declaration>l                                    |
+|                    | "as3declaration": <as3_declaration>                                     |
 |                    |                                                                         |
 |                    | }                                                                       |
 |                    |                                                                         |
