@@ -60,6 +60,14 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 -------
 
+**L4-L7 App Services 'Pending Tasks' table does not update task status**
+
+When AS3 declaration submission goes into asynchronous mode, the task is tracked by the F5 ACI ServiceCenter and its status is updated in 'Pending Tasks' table which is available on the L4-L7 App Services Tab. If such pending tasks exist on multiple BIG-IPs at once, it is possible that the status of such pending tasks is not updated properly in the UI.
+
+**Workaround**: Wait for a maximum of 2 minutes to see if the pending task status gets updated. If not, the workarounds to try are: 1. Switch the tab and come back to L4-L7 App Services and check the task status. 2. Re-login to the BIG-IP where the pending task status is not updated. 
+
+-------
+
 **Success message for AS3 declaration submission is hidden behind the UI loader**
 
 For big AS3 declarations with multiple partitions or applications, it is observed that the success response message is observed in the background of the UI loader. 
@@ -95,7 +103,14 @@ Symptoms users may see:
 2. User may not find previously added BIG-IP entries in the application
 3. New Application installation may fail
 
-**Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover within some time automatically and the application should be accessible again.  
+**Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover within some time automatically and the application should be accessible again.
+
+Visibility
+----------
+
+**VIP table does not show nodes where node name and node IP are different** (Fixed in v2.1)
+
+Workaround: Ensure that all nodes on the BIG-IP have the name same as it's IP address
 
 
 L2-L3 Network Management
