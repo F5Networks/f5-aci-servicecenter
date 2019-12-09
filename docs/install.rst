@@ -88,7 +88,7 @@ Upgrade
 =======
 Upgrade F5 ACI ServiceCenter from v1.0 to v2.0+
 -----------------------------------------------
-Only disruptive upgrade is supported where user can uninstall and re-install the higher version. Application data will not be retained during this upgrade. 
+Upgrade from v1.0 to v2.0+ is not supported. Users can manually uninstall and re-install the higher version (Data will not be retained).
 
 Upgrade F5 ACI ServiceCenter from v2.0 to v2.1+
 -----------------------------------------------
