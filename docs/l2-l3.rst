@@ -50,9 +50,10 @@ Floating IP Automatic Sync
 ````````````````````````````
 
 In a BIG-IP HA setup, the recommended workflow of Network configuration is as follows:
+
 1. Create a VLAN and at least 1 local self IP on each of the devices of the BIG-IP. Ensure that both the BIG-IPs have the same VLAN name. If not, delete either of the VLANs and recreate it. F5 ACI ServiceCenter should take care of creating the same VLAN name. 
 
-2. Create any number of additional local and floating self IPs on either of the BIG-IPs. When floating IP synchronizes from 1 BIG-IP to the other out of band, it F5 ACI ServiceCenter will automatically sync it to database. 
+2. Create any number of additional local and floating self IPs on either of the BIG-IPs. When floating IP synchronizes from 1 BIG-IP to the other out of band, F5 ACI ServiceCenter will automatically sync it to database. 
 
 Note: It is important to create VLAN on both the devices before a floating IP can be created. If this prerequisite is not met, the HA devices can enter the ‘Sync Failed’ state. 
 
