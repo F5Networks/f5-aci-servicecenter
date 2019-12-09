@@ -2217,6 +2217,86 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Import database file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "DevCookie",
+						"value": "8QgDAAAAAAAAAAAAAAAAABAC4qSSII5cU/WxdkjKqtzxonWTkYezzHJen2fGidkWJTZqlXEL0q86dE1EyOePCRdQIQf1vgzOa9JFktJgivtWbuP3XTJedFE5ilp5O265z9AC0IJGmQ/fSyFYjfCdc9SwkqlM5j4N46ydXPJ/iB2yqgf97bxR0DeSAxxwsYaJ/4KUqxfOPmbuHdCCez/8cQ==",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-sqlite3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/importdb.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"importdb.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export or Download database file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "DevCookie",
+						"value": "gOgIAAAAAAAAAAAAAAAAABep/DEgwXarmwc0WN7iwtF2nMMX9q+JlFP1BN1oEbD3c/fAb0eH+943HTFyfyC1wj2XNpAiDe5+bhGe3MsrsH9HtQGX+p4kRndtBVJYuQvlKsv+hDiC6KBBKdi9W8NR5lDQN8RgJv9vb/WFav92/BKcrCsaS1E2B9aU0nWbiE6qAUvrGj0lMw+ipLDYIU5fvg==",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/exportdb.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"exportdb.json"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
