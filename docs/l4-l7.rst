@@ -254,3 +254,16 @@ Refresh L4-L7 Configuration tab
 - In the top right of L4-L7 Configuration tab, click :guilabel:`Refresh`.
 
 The content on the tab is refreshed.
+
+
+AS3 Async Task Processing
+-------------------------
+
+For any configuration on the L4-L7 app services tab, if the AS3 operation takes longer than 45 seconds (for. e.g. scale configuration with 100 partitions), then AS3 sets asynchronous mode to true, and returns a success response with code 202 even if the said configuration hasn't completed on the BIG-IP device. Along with 202 response, AS3 also returns a BIG-IP task id URL which can be used to track the pending task. 
+
+1. F5 ACI ServiceCenter tracks such pending asynchronous tasks and users can monitor them on the L4-L7 App Services tab using the "Pending Tasks" icon. 
+2. Click on the "Pending Tasks" icon to view table listing the last 20 pending AS3 tasks for this BIG-IP.
+3. Once any of the task is successful or errors out, the status gets updated against that task entry in the table with appropriate status code and message. The UI also loads the updated data in the L4-L7 App Services view.
+
+.. note::
+On closing the UI tab for F5 ACI ServiceCenter, this pending tasks table will get cleared out.

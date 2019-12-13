@@ -82,3 +82,75 @@ However, if the VLANs and self IPs, which were created through the F5 ACI Servic
 
 .. note::
    You might encounter L2-L3 operation errors due to BIG-IP's existing configuration. If you do, use `Sync Workflows <https://clouddocs.f5networks.net/f5-aci-servicecenter/latest/l2-l3.html#sync-tasks>`_ wherever applicable. If errors persist, delete the VLAN, self IP, and route entries from the BIG-IP device by logging in to the BIG-IP Configuration utility directly (rather than using the F5 ACI ServiceCenter).
+   
+   
+Upgrade
+=======
+Upgrade F5 ACI ServiceCenter from v1.0 to v2.0+
+-----------------------------------------------
+Upgrade from v1.0 to v2.0+ is not supported. Users can manually uninstall and re-install the higher version (Data will not be retained).
+
+Upgrade F5 ACI ServiceCenter from v2.0 to v2.1+
+-----------------------------------------------
+APIC 4.1(1k) 
+
+  1. F5 ACI ServiceCenter v2 should already be running on APIC version 4.1(1k)
+  
+  2. Close the application UI tab. 
+  
+  3. APIC --> Apps tab shows the F5 ACI ServiceCenter app. 
+  
+  4. Click on the :guilabel:`Upgrade` icon in the top right corner. This opens a file browser. 
+  
+  5. Select the F5Networks-F5ACIServiceCenter-2.1.aci or any other higher version which has been downloaded from appcenter https://dcappcenter.cisco.com/ 
+  
+  6. APIC will upgrade the application from v2.0 to v2.1+ version and also retain the database. 
+  
+  7. Please open the app and check whether the added BIG-IP devices list is visible. User will have to re-login to the BIG-IP devices using the upgraded app.
+ 
+
+APIC 3.2(7f)+ (All supported 3.2.X versions)
+
+  1. APIC 3.2.X versions do not support application upgrades. Hence a manual backup of the database is required as mentioned in the steps below.
+  
+  2. SSH into the APIC server which has the F5 ACI ServiceCenter app container running.
+  
+  3. cd /data2/gluster/gv0/F5Networks_F5ACIServiceCenter
+  
+  4. Copy out the f5.db file from this location to your local system to create the database backup.
+  
+  5. Uninstall the current app and re-install the F5 ACI ServiceCenter v2.1+ as specified in the installation steps.
+  
+  6. Open the new upgraded version of the app. Click the drop-down --> Import DB on the top right corner of F5 ACI ServiceCenter.
+  
+  7. Select the f5.db file from your local system which you saved in step 4. and click Submit.
+  
+  8. The application restores the selected database file and the upgrade process is complete.
+  
+.. note::
+   The APIC on which the ap container is running can be found by going to System --> Controllers --> Controllers --> (APIC name) --> Containers and checking if the F5Networks_F5ACIServiceCenter container is present.
+ 
+ 
+Database Export and Import (Supported in v2.1+)
+===============================================
+
+Export DB
+---------
+
+1. Open F5 ACI ServiceCenter.
+
+2. Click on the drop-down menu in top-right corner.
+
+3. Click on Export DB. This will save a zip file with f5.db file inside it, on your local system. You can use this option to backup the database at any point in time.
+
+
+Import DB
+---------
+
+1. Open F5 ACI ServiceCenter.
+
+2. Click on the drop-down menu in top-right corner.
+ 
+3. Click on Import DB. This opens a file browser dialog box. Select one of the previously saved F5 ACI ServiceCenter database files of interest. 
+
+4. Your current database will be completely replaced by this new database file. Hence this operation should only be done in case of application upgrades, otherwise you might lose your app data. 
