@@ -22,7 +22,7 @@ For all the F5 ACI ServiceCenter API calls following request header parameters a
 
 Header: DevCookie
 `````````````````
-Can be retrived as follows:
+Can be retrieved as follows:
 
 1. POST a request to the following API endpoint
 
@@ -91,7 +91,7 @@ These parameters will be required for L2-L3 Stitching tab.
 |             | 4. Search for vnsRtEPgDefToLIf, and use the tDn property of that entry for lIfCtxDn                                            |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-The other way to retreive the values is to call the getldevinfo.json API and
+The other way to retrieve the values is to call the getldevinfo.json API and
 use the returned values for lif, lIfCtxDn, ldev and use them as input
 parameters in the L2-L3 Stitching APIs. 
 
