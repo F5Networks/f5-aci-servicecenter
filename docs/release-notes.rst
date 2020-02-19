@@ -1,3 +1,83 @@
+Release Notes (Version 2.2)
+===========================
+
+General
+-------
+
+**F5 ACI ServiceCenter Upgrade is not supported from Version 1.0 to Version 2.2**
+
+The F5 ACI ServiceCenter application does not have upgrade support from Version 1.0 to Version 2.2. In order to install a new version of the app the steps to be followed are:
+1. Uninstall the existing Version 1.0 of the application from APIC Apps tab.
+2. Install and enable Version 2.2 of the application by downloading it from https://dcappcenter.cisco.com/
+
+Note: App upgrades are supported in version 2.0 and higher
+
+------
+
+**File system convergence**
+
+APIC Filesystem Glusterfs takes 15 to 20 Minutes to recover when APIC cluster goes unhealthy
+
+During the APIC operations like APIC reboot, upgrade, or decommission/recommission, the APIC filesystem needs some time to recover and resume.
+
+Symptoms users may see:
+1. Application operations throw a (sqlite3.OperationalError) disk I/O error
+2. User may not find previously added BIG-IP entries in the application
+3. New Application installation may fail
+
+**Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover within some time automatically and the application should be accessible again.
+
+
+L2-L3 Network Management
+------------------------
+
+**Error “Invalid DN <someDn>, wrong rn prefix <somePrefix> at position X/Y“**
+
+getldevinfo.json and createbigipvlan.json APIs will show an error of the type “Invalid DN <someDn>, wrong rn prefix <somePrefix> at position X/Y“
+
+Root-cause: During vlan creation using createbigipvlan.json API, the VLAN table in the F5 ACI ServiceCenter saves VLAN database entries. One of the fields in the VLAN table is the lifDn which is the Distinguished name of Logical Interface (in the Logical device) on APIC. If during App REST API automation, anyone creates a VLAN using createbigipvlan.json and enters invalid string in lifDn parameter of the API instead of the valid input for lifDn, the app will accept it. And on a subsequent call to getldevinfo.json or createbigipvlan.json throw the aformentioned error.
+
+**Workaround**: Uninstall and re-install the application to clean out the F5 ACI ServiceCenter database.
+
+------
+
+**F5 ACI ServiceCenter does not allow duplicate Self IP creation even after deleting it from BIG-IP**
+
+If VLAN and Self IPs are created using F5 ACI ServiceCenter, and then deleted out of band from the BIG-IP GUI/CLI directly, stale entries remain within the F5 ACI ServiceCenter state. Hence, if the same Self IPs are created from the app later, user encounters a duplicate error for the Self IPs even if they are not present anymore on the BIG-IP.
+
+**Workaround**: If any L2-L3 configuration is created using the F5 ACI ServiceCenter to stitch an APIC Logical Device with a BIG-IP, ensure that this configuration is deleted from the ServiceCenter UI itself, before making any further changes or deletions from APIC Logical Device or BIG-IP. 
+
+------
+
+
+L4-L7 App Services
+------------------
+
+**Application services declaration not deleted**
+
+If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the Application Services configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
+
+**Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
+
+-------
+
+**L4-L7 App Services 'Pending Tasks' table does not update task status**
+
+When AS3 declaration submission goes into asynchronous mode, the task is tracked by the F5 ACI ServiceCenter and its status is updated in 'Pending Tasks' table which is available on the L4-L7 App Services Tab. If such pending tasks exist on multiple BIG-IPs at once, it is possible that the status of such pending tasks is not updated properly in the UI.
+
+**Workaround**: Wait for a maximum of 2 minutes to see if the pending task status gets updated. If not, the workarounds to try are: 1. Switch the tab and come back to L4-L7 App Services and check the task status. 2. Re-login to the BIG-IP where the pending task status is not updated. 
+
+-------
+
+**Success message for AS3 declaration submission is hidden behind the UI loader**
+
+For big AS3 declarations with multiple partitions or applications, it is observed that the success response message is observed in the background of the UI loader. 
+
+**Workaround**: Check the L4-L7 App Services --> Application Inventory sub-tab to see if the application add/remove/update operation was successful. If the submitted applications are not added/removed from application inventory as expected, please click on the "Pending Tasks" icon to see if the task is still being processed by the BIG-IP.
+
+-------
+
+
 Release Notes (Version 2.1)
 ===========================
 
@@ -26,6 +106,19 @@ Symptoms users may see:
 
 **Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover within some time automatically and the application should be accessible again.
 
+------
+
+**Custom Docker 0 Bridge IP not supported**
+
+On APIC, if Custom Docker 0 Bridge IP other than 172.17.0.1 is used, F5 ACI ServiceCenter will not be able to support it. It will not be able to communicate with APIC as expected. 
+
+Users will see an error similar to "HTTPSConnectionPool(host='172.17.0.1', port=443): Max retries exceeded with url"
+
+**Workaround**: Use default Docker 0 Bridge IP: 172.17.0.1
+
+**Fix**: Fixed in F5 ACI ServiceCenter v2.2
+
+------
 
 L2-L3 Network Management
 ------------------------
@@ -105,6 +198,20 @@ Symptoms users may see:
 
 **Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover within some time automatically and the application should be accessible again.
 
+------
+
+**Custom Docker 0 Bridge IP not supported**
+
+On APIC, if Custom Docker 0 Bridge IP other than 172.17.0.1 is used, F5 ACI ServiceCenter will not be able to support it. It will not be able to communicate with APIC as expected. 
+
+Users will see an error similar to "HTTPSConnectionPool(host='172.17.0.1', port=443): Max retries exceeded with url"
+
+**Workaround**: Use default Docker 0 Bridge IP: 172.17.0.1
+
+**Fix**: Fixed in F5 ACI ServiceCenter v2.2
+
+------
+
 Visibility
 ----------
 
@@ -176,6 +283,21 @@ Symptoms users may see:
 When trying to access the App through the UI, following error might occur: "(sqlite3.OperationalError) database is locked". 
 
 **Workaround**: Wait for 10-15 minutes and try to access the application again. This issue should get resolved automatically and the application should be accessible again. 
+
+------
+
+**Custom Docker 0 Bridge IP not supported**
+
+On APIC, if Custom Docker 0 Bridge IP other than 172.17.0.1 is used, F5 ACI ServiceCenter will not be able to support it. It will not be able to communicate with APIC as expected. 
+
+Users will see an error similar to "HTTPSConnectionPool(host='172.17.0.1', port=443): Max retries exceeded with url"
+
+**Workaround**: Use default Docker 0 Bridge IP: 172.17.0.1
+
+**Fix**: Fixed in F5 ACI ServiceCenter v2.2
+
+------
+
 
 
 L2-L3 stitching
