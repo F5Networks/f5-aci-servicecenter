@@ -154,3 +154,57 @@ Import DB
 3. Click on Import DB. This opens a file browser dialog box. Select one of the previously saved F5 ACI ServiceCenter database files of interest. 
 
 4. Your current database will be completely replaced by this new database file. Hence this operation should only be done in case of application upgrades, otherwise you might lose your app data. 
+
+
+Self Discovery of BIG-IP Devices (Supported in v2.3+)
+=====================================================
+
+F5 ACI ServiceCenter displays all the discovered BIG-IPs attached to APIC fabric and adds them to "Discovered Devices" list on the left hand side menu. 
+
+Users may click on any of the discovered devices and login to the device. Once login is successful the BIG-IP entry will shift to the appropriate section on the side menu namely Standalone or HA.  
+
+.. note:: 
+
+    - This feature does not discover VEs or vCMP guests but only Physical and vCMP hosts. 
+
+    - In order for the BIG-IP devices to be discovered via LLDP protocol, LLDP needs to be enabled on the BIG-IPs. To enable LLDP on BIG-IP:
+
+          1. Login to BIG-IP
+
+          2. Click on Interfaces → LLDP → General
+
+          3. Select 'Enabled' for the LLDP property
+
+          4. Click :guilabel:`Update`
+
+
+View Global Topology
+--------------------
+
+1. Click on top right corner menu → Topology
+
+2. A popup opens which displays a graphical view of all the BIG-IPs and their connectivity to ACI Leaf Switches.
+
+.. note::
+
+    - LLDP needs to be enabled on the BIG-IP for this topology view to be seen. 
+
+
+View BIG-IP Connectivity
+------------------------
+
+1. Login to BIG-IP.
+
+2. Click on any of the 3 tabs (Visibility OR L2-L3 Network Management or L4-L7 App Services).
+
+3. Click on the topology icon with tooltip "View BIG-IP Connectivity".
+
+4. A popup opens which displays a graphical view of this BIG-IP’s port connectivity to ACI Leaf Switches.
+
+.. note::
+
+   - LLDP needs to be enabled on the BIG-IP for this topology view to be seen. 
+
+
+
+

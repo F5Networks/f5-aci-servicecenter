@@ -57,7 +57,9 @@ Create a partition using Advanced mode (Application subtab)
 
 5. Update the stub code with valid inputs.
 
-6. Click :guilabel:`Submit`.
+6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+
+7. Click :guilabel:`Submit`.
 
 A new partition is created on the BIG-IP device.
 
@@ -94,7 +96,9 @@ Create an application using Advanced mode (Application subtab)
 
 5. Update the stub code which appears in the JSON box with appropriate values.
 
-6. Click :guilabel:`Submit`.
+6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+
+7. Click :guilabel:`Submit`.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list.
 
@@ -113,7 +117,9 @@ Update an application using Advanced mode (Application subtab)
 
 4. Update the application JSON.
 
-5. Click :guilabel:`Submit`.
+5. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to update Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+
+6. Click :guilabel:`Submit`.
 
 The application is updated on the BIG-IP device.
 
@@ -147,7 +153,9 @@ Create a partition using Basic mode (Application subtab)
 
 4. Choose a template from the template drop-down. Fox example :guilabel:`simple http`. A form will be displayed. Fill the form with appropriate values.
 
-5. Click Submit.
+5. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+
+6. Click Submit.
 
 A new partition is created on the BIG-IP device.
 
@@ -179,7 +187,9 @@ Create an application using Basic mode (Application subtab)
 
 5. Choose a template from the template drop-down. Fox example :guilabel:`simple http`. A form will be displayed. Fill the form with appropriate values.
 
-6. Click Submit.
+6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+
+7. Click Submit.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list on this tab.
 
@@ -194,7 +204,9 @@ Update an application using Basic mode (Application subtab)
 
 4. Template name and corresponding pre-filled form will appear on the UI. Update the form values.
 
-5. Click Submit.
+5. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to update Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+
+6. Click Submit.
 
 The application is updated on the BIG-IP device.
 
@@ -241,11 +253,24 @@ View AS3 Applications (Application Inventory sub-tab)
 1. Click the Application Inventory tab on the L4-L7 App Services tab.
 
 2. This will display a list of all the AS3 applications present on the BIG-IP device. The list will have the following columns:
-Partition   - Displays BIG-IP partition of the application
-Application - Displays application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
-Template    - Displays the name of the template used. If the application was created using Advanced mode, this column will display ---.
-Pool        - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has hyperlink to BIG-IP UI to the same pool.
-Action      - View details icon - Shows the raw JSON of the AS3 application
+
+Partition   
+            - Displays BIG-IP partition of the application
+
+Application 
+            - Displays application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
+
+Template    
+            - Displays the name of the template used. If the application was created using Advanced mode, this column will display 'No Information'.
+
+Pool        
+            - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has hyperlink to BIG-IP UI to the same pool.
+
+Action      
+            - View details icon - Shows the raw JSON of the AS3 application
+            - Sync Endpoints to BIG-IP icon - Retrieves all the Endpoints from associated Tenant|Application|EPG and creates them to the associated pool of the application
+            - View Pool Endpoints icon - Lists the endpoints present in the service discovery endpoint of the BIG-IP https:///<BIG-IP>/mgmt/shared/service-discovery/task/~Partition~Application~Pool
+            - View Application JSON icon - Shows the raw JSON of the AS3 application
 
 
 Refresh L4-L7 Configuration tab
