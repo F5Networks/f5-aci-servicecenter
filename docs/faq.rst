@@ -135,6 +135,32 @@ The application created through the L4-L7 Application Services → Application �
 
 ------
 
+**Q. While deleting Partition OR Application using L4-L7 Application Services, why do I get the error “All objects must be removed from a partition <Partition-Name> before the partition may be removed”?**
+
+This issue is observed when there are additional objects created under a BIG-IP Partition. In order to see if which objects are present in this partition:
+1. Login to BIG-IP using ssh and as root user
+2. cd to "/partitions/<Partition-Name>/" and check the contents of the file "bigip.conf"
+3. This file should shows the details of the objects that you need to remove to be able to successfully delete the partition from BIG-IP
+
+------
+
+Dynamic Endpoint Attach Detach
+------------------------------
+
+**Q. When new dynamic endpoints get added on APIC, the nodes aren’t getting updated on BIG-IP devices.**
+
+There is a websocket connection between the F5 ACI ServiceCenter and APIC to listen to new endpoint creation/deletion. If there is an issue with the websocket or the endpoint notification subscriptions, those errors will get logged in the log files on APIC. So please check the files for more details about end point attach detach.
+
+User may observe the error "Unrecoverable error occurred while creating APIC websocket…." on UI or in websocket error log file: /data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_websocket.log 
+
+OR
+
+User may observe the error: "Failed to get a new subscription. Subscription Refresh Thread stopped for APIC for…" on UI or in subscription errors log file: data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_subscription.log
+
+**Workaround:** For any of the above errors in log files: please disable and re-enable the F5 ACI ServiceCenter application to fix the dynamic endpoint attach detach functionality. This will not affect the state of the F5 ACI ServiceCenter and all the data and configuration will still be intact after the disable and re-enable steps.
+
+------
+
 Other
 -----
 
@@ -191,20 +217,20 @@ Note:
 
 2. APIC minimum version supported for 4.1.x: 4.1(1k)
 
-Note: For L4-L7 App Services tab to get enabled, minimum AS3 plugin version required is 3.14
+Note: For L4-L7 App Services tab to get enabled, minimum AS3 plugin version required is 3.16
 
-+--------------------------------+-----------------+------------------------------+--------------------+
-| BIG-IP Type                    | Visibility      | L2-L3 Network Management     | L4-L7 App Services |
-+================================+=================+==============================+====================+
-| Physical/VE Standalone         | Yes             | Yes                          | Yes                |
-+--------------------------------+-----------------+------------------------------+--------------------+
-| Physical/VE High Availability  | Yes             | Yes                          | Yes                |
-+--------------------------------+---+-------------+------------------------------+--------------------+
-| vCMP Host Standalone           | VLAN table only | VLAN only                    | No                 |
-+--------------------------------+---+-------------+------------------------------+--------------------+
-| vCMP Host High Availability    | No              | No                           | No                 |
-+--------------------------------+-----------------+------------------------------+--------------------+
-| vCMP Guest Standalone          | Yes             | Self IP/Default Gateway only | Yes                |
-+--------------------------------+-----------------+------------------------------+--------------------+
-| vCMP Guest High Availability   | Yes             | Self IP/Default Gateway only | Yes                |
-+--------------------------------+-----------------+------------------------------+--------------------+
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+| BIG-IP Type                    | Visibility      | L2-L3 Network Management     | L4-L7 App Services | Dynamic Endpoint Attach Detach |
++================================+=================+==============================+====================+================================+
+| Physical/VE Standalone         | Yes             | Yes                          | Yes                | Yes (BIG-IP v13.0 and above)   |                        
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+| Physical/VE High Availability  | Yes             | Yes                          | Yes                | No                             |
++--------------------------------+---+-------------+------------------------------+--------------------+--------------------------------+
+| vCMP Host Standalone           | VLAN table only | VLAN only                    | No                 | No                             |  
++--------------------------------+---+-------------+------------------------------+--------------------+--------------------------------+
+| vCMP Host High Availability    | No              | No                           | No                 | No                             |
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+| vCMP Guest Standalone          | Yes             | Self IP/Default Gateway only | Yes                | Yes (BIG-IP v13.0 and above)   |
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+| vCMP Guest High Availability   | Yes             | Self IP/Default Gateway only | Yes                | No                             |
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
