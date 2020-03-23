@@ -402,7 +402,7 @@ getlldpneighbors.json
 `````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
-| Title              | Discover F5 BIG-IP devices attached to the APIC Fabric                |
+| Title              | Discover F5 BIG-IP devices attached to the ACI Fabric                 |
 +====================+=======================================================================+
 | URL                | /getlldpneighbors.json                                                |
 +--------------------+-----------------------------------------------------------------------+
@@ -1837,8 +1837,8 @@ getasynctaskresponse.json
 +--------------------+-------------------------------------------------------------------------+
 
 
-Dynamic Endpoint Attach Detach
-------------------------------
+Dynamic Endpoint Attach Detach APIs
+-----------------------------------
 
 getepginfo.json
 ```````````````
