@@ -1,7 +1,7 @@
 REST API
 ========
 
-This section will go over the specifies of the REST APIs supported by F5 ACI ServiceCenter application.
+This section contains the specifics of the REST APIs supported by F5 ACI ServiceCenter application.
 
 The REST calls can be made to the following APIC endpoint
 
@@ -18,7 +18,8 @@ The REST calls can be made to the following APIC endpoint
 Request Headers
 ---------------
 
-For all the F5 ACI ServiceCenter API calls following request header parameters are required:
+For all the F5 ACI ServiceCenter API calls, the following request header parameters are required:
+
 
 Header: DevCookie
 `````````````````
@@ -38,7 +39,7 @@ Can be retrieved as follows:
 
 3. From the result of the POST, save the token returned
 
-4. In the “Headers” section of any further REST API requests, add a key-value pair. Key name is “DevCookie”, and its value should be the token obtained in the previous step
+4. In the **Headers** section of any further REST API requests, add a key-value pair. Key name is **DevCookie**, and its value should be the token obtained in the previous step
 
 .. code-block:: json
    
@@ -56,7 +57,7 @@ Header: Content-Type
 Input Parameters
 ----------------
 
-There are multiple F5 ACI ServiceCenter APIs which require input parameters to be retrieved for the APIC Logical Device. These input parameters can be retrieved from APIC object browser known as visore.html
+There are multiple F5 ACI ServiceCenter APIs which require input parameters to be retrieved for the APIC Logical Device. These input parameters can be retrieved from the APIC object browser known as visore.html
 
 APIC managed objects can be accessed at https://<APIC_IP>/visore.html.
 
@@ -68,13 +69,13 @@ These parameters will be required for L2-L3 Stitching tab.
 +=============+================================================================================================================================+=========================================================================================================================================================+
 | ldev        | 1. Go to APIC GUI → Tenant→ Services→ L4-L7→ Devices→ <Your L4-L7 Device>                                                      |     uni/tn-Sample\_2/lDevVip-f5-gs                                                                                                                      |
 |             |                                                                                                                                |                                                                                                                                                         |
-|             | 2. Right click on the <Your L4-L7 Device> and click on “Open in Object Store Browser”                                          |                                                                                                                                                         |
+|             | 2. Right click the <Your L4-L7 Device> and click **Open in Object Store Browser**                                              |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
 |             | 3. Use the dn property from the object browser for input parameter “ldev”.                                                     |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | lif         | 1. Go to APIC GUI → Tenant→ Services→ L4-L7→ Devices→ <Your L4-L7 Device> → Cluster Interfaces→ <Your Interface of Interest>   |     uni/tn-Sample\_2/lDevVip-f5-gs/lIf-external                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
-|             | 2. Right click on the logical interface and click on “Open in Object Store Browser”                                            |                                                                                                                                                         |
+|             | 2. Right click the logical interface and click **Open in Object Store Browser**                                                |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
 |             | 3. Use the dn property from the object browser for input parameter “lif”                                                       |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -84,9 +85,9 @@ These parameters will be required for L2-L3 Stitching tab.
 |             |                                                                                                                                |                                                                                                                                                         |
 |             | 1. Go to APIC GUI → Tenant→ Services→ L4-L7→ Devices→ <Your L4-L7 Device> → Cluster Interfaces→ <Your Interface of Interest>   |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
-|             | 2. Right click on the logical interface and click on “Open in Object Store Browser”.                                           |                                                                                                                                                         |
+|             | 2. Right click the logical interface and click **Open in Object Store Browser**                                                |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
-|             | 3. Click on > arrow of the dn property to see it’s children                                                                    |                                                                                                                                                         |
+|             | 3. Click the > arrow of the dn property to see it’s children                                                                   |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
 |             | 4. Search for vnsRtEPgDefToLIf, and use the tDn property of that entry for lIfCtxDn                                            |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -396,6 +397,79 @@ getbigiplist.json
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | Notes              |                                                                                                                                |
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+getlldpneighbors.json
+`````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Discover F5 BIG-IP devices attached to the ACI Fabric                 |
++====================+=======================================================================+
+| URL                | /getlldpneighbors.json                                                |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or Hostname. Field is optional>",                  |
+|                    |                                                                       |
+|                    | "topology": true,                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.21:443",                                             |
+|                    |                                                                       |
+|                    | "topology": true,                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "links": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "aciInfo": {"allowedVlans": "",                                       |
+|                    |                                                                       |
+|                    | "operMode": "trunk",                                                  |
+|                    |                                                                       |
+|                    | "operSpeed": "10G",                                                   |
+|                    |                                                                       |
+|                    | "operSt": "up",                                                       |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "aciPort": "eth1/25",                                                 |
+|                    |                                                                       |
+|                    | "bigipPort": "1.1",                                                   |
+|                    |                                                                       |
+|                    | "bigipPort": "1.1",                                                   |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ],                                                                    |
+|                    |                                                                       |
+|                    | "mgmtIp": "10.107.0.40",                                              |
+|                    |                                                                       |
+|                    | "present": true                                                       |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | Does not discovery BIG-IP VE and BIG-IP vCMP Guests                   |
++--------------------+-----------------------------------------------------------------------+
+
 
 checkbigipfailoverstate.json
 ````````````````````````````
@@ -1761,6 +1835,228 @@ getasynctaskresponse.json
 +--------------------+-------------------------------------------------------------------------+
 | Notes              |                                                                         |
 +--------------------+-------------------------------------------------------------------------+
+
+
+Dynamic Endpoint Attach Detach APIs
+-----------------------------------
+
+getepginfo.json
+```````````````
++--------------------+-------------------------------------------------------------------------+
+| Title              | Get endpoint group or EPG information from APIC                         |
++====================+=========================================================================+
+| URL                | /getepginfo.json                                                        |
++--------------------+-------------------------------------------------------------------------+
+| Method             | GET                                                                     |
++--------------------+-------------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                            |
+|                    |                                                                         |
+|                    | "content"                                                               |
+|                    |                                                                         |
+|                    | {                                                                       |
+|                    |                                                                         |
+|                    | "<tenant name>": {                                                      |
+|                    |                                                                         |
+|                    | "<Application Profile 1>": [                                            |
+|                    |                                                                         |
+|                    | {                                                                       |
+|                    |                                                                         |
+|                    | "dn": "<Dn>",                                                           |
+|                    |                                                                         |
+|                    | "name": "<Endpoint group name or EPG>"                                  |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
+|                    | ],                                                                      |
+|                    |                                                                         |
+|                    | "<Application Profile 2>": [                                            |
+|                    |                                                                         |
+|                    | {                                                                       |
+|                    |                                                                         |
+|                    | "dn": "<Dn>",                                                           |
+|                    |                                                                         |
+|                    | "name": "<Endpoint group name or EPG>"                                  |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
+|                    | ]                                                                       |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
++--------------------+-------------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                            |
+|                    |                                                                         |
+|                    | "content"                                                               |
+|                    |                                                                         |
+|                    | {                                                                       |
+|                    |                                                                         |
+|                    | "Demo": {                                                               |
+|                    |                                                                         |
+|                    | "3-Tier-Arch": [                                                        |
+|                    |                                                                         |
+|                    | {                                                                       |
+|                    |                                                                         |
+|                    | "dn": "uni/tn-Demo/ap-3-Tier-Arch/epg-Front-EndUI",                     |
+|                    |                                                                         |
+|                    | "name": "Front-EndUI"                                                   |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
+|                    | ],                                                                      |
+|                    |                                                                         |
+|                    | "AppProfile": [                                                         |
+|                    |                                                                         |
+|                    | {                                                                       |
+|                    |                                                                         |
+|                    | "dn": "uni/tn-Demo/ap-AppProfile/epg-test",                             |
+|                    |                                                                         |
+|                    | "name": "test"                                                          |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
+|                    | ]                                                                       |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
+|                    | }                                                                       |
+|                    |                                                                         |
++--------------------+-------------------------------------------------------------------------+
+| Error Response     | Code: 400                                                               |
+|                    |                                                                         |
+|                    | Content: {error: Bad request}                                           |
++--------------------+-------------------------------------------------------------------------+
+| Notes              |                                                                         |
++--------------------+-------------------------------------------------------------------------+
+
+
+getbigipendpoints.json
+``````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Get Dynamic Endpoints from BIG-IP Service Discovery for an AS3 app    |
++====================+=======================================================================+
+| URL                | /getbigipendpoints.json                                               |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |
+|                    |                                                                       |
+|                    | "partition": "<partition_name>",                                      |
+|                    |                                                                       |
+|                    | "subpath": "<application_name on BIG-IP>",                            |
+|                    |                                                                       |
+|                    | "pool": "<Pool_Name>"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.21:443",                                             |
+|                    |                                                                       |
+|                    | "partition": "testPart",                                              |
+|                    |                                                                       |
+|                    | "subpath": "testApp",                                                 |
+|                    |                                                                       |
+|                    | "pool": "web_pool"                                                    |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "content"                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | [                                                                     |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "ip": "10.168.18.100",                                                |
+|                    |                                                                       |
+|                    | "id": "/partition1/10.168.18.100"                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+
+
+
+syncepgmappings.json
+`````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | EPG mappings sync from APIC to BIG-IP                                 |
++====================+=======================================================================+
+| URL                | /syncepgmappings.json                                                 |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |
+|                    |                                                                       |
+|                    | "tenant": "<tenant_name>",                                            |
+|                    |                                                                       |
+|                    | "application": "<application_profile_name on APIC>",                  |
+|                    |                                                                       |
+|                    | "epg": "<epg>",                                                       |
+|                    |                                                                       |
+|                    | "partition": "<partition_name>",                                      |
+|                    |                                                                       |
+|                    | "subpath": "<application_name on BIG-IP>",                            |
+|                    |                                                                       |
+|                    | "pool": "<Pool_Name>"                                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.21:443",                                             |
+|                    |                                                                       |
+|                    | "tenant": "Demo",                                                     |
+|                    |                                                                       |
+|                    | "application": "AppProfile",                                          |
+|                    |                                                                       |
+|                    | "epg": "EPG-Internal",                                                |
+|                    |                                                                       |
+|                    | "partition": "testPart",                                              |
+|                    |                                                                       |
+|                    | "subpath": "testApp",                                                 |
+|                    |                                                                       |
+|                    | "pool": "web_pool"                                                    |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Success Response   | {                                                                     |
+|                    |                                                                       |
+|                    | "code": 200,                                                          |
+|                    |                                                                       |
+|                    | "message": "EPG mappings sync from APIC to BIG-IP successful"         |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              |                                                                       |
++--------------------+-----------------------------------------------------------------------+
 
 
 L2-L3 Stitching APIs

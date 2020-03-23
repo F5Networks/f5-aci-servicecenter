@@ -51,6 +51,7 @@ For details on supported versions, see :doc:`Support <support>`.
    l4-l7.rst
    l2-l3.rst
    navigate.rst
+   dynamic-ep.rst
    tech-support-and-logs.rst
    faq.rst
    release-notes.rst
