@@ -42,6 +42,12 @@ All F5 ACI ServiceCenter operations in-turn perform REST API calls to BIG-IP or 
 
 **Workaround:** 1. Try the operation again. 2. Ensure that BIG-IP is up and responding properly to UI login. 
 
+------
+
+**Q. I’m able to see only the last 100 errors/warnings in 'View Faults'. How can I see older faults for my BIG-IP? (View Faults feature is available in versions 2.4+)**
+
+The F5 ACI ServiceCenter UI will show the last 100 errors or warnings which were observed on a particular BIG-IP. To check the older errors/warnings, please ssh to the APIC server which has the app container. The faults logs for BIG-IPs are available at location data2/logs/F5Networks_F5ACIServiceCenter/faults.
+
 
 Visibility
 ----------
