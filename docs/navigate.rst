@@ -31,6 +31,7 @@ View VIP table
    -  If a node is not operational on the APIC, it is not displayed in the VIP table.
    -  If a pool is empty and does not have any nodes, a pool entry is not displayed in the VIP table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in the VIP table.
+   -  If any of the node members have an associated FQDN, it will be displayed in FQDN column (Supported in v2.4+).
 
 View Node table
 ---------------
@@ -47,6 +48,7 @@ View Node table
    -  If a specific node is not operational on the APIC, it isn't displayed in the Node table.
    -  If a pool does not have any nodes, the pool is not displayed in any of the entries in the Node table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in any of the entries in the Node table.
+   -  If any of the nodes have an associated FQDN, it will be displayed in FQDN column (Supported in v2.4+).
 
 Download report
 ---------------
