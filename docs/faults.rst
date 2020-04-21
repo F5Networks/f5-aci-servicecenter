@@ -14,6 +14,8 @@ View App Faults
     - This specifically displays the faults in websocket and subscriptions for dynamic endpoint attach detach feature. 
     - On click, each row of the datagrid will display a detailed view for the fault.
     - To see older errors/warnings, please ssh to APIC server and check log files present in /data2/logs/F5Networks_F5ACIServiceCenter/faults/app.log
+    - The F5 ACI ServiceCenter currently displays the logs in UTC timezone which is the default timezone of this app.
+
 
 View BIG-IP Faults
 ------------------
@@ -30,3 +32,4 @@ View BIG-IP Faults
     - The datagrid also displays the type of error (Visibility, L2-L3 Network Management OR L4-L7 App Services. It is possible to filter the errors by type)
     - On click, each row of the datagrid will display a detailed view for the fault.
     - To see older errors/warnings, please ssh to APIC server and check log files present in /data2/logs/F5Networks_F5ACIServiceCenter/faults/<BIG-IP IP>.log
+    - The F5 ACI ServiceCenter currently displays the logs in UTC timezone which is the default timezone of this app.
