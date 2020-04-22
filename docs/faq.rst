@@ -172,7 +172,7 @@ Other
 
 **Q. How can I change the management port of a BIG-IP device which is already added in the F5 ACI ServiceCenter?**
 
-Click the delete (X) icon besides the BIG-IP to delete it. Re-add the BIG-IP to F5 ACI ServiceCenter with the changed port (For example, from the default 443 to 8443). The BIG-IP data will still be retained after the delete and re-add.
+Click the delete (X) icon next to the BIG-IP to delete it. Re-add the BIG-IP to F5 ACI ServiceCenter with the changed port (For example, from the default 443 to 8443). The BIG-IP data will still be retained after the delete and re-add.
 
 ------
 
