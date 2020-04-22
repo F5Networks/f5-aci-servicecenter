@@ -6,7 +6,7 @@ General
 
 **F5 ACI ServiceCenter Upgrade is not supported from Version 1.0 to Version 2.4**
 
-The F5 ACI ServiceCenter application does not have upgrade support from Version 1.0 to Version 2.4. In order to install a new version of the app the steps to be followed are:
+The F5 ACI ServiceCenter application does not have upgrade support from Version 1.0 to Version 2.4. In order to install a new version of the app, use the following steps:
 1. Uninstall the existing Version 1.0 of the application from APIC Apps tab.
 2. Install and enable Version 2.4 of the application by downloading it from https://dcappcenter.cisco.com/
 
@@ -25,21 +25,21 @@ Symptoms users may see:
 2. User may not find previously added BIG-IP entries in the application
 3. New Application installation may fail
 
-**Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover within some time automatically and the application should be accessible again.
+**Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover automatically and the application should be accessible again.
 
 ------
 
 **F5 ACI ServiceCenter HA clusters show IPs even if the devices are added using hostnames**
 
-For BIG-IP in HA cluster, when one BIG-IP with hostname is added to F5 ACI ServiceCenter, the IP corresponding to that hostname also gets added in the side menu. 
+For BIG-IP devices in an HA cluster, when one BIG-IP with hostname is added to F5 ACI ServiceCenter, the IP corresponding to that hostname also gets added in the side menu. 
 
-**Workaround:** Delete the device which got added using IP by clicking on the X icon besides the IP of the host. Repeat the same process for the peer of this device as well - now both devices should be seen inside the cluster with hostname.  
+**Workaround:** Delete the device which got added using IP by clicking on the delete (X) icon besides the IP of the host. Repeat the same process for the peer of this device - now both devices should be seen inside the cluster with hostname.  
 
 ------
 
 **Floating IP auto sync and Default Gateway auto sync will not work when hosts are added in an HA cluster using hostnames**
 
-**Workaround:** Manually sync the Floating IPs and Default Gateway to Application DB by clicking on “Sync To DB”
+**Workaround:** Manually sync the Floating IPs and Default Gateway to Application DB by clicking on **Sync To DB**
 
 ------
 
@@ -50,7 +50,7 @@ L2-L3 Network Management
 
 getldevinfo.json and createbigipvlan.json APIs will show an error of the type “Invalid DN <someDn>, wrong rn prefix <somePrefix> at position X/Y“
 
-Root-cause: During vlan creation using createbigipvlan.json API, the VLAN table in the F5 ACI ServiceCenter saves VLAN database entries. One of the fields in the VLAN table is the lifDn which is the Distinguished name of Logical Interface (in the Logical device) on APIC. If during App REST API automation, anyone creates a VLAN using createbigipvlan.json and enters invalid string in lifDn parameter of the API instead of the valid input for lifDn, the app will accept it. And on a subsequent call to getldevinfo.json or createbigipvlan.json throw the aformentioned error.
+Root-cause: During VLAN creation using createbigipvlan.json API, the VLAN table in the F5 ACI ServiceCenter saves VLAN database entries. One of the fields in the VLAN table is the lifDn which is the Distinguished name of Logical Interface (in the Logical device) on APIC. If during App REST API automation, anyone creates a VLAN using createbigipvlan.json and enters invalid string in lifDn parameter of the API instead of the valid input for lifDn, the app will accept it. And on a subsequent call to getldevinfo.json or createbigipvlan.json throw the aformentioned error.
 
 **Workaround**: Uninstall and re-install the application to clean out the F5 ACI ServiceCenter database.
 
@@ -84,9 +84,9 @@ Dynamic Endpoint attach/detach using the "Manage Endpoint Mappings" button is no
 
 **Error on EPG mapping delete operation**
 
-When a dynamic endpoint mapping is added to an application using the "Manage Endpoint Mappings", the application gets created on BIG-IP. If this mapping is deleted using the "RESET" button on "Manage Endpoint Mappings" form, user may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found"
+When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application gets created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, user may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found"
 
-**Workaround:** Click on the "Submit" button again, and the mapping will be reset properly without any errors. 
+**Workaround:** Click the **Submit** button again, and the mapping will be reset properly without any errors. 
 
 **AS3 Defect:** https://github.com/F5Networks/f5-appsvcs-extension/issues/185
  
@@ -94,7 +94,7 @@ When a dynamic endpoint mapping is added to an application using the "Manage End
 
 **AS3 application can either have static nodes or dynamic nodes but not both**
 
-AS3 applications will support either static nodes or dynamic nodes (Using Manage Endpoint Mappings button) but not both. 
+AS3 applications will support either static nodes or dynamic nodes (using the **Manage Endpoint Mappings** button) but not both. 
 
 ------
 
@@ -120,7 +120,7 @@ For a single BIG-IP device, if 2 AS3 applications belonging to 2 different parti
 
 If an APIC endpoint group has more than 60 endpoints attached, then the endpoint list will not get reflected on the BIG-IP, and users may experience service restarts on BIG-IP. 
 
-**Workaround:** For any dynamic endpoint mapping, please ensure that the number of endpoints in the corresponding APIC endpoint group never crosses 60.
+**Workaround:** For any dynamic endpoint mapping, please ensure that the number of endpoints in the corresponding APIC endpoint group never exceeds 60.
 
 **AS3 Defect:** https://github.com/F5Networks/f5-appsvcs-extension/issues/188
 
@@ -128,7 +128,7 @@ If an APIC endpoint group has more than 60 endpoints attached, then the endpoint
 
 **Node not removed from BIG-IP pool when node IP is a substring of some other node's IP**
 
-If a node, for example node with IP 1.2.3.4 is deleted from APIC, and there is also another node 1.2.3.40 of which the original IP is a substring, it may be possible that dynamic end point attach detach feature is not able to delete 1.2.3.4 from BIG-IP. Note: The pool members will get deleted as expected. 
+If a node, for example a node with IP 1.2.3.4, is deleted from APIC, and there is also another node 1.2.3.40 of which the original IP is a substring, it may be possible that the dynamic end point attach detach feature is not able to delete 1.2.3.4 from BIG-IP. Note: The pool members will get deleted as expected. 
 
 **Workaround:** Login to the BIG-IP UI and delete the problematic node
 
