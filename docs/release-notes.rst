@@ -33,7 +33,7 @@ Symptoms users may see:
 
 For BIG-IP devices in an HA cluster, when one BIG-IP with hostname is added to F5 ACI ServiceCenter, the IP corresponding to that hostname also gets added in the side menu. 
 
-**Workaround:** Delete the device which got added using IP by clicking on the delete (X) icon besides the IP of the host. Repeat the same process for the peer of this device - now both devices should be seen inside the cluster with hostname.  
+**Workaround:** Delete the device which got added using IP by clicking on the delete (X) icon next to the IP of the host. Repeat the same process for the peer of this device - now both devices should be seen inside the cluster with hostname.  
 
 ------
 
