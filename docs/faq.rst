@@ -170,6 +170,13 @@ User may observe the error: "Failed to get a new subscription. Subscription Refr
 Other
 -----
 
+**Q. How can I change the port of a BIG-IP device which is already added in the F5 ACI ServiceCenter?**
+
+Click the delete (X) icon besides the BIG-IP to delete it. Re-add the BIG-IP to F5 ACI ServiceCenter with the changed port. The BIG-IP data will still be retained after the delete and re-add.
+
+------
+
+
 **Q. F5 ACI SeviceCenter is taking longer time to respond or has hanged.**
 
 If F5 ACI ServiceCenter UI is taking more than 3 minutes to display response, then check f5.log file, which may display a warning:
