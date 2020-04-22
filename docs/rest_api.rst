@@ -62,7 +62,7 @@ There are multiple F5 ACI ServiceCenter APIs which require input parameters to b
 APIC managed objects can be accessed at https://<APIC_IP>/visore.html.
 
 Below is a table of such parameters and steps on how to retrieve them.
-These parameters will be required for L2-L3 Stitching tab.
+These parameters will be required for the L2-L3 Stitching tab.
 
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Input Key   | Input Value                                                                                                                    | Input Value Example                                                                                                                                     |
@@ -71,7 +71,7 @@ These parameters will be required for L2-L3 Stitching tab.
 |             |                                                                                                                                |                                                                                                                                                         |
 |             | 2. Right click the <Your L4-L7 Device> and click **Open in Object Store Browser**                                              |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
-|             | 3. Use the dn property from the object browser for input parameter “ldev”.                                                     |                                                                                                                                                         |
+|             | 3. Use the dn property from the object browser for the input parameter **ldev**.                                               |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | lif         | 1. Go to APIC GUI → Tenant→ Services→ L4-L7→ Devices→ <Your L4-L7 Device> → Cluster Interfaces→ <Your Interface of Interest>   |     uni/tn-Sample\_2/lDevVip-f5-gs/lIf-external                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
@@ -87,7 +87,7 @@ These parameters will be required for L2-L3 Stitching tab.
 |             |                                                                                                                                |                                                                                                                                                         |
 |             | 2. Right click the logical interface and click **Open in Object Store Browser**                                                |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
-|             | 3. Click the > arrow of the dn property to see it’s children                                                                   |                                                                                                                                                         |
+|             | 3. Click the > arrow of the dn property to see its children                                                                    |                                                                                                                                                         |
 |             |                                                                                                                                |                                                                                                                                                         |
 |             | 4. Search for vnsRtEPgDefToLIf, and use the tDn property of that entry for lIfCtxDn                                            |                                                                                                                                                         |
 +-------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,7 +211,7 @@ deletebigip.json
 ````````````````
 
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title             | Deletes a BIG-IP device from F5 ACI ServiceCenter Application (Note: The device is soft deleted, and once added back to the app, all data for the device is restored)   |
+| Title             | Deletes a BIG-IP device from the F5 ACI ServiceCenter Application (Note: The device is soft deleted, and once added back to the app, all the data for it is restored)   |
 +===================+=========================================================================================================================================================================+
 | URL               | /deletebigip.json                                                                                                                                                       |
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -467,7 +467,7 @@ getlldpneighbors.json
 |                    |                                                                       |
 |                    | Content: {error: Bad request}                                         |
 +--------------------+-----------------------------------------------------------------------+
-| Notes              | Does not discovery BIG-IP VE and BIG-IP vCMP Guests                   |
+| Notes              | Does not discover BIG-IP VE and BIG-IP vCMP Guests                    |
 +--------------------+-----------------------------------------------------------------------+
 
 
@@ -970,14 +970,14 @@ dryrunas3declaration.json
 |                    |                                                                                                                                                                                                                                                          |
 |                    | Content: {error: Bad request}                                                                                                                                                                                                                            |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | As can be seen, the json provided has action "deploy”, and in the application, the json remains the same, except for the action attribute, which is changed to “dry-run” and a POST request is sent to <BIG-IP IP address>/mgmt/shared/appsvcs/declare   |
+| Notes              | The JSON provided has an action of **deploy**, and in the application, the JDON remains the same, except for the action attribute, which is changed to **dry-run** and a POST request is sent to <BIG-IP IP address>/mgmt/shared/appsvcs/declare         |
 +--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 submitas3declaration.json
 `````````````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------+
-| Title              | Submits AS3 declaration to specified BIG-IP device’s AS3 endpoint                                                     |
+| Title              | Submits the AS3 declaration to specified BIG-IP device’s AS3 endpoint                                                 |
 +====================+=======================================================================================================================+
 | URL                | /submitas3declaration.json                                                                                            |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -1083,14 +1083,14 @@ submitas3declaration.json
 |                    |                                                                                                                       |
 |                    | Content: {error: Bad request}                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------+
-| Notes              | The json from above dictionary is posted to the BIG IP AS3 endpoint <BIG-IP IP address>/mgmt/shared/appsvcs/declare   |
+| Notes              | The JSON from the dictionary above is posted to the AS3 endpoint <BIG-IP IP address>/mgmt/shared/appsvcs/declare      |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 getas3declaration.json
 ``````````````````````
 
 +--------------------+------------------------------------------------------------------------------------------------------------+
-| Title              | Get AS3 declaration JSON from given BIG-IP device                                                          |
+| Title              | Get the AS3 declaration JSON from the given BIG-IP device                                                  |
 +====================+============================================================================================================+
 | URL                | /getas3declaration.json                                                                                    |
 +--------------------+------------------------------------------------------------------------------------------------------------+
@@ -1254,7 +1254,7 @@ getas3declaration.json
 |                    |                                                                                                            |
 |                    | Content: {error: Bad request}                                                                              |
 +--------------------+------------------------------------------------------------------------------------------------------------+
-| Notes              | Get AS3 declaration from specified BIG-IP’s AS3 endpoint <BIG-IP IP address>/mgmt/shared/appsvcs/declare   |
+| Notes              | Gets the AS3 declaration from the AS3 endpoint <BIG-IP IP address>/mgmt/shared/appsvcs/declare             |
 +--------------------+------------------------------------------------------------------------------------------------------------+
 
 deleteas3declaration.json
@@ -1683,7 +1683,7 @@ deleteas3application.json
 `````````````````````````
 
 +--------------------+-------------------------------------------------------------------------+
-| Title              | Deletes an application from BIG-IP AS3 declaration                      |
+| Title              | Deletes an application from the BIG-IP AS3 declaration                  |
 +====================+=========================================================================+
 | URL                | /deleteas3application.json                                              |
 +--------------------+-------------------------------------------------------------------------+
@@ -1848,7 +1848,7 @@ getasynctaskresponse.json
 ``````````````````````````
 
 +--------------------+-------------------------------------------------------------------------+
-| Title              | Get as3 async task response                                             |
+| Title              | Get AS3 async task response                                             |
 +====================+=========================================================================+
 | URL                | /getasynctaskresponse.json                                              |
 +--------------------+-------------------------------------------------------------------------+
@@ -2235,7 +2235,7 @@ getldevinfo.json
 ````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Gets Logical Device (L4-L7 device) information for specified Logical Device (Distinguished Name of Logical Device required)                                                 |
+| Title              | Gets Logical Device (L4-L7 device) information for the specified Logical Device (Distinguished Name of Logical Device required)                                             |
 +====================+=============================================================================================================================================================================+
 | URL                | /getldevinfo.json                                                                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2511,7 +2511,7 @@ getportlockdown.json
 ````````````````````
 
 +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Gets port lockdown options from BIG-IP device                                                                                                                                                   |
+| Title              | Gets port lockdown options from a BIG-IP device                                                                                                                                                 |
 +====================+=================================================================================================================================================================================================+
 | URL                | /getportlockdown.json                                                                                                                                                                           |
 +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2610,7 +2610,7 @@ gettrafficgroups.json
 `````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
-| Title              | Gets available traffic groups from BIG-IP device                      |
+| Title              | Gets available traffic groups from a BIG-IP device                    |
 +====================+=======================================================================+
 | URL                | /gettrafficgroups.json                                                |
 +--------------------+-----------------------------------------------------------------------+
@@ -2804,7 +2804,7 @@ deletebigipselfips.json
 ```````````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title                        | Deletes Self IPs from BIG-IP device                                                                                                                                                        |
+| Title                        | Deletes Self IPs from a BIG-IP device                                                                                                                                                      |
 +==============================+============================================================================================================================================================================================+
 | URL                          | /deletebigipselfips.json                                                                                                                                                                   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2978,7 +2978,7 @@ vlansynctobigip.json
 ````````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title                        | Synchronizes vlan information for specific vlan from F5 ACI ServiceCenter database to BIG-IP Device                                                                                        |
+| Title                        | Synchronizes VLAN information for a specific VLAN from the F5 ACI ServiceCenter database to a BIG-IP Device                                                                                |
 +==============================+============================================================================================================================================================================================+
 | URL                          | /vlansynctobigip.json                                                                                                                                                                      |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3047,7 +3047,7 @@ vlansynctodb.json
 `````````````````
 
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title                        | Synchronizes vlan information for specific vlan from BIG-IP Device to F5 ACI ServiceCenter database                                                                                        |
+| Title                        | Synchronizes VLAN information for a specific VLAN from a BIG-IP Device to the F5 ACI ServiceCenter database                                                                                |
 +==============================+============================================================================================================================================================================================+
 | URL                          | /vlansynctodb.json                                                                                                                                                                         |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3185,7 +3185,7 @@ createbigiproutes.json
 ``````````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| Title              | Creates default gateway on BIG-IP device                                                                                    |
+| Title              | Creates a default gateway on a BIG-IP device                                                                                |
 +====================+=============================================================================================================================+
 | URL                | /createbigiproutes.json                                                                                                     |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -3228,7 +3228,7 @@ deletebigiproutes.json
 ``````````````````````
 
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Deletes default gateway from BIG-IP device                                                                                     |
+| Title              | Deletes the default gateway from a BIG-IP device                                                                               |
 +====================+================================================================================================================================+
 | URL                | /deletebigiproutes.json                                                                                                        |
 +--------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -3281,7 +3281,7 @@ routesynctodb.json
 ``````````````````
 
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Synchronizes default gateway information from BIG-IP device to F5 ACI ServiceCenter database                                                            |
+| Title              | Synchronizes default gateway information from a BIG-IP device to the F5 ACI ServiceCenter database                                                      |
 +====================+=========================================================================================================================================================+
 | URL                | /routesynctodb.json                                                                                                                                     |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3307,14 +3307,14 @@ routesynctodb.json
 |                    |                                                                                                                                                         |
 |                    | Content: {error: Bad request}                                                                                                                           |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | Currently this API only supports default gateway synchronization, and cannot be used for synchronizing any other route information from BIG-IP device   |
+| Notes              | Currently this API only supports default gateway synchronization, and cannot be used for synchronizing any other route information from a BIG-IP device |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 routesynctobigip.json
 ``````````````````````
 
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Synchronizes default gateway information from F5 ACI ServiceCenter database to BIG-IP device                                                            |
+| Title              | Synchronizes default gateway information from the F5 ACI ServiceCenter database to a BIG-IP device                                                      |
 +====================+=========================================================================================================================================================+
 | URL                | /routesynctobigip.json                                                                                                                                  |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3340,14 +3340,14 @@ routesynctobigip.json
 |                    |                                                                                                                                                         |
 |                    | Content: {error: Bad request}                                                                                                                           |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | Currently this API only supports default gateway synchronization, and cannot be used for synchronizing any other route information from BIG-IP device   |
+| Notes              | Currently this API only supports default gateway synchronization, and cannot be used for synchronizing any other route information from a BIG-IP device |
 +--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 createbigipselfips.json
 ```````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
-| Title              | Create Self IPs on F5 BIG-IP device of type vCMP Guest                |
+| Title              | Create Self IPs on a BIG-IP device with a type of **vCMP Guest**      |
 +====================+=======================================================================+
 | URL                | /createbigipselfips.json                                              |
 +--------------------+-----------------------------------------------------------------------+
@@ -3448,8 +3448,8 @@ getvcmpguestvlans.json
 ``````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
-| Title              | Get list of vCMP guests and vlans assigned/available for each from    |
-|                    | vCMP Host F5 BIG-IP                                                   |
+| Title              | Get list of vCMP guests and VLANs assigned/available for each, from   |
+|                    | a BIG-IP of type vCMP host                                            |
 +====================+=======================================================================+
 | URL                | /getvcmpguestvlans.json                                               |
 +--------------------+-----------------------------------------------------------------------+
@@ -3518,7 +3518,7 @@ getvcmpvlaninfo.json
 ``````````````````````
 
 +--------------------+-----------------------------------------------------------------------+
-| Title              | Get VLAN information from F5 BIG-IP of type vCMP Guest                |
+| Title              | Get VLAN information from a BIG-IP of type vCMP Guest                 |
 +====================+=======================================================================+
 | URL                | /getvcmpvlaninfo.json                                                 |
 +--------------------+-----------------------------------------------------------------------+
@@ -3755,9 +3755,9 @@ assignvcmpguestvlans.json
 |                    |                                                                       |
 |                    | Content: {error: Bad request}                                         |
 +--------------------+-----------------------------------------------------------------------+
-| Notes              | This is used for assign and unassign of Vlan. During unassignment if  | 
-|                    | deleteGuestVlans = true , then it deletes the vlan from guest BIG-IP  |
-|                    | otherwise after unassignment it keeps as it is.                       |
+| Notes              | This is used for assigning and unassigning VLANs. During unassignment | 
+|                    | if deleteGuestVlans=true, then it deletes the VLAN from the guest     |
+|                    | BIG-IP, otherwise after unassignment it keeps as it is.               |
 |                    | This API is applicable only for vCMP Host.                            |
 +--------------------+-----------------------------------------------------------------------+
 
@@ -3900,7 +3900,7 @@ getvlanstats.json
 `````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Gets VLANs from BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information                                             |
+| Title              | Gets VLANs from a BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information                                           |
 +====================+===========================================================================================================================================================+
 | URL                | /getvlanstats.json                                                                                                                                        |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3990,14 +3990,14 @@ getvlanstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If Partition other than Common is selected, for example Sample\_1, the API will return information for both partitions Sample\_1 and Common partitions.   |
+| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getvipstats.json
 ````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Gets VIP:port (Virtual server) information from BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information             |
+| Title              | Gets VIP:port (Virtual server) information from a BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information           |
 +====================+===========================================================================================================================================================+
 | URL                | /getvipstats.json                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4097,14 +4097,14 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If Partition other than Common is selected, for example Sample\_1, the API will return information for both partitions Sample\_1 and Common partitions.   |
+| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getnodestats.json
 `````````````````
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Title              | Gets node information from BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information                                  |
+| Title              | Gets node information from a BIG-IP device and correlates with APIC Tenant/Application Profile/End Point Group information                                |
 +====================+===========================================================================================================================================================+
 | URL                | /getnodestats.json                                                                                                                                        |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4254,6 +4254,6 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If Partition other than Common is selected, for example Sample\_1, the API will return information for both partitions Sample\_1 and Common partitions.   |
+| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
