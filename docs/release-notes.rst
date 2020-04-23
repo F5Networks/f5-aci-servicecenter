@@ -132,7 +132,7 @@ Example: "members": [
             }
          ]
 
-Another possible workaround is to remove the erroneous applications and recreate them with different mappings so they will have a separate set of nodes.
+Another possible workaround is to remove the erroneous applications and recreate them with different mappings so that each AS3 application will have a separate set of nodes.
 
 **AS3 Defect:** https://github.com/F5Networks/f5-appsvcs-extension/issues/187
 
