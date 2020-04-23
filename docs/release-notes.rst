@@ -110,7 +110,29 @@ Dynamic endpoints are the endpoints present in APIC Endpoint Group. The app auto
 
 For a single BIG-IP device, if 2 AS3 applications belonging to 2 different partitions are associated with the same APIC Endpoint Group (Tenant|Application|EPG), the dynamic discovery of nodes will not work for either of the AS3 applications. 
 
-**Workaround:** Remove erroneous applications and recreate with different mappings
+**Workaround:** If you want to use the same endpoint mapping for 2 AS3 applications belonging to 2 different partitions, use the **shareNodes** option as described in https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/declarations/miscellaneous.html#using-sharenodes-to-reuse-nodes-across-tenants. 
+
+To enable shareNodes,
+
+1. Go to L4-L7 App Services --> Application --> Advanced.
+
+2. Create a new partition/application.
+
+3. Set dynamic endpoint mappings via **Manage Endpoint Mappings**, by selecting the Tenant|Application|EPG and port and click **Save**.
+
+4. Update the members section as below to add the shareNodes property:
+
+Example: "members": [
+            {
+                "addressDiscovery": "event",
+                
+                "servicePort": 80,
+                
+                "shareNodes": true
+            }
+         ]
+
+Another possible workaround is to remove the erroneous applications and recreate them with different mappings so that each AS3 application will have a separate set of nodes.
 
 **AS3 Defect:** https://github.com/F5Networks/f5-appsvcs-extension/issues/187
 
