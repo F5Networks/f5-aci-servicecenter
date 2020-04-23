@@ -125,7 +125,9 @@ To enable shareNodes,
 Example: "members": [
             {
                 "addressDiscovery": "event",
+                
                 "servicePort": 80,
+                
                 "shareNodes": true
             }
          ]
