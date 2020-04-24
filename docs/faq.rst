@@ -42,6 +42,12 @@ All F5 ACI ServiceCenter operations in-turn perform REST API calls to BIG-IP or 
 
 **Workaround:** 1. Try the operation again. 2. Ensure that BIG-IP is up and responding properly to UI login. 
 
+------
+
+**Q. I’m able to see only the last 100 errors/warnings in 'View Faults'. How can I see older faults for my BIG-IP? (View Faults feature is available in versions 2.4+)**
+
+The F5 ACI ServiceCenter UI will show the last 100 errors or warnings which were observed on a particular BIG-IP. To check the older errors/warnings, please ssh to the APIC server which has the app container. The faults logs for BIG-IPs are available at location data2/logs/F5Networks_F5ACIServiceCenter/faults.
+
 
 Visibility
 ----------
@@ -163,6 +169,13 @@ User may observe the error: "Failed to get a new subscription. Subscription Refr
 
 Other
 -----
+
+**Q. How can I change the management port of a BIG-IP device which is already added in the F5 ACI ServiceCenter?**
+
+Click the delete (X) icon next to the BIG-IP to delete it. Re-add the BIG-IP to F5 ACI ServiceCenter with the changed port (For example, from the default 443 to 8443). The BIG-IP data will still be retained after the delete and re-add.
+
+------
+
 
 **Q. F5 ACI SeviceCenter is taking longer time to respond or has hanged.**
 
