@@ -2,13 +2,13 @@
 
 The following versions of BIG-IP and APIC are currently supported for the F5 ACI ServiceCenter:
  
-| Package Version | BIG-IP Version        | APIC Version                | 
-|-----------------|-----------------------|-----------------------------|
-| 1.0             | 12.1, 13.1            | 4.1(1k)                     |
-| 2.0             | 12.1, 13.1, 14.1      | 4.1(1k)+, 3.2(7f)+          |
-| 2.1             | 12.1, 13.1, 14.1      | 4.1(1k)+, 3.2(7f)+          |
-| 2.2             | 12.1, 13.1, 14.1      | 4.1(1k)+, 3.2(7f)+          |
-| 2.3             | 12.1, 13.1, 14.1, 15.1| 4.2(3l)+, 4.1(1k)+, 3.2(7f)+|
-| 2.4             | 12.1, 13.1, 14.1, 15.1| 4.2(3l)+, 4.1(1k)+, 3.2(7f)+|
+| Package Version | BIG-IP Version        | APIC Version                          | 
+|-----------------|-----------------------|---------------------------------------|
+| 2.1             | 12.1, 13.1, 14.1      | 4.1(1k)+, 3.2(7f)+                    |
+| 2.2             | 12.1, 13.1, 14.1      | 4.1(1k)+, 3.2(7f)+                    |
+| 2.3             | 12.1, 13.1, 14.1, 15.1| 4.2(3l)+, 4.1(1k)+, 3.2(7f)+          |
+| 2.4             | 12.1, 13.1, 14.1, 15.1| 4.2(3l)+, 4.1(1k)+, 3.2(7f)+          |
+| 2.5             | 12.1, 13.1, 14.1, 15.1| 5.0(1k)+, 4.2(3l)+, 4.1(1k)+, 3.2(7f)+|
+
 
 See the [Release notes](https://clouddocs.f5.com/f5-aci-servicecenter/latest/release-notes.html) for new features and issues resolved for each release. 

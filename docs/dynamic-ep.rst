@@ -1,7 +1,7 @@
 Dynamic Endpoint Attach Detach
 ==============================
 
-This feature is supported in F5 ACI ServiceCenter version 2.3 and above. The minimum AS3 plugin version required is 3.16. AS3 plugin is available for download at https://github.com/F5Networks/f5-appsvcs-extension/releases
+This feature is supported in F5 ACI ServiceCenter version 2.3 and above. The minimum AS3 plugin version required is 3.19.1. AS3 plugin is available for download at https://github.com/F5Networks/f5-appsvcs-extension/releases
 
 This feature adds support to dynamically update endpoints on BIG-IP pools whenever endpoints get attached or detached from APIC EPGs (Endpoint Groups). The F5 ACI ServiceCenter application provides a way to create a mapping between the APIC EPG and BIG-IP AS3 Application.
 

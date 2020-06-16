@@ -30,6 +30,10 @@ Submit an AS3 declaration (BIG-IP subtab)
 
 If successful, BIG-IP includes all the partitions, applications, pools, and nodes as specified in the AS3 declaration.
 
+.. note::
+
+   - On clicking :guilabel:`Submit`, the resources are created asynchronously in the background. Once the resources like partitions, applications, pools and nodes are created successfully, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
 View the current AS3 declaration
 --------------------------------
 
@@ -65,6 +69,11 @@ A new partition is created on the BIG-IP device.
 
 New partitions and applications are listed in the Partition and Application lists.
 
+.. note::
+
+   - On clicking :guilabel:`Submit`, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
+
 Delete a partition using Advanced mode (Application subtab)
 -----------------------------------------------------------
 
@@ -78,6 +87,11 @@ Delete a partition using Advanced mode (Application subtab)
 4. When prompted, confirm that you want to delete the partition.
 
 The partition from this BIG-IP device is no longer listed in the Partition list.
+
+.. note::
+
+   - On clicking :guilabel:`Delete` icon, the partition is deleted asynchronously in the background. Once the partition is deleted successfully, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
 
 Create an application using Advanced mode (Application subtab)
 --------------------------------------------------------------
@@ -102,6 +116,11 @@ Create an application using Advanced mode (Application subtab)
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list.
 
+.. note::
+
+   - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the application is created successfully, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
+
 Update an application using Advanced mode (Application subtab)
 --------------------------------------------------------------
 
@@ -123,6 +142,11 @@ Update an application using Advanced mode (Application subtab)
 
 The application is updated on the BIG-IP device.
 
+.. note::
+
+   - On clicking :guilabel:`Submit`, the application is updated asynchronously in the background. Once the application is updated successfully, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
+
 Delete an application using Advanced mode (Application subtab)
 --------------------------------------------------------------
 
@@ -141,6 +165,11 @@ Delete an application using Advanced mode (Application subtab)
 The application is deleted from the BIG-IP device and won’t be listed in the :guilabel:`Application` list.
 
 When you delete the last application, the corresponding partition is automatically deleted.
+
+.. note::
+
+   - On clicking :guilabel:`Confirm`, the application is deleted asynchronously in the background. Once the application is deleted successfully, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
 
 Create a partition using Basic mode (Application subtab)
 --------------------------------------------------------
@@ -161,6 +190,11 @@ A new partition is created on the BIG-IP device.
 
 New partitions and applications are listed in the Partition and Application drop-downs respectively, on this tab.
 
+.. note::
+
+   - On clicking :guilabel:`Submit`, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
+
 Delete a partition using  Basic mode (Application subtab)
 ---------------------------------------------------------
 
@@ -173,6 +207,11 @@ Delete a partition using  Basic mode (Application subtab)
 4. When prompted, confirm that you want to delete the partition.
 
 5. The partition from this BIG-IP device is no longer listed in the Partition list.
+
+.. note::
+
+   - On clicking :guilabel:`Delete`, the partition is deleted asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
 
 Create an application using Basic mode (Application subtab)
 -----------------------------------------------------------
@@ -193,6 +232,11 @@ Create an application using Basic mode (Application subtab)
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list on this tab.
 
+.. note::
+
+   - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
+
 Update an application using Basic mode (Application subtab)
 -----------------------------------------------------------
 
@@ -210,6 +254,10 @@ Update an application using Basic mode (Application subtab)
 
 The application is updated on the BIG-IP device.
 
+.. note::
+
+   - On clicking :guilabel:`Submit`, the application is updated asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
 Delete an application using Basic mode (Application subtab)
 -----------------------------------------------------------
 
@@ -222,6 +270,11 @@ Delete an application using Basic mode (Application subtab)
 4. Click the Delete Icon next to the Application list.
 
 5. When prompted, click Confirm.
+
+.. note::
+
+   - On clicking :guilabel:`Submit`, the application is deleted asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, please refer https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
 
 Upload a new AS3 Template using Basic mode (Application subtab)
 ---------------------------------------------------------------
@@ -284,11 +337,13 @@ The content on the tab is refreshed.
 AS3 Async Task Processing
 -------------------------
 
-For any configuration on the L4-L7 app services tab, if the AS3 operation takes longer than 45 seconds (for. e.g. scale configuration with 100 partitions), then AS3 sets asynchronous mode to true, and returns a success response with code 202 even if the said configuration hasn't completed on the BIG-IP device. Along with 202 response, AS3 also returns a BIG-IP task id URL which can be used to track the pending task. 
+For any configuration on the L4-L7 app services tab, all AS3 operations support asynchronous mode by default and return a success response with code 202, even if the configuration hasn’t completed yet on the BIG-IP device. Along with the 202 response, AS3 also returns a BIG-IP **task id URL** which can be used to track the pending task.
 
-1. F5 ACI ServiceCenter tracks such pending asynchronous tasks and users can monitor them on the L4-L7 App Services tab using the "Pending Tasks" icon. 
-2. Click on the "Pending Tasks" icon to view table listing the last 20 pending AS3 tasks for this BIG-IP.
-3. Once any of the task is successful or errors out, the status gets updated against that task entry in the table with appropriate status code and message. The UI also loads the updated data in the L4-L7 App Services view.
+1. F5 ACI ServiceCenter tracks all pending asynchronous tasks and users can monitor them on the L4-L7 App Services tab using the **Pending Tasks** icon.
+
+2. Click **Pending Tasks** icon to view the list of last 20 pending AS3 tasks.
+
+3. Once the AS3 task completes, the status gets updated against that task entry in the **Pending Tasks** table with appropriate status code and message. The UI also loads the updated data in the L4-L7 App Services view.
 
 .. note::
-On closing the UI tab for F5 ACI ServiceCenter, this pending tasks table will get cleared out.
+The **Pending Tasks** maintains the list of tasks only for the current user session. On closing the F5 ACI ServiceCenter app, the **Pending tasks** table gets cleared. 
