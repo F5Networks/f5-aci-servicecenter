@@ -9,7 +9,7 @@ View app background services status
 
 2. Click **Settings > Status**.
 
-3. This displays a table named **Services** with the status of all the background services. The services displayed in this table are celeryd, celerybeat and redis. Please check details of these services below.
+3. This displays a table named **Services** with the status of all the background services. The services displayed in this table are celeryd, celerybeat and redis. Check details of these services below.
 
 
 +--------------+-----------------------+--------------------------------------------------------------------------------------------------------------+
