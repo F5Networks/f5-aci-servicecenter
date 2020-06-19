@@ -8,11 +8,11 @@ General
 
 APIC Filesystem Glusterfs takes 15 to 20 Minutes to recover when APIC cluster goes unhealthy
 
-During the APIC operations like APIC reboot, upgrade, or decommission/recommission, the APIC filesystem needs some time to recover and resume.
+During APIC operations like APIC reboot, upgrade, or decommission/recommission, the APIC filesystem needs some time to recover and resume.
 
 Symptoms users may see:
 1. Application operations throw a (sqlite3.OperationalError) disk I/O error
-2. User may not find previously added BIG-IP entries in the application
+2. Users may not find previously added BIG-IP entries in the application
 3. New Application installation may fail
 
 **Workaround**: Wait for 20 minutes and try to access the application again. The Glusterfs should recover automatically and the application should be accessible again.
@@ -23,8 +23,8 @@ Symptoms users may see:
 
 For BIG-IP devices in an HA cluster, when one BIG-IP with hostname is added to F5 ACI ServiceCenter, the IP corresponding to that hostname also gets added in the side menu. The application warns the user about this, and displays a deletion prompt for retaining only the hostname version of the BIG-IP. 
 
-**Workaround:** User may click **Delete** to proceed with deletion of the additional IP version of the device added to the app. OR
-user may skip the prompt and manually delete the device which got added using IP by clicking on the delete (X) icon next to the IP of the device. Repeat the same process for the peer of this device - now both devices should be seen inside the cluster with hostname.
+**Workaround:** Users may click **Delete** to proceed with deletion of the additional IP version of the device added to the app. OR
+Users may skip the prompt and manually delete the device which got added using IP by clicking on the delete (X) icon next to the IP of the device. Repeat the same process for the peer of this device - now both devices should be seen inside the cluster with hostname.
 
 ------
 
@@ -36,7 +36,7 @@ user may skip the prompt and manually delete the device which got added using IP
 
 **Export db does not work on APIC version 5.0.X**
 
-User menu on the top-right corner of the F5 ACI ServiceCenter has an option **Export/Import DB** → **Export DB**, for exporting the F5 ACI ServiceCenter database. This option is not working on APIC versions 5.0.X and higher. This is working as expected on prior versions of the APIC. 
+The user menu on the top-right corner of the F5 ACI ServiceCenter has an option **Export/Import DB > Export DB**, for exporting the F5 ACI ServiceCenter database. This option does not work on APIC versions 5.0.X and higher. This is working as expected on prior versions of the APIC. 
 
 **Workaround:** Backup the F5 ACI ServiceCenter database via the following steps:
 1. Login to the APIC server via SSH
@@ -47,11 +47,11 @@ User menu on the top-right corner of the F5 ACI ServiceCenter has an option **Ex
 
 ------
 
-**Non-default docker0 configuration on APIC may affect connection to management IP of Virtual BIG-IP**
+**Non-default docker0 configuration on APIC may affect connection to the management IP of Virtual BIG-IP**
 
-The default docker0 bridge IP has the address **172.17.0.1**. If docker0 bridge IP is updated to a non-default IP followed by APIC cluster reboot, Virtual BIG-IP login (connection to management IP) will fail from the F5 ACI ServiceCenter.
+The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bridge IP is updated to a non-default IP followed by APIC cluster reboot, the Virtual BIG-IP login (connection to management IP) will fail from the F5 ACI ServiceCenter.
 
-**Workaround:** Change the docker0 bridge IP once more after APIC reboot to a new value. 
+**Workaround:** After APIC reboots, once again change the docker0 bridge IP to a new value.
 
 ------
 
@@ -62,7 +62,7 @@ L2-L3 Network Management
 
 getldevinfo.json and createbigipvlan.json APIs will show an error of the type “Invalid DN <someDn>, wrong rn prefix <somePrefix> at position X/Y“
 
-Root-cause: During VLAN creation using createbigipvlan.json API, the VLAN table in the F5 ACI ServiceCenter saves VLAN database entries. One of the fields in the VLAN table is the lifDn which is the Distinguished name of Logical Interface (in the Logical device) on APIC. If during App REST API automation, anyone creates a VLAN using createbigipvlan.json and enters invalid string in lifDn parameter of the API instead of the valid input for lifDn, the app will accept it. And on a subsequent call to getldevinfo.json or createbigipvlan.json throw the aformentioned error.
+Root-cause: During VLAN creation using createbigipvlan.json API, the VLAN table in the F5 ACI ServiceCenter saves VLAN database entries. One of the fields in the VLAN table is the lifDn which is the Distinguished name of Logical Interface (in the Logical device) on APIC. If during App REST API automation, anyone creates a VLAN using createbigipvlan.json and enters an invalid string in lifDn parameter of the API instead of the valid input for lifDn, the app will accept it. And on a subsequent call to getldevinfo.json or createbigipvlan.json, it throws the aformentioned error.
 
 **Workaround**: Uninstall and re-install the application to clean out the F5 ACI ServiceCenter database.
 
@@ -84,9 +84,9 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 Dynamic Endpoint Attach Detach
 ------------------------------
 
-**Dynamic Endpoint attach/detach is not supported for BIG-IP High Availability setups**
+**Dynamic Endpoint attach/detach is not supported for BIG-IP High Availability configurations**
 
-Dynamic Endpoint attach/detach using the "Manage Endpoint Mappings" button is not supported for BIG-IP devices which are in HA pair. If used, the behavior is unknown and user may experience BIG-IP service restarts and hang up.
+Dynamic Endpoint attach/detach using the "Manage Endpoint Mappings" button is not supported for BIG-IP devices which are in an HA pair. If used, the behavior is unknown and users may experience BIG-IP service restarts and hang ups.
 
 **Workaround:** None
 
@@ -96,7 +96,7 @@ Dynamic Endpoint attach/detach using the "Manage Endpoint Mappings" button is no
 
 **Error on EPG mapping delete operation**
 
-When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application gets created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, user may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found"
+When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application gets created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, users may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found"
 
 **Workaround:** Click the **Submit** button again, and the mapping will be reset properly without any errors. 
 
@@ -112,17 +112,17 @@ AS3 applications will support either static nodes or dynamic nodes (using the **
 
 **Dynamic endpoints will not be discovered if any of the dynamic endpoint IPs already belong to the static nodes on the BIG-IP**
 
-Dynamic endpoints are the endpoints present in APIC Endpoint Group. The app automatically updates this in the BIG-IP application’s pool members provided the correct association is configured via the application. But if this dynamic endpoint list consists of an IP which has already been added as a static node on the BIG-IP previously, none of the dynamic endpoints will get updated in the application. 
+Dynamic endpoints are the endpoints present in APIC Endpoint Group. The app automatically updates this in the BIG-IP application’s pool members provided the correct association is configured via the application. But if this dynamic endpoint list consists of an IP which has previously been added as a static node on the BIG-IP, none of the dynamic endpoints will get updated in the application. 
 
 **Workaround:** Ensure that the APIC endpoint subnet/IPs are different from the static endpoint IPs on the BIG-IP.
 
 ------
 
-**Same Dynamic endpoint mappings on 2 separate partitions of a BIG-IP are not supported**
+**Same Dynamic endpoint mappings on two separate partitions of a BIG-IP are not supported**
 
-For a single BIG-IP device, if 2 AS3 applications belonging to 2 different partitions are associated with the same APIC Endpoint Group (Tenant|Application|EPG), the dynamic discovery of nodes will not work for either of the AS3 applications. 
+For a single BIG-IP device, if two AS3 applications belonging to two different partitions are associated with the same APIC Endpoint Group (Tenant|Application|EPG), the dynamic discovery of nodes will not work for either of the AS3 applications. 
 
-**Workaround:** If you want to use the same endpoint mapping for 2 AS3 applications belonging to 2 different partitions, use the **shareNodes** option as described in https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/declarations/miscellaneous.html#using-sharenodes-to-reuse-nodes-across-tenants. 
+**Workaround:** If you want to use the same endpoint mapping for two AS3 applications belonging to two different partitions, use the **shareNodes** option as described in https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/declarations/miscellaneous.html#using-sharenodes-to-reuse-nodes-across-tenants. 
 
 To enable shareNodes,
 
@@ -154,7 +154,7 @@ Another possible workaround is to remove the erroneous applications and recreate
 
 If an APIC endpoint group has more than 60 endpoints attached, then the endpoint list will not get reflected on the BIG-IP, and users may experience service restarts on BIG-IP. 
 
-**Workaround:** For any dynamic endpoint mapping, please ensure that the number of endpoints in the corresponding APIC endpoint group never exceeds 60.
+**Workaround:** For any dynamic endpoint mapping, ensure that the number of endpoints in the corresponding APIC endpoint group never exceeds 60.
 
 **AS3 Defect:** https://github.com/F5Networks/f5-appsvcs-extension/issues/188
 
@@ -162,7 +162,7 @@ If an APIC endpoint group has more than 60 endpoints attached, then the endpoint
 
 **Node not removed from BIG-IP pool when node IP is a substring of some other node's IP**
 
-If a node, for example a node with IP 1.2.3.4, is deleted from APIC, and there is also another node 1.2.3.40 of which the original IP is a substring, it may be possible that the dynamic end point attach detach feature is not able to delete 1.2.3.4 from BIG-IP. Note: The pool members will get deleted as expected. 
+If a node (for example a node with IP 1.2.3.4) is deleted from APIC, and there is also another node 1.2.3.40 of which the original IP is a substring, it may be possible that the dynamic end point attach detach feature is not able to delete 1.2.3.4 from BIG-IP. Note: The pool members will get deleted as expected. 
 
 **Workaround:** Login to the BIG-IP UI and delete the problematic node
 
@@ -172,11 +172,11 @@ If a node, for example a node with IP 1.2.3.4, is deleted from APIC, and there i
 
 **Dynamic EP discovery does not work if duplicate IP pre-exists on a different partition.**
 
-If an APIC Tenant|App|EPG mapped to a BIG-IP pool has an endpoint with IP which already exists on the BIG-IP but in a different partition, then the APIC endpoint will not get added to BIG-IP pool. Also any successive configurations and endpoints also will not be discovered/deleted from this BIG-IP pool. 
+If an APIC Tenant|App|EPG mapped to a BIG-IP pool has an endpoint with an IP address which already exists on the BIG-IP but in a different partition, then the APIC endpoint will not get added to BIG-IP pool. Also any successive configurations and endpoints also will not be discovered/deleted from this BIG-IP pool. 
 
-Workaround: Remove the duplicate IPs from the endpoint list on APIC and retry manual sync of Endpoints from L4-L7 App Services --> Application Inventory --> Sync EPs icon. 
+Workaround: Remove the duplicate IPs from the endpoint list on APIC and retry a manual sync of Endpoints from L4-L7 App Services --> Application Inventory --> Sync EPs icon. 
 
-Note: Similar issue might be seen with other erronous configurations such as unsupported IPv4 formats like 1.2.3.4/24 instead of 1.2.3.4
+Note: Similar issues might be seen with other erronous configurations such as unsupported IPv4 formats like 1.2.3.4/24 instead of 1.2.3.4
 
 AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
@@ -184,7 +184,7 @@ AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
 **Pool members deleted or added directly to BIG-IP don't get updated automatically after clicking "Sync EPs".**
 
-1. If BIG-IP pool members automatically get added by **Dynamic endpoint discovery** feature, but then few endpoints are deleted directly from the BIG-IP (i.e. out of band); These endpoints do not get created again on clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
+1. If BIG-IP pool members automatically get added by **Dynamic endpoint discovery** feature, but then few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again on clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
 
 2. Similarly, when few pool members are added directly to the BIG-IP (i.e. out of band), these extra members are not deleted after clicking **L4-L7 App Services --> Application Inventory --> Sync EPs**
 
