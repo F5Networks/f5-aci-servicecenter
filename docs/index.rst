@@ -53,6 +53,8 @@ For details on supported versions, see :doc:`Support <support>`.
    navigate.rst
    dynamic-ep.rst
    faults.rst
+   background-services.rst
+   teem.rst
    tech-support-and-logs.rst
    faq.rst
    release-notes.rst
