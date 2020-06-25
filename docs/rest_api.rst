@@ -4049,11 +4049,19 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | "address": "10.0.0.112",                                                                                                                                  |
 |                    |                                                                                                                                                           |
+|                    | "epgs": [                                                                                                                                                 |
+|                    |                                                                                                                                                           |
+|                    | {                                                                                                                                                         |
+|                    |                                                                                                                                                           |
 |                    | "tenant": "gstenant",                                                                                                                                     |
 |                    |                                                                                                                                                           |
 |                    | "app": "gsApp",                                                                                                                                           |
 |                    |                                                                                                                                                           |
 |                    | "epg": "consumerEPG",                                                                                                                                     |
+|                    |                                                                                                                                                           |
+|                    | }                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | ],                                                                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | "partition": "Common",                                                                                                                                    |
 |                    |                                                                                                                                                           |
@@ -4140,11 +4148,19 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | "address": "10.0.0.112",                                                                                                                                  |
 |                    |                                                                                                                                                           |
+|                    | "epgs": [                                                                                                                                                 |
+|                    |                                                                                                                                                           |
+|                    | {                                                                                                                                                         |
+|                    |                                                                                                                                                           |
 |                    | "tenant": "gstenant",                                                                                                                                     |
 |                    |                                                                                                                                                           |
 |                    | "app": "gsApp",                                                                                                                                           |
 |                    |                                                                                                                                                           |
 |                    | "epg": "consumerEPG",                                                                                                                                     |
+|                    |                                                                                                                                                           |
+|                    | }                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | ],                                                                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | "partition": "Common",                                                                                                                                    |
 |                    |                                                                                                                                                           |
