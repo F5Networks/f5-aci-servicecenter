@@ -58,11 +58,11 @@ The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bri
 Visibility
 ----------
 
-**Visibility report downloads do not work in Chrome browser version 83 and higher**
+**Visibility report downloads do not work in the Chrome browser version 83 and higher**
 
-F5 ACI ServiceCenter's Visibility tab has a **Download Report** icon for downloading VLAN, VIP and Node table data in CSV format. This download functionality does not work in Chrome browser version 83 and higher, due to a new security check added by Chrome: https://developers.google.com/web/updates/2020/04/chrome-83-deps-rems#disallow_downloads_in_sandboxed_iframes 
+F5 ACI ServiceCenter's Visibility tab has a **Download Report** icon for downloading VLAN, VIP and Node table data in CSV format. This download functionality does not work in the Chrome browser version 83 and higher, due to a new security check added by Chrome: https://developers.google.com/web/updates/2020/04/chrome-83-deps-rems#disallow_downloads_in_sandboxed_iframes 
 
-**Workaround:** Use a different browser like Mozilla Firefox or use a lower version of Google Chrome, to download the visibility reports.
+**Workaround:** To download visibility reports, use a different browser, like Mozilla Firefox, or an earlier version of Google Chrome.
 
 ------
 
