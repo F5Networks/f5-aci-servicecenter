@@ -32,6 +32,8 @@ L4-L7 App Services    Create custom application definitions, with the ability to
 
 For support for the F5 ACI ServiceCenter app, `file an issue on Github <https://github.com/F5Networks/f5-aci-servicecenter/issues>`_.
 
+To download F5 ACI ServiceCenter app, go to `Cisco DC App Center <https://dcappcenter.cisco.com/f5-aci-servicecenter.html>`_.
+
 For details on supported versions, see :doc:`Support <support>`.
 
 :fonticon:`fa fa-download` :download:`Attributions.pdf <./Attributions.pdf>`
