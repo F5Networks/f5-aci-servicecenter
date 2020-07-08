@@ -8,7 +8,7 @@ The F5 ACI ServiceCenter app is powered by Cisco ACI App Center. The F5 ACI Serv
 F5 ACI ServiceCenter runs natively in APIC, providing administrators a single point of automation and visibility for L2-L3, plus L4-L7 infrastructures.
 
 ## Documentation
-- Download, install and [get started](https://aciappcenter.cisco.com/all/f5-aci-servicecenter-4-1-1k-1-0-285.html)  
+- Download, install and [get started](https://dcappcenter.cisco.com/f5-aci-servicecenter.html)  
 - View the [product documentation](https://clouddocs.f5.com/f5-aci-servicecenter/latest/)
 - Learn more about the [F5 and Cisco Joint Solutions](https://f5.com/cisco) 
 
