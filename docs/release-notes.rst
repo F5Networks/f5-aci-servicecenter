@@ -55,6 +55,14 @@ The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bri
 
 ------
 
+**Alert text spills outside the alert window on Internet Explorer**
+
+On Internet Explorer, the text for longer alert messages (errors, warnings, success messages), may spill outside the alert window.
+
+**Workaround:** User a different browser like Google Chrome or Mozilla Firefox. 
+
+------
+
 Visibility
 ----------
 

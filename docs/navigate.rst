@@ -15,6 +15,10 @@ View VLAN table
    The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding Logical Device|Tenant entry on the APIC.
 
    The table does not show VLANs from BIG-IPs that don't have corresponding APIC entries.
+   
+.. note ::
+
+   - A VLAN which is a part of a Logical Device which has been exported to a tenant, will still show the VLAN associated to original Tenant where the Logical Device was first created, and will not show the Tenant where it has been exported to.
 
 View VIP table
 ---------------
