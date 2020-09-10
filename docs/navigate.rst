@@ -67,9 +67,9 @@ Download report
 
 A report, in the form of an Excel sheet, is downloaded.
 
-..note::
+.. note::
 
-- The report download is also supported using REST API calls to visibility table REST API endpoints. More details can be found here: https://clouddocs.f5.com/f5-aci-servicecenter/latest/rest_api.html
+   - The report download is also supported using REST API calls to visibility table REST API endpoints. More details can be found here: https://clouddocs.f5.com/f5-aci-servicecenter/latest/rest_api.html
 
 
 Refresh Visibility tab
