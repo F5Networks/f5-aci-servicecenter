@@ -35,7 +35,7 @@ View VIP table
    -  If a pool is empty and does not have any nodes, a pool entry is not displayed in the VIP table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in the VIP table.
    -  If any of the node members have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
-   -  Route domain entries are supported by VIP table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the VIP table (Supported in v2.6+). 
+   -  Route domain entries are supported by the VIP table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the VIP table (Supported in v2.6+). 
 
 
 View Node table
