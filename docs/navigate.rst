@@ -54,7 +54,7 @@ View Node table
    -  If a pool does not have any nodes, the pool is not displayed in any of the entries in the Node table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in any of the entries in the Node table.
    -  If any of the nodes have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
-   -  Route domain entries are supported by Node table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the Node table (Supported in v2.6+).
+   -  Route domain entries are supported by the Node table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the Node table (Supported in v2.6+).
 
    
 
