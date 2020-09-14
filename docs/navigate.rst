@@ -12,13 +12,12 @@ View VLAN table
 
 2. From the :guilabel:`Partition` list, select the partition you’re interested in.
 
-   The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding Logical Device|Tenant entry on the APIC.
+   The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding **Logical Device|Tenant** entry on the APIC.
+   
+   The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding **Endpoint Group|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**.
 
    The table does not show VLANs from BIG-IPs that don't have corresponding APIC entries.
    
-.. note ::
-
-   - A VLAN which is a part of a Logical Device which has been exported to a tenant, will still show the VLAN associated to original Tenant where the Logical Device was first created, and will not show the Tenant where it has been exported to.
 
 View VIP table
 ---------------
@@ -36,6 +35,8 @@ View VIP table
    -  If a pool is empty and does not have any nodes, a pool entry is not displayed in the VIP table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in the VIP table.
    -  If any of the node members have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
+   -  Route domain entries are supported by the VIP table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the VIP table (Supported in v2.6+). 
+
 
 View Node table
 ---------------
@@ -53,6 +54,9 @@ View Node table
    -  If a pool does not have any nodes, the pool is not displayed in any of the entries in the Node table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in any of the entries in the Node table.
    -  If any of the nodes have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
+   -  Route domain entries are supported by the Node table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the Node table (Supported in v2.6+).
+
+   
 
 Download report
 ---------------
@@ -62,6 +66,11 @@ Download report
 2. In the top right of the Visibility tab, click :guilabel:`Download`.
 
 A report, in the form of an Excel sheet, is downloaded.
+
+.. note::
+
+   - The report download is also supported using REST API calls to visibility table REST API endpoints. More details can be found here: https://clouddocs.f5.com/f5-aci-servicecenter/latest/rest_api.html
+
 
 Refresh Visibility tab
 ----------------------

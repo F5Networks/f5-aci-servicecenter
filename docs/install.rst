@@ -33,14 +33,18 @@ Add a new BIG-IP device (Device Login)
    - If the device is standalone, it is visible under :guilabel:`Standalone BIG-IP Devices`.
 
    - If the device is part of a highly-available (HA) pair, the F5 ACI ServiceCenter prompts for a cluster name. After you enter a cluster name, the device and its peer are added under the cluster name on the left menu bar. The peer device is in a logged-out state and you must log in to it separately.
+   
+   - If the device is a part of an HA pair to which the user wants to login to using hostnames instead of IPs, there will be an additional prompt for peer BIG-IP's hostname and credentials. Once they are entered in the displayed form, both the devices will be logged-in from the F5 ACI ServiceCenter. 
+   
+   - The active device will be indicated using a Green icon. The standby device will be indicated using a Yellow icon. A logged out device or any device for which failover state cannot be determined will be displayed with a Gray icon. Any device for which the failover state is not Active OR Standby will be indicated with a Green icon.
 
 4. Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
 
 .. note::
    
-   - If you create an HA pair from two BIG-IP devices in the F5 ACI ServiceCenter, you must log out of the BIG-IP device in the F5 ACI ServiceCenter. When you log back in, the F5 ACI ServiceCenter moves the device and its peer under the cluster name in the left menu bar.
+   - If you create an HA pair from two standalone BIG-IP devices in the F5 ACI ServiceCenter, you must log out of the BIG-IP device in the F5 ACI ServiceCenter UI. When you log back in, the F5 ACI ServiceCenter moves the device and its peer under the specified cluster name in the side menu bar.
 
-   - If you change the configuration so the BIG-IP devices are no longer part of an HA pair, you must log out of the device from within the F5 ACI ServiceCenter, then log back in for the F5 ACI ServiceCenter to recognize the changes and remove the cluster. The devices are then displayed under Standalone BIG-IP Devices.
+   - If you change the configuration such that the BIG-IP devices are no longer part of an HA pair, you must log out of the device from within the F5 ACI ServiceCenter UI and log back in, for the F5 ACI ServiceCenter to recognize the changes and remove the cluster from the FASC UI. The devices are then displayed under Standalone BIG-IP Devices.
 
 
 Log out of a BIG-IP device

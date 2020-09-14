@@ -1,4 +1,4 @@
-REST API
+﻿REST API
 ========
 
 This section contains the specifics of the REST APIs supported by F5 ACI ServiceCenter application.
@@ -264,7 +264,13 @@ setclustername.json
 |                    |                                                                    |
 |                    | "10.107.0.21"                                                      |
 |                    |                                                                    |
-|                    | ]                                                                  |
+|                    | ],                                                                 |
+|                    |                                                                    |
+|                    | "peerhostname": "bigip21",                                         |
+|                    |                                                                    |
+|                    | "peerusername": "admin",                                           |
+|                    |                                                                    |
+|                    | "peerpassword": "admin"                                            |
 |                    |                                                                    |
 |                    | }                                                                  |
 +--------------------+--------------------------------------------------------------------+
@@ -276,7 +282,8 @@ setclustername.json
 |                    |                                                                    |
 |                    | Content: {error: Bad request}                                      |
 +--------------------+--------------------------------------------------------------------+
-| Notes              |                                                                    |
+| Notes              | peerhostname, peerusername and peerpassword request parameters     |
+|                    | are required only for hostname HA clusters.                        |
 +--------------------+--------------------------------------------------------------------+
 
 getbigiplist.json
@@ -3910,15 +3917,19 @@ getvlanstats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",                                                                                      |
 |                    |                                                                                                                                                           |
-|                    | "partition": "<Partition Name>"                                                                                                                           |
+|                    | "partition": "<Partition Name>",                                                                                                                          |
 |                    |                                                                                                                                                           |
+|                    | "download": <true/false>                                                                                                                                  |
+|                    |                                                                                                                                                           | 
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Example Request    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | "url": "10.107.0.22:443",                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "partition": "Common"                                                                                                                                     |
+|                    | "partition": "Common",                                                                                                                                    |
+|                    |                                                                                                                                                           |
+|                    | "download": false                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3990,7 +4001,7 @@ getvlanstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
+| Notes              | To download an Excel report for a VLAN table, set the 'download' request parameter to true.                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getvipstats.json
@@ -4007,7 +4018,9 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",                                                                                      |
 |                    |                                                                                                                                                           |
-|                    | "partition": "<Partition\_Name>"                                                                                                                          |
+|                    | "partition": "<Partition\_Name>",                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | "download": <true/false>                                                                                                                                  |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4015,7 +4028,9 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "10.107.0.22:443",                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "partition": "Sample\_1"                                                                                                                                  |
+|                    | "partition": "Sample\_1",                                                                                                                                 |
+|                    |                                                                                                                                                           |
+|                    | "download": false                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4105,7 +4120,7 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
+| Notes              | To download an Excel report for a VIP table, set the 'download' request parameter to true.                                                                |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getnodestats.json
@@ -4122,7 +4137,9 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",                                                                                      |
 |                    |                                                                                                                                                           |
-|                    | "partition": "<Partition\_Name>"                                                                                                                          |
+|                    | "partition": "<Partition\_Name>",                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | "download": <true/false>                                                                                                                                  |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4130,7 +4147,9 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "10.107.0.22:443",                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "partition": "Sample\_1"                                                                                                                                  |
+|                    | "partition": "Sample\_1",                                                                                                                                 |
+|                    |                                                                                                                                                           |
+|                    | "download": false                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4270,7 +4289,7 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
+| Notes              | To download an Excel report for a Node table, set the 'download' request parameter to true.                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
