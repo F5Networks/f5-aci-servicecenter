@@ -6,7 +6,7 @@ General
 
 **File system convergence**
 
-APIC Filesystem Glusterfs takes 15 to 20 Minutes to recover when APIC cluster goes unhealthy
+APIC Filesystem Glusterfs takes 15 to 20 Minutes to recover when APIC cluster goes unhealthy.
 
 During APIC operations like APIC reboot, upgrade, or decommission/recommission, the APIC filesystem needs some time to recover and resume.
 
@@ -21,24 +21,24 @@ Symptoms users may see:
 
 **Floating IP auto sync and Default Gateway auto sync will not work when hosts are added in an HA cluster using hostnames**
 
-**Workaround:** Manually sync the Floating IPs and Default Gateway to Application DB by clicking on **Sync To DB**
+**Workaround:** Manually sync the Floating IPs and Default Gateway to Application DB by clicking **Sync To DB**
 
 ------
 
 **Export db does not work on APIC version 5.0.1**
 
-The user menu on the top-right corner of the F5 ACI ServiceCenter has an option **Export/Import DB > Export DB**, for exporting the F5 ACI ServiceCenter database. This option does not work on APIC versions 5.0.1. This is working as expected on prior versions of the APIC and also on versions 5.0(2e) and higher. 
+The user menu on the top-right corner of the F5 ACI ServiceCenter has an option for exporting F5 ACI ServiceCenter database (**Export/Import DB > Export DB**). This option does not work on APIC versions 5.0.1. This is working as expected on prior versions of the APIC and also on versions 5.0(2e) and higher. 
 
 **Workaround:** Backup the F5 ACI ServiceCenter database via the following steps:
-1. Login to the APIC server via SSH
+1. Login to the APIC server via SSH.
 
-2. cd /data2/gluster/gv0/F5Networks_F5ACIServiceCenter
+2. Change directories to F5Networks_F5ACIServiceCenter: **cd /data2/gluster/gv0/F5Networks_F5ACIServiceCenter**.
 
 3. Use scp, winscp or any other preferred tool to copy out the f5.db file from this location. 
 
 ------
 
-**Non-default docker0 configuration on APIC may affect connection to the management IP of Virtual BIG-IP**
+**Non-default docker0 configuration on APIC may affect the connection to the management IP of Virtual BIG-IP**
 
 The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bridge IP is updated to a non-default IP followed by APIC cluster reboot, the Virtual BIG-IP login (connection to management IP) will fail from the F5 ACI ServiceCenter.
 
@@ -48,7 +48,7 @@ The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bri
 
 **Zoom In/Out for Device Discovery Topology diagrams may get stuck on Internet Explorer**
 
-Zoom In and Zoom out of Topology diagrams which open on Topology icon click in every tab (Visibility, Network Management and L4-L7 App Services) may get stuck in Internet Explorer browser. The position of the topology diagram can also not be changed once this issue is observed. 
+When you click the Topology icon in any one of the tabs (Visibility, Network Management, and L4-L7 App Services), the Topology diagrams may get stuck when zooming in and out. The position of the topology diagram can also not be changed once this issue is observed. 
 
 **Workaround:** Use a different browser than IE.
 
@@ -66,13 +66,13 @@ F5 ACI ServiceCenter's Visibility tab has a **Download Report** icon for downloa
 
 ------
 
-**Visibility table fast scrolling on Mozilla firefox for scale configs may result in a blank screen**
+**Visibility table fast scrolling on Mozilla Firefox for scale configs may result in a blank screen**
 
-This is a known ag-grid issue on Mozilla Firefox browser: https://github.com/ag-grid/ag-grid/issues/2841
+This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com/ag-grid/ag-grid/issues/2841
 
 **Workaround:** Scroll slowly to prevent this issue. But if this issue is observed, the possible workarounds are:
 
-1. Switch tab from Visibility tab to one of the other tabs and swith back. 
+1. Switch tabs from Visibility tab to one of the other tabs and then switch back. 
 
 2. Select a different entry from the Visibility table drop-downs (either Partition or Table) and switch back to the intended combination.
 
@@ -113,7 +113,7 @@ Dynamic Endpoint attach/detach using the "Manage Endpoint Mappings" button is no
 
 **Error on EPG mapping delete operation**
 
-When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application gets created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, users may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found"
+When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application gets created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, users may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found."
 
 **Workaround:** Click the **Submit** button again, and the mapping will be reset properly without any errors. 
 
@@ -121,7 +121,7 @@ When a dynamic endpoint mapping is added to an application using **Manage Endpoi
  
 ------
 
-**AS3 application can either have static nodes or dynamic nodes but not both**
+**AS3 applications can either have static nodes or dynamic nodes but not both**
 
 AS3 applications will support either static nodes or dynamic nodes (using the **Manage Endpoint Mappings** button) but not both. 
 
@@ -135,7 +135,7 @@ Dynamic endpoints are the endpoints present in APIC Endpoint Group. The app auto
 
 ------
 
-**Same Dynamic endpoint mappings on two separate partitions of a BIG-IP are not supported**
+**Using the same Dynamic endpoint mappings on two separate partitions of a BIG-IP are not supported**
 
 For a single BIG-IP device, if two AS3 applications belonging to two different partitions are associated with the same APIC Endpoint Group (Tenant|Application|EPG), the dynamic discovery of nodes will not work for either of the AS3 applications. 
 
@@ -149,7 +149,7 @@ To enable shareNodes,
 
 3. Set dynamic endpoint mappings via **Manage Endpoint Mappings**, by selecting the Tenant|Application|EPG and port and click **Save**.
 
-4. Update the members section as below to add the shareNodes property:
+4. Update the members section to add the **shareNodes** property. For example:
 
 Example: "members": [
             {
@@ -177,11 +177,11 @@ If an APIC endpoint group has more than 60 endpoints attached, then the endpoint
 
 ------
 
-**Node not removed from BIG-IP pool when node IP is a substring of some other node's IP**
+**Nodes are not removed from the BIG-IP pool when the node IP is a substring of some other node's IP**
 
 If a node (for example a node with IP 1.2.3.4) is deleted from APIC, and there is also another node 1.2.3.40 of which the original IP is a substring, it may be possible that the dynamic end point attach detach feature is not able to delete 1.2.3.4 from BIG-IP. Note: The pool members will get deleted as expected. 
 
-**Workaround:** Login to the BIG-IP UI and delete the problematic node
+**Workaround:** Login to the BIG-IP UI and delete the problematic node.
 
 **AS3 Defect:** https://github.com/F5Networks/f5-appsvcs-extension/issues/244
 
@@ -404,7 +404,7 @@ If a node (for example a node with IP 1.2.3.4) is deleted from APIC, and there i
 
 ------
 
-**Dynamic EP discovery does not work if duplicate IP pre-exists on a different partition.**
+**Dynamic EP discovery does not work if duplicate IP already exists on a different partition.**
 
 If an APIC Tenant|App|EPG mapped to a BIG-IP pool has an endpoint with an IP address which already exists on the BIG-IP but in a different partition, then the APIC endpoint will not get added to BIG-IP pool. Also any successive configurations and endpoints also will not be discovered/deleted from this BIG-IP pool. 
 
@@ -418,9 +418,9 @@ AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
 **Pool members deleted or added directly to BIG-IP don't get updated automatically after clicking "Sync EPs".**
 
-1. If BIG-IP pool members automatically get added by **Dynamic endpoint discovery** feature, but then few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again on clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
+1. If BIG-IP pool members automatically get added by the **Dynamic endpoint discovery** feature, but then few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again on clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
 
-2. Similarly, when few pool members are added directly to the BIG-IP (i.e. out of band), these extra members are not deleted after clicking **L4-L7 App Services --> Application Inventory --> Sync EPs**
+2. Similarly, when a few pool members are added directly to the BIG-IP (i.e. out of band), these extra members are not deleted after clicking **L4-L7 App Services --> Application Inventory --> Sync EPs**
 
 **Workaround:** Manually add/delete the pool members from BIG-IP. 
 
