@@ -187,7 +187,7 @@ If a node (for example a node with IP 1.2.3.4) is deleted from APIC, and there i
 
 ------
 
-**Dynamic EP discovery does not work if duplicate IP pre-exists on a different partition.**
+**Dynamic EP discovery does not work if a duplicate IP already exists on a different partition.**
 
 If an APIC Tenant|App|EPG mapped to a BIG-IP pool has an endpoint with an IP address which already exists on the BIG-IP but in a different partition, then the APIC endpoint will not get added to BIG-IP pool. Also any successive configurations and endpoints also will not be discovered/deleted from this BIG-IP pool. 
 
@@ -201,9 +201,9 @@ AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
 **Pool members deleted or added directly to BIG-IP don't get updated automatically after clicking "Sync EPs".**
 
-1. If BIG-IP pool members automatically get added by **Dynamic endpoint discovery** feature, but then few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again on clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
+1. If BIG-IP pool members automatically get added by the **Dynamic endpoint discovery** feature, but then few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again on clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
 
-2. Similarly, when few pool members are added directly to the BIG-IP (i.e. out of band), these extra members are not deleted after clicking **L4-L7 App Services --> Application Inventory --> Sync EPs**
+2. Similarly, when a few pool members are added directly to the BIG-IP (i.e. out of band), these extra members are not deleted after clicking **L4-L7 App Services --> Application Inventory --> Sync EPs**
 
 **Workaround:** Manually add/delete the pool members from BIG-IP. 
 
