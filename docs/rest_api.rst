@@ -4001,7 +4001,7 @@ getvlanstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | To download Excel report for VLAN table, set the 'download' request parameter to true.                                                                    |
+| Notes              | To download an Excel report for a VLAN table, set the 'download' request parameter to true.                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getvipstats.json
@@ -4120,7 +4120,7 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | To download Excel report for VIP table, set the 'download' request parameter to true.                                                                     |
+| Notes              | To download an Excel report for a VIP table, set the 'download' request parameter to true.                                                                |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getnodestats.json
@@ -4289,7 +4289,7 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | To download Excel report for Node table, set the 'download' request parameter to true                                                                     |
+| Notes              | To download an Excel report for a Node table, set the 'download' request parameter to true.                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
