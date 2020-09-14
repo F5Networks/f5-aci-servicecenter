@@ -36,7 +36,7 @@ Add a new BIG-IP device (Device Login)
    
    - If the device is a part of an HA pair to which the user wants to login to using hostnames instead of IPs, there will be an additional prompt for peer BIG-IP's hostname and credentials. Once they are entered in the displayed form, both the devices will be logged-in from the F5 ACI ServiceCenter. 
    
-   - The active device will be indicated using a Green icon. The standby device will be indicated using a Yellow icon. Logged out device or any device for which failover state cannot be determined will be displayed with a Gray icon. Any device for which the failover state is not Active OR Standby will be indicated with a Green icon.
+   - The active device will be indicated using a Green icon. The standby device will be indicated using a Yellow icon. A logged out device or any device for which failover state cannot be determined will be displayed with a Gray icon. Any device for which the failover state is not Active OR Standby will be indicated with a Green icon.
 
 4. Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
 
