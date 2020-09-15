@@ -139,6 +139,8 @@ See above.
 
 If a BIG-IP is already processing an AS3 asynchronous task, it displays this message for any successive async operations. Once the asynchronous operation is completed, it is possible to perform the next operation like create/update/delete partition or application. Wait for a few minutes and try the configuration again. 
 
+It is also possible that you may see an error message such as **'HTTPError' object has no attribute 'message'**. Wait for a few minutes and try the configuration again.
+
 ------
 
 **Q. For all L4-L7 App Services operations, why do I see the message “BIG-IP is processing the request. Please click the 'Pending Tasks' icon to check the status of the pending request.”?**
