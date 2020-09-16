@@ -123,6 +123,14 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 -------
 
+**Application services declaration delete of scaled config may result in an error 'HTTPError' object has no attribute 'message'**
+
+If an AS3 declaration with scale config is deleted using **L4-L7 App Services > View AS3 Declaration > Delete** button, the F5 ACI ServiceCenter may display an error  'HTTPError' object has no attribute 'message' instead of the actual error that BIG-IP responds with which is '503 Server Error'. 
+
+**Workaround**: This 503 error occurs when BIG-IP is in error state or is already in the process of configuring a previous AS3 declaration. Once BIG-IP is in steady state and UI is accessible, the delete operation can be retried to get a success response for delete declaration.
+
+-------
+
 
 Dynamic Endpoint Attach Detach
 ------------------------------
