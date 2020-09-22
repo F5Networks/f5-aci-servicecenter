@@ -48,21 +48,21 @@ The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bri
 
 **Hostname vCMP HA peer login during unassign VLANs does not update the login color to Green/Yellow in the side menu**
 
-On a vCMP Host, if a user clicks the **L2-L3 Network Management > vCMP Guest** and selects a vCMP Guest and moves a few VLANs from **Selected** menu to **Available** menu and clicks **Submit**, F5 ACI ServiceCenter logs into the vCMP Guest if it is not already logged in. In this case, the side menu does not show the Green/Yellow color indicator correctly. 
+On a vCMP Host, if a user clicks **L2-L3 Network Management > vCMP Guest**, selects a vCMP Guest, moves a few VLANs from **Selected** menu to **Available** menu, and then clicks **Submit**, F5 ACI ServiceCenter logs into the vCMP Guest if it is not already logged in. In this case, the side menu does not show the Green/Yellow color indicator correctly. 
 
 **Workaround:** Click the side menu **Refresh BIG-IP List** icon to update the login status of the vCMP Guest.
 
 ------
 
-**If a vCMP Guest has been logged in using hostname, vCMP Guest auto-login during VLAN unassignment may result in an error**
+**If a vCMP Guest has been logged in using a hostname, vCMP Guest auto-login during VLAN unassignment may result in an error**
 
 The error message observed is: "<IP_Address> is already added as <Hostname>. To add <IP_Address>, delete BIG-IP device <Hostname> and retry."
 
 The steps that may lead to this error are:
 
-- Login to a vCMP Guest using hostname.
+- Login to a vCMP Guest using a hostname.
 
-- Login to the corresponding vCMP Host and click **L2-L3 Network Management > vCMP Guest tab**. 
+- Login to the corresponding vCMP Host and click **L2-L3 Network Management > vCMP Guest** tab. 
 
 - From the **vCMP Guest** drop-down, select the vCMP Guest IP corresponding to the aformentioned vCMP Guest. 
 
@@ -123,11 +123,11 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 -------
 
-**Application services declaration delete of scaled config may result in an error 'HTTPError' object has no attribute 'message'**
+**Application services declaration delete of scaled config may result in an error stating the 'HTTPError' object has no attribute 'message'**
 
-If an AS3 declaration with scale config is deleted using **L4-L7 App Services > View AS3 Declaration > Delete** button, the F5 ACI ServiceCenter may display an error  'HTTPError' object has no attribute 'message' instead of the actual error that BIG-IP responds with which is '503 Server Error'. 
+If an AS3 declaration with scale config is deleted using the **L4-L7 App Services > View AS3 Declaration > Delete** button, the F5 ACI ServiceCenter may display an error  stating the 'HTTPError' object has no attribute 'message' instead of the actual error that BIG-IP responds with, which is '503 Server Error'. 
 
-**Workaround**: This 503 error occurs when BIG-IP is in error state or is already in the process of configuring a previous AS3 declaration. Once BIG-IP is in steady state and UI is accessible, the delete operation can be retried to get a success response for delete declaration.
+**Workaround**: This 503 error occurs when BIG-IP is in error state or is already in the process of configuring a previous AS3 declaration. Once BIG-IP is in steady state and UI is accessible, the delete operation can be retried to get a successful response for deleting the declaration.
 
 -------
 
