@@ -46,6 +46,32 @@ The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bri
 
 ------
 
+**Hostname vCMP HA peer login during unassign VLANs does not update the login color to Green/Yellow in the side menu**
+
+On a vCMP Host, if a user clicks **L2-L3 Network Management > vCMP Guest**, selects a vCMP Guest, moves a few VLANs from **Selected** menu to **Available** menu, and then clicks **Submit**, F5 ACI ServiceCenter logs into the vCMP Guest if it is not already logged in. In this case, the side menu does not show the Green/Yellow color indicator correctly. 
+
+**Workaround:** Click the side menu **Refresh BIG-IP List** icon to update the login status of the vCMP Guest.
+
+------
+
+**If a vCMP Guest has been logged in using a hostname, vCMP Guest auto-login during VLAN unassignment may result in an error**
+
+The error message observed is: "<IP_Address> is already added as <Hostname>. To add <IP_Address>, delete BIG-IP device <Hostname> and retry."
+
+The steps that may lead to this error are:
+
+- Login to a vCMP Guest using a hostname.
+
+- Login to the corresponding vCMP Host and click **L2-L3 Network Management > vCMP Guest** tab. 
+
+- From the **vCMP Guest** drop-down, select the vCMP Guest IP corresponding to the aformentioned vCMP Guest. 
+
+- Unassign one or more VLANs by moving them from **Selected** menu to **Available** menu, and click **Submit**. 
+
+**Workaround:** Delete the vCMP Guest BIG-IP which has been logged in using <Hostname>, and re-add it to FASC using <IP_Address>.
+
+------
+
 **Zoom In/Out for Device Discovery Topology diagrams may get stuck on Internet Explorer**
 
 When you click the Topology icon in any one of the tabs (Visibility, Network Management, and L4-L7 App Services), the Topology diagrams may get stuck when zooming in and out. The position of the topology diagram can also not be changed once this issue is observed. 
@@ -94,6 +120,14 @@ L4-L7 App Services
 If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the Application Services configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
 
 **Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
+
+-------
+
+**Application services declaration delete of scaled config may result in an error stating the 'HTTPError' object has no attribute 'message'**
+
+If an AS3 declaration with scale config is deleted using the **L4-L7 App Services > View AS3 Declaration > Delete** button, the F5 ACI ServiceCenter may display an error  stating the 'HTTPError' object has no attribute 'message' instead of the actual error that BIG-IP responds with, which is '503 Server Error'. 
+
+**Workaround**: This 503 error occurs when BIG-IP is in error state or is already in the process of configuring a previous AS3 declaration. Once BIG-IP is in steady state and UI is accessible, the delete operation can be retried to get a successful response for deleting the declaration.
 
 -------
 
