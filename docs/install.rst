@@ -80,6 +80,8 @@ Uninstall F5 ACI ServiceCenter
 
   - It is important to disable the F5 ACI ServiceCenter first and then delete it, in order to clean out all the filesystem folders related to the application. To check whether the deletion of the app has happened correctly, please check /data2/gluster/gv0/ folder and ensure that it does not contain F5Networks_F5ACIServiceCenter folder on any of the APIC nodes. Not disabling the app first may lead to 'InvalidPaddingError' errors when performing app operations.
 
+  - If the error 'InvalidPaddingError' is observed, uninstall and re-install the application by following the aforementioned steps. If the database is to be retained, then export the database, uninstall and re-install followed by an import of the database. For more details check **Database Export and Import** section.
+
 Reinstall F5 ACI ServiceCenter
 ------------------------------
 
