@@ -54,6 +54,11 @@ The F5 ACI ServiceCenter UI will show the last 100 errors or warnings which were
 
 In order to recreate the deleted log files, disable and re-enable the application from the APIC **Apps** tab. Once the app is re-enabled, the logging should work correctly. 
 
+------
+
+**Q. Why do I see a 'Request timeout' error on the F5 ACI ServiceCenter UI?**
+
+The application UI may show the 'Request timeout' error, if the application or APIC is receiving a lot of traffic. You can retry the same operation that displayed the error and it should be successful after one or more retries. 
 
 
 Visibility
