@@ -56,9 +56,9 @@ In order to recreate the deleted log files, disable and re-enable the applicatio
 
 ------
 
-**Q. Why do I see 'Request timeout' error on the F5 ACI ServiceCenter UI?**
+**Q. Why do I see a 'Request timeout' error on the F5 ACI ServiceCenter UI?**
 
-Application UI may show the 'Request timeout' error, if the application or APIC is receiving a lot of traffic. Users can retry the same operation again (which displayed the error) and it should be successful after one or more retries. 
+The application UI may show the 'Request timeout' error, if the application or APIC is receiving a lot of traffic. You can retry the same operation that displayed the error and it should be successful after one or more retries. 
 
 
 Visibility
