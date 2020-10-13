@@ -54,6 +54,11 @@ The F5 ACI ServiceCenter UI will show the last 100 errors or warnings which were
 
 In order to recreate the deleted log files, disable and re-enable the application from the APIC **Apps** tab. Once the app is re-enabled, the logging should work correctly. 
 
+------
+
+**Q. Why do I see a 'Request timeout' error on the F5 ACI ServiceCenter UI?**
+
+The application UI may show the 'Request timeout' error, if the application or APIC is receiving a lot of traffic. You can retry the same operation that displayed the error and it should be successful after one or more retries. 
 
 
 Visibility
@@ -72,6 +77,19 @@ For virtual ADC logical devices, if you did the following steps
 The VLAN encap values associated with logical interfaces of the LDEV change and do not remain the same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag. 
 
 After a VLAN tag is updated on BIG-IP, the visibility vlan table will start showing the VLANs again.
+
+
+**Q. Why don't I see all the VLANs/VIPs/Nodes from the BIG-IP in the visibility tables?**
+
+Visibility tables display only those entries from BIG-IP which have corresponding constructs on APIC. For example, a VLAN from BIG-IP will only be displayed if that VLAN also belongs to some Tenant|App Profile|EPG or Tenant|LDEV on APIC. Similarly, a node will only be displayed if it exists as an operational endpoint in one or more of the EPGs on APIC. 
+
+
+**Q. In Visibility tables, why don't I see Common partition entries in VLAN/VIP/Node table when I select a different partition?**
+
+The F5 ACI ServiceCenter Visibility tables have an option to select the **Partition**. The VLAN/VIP/Node tables will only display entries from the selected partition and will not include Common partition entries (although the BIG-IP UI does provide this feature where any partition selected will also show entries from the Common partition). 
+
+Note: This is a new behavior in FASC v2.6 and above. The previous versions do show Common partition entries along with the selected partition entries.
+
 
 L2-L3 stitching
 ---------------
@@ -125,6 +143,8 @@ See above.
 **Q. Why do I see error code 503 with the message "Error: Configuration operation in progress on device <BIG-IP IP>, Please try again in 2 minutes" on the 'Pending tasks' table of the app?**
 
 If a BIG-IP is already processing an AS3 asynchronous task, it displays this message for any successive async operations. Once the asynchronous operation is completed, it is possible to perform the next operation like create/update/delete partition or application. Wait for a few minutes and try the configuration again. 
+
+It is also possible that you may see an error message such as **'HTTPError' object has no attribute 'message'**. Wait for a few minutes and try the configuration again.
 
 ------
 
