@@ -60,6 +60,14 @@ In order to recreate the deleted log files, disable and re-enable the applicatio
 
 The application UI may show the 'Request timeout' error, if the application or APIC is receiving a lot of traffic. You can retry the same operation that displayed the error and it should be successful after one or more retries. 
 
+------
+
+**Q. Why do I see the error "Error from BIG-IP: X-F5-Auth-Token does not exist" on performing a BIG-IP login from FASC app?**
+
+If the version of BIG-IP is changed and a re-login to the BIG-IP is attempted from the FASC app, this error may be seen.
+
+Workaround: Delete the BIG-IP from the FASC app UI and re-login to the BIG-IP again.
+
 
 Visibility
 ----------
@@ -78,17 +86,53 @@ The VLAN encap values associated with logical interfaces of the LDEV change and 
 
 After a VLAN tag is updated on BIG-IP, the visibility vlan table will start showing the VLANs again.
 
+------
 
 **Q. Why don't I see all the VLANs/VIPs/Nodes from the BIG-IP in the visibility tables?**
 
 Visibility tables display only those entries from BIG-IP which have corresponding constructs on APIC. For example, a VLAN from BIG-IP will only be displayed if that VLAN also belongs to some Tenant|App Profile|EPG or Tenant|LDEV on APIC. Similarly, a node will only be displayed if it exists as an operational endpoint in one or more of the EPGs on APIC. 
 
+------
 
 **Q. In Visibility tables, why don't I see Common partition entries in VLAN/VIP/Node table when I select a different partition?**
 
 The F5 ACI ServiceCenter Visibility tables have an option to select the **Partition**. The VLAN/VIP/Node tables will only display entries from the selected partition and will not include Common partition entries (although the BIG-IP UI does provide this feature where any partition selected will also show entries from the Common partition). 
 
 Note: This is a new behavior in FASC v2.6 and above. The previous versions do show Common partition entries along with the selected partition entries.
+
+
+Visibility Dashboard
+--------------------
+
+**Q. Why is the BIG-IP Endpoint Details section on the Visibility Dashboard blank?** (Applicable to v2.7+)
+
+BIG-IP Endpoint Details section on the Visibility Dashboard may not display information due to the MAC address table getting flushed on the BIG-IP.
+
+Workaround: Send an ARP request to the host or check the connectivity with the host using ping command.
+
+------
+
+**Q. Why is the 'Interface' column blank in the BIG-IP endpoint details section on the Visibility Dashboard?** (Applicable to v2.7+)
+
+The **Interface** column in the BIG-IP Endpoint Details section on the Visibility Dashboard will be blank for vCMP guests since the behavior of the vCMP Guest BIG-IP also is the same; i.e. no interface information for VLANs.
+
+------
+
+**Q. Why are the pool members displayed on Visibility VIP table, and the pool members displayed on the Visibility VIP dashboard not the same?**
+
+Visibility VIP table displays the pool members from a BIG-IP VIP, only if they are also present on the APIC. However, the Visibility dashboard shows all the pool members (and associated stats) that are present on the BIG-IP even if they may or may not be present on the APIC. Hence both the outputs may be different.
+
+------
+
+**Q. What does the field 'Route Domain' on the Visibility Dashboard indicate?**
+
+It displays the **default route domain** for the partition to which the Virtual Server (VIP) or Node belongs to.
+
+------
+
+**Q. Why don't I see the scrollbar for 'View Logs' window on the Visibility Dashboard?**
+
+If you encounter this issue, please zoom out your web browser window by clicking the **Ctrl** key, and then press the **-** (i.e. minus key).
 
 
 L2-L3 stitching
@@ -287,7 +331,9 @@ Note:
 
 3. APIC minimum version supported for 5.0.x: 5.0(1k)
 
-Note: To enable the L4-L7 App services tab, you must be using AS3 version 3.19.1 or later.
+Note: To enable the L4-L7 App services tab, you must be using AS3 version 3.19.1 or higher.
+
+Note: To enable the Telemetry Statistics, you must be using Telemetry plugin version 1.17.0 or higher.
 
 +--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
 | BIG-IP Type                    | Visibility      | L2-L3 Network Management     | L4-L7 App Services | Dynamic Endpoint Attach Detach |
