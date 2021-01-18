@@ -96,6 +96,14 @@ This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com
 
 ------
 
+**Visibility Dashboard filter may display additional logs with interface filter.**
+
+**Visibility Dashboard → BIG-IP Endpoint Details → Interface → View Logs** (for BIG-IP interfaces) displays interface logs. By default it applies the filter of interface name (for example: 1.1 or 1.2); and hence only the logs with interface name in them are displayed. This filtering logic may not work as expected and display additional logs which have interface name as a substring (For example: **1.2** is a substring in the log "Pool /Partition/Application/web_pool member **/Partition/12.14.1.2:8080** monitor status down").
+
+**Workaround:** None.
+
+------
+
 **Pool members added with the name IP%RD are displayed as IP%25RD on the pool member stats window of the Visibility Dashboard.**
 
 **Workaround:** Use a pool member name other than IP%RD.
