@@ -4329,8 +4329,8 @@ gettelemetryconsumers.json
 |                    |                                                                       |
 |                    | Content: {error: Bad request}                                         |
 +--------------------+-----------------------------------------------------------------------+
-| Notes              | If f5-telemetry package version is lower than 1.17.0 this API will    |
-|                    | return the warning and will not display the statistics..              |
+| Notes              | If f5-telemetry package version is lower than 1.17.0, this API will   |
+|                    | return a warning and will not display the statistics.                 |
 +--------------------+-----------------------------------------------------------------------+
 
 gettelemetrystats.json
