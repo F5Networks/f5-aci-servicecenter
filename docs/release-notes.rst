@@ -23,7 +23,7 @@ Symptoms users may see:
 
 The user menu on the top-right corner of the F5 ACI ServiceCenter has an option for exporting F5 ACI ServiceCenter database (**Export/Import DB > Export DB**). This option does not work on APIC versions 5.0.1. This is working as expected on prior versions of the APIC and also on versions 5.0(2e) and higher. 
 
-**Workaround:** Backup the F5 ACI ServiceCenter database via the following steps:
+**Workaround:** Backup the F5 ACI ServiceCenter database using the following steps:
 1. Login to the APIC server via SSH.
 
 2. Change directories to F5Networks_F5ACIServiceCenter: **cd /data2/gluster/gv0/F5Networks_F5ACIServiceCenter**.
@@ -74,7 +74,7 @@ This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com
 
 **Workaround:** Scroll slowly to prevent this issue. But if this issue is observed, the possible workarounds are:
 
-1. Switch tabs from Visibility tab to one of the other tabs and then switch back. 
+1. Switch tabs from the Visibility tab to one of the other tabs and then switch back. 
 
 2. Select a different entry from the Visibility table drop-downs (either Partition or Table) and switch back to the intended combination.
 
@@ -117,7 +117,7 @@ L4-L7 App Services
 
 **Application services declaration not deleted**
 
-If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the Application Services configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
+If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the Application Services configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration is removed from the BIG-IP device.
 
 **Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
 
@@ -130,7 +130,7 @@ Dynamic Endpoint Attach Detach
 
 **Error on EPG mapping delete operation**
 
-When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application gets created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, users may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found."
+When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application is created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, users may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found."
 
 **Workaround:** Click the **Submit** button again, and the mapping will be reset properly without any errors. 
 
@@ -208,7 +208,7 @@ AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
 **Pool members deleted or added directly to BIG-IP don't get updated automatically after clicking "Sync EPs".**
 
-1. If BIG-IP pool members automatically get added by the **Dynamic endpoint discovery** feature, but then few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again on clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
+1. If BIG-IP pool members are automatically added by the **Dynamic endpoint discovery** feature, but then a few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again when clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
 
 2. Similarly, when a few pool members are added directly to the BIG-IP (i.e. out of band), these extra members are not deleted after clicking **L4-L7 App Services --> Application Inventory --> Sync EPs**
 
