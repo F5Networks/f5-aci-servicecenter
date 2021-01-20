@@ -62,11 +62,11 @@ The application UI may show the 'Request timeout' error, if the application or A
 
 ------
 
-**Q. Why do I see the error "Error from BIG-IP: X-F5-Auth-Token does not exist" on performing a BIG-IP login from FASC app?**
+**Q. Why do I see the error "Error from BIG-IP: X-F5-Auth-Token does not exist" when performing a BIG-IP login from FASC app?**
 
-If the version of BIG-IP is changed and a re-login to the BIG-IP is attempted from the FASC app, this error may be seen.
+If the version of BIG-IP has changed, and you attempt to re-login to the BIG-IP from the FASC app, you may see this error.
 
-Workaround: Delete the BIG-IP from the FASC app UI and re-login to the BIG-IP again.
+Workaround: Delete the BIG-IP from the FASC app UI and re-login to the BIG-IP.
 
 
 Visibility
@@ -108,7 +108,7 @@ Visibility Dashboard
 
 BIG-IP Endpoint Details section on the Visibility Dashboard may not display information due to the MAC address table getting flushed on the BIG-IP.
 
-Workaround: Send an ARP request to the host or check the connectivity with the host using ping command.
+Workaround: Send an ARP request to the host or check the connectivity with the host using the **ping** command.
 
 ------
 
@@ -120,19 +120,19 @@ The **Interface** column in the BIG-IP Endpoint Details section on the Visibilit
 
 **Q. Why are the pool members displayed on Visibility VIP table, and the pool members displayed on the Visibility VIP dashboard not the same?**
 
-Visibility VIP table displays the pool members from a BIG-IP VIP, only if they are also present on the APIC. However, the Visibility dashboard shows all the pool members (and associated stats) that are present on the BIG-IP even if they may or may not be present on the APIC. Hence both the outputs may be different.
+The Visibility VIP table displays the pool members from a BIG-IP VIP, only if they are also present on the APIC. However, the Visibility dashboard shows all the pool members (and associated stats) that are present on the BIG-IP even if they may or may not be present on the APIC. Hence both the outputs may be different.
 
 ------
 
 **Q. What does the field 'Route Domain' on the Visibility Dashboard indicate?**
 
-It displays the **default route domain** for the partition to which the Virtual Server (VIP) or Node belongs to.
+It displays the **default route domain** for the partition to which the Virtual Server (VIP) or Node belongs.
 
 ------
 
-**Q. Why don't I see the scrollbar for 'View Logs' window on the Visibility Dashboard?**
+**Q. Why don't I see the scrollbar for the 'View Logs' window on the Visibility Dashboard?**
 
-If you encounter this issue, please zoom out your web browser window by clicking the **Ctrl** key, and then press the **-** (i.e. minus key).
+If you encounter this issue, use the 'zoom out' option on your web browser. For example, on Windows, hold the **Ctrl** key, and then click **-** (the dash/minus key).
 
 
 L2-L3 stitching
