@@ -86,13 +86,13 @@ The contents of the visibility table are refreshed.
 Configure Telemetry
 -------------------
 
-1. To view the Virtual Server statistics on the Visibility VIP Dashboard, Telemetry plugin version 1.17 or higher needs to be installed on the BIG-IP device.
+1. To view the Virtual Server statistics on the Visibility VIP Dashboard, you must install the Telemetry Streaming plugin version 1.17 or higher on the BIG-IP device.
 
 2. Follow the installation steps from https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/installation.html
 
 3. Configure a default pull consumer. For example: https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/pull-consumers.html#pull
 
-4. Recommended pull consumer configuration: For a scaled environment it is highly recommended to retrieve just the Pool and Virtual Server stats from the BIG-IP. One way filter the VIP and Pool statistics is to create a default pull consumer configuration via  a POST request to: https://<BIG_IP>/mgmt/shared/telemetry/declare
+4. Recommended pull consumer configuration: For a scaled environment, we strongly recommend you retrieve just the Pool and Virtual Server stats from the BIG-IP. One way to filter the VIP and Pool statistics is to create a default pull consumer configuration via  a POST request to: https://<BIG_IP>/mgmt/shared/telemetry/declare
 
       {
           "class": "Telemetry",
@@ -130,7 +130,7 @@ View VIP Dashboard
 
 1. Click the Visibility tab, and then from the Table list, click the VIP table.
 
-2. From the Partition list, click the partition of interest.
+2. From the Partition list, click the appropriate partition.
 
 3. The VIP table for this BIG-IP and partition will be displayed.
 
@@ -143,17 +143,17 @@ View VIP Dashboard
 
 5. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, route domain, iRules, default pool (and pool information such as load balancing and pool monitor)
          
-         a. Dashboard displays a **Telemetry Consumer** drop-down list. Select the appropriate consumer from which the statistics need to be obtained. The Virtual pool statistics will be displayed on the dashboard including Bits, Packets, Connections and Requests. 
+         a. The dashboard displays a **Telemetry Consumer** drop-down list. Select the appropriate consumer from which the statistics need to be obtained. The Virtual pool statistics will be displayed on the dashboard including Bits, Packets, Connections and Requests. 
          
             .. note::
          
-               - Telemetry plugin needs to be installed on the BIG-IP to be able to view the Telemetry consumer list and stats from the telemetry consumer. Check the **Configure Telemetry** section for installation and configuration.
+               - The Telemetry Streaming plugin needs to be installed on the BIG-IP to be able to view the Telemetry consumer list and stats from the telemetry consumer. Check the **Configure Telemetry** section for installation and configuration.
             
                - If there is only a single Telemetry pull consumer configured, then FASC will directly query that consumer and display the stats.
             
-         b. **View Stats** - Dashboard displays a **View Stats** link besides the default pool. It displays total pool member count and the availability and enabled state of the pool  members using a pie chart.
+         b. **View Stats** - The dashboard displays a **View Stats** link beside the default pool. It displays the total pool member count and the availability and enabled state of the pool  members using a pie chart.
          
-         c. **View Logs** - Dashboard displays a **View Logs** link besides the VIP, which, on click will open a popup window and display all the logs for the selected Virtual Server. 
+         c. **View Logs** - The dashboard displays a **View Logs** link beside the VIP, which, when clicked opens a popup window and displays all the logs for the selected Virtual Server. 
          
             .. note::
 
@@ -161,12 +161,12 @@ View VIP Dashboard
             
                - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
 
-         d. **View Connections** - Dashboard will display a **View Connections** link which, on click will display all the active connections to that VIP.
+         d. **View Connections** - The dashboard displays a **View Connections** link, which, when clicked displays all the active connections to that VIP.
          
-         e. **APIC Endpoint Details** - Visibility dashboard displays APIC details for the VIP:
+         e. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the VIP:
                                         1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap
                                         
-         f. **BIG-IP Endpoint Details** - Visibility dashboard displays BIG-IP details for the VIP:
+         f. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the VIP:
                                           1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link besides interfaces to view the interface logs) 4. Self IPs
 
 
@@ -175,7 +175,7 @@ View Node Dashboard
 
 1. Click the Visibility tab, and then from the Table list, click the Node table.
 
-2. From the Partition list, click the partition of interest.
+2. From the Partition list, click the appropriate partition.
 
 3. The Node table for this BIG-IP and partition will be displayed.
 
@@ -185,9 +185,9 @@ View Node Dashboard
    
             - It is possible to directly click the **Visibility Dashboard** sub-tab and then select the Node, instead of a redirect from **Visibility Table**.
       
-5. Visibility Dashboard displays the information for the selected VIP including Node name, route domain and monitor.
+5. The Visibility Dashboard displays the information for the selected VIP including Node name, route domain and monitor.
 
-         a. **View Logs** - Dashboard displays a **View Logs** link besides the Node, which, on click will open a popup and all the logs for the selected Node.
+         a. **View Logs** - The dashboard displays a **View Logs** link beside the Node, which, when clicked opens a popup and all the logs for the selected Node.
 
             .. note::
 
@@ -195,11 +195,11 @@ View Node Dashboard
             
                - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
 
-         b. **View Connections** - Dashboard displays a **View Connections** link which, on click will display all the active connections to that Node.
+         b. **View Connections** - The dashboard displays a **View Connections** link which, when clicked displays all the active connections to that Node.
 
-         c. **APIC Endpoint Details** - Visibility dashboard displays APIC details for the Node:
+         c. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the Node:
                                         1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap 
                                         
-         d. **BIG-IP Endpoint Details** - Visibility dashboard displays BIG-IP details for the Node:
-                                          1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link besides interfaces to view the interface logs) 4. Self IPs
+         d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node:
+                                          1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs
 
