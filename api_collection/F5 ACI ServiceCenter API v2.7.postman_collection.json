@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "401ed4c0-4e90-41c9-999f-4236ec2d131b",
-		"name": "F5 ACI ServiceCenter API v2",
+		"_postman_id": "254d5536-612e-430a-adbf-ecd7e9f66bdc",
+		"name": "F5 ACI ServiceCenter API v2.7",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -134,8 +134,7 @@
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "L4-L7 - Dry-Run AS3 Declaration",
@@ -502,6 +501,51 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "L4-L7 - Get response of as3 async task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "DevCookie",
+								"value": "xz8HAAAAAAAAAAAAAAAAAPEyZAAq3UJ0PnWEAbIKgu1YDEYa5OrM4iLMxQ5kGEraBS0JlitXGCpqU2fXsMBgCdZhXLIkr8L8Co6UZ/Yze2fHioC3ntiyOSE8G1adgjYLou9r4LC06V6Ss9SWfsAIjvLjF3Ii5W6XMbvQhSWXDnen+52f1Pu6ZMbBXPPMxV77NAHNQwQdRDxVI0tkwFTclg==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"taskId\":\"dcd1280f-11d8-4a9b-997b-e4c0a69de119\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getasynctaskresponse.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getasynctaskresponse.json"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -711,8 +755,7 @@
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "VIRTUAL BIG-IP",
@@ -916,8 +959,7 @@
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "vCMP Guest",
@@ -944,7 +986,7 @@
 									"raw": "\r\n{\r\n  \"url\": \"10.107.0.47:443\",\r\n  \"vlans\": [\r\n    {\r\n      \"name\": \"apic-vlan-3dc1d93a\",\r\n      \"tag\": 25,\r\n      \"selfips\": [\r\n        {\r\n          \"address\": \"10.10.10.35\",\r\n          \"netmask\": \"255.255.255.0\",\r\n          \"traffic_group\": \"traffic-group-local-only\",\r\n          \"allow_service\": \"all\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n"
 								},
 								"url": {
-									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/createbigipselfips.json?",
+									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/createbigipselfips.json",
 									"protocol": "https",
 									"host": [
 										"10",
@@ -1127,8 +1169,7 @@
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "vCMP Host",
@@ -1213,8 +1254,7 @@
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "L2-L3 - Get APIC Logical Device List",
@@ -1674,13 +1714,13 @@
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTczMTA4MiwiZXhwIjoxNTk5NzM0MDgyLCJzZXNzaW9uaWQiOiJoWmpWbzlvblFrT29JdXVTWjRHNnFBPT0ifQ.to7BeAAhzsRSqXUGB3dZFZehbFDb7VMXZ1BIySnuP5_nqk_AsoS8Y9Drarv-CtwunMc4DBdh2ZNHqnskmRBpaX4qsaWVJN1whCbvlauanxSq86POOgKNuE9daQijWHaVW26jua-tPde26XnQ3VpvRNUEV8gqdMjknMoS5hxY6n8uDTwFbTr5uPMAJFiQFsdSI5EMjW3kN_V7axncXGnHu7_6jbQrw8Xrap3NwR6LVdDPZljVba8G5AEagQzAZxuErpV-_zL6Snw9OY5m7v6qoUay6ErQmu9Gd6PsMoNjkSdlZ6jbtKq5hu4M6f8o5QwZ6FaBIIQKD0jbNvRVcGqx4A",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"Common\"\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"partition\": \"Common\",\n    \"download\": false\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getvlanstats.json",
@@ -1714,13 +1754,13 @@
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTczMTA4MiwiZXhwIjoxNTk5NzM0MDgyLCJzZXNzaW9uaWQiOiJoWmpWbzlvblFrT29JdXVTWjRHNnFBPT0ifQ.to7BeAAhzsRSqXUGB3dZFZehbFDb7VMXZ1BIySnuP5_nqk_AsoS8Y9Drarv-CtwunMc4DBdh2ZNHqnskmRBpaX4qsaWVJN1whCbvlauanxSq86POOgKNuE9daQijWHaVW26jua-tPde26XnQ3VpvRNUEV8gqdMjknMoS5hxY6n8uDTwFbTr5uPMAJFiQFsdSI5EMjW3kN_V7axncXGnHu7_6jbQrw8Xrap3NwR6LVdDPZljVba8G5AEagQzAZxuErpV-_zL6Snw9OY5m7v6qoUay6ErQmu9Gd6PsMoNjkSdlZ6jbtKq5hu4M6f8o5QwZ6FaBIIQKD0jbNvRVcGqx4A",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"Common\"\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"partition\": \"Common\",\n    \"download\": false\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getvipstats.json",
@@ -1760,7 +1800,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"Common\"\n}"
+							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"Common\",\n    \"download\": false\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getnodestats.json",
@@ -1776,6 +1816,828 @@
 								"F5Networks",
 								"F5ACIServiceCenter",
 								"getnodestats.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download VLAN Table Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"type": "text",
+								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ=="
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"10.107.0.23:443\",\r\n    \"partition\":\"dontDeleteit\",\r\n    \"download\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getvlanstats.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getvlanstats.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download VIP Table Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"type": "text",
+								"value": "gSsAAAAAAAAAAAAAAAAAAC2ggCNhZjjEH2MkkiSj8hTpubI5Vge8B0kltU3JSebn49Sm2VIMxhm8Fw/nT7W2HBssPxcLGbPK8EqMCGP1hJwsFo4extLifkYUHqjt1u92ezKSfy8cLpk0+W5DtbDmyO5UB77NkvmtAdl+n/NIRhYHQuU61HUtkzsh6JUGlM9pbyVFwcpOrxOobUIrjTr2OA=="
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"10.107.0.23:9443\",\r\n    \"partition\":\"dontDeleteit\",\r\n    \"download\": true\r\n}"
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getvipstats.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getvipstats.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download Node Table Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"url\":\"10.107.0.23:9443\",\"partition\":\"dontDeleteit\",\"download\":true}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getnodestats.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getnodestats.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Telemetry Consumers",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"10.107.0.49:443\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/gettelemetryconsumers.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"gettelemetryconsumers.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Telemetry Stats",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"10.107.0.49:443\",\r\n    \"consumer\":\"My_Pull_Consumer2\"\r\n}"
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/gettelemetrystats.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"gettelemetrystats.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get System Connections",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdndHg2MzBqendtYTl5aGM4d3N6c3J2YmExdHQ1dG5lIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYxMDk2MjQ4NCwiZXhwIjoxNjEwOTY1NDg0LCJzZXNzaW9uaWQiOiJYdm5lSEV0aFNaS053MmIrUnZtcDh3PT0ifQ.WULq2kjGcuVG_deqfFR1xV1EqaBMfJeC_C7-I67rO7NAk_H7C-XW26uqAAk66iWPvvCNfdV8izD0616AevVh58E9_4fNJKo2VJNConBPNnBaCLaoenXTOMpKA4UqjCmLW9NQ_i2_ZLlHMc64j3QyApqOtuNnM3KAcI_06Jy_C7Y4P8WKMdBZ8GK_o321qhJHcRS0Wwv_4rMJ9dOM_neB0E1o7y5R2taWPFhN3VsHAXs12zCUAgDy5Do9cQjest-e64xvon-V9TJAzt9mzGlpyj0h5JcbB521OA5T1SJsoKltNwrfgzpzezbswk-Cw3l0nc6WM4K3lf8Ke38i24dxyg",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"10.107.0.49:443\",\r\n    \"ip\":\"192.168.11.49%15\",\r\n    \"type\":\"vip\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getsystemconnections",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getsystemconnections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoint details of VIP/Node using IP",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "f5in$1eme",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"10.107.0.159:443\",\r\n    \"ip\":\"192.168.11.23\",\r\n    \"partition\":\"Common\",\r\n    \"type\":\"vip\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getendpointdetails.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getendpointdetails.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gets logs for a VIP or Node from BIG-IP LTM module",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "f5in$1eme",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdndHg2MzBqendtYTl5aGM4d3N6c3J2YmExdHQ1dG5lIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYxMDk2MjQ4NCwiZXhwIjoxNjEwOTY1NDg0LCJzZXNzaW9uaWQiOiJYdm5lSEV0aFNaS053MmIrUnZtcDh3PT0ifQ.WULq2kjGcuVG_deqfFR1xV1EqaBMfJeC_C7-I67rO7NAk_H7C-XW26uqAAk66iWPvvCNfdV8izD0616AevVh58E9_4fNJKo2VJNConBPNnBaCLaoenXTOMpKA4UqjCmLW9NQ_i2_ZLlHMc64j3QyApqOtuNnM3KAcI_06Jy_C7Y4P8WKMdBZ8GK_o321qhJHcRS0Wwv_4rMJ9dOM_neB0E1o7y5R2taWPFhN3VsHAXs12zCUAgDy5Do9cQjest-e64xvon-V9TJAzt9mzGlpyj0h5JcbB521OA5T1SJsoKltNwrfgzpzezbswk-Cw3l0nc6WM4K3lf8Ke38i24dxyg",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"10.107.0.23:443\",\r\n    \"from\":\"2021-01-18T08:34:47Z\",\r\n    \"to\":\"2021-01-18T08:54:39Z\",\r\n    \"filters\":[\"/Common/192.168.11.23\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigiplogs.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getbigiplogs.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dynamic Endpoint Attach Detach",
+			"item": [
+				{
+					"name": "Dynamic EP - Get EPG information from APIC",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "epAAAAAAAAAAAAAAAAAAACG5+9ALQVkA4nZuLeRyHc/gcwikdm0/T6CxdYApDDrz9pDxDrrVoLWHRk+26wG9hIKW1sbAPZittaYrVCkAeUeY/vEEB4QlJ1xb1PvOc8Wm/eVrGE08/8rOP0vGgRLYLrRwfoM71f7IU7k6+2wJpQSJt628/5ohDrCsBYaDo9xl+4Gp3rDuAME2vmmTfPcAXQ==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getepginfo.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getepginfo.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dynamic EP - Get Dynamic Endpoints",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "OZEAAAAAAAAAAAAAAAAAALXVkm6Xb7+0825o5+ttOMe2fsvNljnA+Dz3W4Vf7K6MPnmwjV1jAokjxu+UzVxokTEvQavnx9g30Rpk7SExXjJeDXwhrj7iWHzLMCiadYAvu5JEzx0IC1NX0ZuL2hxAMLUf+oeoWJKJ8AmwZlt5FSq45/C0ps8RRbl/cZHuRMDj458mqEZIBf5Av7J1z8ourg==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\": \"10.107.0.23:9443\",\n\t\"partition\": \"partition1\",\n\t\"subpath\": \"app1\",\n\t\"pool\": \"web_pool\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigipendpoints.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getbigipendpoints.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dynamic EP - Synchronize Endpoints from APIC to BIG-IP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "OZEAAAAAAAAAAAAAAAAAALXVkm6Xb7+0825o5+ttOMe2fsvNljnA+Dz3W4Vf7K6MPnmwjV1jAokjxu+UzVxokTEvQavnx9g30Rpk7SExXjJeDXwhrj7iWHzLMCiadYAvu5JEzx0IC1NX0ZuL2hxAMLUf+oeoWJKJ8AmwZlt5FSq45/C0ps8RRbl/cZHuRMDj458mqEZIBf5Av7J1z8ourg==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\": \"10.107.0.23:9443\",\n\t\"tenant\": \"Demo\",\n\t\"application\": \"AppProfile\",\n\t\"epg\": \"EPG-External\", \n\t\"partition\": \"partition1\",\n\t\"subpath\": \"app1\",\n\t\"pool\": \"web_pool\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/syncepgmappings.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"syncepgmappings.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Faults",
+			"item": [
+				{
+					"name": "Faults - Get App Faults",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "+oICAAAAAAAAAAAAAAAAAAi4UEdo4tz3JLelxCywrKy8DZVqoJcTVQ7ISwwsD048lZ4/pocmRE+f/qzqncs8TBTeJ7BtfnKD6eFApPg364WK7vUKL8EKjuzm1JSm2vyTMyn1ApAhWHo43qmOp4DDYw0dVa4iMiFyLB+fIGwJkqxGXYS+4CXDariIADPs4AbC4JLV0LQ5OdlvDXu4xhgl5w==",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getappfaults.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getappfaults.json"
+							]
+						},
+						"description": "Get a app Faults like subscription related errors"
+					},
+					"response": []
+				},
+				{
+					"name": "Faults - Get BIG-IP Faults",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "+oICAAAAAAAAAAAAAAAAAAi4UEdo4tz3JLelxCywrKy8DZVqoJcTVQ7ISwwsD048lZ4/pocmRE+f/qzqncs8TBTeJ7BtfnKD6eFApPg364WK7vUKL8EKjuzm1JSm2vyTMyn1ApAhWHo43qmOp4DDYw0dVa4iMiFyLB+fIGwJkqxGXYS+4CXDariIADPs4AbC4JLV0LQ5OdlvDXu4xhgl5w==",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\": \"10.107.0.154:443\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigipfaults.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getbigipfaults.json"
+							]
+						},
+						"description": "- Get the Faults of specified BIG-IP."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Background Services",
+			"item": [
+				{
+					"name": "GET Async tasks status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/async/tasks/status.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"async",
+								"tasks",
+								"status.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Async services restart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/async/services/restart.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"async",
+								"services",
+								"restart.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Async services status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/settings/teem.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"settings",
+								"teem.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TEEM",
+			"item": [
+				{
+					"name": "GET TEEM Settings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/settings/teem.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"settings",
+								"teem.json"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST TEEM Settings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DevCookie",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n  \t\"hour\": \"3\",\r\n  \"minute\": \"15\",\r\n  \"timezone\": \"UTC\",\r\n  \"optout\": false\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/settings/teem.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"settings",
+								"teem.json"
 							]
 						}
 					},
@@ -1800,7 +2662,7 @@
 					"raw": "<aaaUser name=\"admin\" pwd=\"f5insieme\"/>\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://10.107.0.24/api/aaaLogin.xml?",
+					"raw": "https://10.107.0.24/api/aaaLogin.xml",
 					"protocol": "https",
 					"host": [
 						"10",
@@ -1937,7 +2799,7 @@
 					"raw": "{\n\t\"url\": \"10.107.0.22:443\",\n    \"user\": \"admin\",\n    \"password\": \"admin\"\n}"
 				},
 				"url": {
-					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/loginbigip.json?",
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/loginbigip.json",
 					"protocol": "https",
 					"host": [
 						"10",
@@ -2043,7 +2905,7 @@
 			"response": []
 		},
 		{
-			"name": "Set Clustername for HA BIG-IPs",
+			"name": "Set Clustername for hostname HA cluster",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -2055,13 +2917,53 @@
 					},
 					{
 						"key": "DevCookie",
-						"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTc0NTcxNCwiZXhwIjoxNTk5NzQ4NzE0LCJzZXNzaW9uaWQiOiJQdVEwclRvdlRUMlRrQ0xnWXU2c1BBPT0ifQ.dVyZJQ6W_tfZi-zA4Z7lljJE7C1bU1afO1_o1t0JN02Yd5_aLSB_qbgcDWrtvcVje3e8LXXD1DV_QNMn6epw46k-WPjsCqdxI2b2jmxEmeFCldXZC-eaeOQjASBDtUmThhvusjslY46nHIC8DpuPyVW-XOzXtCvOSr-0QrKLGN1rOTpCzJtXGtXD0F5eg_l2XNkXajMJVmzOcO3DnbxbgDGbnxWg0GswzvZ94cg5OHuqLXCen3kxRUZwU7aOeQ0776BL44aXJPKQa2AQogU6zqWZEUgYBHaCYFRlYMs_C0Db4WUBVfnZ0A76f4TOlqNKirSYe0T01xBo3nNrrALbeA",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"clustername\": \"cluster20_21\",\n    \"urls\": [\n        \"10.107.0.20:443\",\n        \"10.107.0.21\"\n    ]\n}"
+					"raw": "{\n    \"clustername\":\"cluster20_21\",\n    \"urls\":[\"bigip20:443\",\"10.107.0.20\"],\n    \"peerhostname\":\"bigip21\",\n    \"peerusername\":\"admin\",\n    \"peerpassword\":\"admin\"\n    }"
+				},
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/setclustername.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"setclustername.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Clustername for HA BIG-IPs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "DevCookie",
+						"type": "text",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTgwMDI3NiwiZXhwIjoxNTk5ODAzMjc2LCJzZXNzaW9uaWQiOiJXdmtSM201SVIrcWVEbkpTQmdPOGpBPT0ifQ.M_KN_sTs0u2bHqfDhytQ-qJiN8yDwH1U_-3aDahcH8gi-4YwzshkY_QCcZpxiaFYnXEEwhO9dXUvf77gkY0QvssO29dJUwPRMUNNDL7k5xFxei7uomlKlC53ZPrfgMOJoVzsTTLIRD3tFa6-p2LRdZZgvfWeVSo1grTWJQ7xMKXpu2CQh_J74GZcVdBdQNBcOQva63IpI6WTvsG0AYFdhb3yeIX07ilqpxpFxgQNna1rzKDPoO7JIqe5MwO1xBXhclTwgVQjnDlri2TEdHSBI1BhIAzXrriGgcwS8mh796EoL3QZysJrmXi5qMLkbInR8kY9ZxSqirRPROIlYkt9mw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"clustername\":\"cluster20_21\",\n    \"urls\":[\n            \"10.107.0.20\",\n            \"10.107.0.21\"\n        ]\n    }"
 				},
 				"url": {
 					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/setclustername.json",
@@ -2126,6 +3028,45 @@
 			"response": []
 		},
 		{
+			"name": "BIG-IP - Discover Devices",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "DevCookie",
+						"value": "upEAAAAAAAAAAAAAAAAAADZCmlFOMnxKtatv5cQiTFtWaiDDU2EgPAVpc5yg/UdE0jUBqsFIExze58z5VSOxvzCrinlMpr2Cw8yijyIRW8U6R6h4zNe1RvXBGnpr/EgHkwGIVXeCsT+kFehy0z5/w8b5/CHk76KO6JCqTkFrSgkaLDq2JXFuKqAqI2dmjDHyjAt2C65+k7TlmtTtxykYjg==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"topology\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getlldpneighbors.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"getlldpneighbors.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "BIG-IP - Sync Status and Failover State",
 			"request": {
 				"method": "POST",
@@ -2160,6 +3101,86 @@
 						"F5Networks",
 						"F5ACIServiceCenter",
 						"checkbigipstatus.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Import database file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "DevCookie",
+						"value": "8QgDAAAAAAAAAAAAAAAAABAC4qSSII5cU/WxdkjKqtzxonWTkYezzHJen2fGidkWJTZqlXEL0q86dE1EyOePCRdQIQf1vgzOa9JFktJgivtWbuP3XTJedFE5ilp5O265z9AC0IJGmQ/fSyFYjfCdc9SwkqlM5j4N46ydXPJ/iB2yqgf97bxR0DeSAxxwsYaJ/4KUqxfOPmbuHdCCez/8cQ==",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-sqlite3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/importdb.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"importdb.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export or Download database file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "DevCookie",
+						"value": "gOgIAAAAAAAAAAAAAAAAABep/DEgwXarmwc0WN7iwtF2nMMX9q+JlFP1BN1oEbD3c/fAb0eH+943HTFyfyC1wj2XNpAiDe5+bhGe3MsrsH9HtQGX+p4kRndtBVJYuQvlKsv+hDiC6KBBKdi9W8NR5lDQN8RgJv9vb/WFav92/BKcrCsaS1E2B9aU0nWbiE6qAUvrGj0lMw+ipLDYIU5fvg==",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/exportdb.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"exportdb.json"
 					]
 				}
 			},

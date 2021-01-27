@@ -1,4 +1,4 @@
-REST API
+﻿REST API
 ========
 
 This section contains the specifics of the REST APIs supported by F5 ACI ServiceCenter application.
@@ -264,7 +264,13 @@ setclustername.json
 |                    |                                                                    |
 |                    | "10.107.0.21"                                                      |
 |                    |                                                                    |
-|                    | ]                                                                  |
+|                    | ],                                                                 |
+|                    |                                                                    |
+|                    | "peerhostname": "bigip21",                                         |
+|                    |                                                                    |
+|                    | "peerusername": "admin",                                           |
+|                    |                                                                    |
+|                    | "peerpassword": "admin"                                            |
 |                    |                                                                    |
 |                    | }                                                                  |
 +--------------------+--------------------------------------------------------------------+
@@ -276,7 +282,8 @@ setclustername.json
 |                    |                                                                    |
 |                    | Content: {error: Bad request}                                      |
 +--------------------+--------------------------------------------------------------------+
-| Notes              |                                                                    |
+| Notes              | peerhostname, peerusername and peerpassword request parameters     |
+|                    | are required only for hostname HA clusters.                        |
 +--------------------+--------------------------------------------------------------------+
 
 getbigiplist.json
@@ -3910,15 +3917,19 @@ getvlanstats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",                                                                                      |
 |                    |                                                                                                                                                           |
-|                    | "partition": "<Partition Name>"                                                                                                                           |
+|                    | "partition": "<Partition Name>",                                                                                                                          |
 |                    |                                                                                                                                                           |
+|                    | "download": <true/false>                                                                                                                                  |
+|                    |                                                                                                                                                           | 
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Example Request    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | "url": "10.107.0.22:443",                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "partition": "Common"                                                                                                                                     |
+|                    | "partition": "Common",                                                                                                                                    |
+|                    |                                                                                                                                                           |
+|                    | "download": false                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3990,7 +4001,7 @@ getvlanstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
+| Notes              | To download an Excel report for a VLAN table, set the 'download' request parameter to true.                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getvipstats.json
@@ -4007,7 +4018,9 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",                                                                                      |
 |                    |                                                                                                                                                           |
-|                    | "partition": "<Partition\_Name>"                                                                                                                          |
+|                    | "partition": "<Partition\_Name>",                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | "download": <true/false>                                                                                                                                  |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4015,7 +4028,9 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "10.107.0.22:443",                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "partition": "Sample\_1"                                                                                                                                  |
+|                    | "partition": "Sample\_1",                                                                                                                                 |
+|                    |                                                                                                                                                           |
+|                    | "download": false                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4105,7 +4120,7 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
+| Notes              | To download an Excel report for a VIP table, set the 'download' request parameter to true.                                                                |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 getnodestats.json
@@ -4122,7 +4137,9 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",                                                                                      |
 |                    |                                                                                                                                                           |
-|                    | "partition": "<Partition\_Name>"                                                                                                                          |
+|                    | "partition": "<Partition\_Name>",                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | "download": <true/false>                                                                                                                                  |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4130,7 +4147,9 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | "url": "10.107.0.22:443",                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "partition": "Sample\_1"                                                                                                                                  |
+|                    | "partition": "Sample\_1",                                                                                                                                 |
+|                    |                                                                                                                                                           |
+|                    | "download": false                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4270,9 +4289,386 @@ getnodestats.json
 |                    |                                                                                                                                                           |
 |                    | Content: {error: <Error Message from F5 BIG-IP}                                                                                                           |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notes              | If a Partition other than Common is selected, for example Sample\_1, the API will return information for both the partitions, i.e. Sample\_1 and Common.  |
+| Notes              | To download an Excel report for a Node table, set the 'download' request parameter to true.                                                               |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+
+gettelemetryconsumers.json
+``````````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Get telemetry stats consumers                                         |
++====================+=======================================================================+
+| URL                | gettelemetryconsumers.json                                            |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>"   |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.49:443",                                             |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Response   | Code: 200                                                             |
+|                    |                                                                       |
+|                    | "message": {                                                          |
+|                    |                                                                       |
+|                    | "consumers": ["My_Pull_Consumer"],                                    |
+|                    |                                                                       |
+|                    | "warning": "null"                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | If f5-telemetry package version is lower than 1.17.0, this API will   |
+|                    | return a warning and will not display the statistics.                 |
++--------------------+-----------------------------------------------------------------------+
+
+gettelemetrystats.json
+```````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Retrieve stats using telemetry stream plugin                          |
++====================+=======================================================================+
+| URL                | gettelemetrystats.json                                                |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |
+|                    |                                                                       |
+|                    | "consumer": "<Consumer>"                                              |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.49:443",                                             |
+|                    |                                                                       |
+|                    | "consumer": "My_Pull_Consumer"                                        |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Response   | Code: 200                                                             |
+|                    |                                                                       |
+|                    | "message": {                                                          |
+|                    |                                                                       |
+|                    | "pools": {                                                            |
+|                    |                                                                       |
+|                    | "/Common/Pool1": {                                                    |
+|                    |                                                                       |
+|                    | "availabilityState": "available",                                     |
+|                    |                                                                       |
+|                    | "enabledState": "enabled",                                            |
+|                    |                                                                       |
+|                    | "members": {                                                          |
+|                    |                                                                       |
+|                    | "/Common/192.168.1.1:80": {                                           |
+|                    |                                                                       |
+|                    | "addr": "192.168.1.1",                                                |
+|                    |                                                                       |
+|                    | "availabilityState": "offline",                                       |
+|                    |                                                                       |
+|                    | "enabledState": "enabled",                                            |
+|                    |                                                                       |
+|                    | "port": 80,                                                           |
+|                    |                                                                       |
+|                    | "serverside.bitsIn": 0,                                               |
+|                    |                                                                       |
+|                    | "serverside.bitsOut": 0,                                              |
+|                    |                                                                       |
+|                    | "serverside.curConns": 0,                                             |
+|                    |                                                                       |
+|                    | "serverside.maxConns": 0,                                             |
+|                    |                                                                       |
+|                    | "serverside.pktsIn": 0,                                               |
+|                    |                                                                       |
+|                    | "serverside.pktsOut": 0,                                              |
+|                    |                                                                       |
+|                    | "serverside.totConns": 0,                                             |
+|                    |                                                                       |
+|                    | "totRequests": 0                                                      |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "name": "/Common/Pool1",                                              |
+|                    |                                                                       |
+|                    | "serverside.bitsIn": 8280,                                            |
+|                    |                                                                       |
+|                    | "serverside.bitsOut": 13800,                                          |
+|                    |                                                                       |
+|                    | "serverside.curConns": 0,                                             |
+|                    |                                                                       |
+|                    | "serverside.maxConns": 2,                                             |
+|                    |                                                                       |
+|                    | "serverside.pktsIn": 15,                                              |
+|                    |                                                                       |
+|                    | "serverside.pktsOut": 12,                                             |
+|                    |                                                                       |
+|                    | "serverside.totConns": 3,                                             |
+|                    |                                                                       |
+|                    | "tenant": "Common",                                                   |
+|                    |                                                                       |
+|                    | "totRequests": 3                                                      |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+
+getsystemconnections.json
+``````````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Get System Connections of VIP/Node                                    |
++====================+=======================================================================+
+| URL                | getsystemconnections.json                                             |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>" , |
+|                    |                                                                       |
+|                    | "ip": "<VIP/Node IP>",                                                |
+|                    |                                                                       |
+|                    | "type": "<vip/node>"                                                  |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.49:443",                                             |
+|                    |                                                                       |
+|                    | "ip": "192.168.10.100",                                               |
+|                    |                                                                       |
+|                    | "type": "node"                                                        |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Response   | Code: 200                                                             |
+|                    |                                                                       |
+|                    | "message": [                                                          |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "clientDestination": any6.any,                                        |
+|                    |                                                                       |
+|                    | "clientSource": "any6.any",                                           |
+|                    |                                                                       |
+|                    | "protocol": "tcp",                                                    |
+|                    |                                                                       |
+|                    | "serverDestination": "192.168.10.100:80",                             |
+|                    |                                                                       |
+|                    | "serverSource": "192.168.10.54:48500"                                 |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | For short lived connections, users may see the value of 'any6.any'    |
+|                    | for fields clientSource and clientDestination .                       |
++--------------------+-----------------------------------------------------------------------+
+
+getendpointdetails.json
+````````````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              |  Get endpoint details of VIP/Node using IP                            |
++====================+=======================================================================+
+| URL                | getendpointdetails.json                                               |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |
+|                    |                                                                       |
+|                    | "ip": "<VIP/Node IP>",                                                |
+|                    |                                                                       |
+|                    | "partition": "<Partition>",                                           |
+|                    |                                                                       |
+|                    | "type": "<vip/node>"                                                  |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.49:443",                                             |
+|                    |                                                                       |
+|                    | "ip": "192.168.11.23",                                                |
+|                    |                                                                       |
+|                    | "partition": "Common",                                                |
+|                    |                                                                       |
+|                    | "type": "vip"                                                         |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Response   | Code: 200                                                             |
+|                    |                                                                       |
+|                    | "message": {                                                          |
+|                    |                                                                       |
+|                    | "apic": [                                                             |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "encap": "vlan-364",                                                  |
+|                    |                                                                       |
+|                    | "epg": "Traffic_flow/AP1/EPG_external",                               |
+|                    |                                                                       |
+|                    | "interface": {                                                        |
+|                    |                                                                       |
+|                    | "adminSt": "Up",                                                      |
+|                    |                                                                       |
+|                    | "children": [],                                                       |
+|                    |                                                                       |
+|                    | "name": "eth1/2",                                                     |
+|                    |                                                                       |
+|                    | "operSt": "Up",                                                       |
+|                    |                                                                       |
+|                    | "type": "Not Aggregated"                                              |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | "mac": "00:50:56:BA:35:5A",                                           |
+|                    |                                                                       |
+|                    | "node": "Pod-1/Node-102"                                              |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ],                                                                    |
+|                    |                                                                       |
+|                    | "bigip": [                                                            |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "interfaces": [                                                       |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "children": [],                                                       |
+|                    |                                                                       |
+|                    | "interface": "1.2",                                                   |
+|                    |                                                                       |
+|                    | "status": "UP"                                                        |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ],                                                                    |
+|                    |                                                                       |
+|                    | "mac": "00:50:56:BA:35:5A",                                           |
+|                    |                                                                       |
+|                    | "selfips": [                                                          |
+|                    |                                                                       |
+|                    | {                                                                     |
+|                    |                                                                       |
+|                    | "selfip": "192.168.11.40/24"                                          |
+|                    |                                                                       |
+|                    | },                                                                    |
+|                    |                                                                       |
+|                    | ],                                                                    |
+|                    |                                                                       |
+|                    | "vlan": "413"                                                         |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | ]                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              |                                                                       |
++--------------------+-----------------------------------------------------------------------+
+
+getbigiplogs.json
+``````````````````
+
++--------------------+-----------------------------------------------------------------------+
+| Title              | Gets logs for a VIP or Node from BIG-IP LTM module                    |
++====================+=======================================================================+
+| URL                | getbigiplogs.json                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Method             | POST                                                                  |
++--------------------+-----------------------------------------------------------------------+
+| Example Request    | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "<BIG-IP IP or BIG-IP IP:Port or Hostname or Hostname:Port>",  |
+|                    |                                                                       |
+|                    | "from": "<From Date/Time in UTC format>",                             |
+|                    |                                                                       |
+|                    | "to": "<To Date/Time in UTC format>",                                 |
+|                    |                                                                       |
+|                    | "filters": "<Filters>"                                                |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Request Body       | {                                                                     |
+|                    |                                                                       |
+|                    | "url": "10.107.0.159:443",                                            |
+|                    |                                                                       |
+|                    | "from": "null",                                                       |
+|                    |                                                                       |
+|                    | "to": "null",                                                         |
+|                    |                                                                       |
+|                    | "filters": "[]"                                                       |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Example Response   | Code: 200                                                             |
+|                    |                                                                       |
+|                    | "message": {                                                          |
+|                    |                                                                       |
+|                    | "logs":                                                               |
+|                    |                                                                       |
+|                    | "ltm 2021-01-04T04:26:38Z err ve159-bigip.lab tmsh[504]: 01420006:3:  |
+|                    |                                                                       |
+|                    | 01020036:3: The requested pool(/BIG_IPendpoint/Test2/svc_pool) was    |
+|                    |                                                                       |
+|                    | not found.\n",                                                        |
+|                    |                                                                       |
+|                    | "warning": "From and To timestamps not found. Hence only the last     | 
+|                    |                                                                       |
+|                    | 10K logs scanned."                                                    |
+|                    |                                                                       |
+|                    | }                                                                     |
++--------------------+-----------------------------------------------------------------------+
+| Error Response     | Code: 400                                                             |
+|                    |                                                                       |
+|                    | Content: {error: Bad request}                                         |
++--------------------+-----------------------------------------------------------------------+
+| Notes              | If users provide  from/to date/time and filters, API will respond with|
+|                    | logs from the specified date range and specified filter.              |
+|                    |                                                                       |
++--------------------+-----------------------------------------------------------------------+
 
 TEEM Settings APIs
 -------------------
