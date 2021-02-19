@@ -348,8 +348,11 @@ For any configuration on the L4-L7 app services tab, all AS3 operations support 
 .. note::
 **Pending Tasks** maintains the list of tasks only for the current user session. On closing the F5 ACI ServiceCenter app, the **Pending tasks** table gets cleared. 
 
+------
+
 FAQ
-```
+===
+
 **Q. Why is my L4-L7 Configuration tab disabled?**
 
 For the L4-L7 configuration tab to work correctly, f5-appsvcs RPM version 3.19.1 or later is required. Installation steps are available here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html#installation
