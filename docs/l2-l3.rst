@@ -1,4 +1,4 @@
-Work with L2-L3 Stitching
+L2-L3 Stitching
 =========================
 
 In the top-left of L2-L3 tab, the :guilabel:`Logical Device` list filters devices based on high availability type (standalone or HA) and on device type (physical or virtual). If someone is logged in to a physical standalone BIG-IP device, the list shows only APIC logical devices of devtype :guilabel:`physical`, which have a single APIC Concrete device entry (CDEV) associated with them.
@@ -243,3 +243,42 @@ Delete Self IPs
 2. When prompted, click Confirm.
 
 The self IPs are deleted from the BIG-IP device, as well as from the application database.
+
+FAQ
+```
+**Q. Why do I get an error for VLAN/self IP delete operation from the App?**
+
+This is a known issue for BIG-IP v 12.x. If a pool with nodes is associated with a self IP of the same subnet, BIG-IP doesn’t allow user to delete that self IP. As a result, the VLAN delete operation also fails with the error.
+
+**Workaround:**
+
+- Delete the corresponding pool member from BIG-IP.
+
+- Perform the VLAN/self IP delete from App.
+
+- Recreate the pool member on BIG-IP.
+
+------
+
+**Q. When I try to stitch a VLAN tag, why do I see “VLAN not available for stitching”? Not able to configure the VLAN.**
+
+For a single BIG-IP device, after a VLAN tag is stitched for a particular logical device (say LDEV1), the same VLAN tag is not available for stitching again for a different Logical device (say LDEV2). This is because the VLAN tag is already present on the BIG-IP device and re-creating it for a different logical device is not allowed. In order to proceed with stitching, delete the original VLAN from the stitched LDEV, which is mentioned in this VLAN card’s info message. 
+
+.. note::
+   For a different BIG-IP login, this stitched VLAN tag will still be available for configuration. 
+
+------
+
+**Q. Why don’t I see the pre-existing BIG-IP VLANs and self IPs that have a different naming convention than the application?**
+
+The application does not support pre-existing VLANs that have a different naming convention than the app. It is able to detect VLANs that have been created and managed from the application only. 
+
+Although, after uninstalling and reinstalling the application, if the app database is lost, the application will be able to detect the previously created application VLANs by reading BIG-IP information and show them as Out-of-sync VLANs. The users will also be able to sync them to the application to rebuild App Database.
+
+The application displays APIC VLAN tags for a particular Logical Device Cluster on the L2-L3 stitching page. If there is an out-of-band VLAN with different naming convention but same VLAN tag on the BIG-IP device, the application detects it and shows it in the Out-of-sync information too. But the only action available for such a VLAN or self IP will be deletion of that object from BIG-IP. It cannot sync to application, since it has a different naming convention. The application also does not detect out-of-band information for any of the other VLAN tags that are not a part of APIC VLAN list. 
+
+-----
+
+**Q. What is the best way to delete LDEV from APIC?**
+
+Do not delete Logical devices from APIC directly. Instead, as a first step, delete self IPs, VLANs and routes from the BIG-IP device by using the application. When you are done, you can delete the Logical Device from APIC. This ensures there are no stale self IP, VLAN, and route entries on BIG
