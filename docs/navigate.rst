@@ -1,5 +1,5 @@
-Visibility Tab F5 ACI ServiceCenter
-=================================
+Visibility
+==========
 
 In the F5 ACI ServiceCenter :guilabel:`Partition` list, :guilabel:`Common Partition` is selected by default. If any other partition is selected, for example the :guilabel:`Sample Partition`, the selected table shows entries that belong to both the sample partition and common partition.
 
