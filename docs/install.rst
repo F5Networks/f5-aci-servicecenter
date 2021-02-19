@@ -23,50 +23,6 @@ Install F5 ACI ServiceCenter
 8. After the app is enabled, to open and access it, click :guilabel:`Open`.
 
 
-Add a new BIG-IP device (Device Login)
---------------------------------------
-
-1. In the top left of the F5 ACI ServiceCenter, click :guilabel:`+ NEW DEVICE`. A login prompt appears.
-
-2. Enter the BIG-IP device credentials.
-
-3. The newly-added device is displayed under the left menu bar.
-
-   - If the device is standalone, it is visible under :guilabel:`Standalone BIG-IP Devices`.
-
-   - If the device is part of a highly-available (HA) pair, the F5 ACI ServiceCenter prompts for a cluster name. After you enter a cluster name, the device and its peer are added under the cluster name on the left menu bar. The peer device is in a logged-out state and you must log in to it separately.
-   
-   - If the device is a part of an HA pair to which the user wants to login to using hostnames instead of IPs, there will be an additional prompt for peer BIG-IP's hostname and credentials. Once they are entered in the displayed form, both the devices will be logged-in from the F5 ACI ServiceCenter. 
-   
-   - The active device will be indicated using a Green icon. The standby device will be indicated using a Yellow icon. A logged out device or any device for which failover state cannot be determined will be displayed with a Gray icon. Any device for which the failover state is not Active OR Standby will be indicated with a Green icon.
-
-4. Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
-
-.. note::
-   
-   - If you create an HA pair from two standalone BIG-IP devices in the F5 ACI ServiceCenter, you must log out of the BIG-IP device in the F5 ACI ServiceCenter UI. When you log back in, the F5 ACI ServiceCenter moves the device and its peer under the specified cluster name in the side menu bar.
-
-   - If you change the configuration such that the BIG-IP devices are no longer part of an HA pair, you must log out of the device from within the F5 ACI ServiceCenter UI and log back in, for the F5 ACI ServiceCenter to recognize the changes and remove the cluster from the FASC UI. The devices are then displayed under Standalone BIG-IP Devices.
-
-
-Log out of a BIG-IP device
---------------------------
-
-1. Click the BIG-IP device host name or IP on the menu bar on the left.
-
-2. In the top right, click :guilabel:`Log Out`.
-
-3. After you log out, you should see the login page again.
-
-Delete a BIG-IP device
-----------------------
-
-1. Log out of the BIG-IP device.
-
-2. On the left menu bar, hover over the BIG-IP device Hostname/IP.
-
-3. Click the X to delete this device from the F5 ACI ServiceCenter.
-
 Uninstall F5 ACI ServiceCenter 
 ------------------------------
 
@@ -140,6 +96,54 @@ APIC 3.2(7f)+ (All supported 3.2.X versions)
   
 .. note::
    The APIC on which the ap container is running can be found by going to System --> Controllers --> Controllers --> (APIC name) --> Containers and checking if the F5Networks_F5ACIServiceCenter container is present.
+   
+Adding/Deleting BIG-IP Devices From FASC
+=======================================
+
+Add a new BIG-IP device (Device Login)
+--------------------------------------
+
+1. In the top left of the F5 ACI ServiceCenter, click :guilabel:`+ NEW DEVICE`. A login prompt appears.
+
+2. Enter the BIG-IP device credentials.
+
+3. The newly-added device is displayed under the left menu bar.
+
+   - If the device is standalone, it is visible under :guilabel:`Standalone BIG-IP Devices`.
+
+   - If the device is part of a highly-available (HA) pair, the F5 ACI ServiceCenter prompts for a cluster name. After you enter a cluster name, the device and its peer are added under the cluster name on the left menu bar. The peer device is in a logged-out state and you must log in to it separately.
+   
+   - If the device is a part of an HA pair to which the user wants to login to using hostnames instead of IPs, there will be an additional prompt for peer BIG-IP's hostname and credentials. Once they are entered in the displayed form, both the devices will be logged-in from the F5 ACI ServiceCenter. 
+   
+   - The active device will be indicated using a Green icon. The standby device will be indicated using a Yellow icon. A logged out device or any device for which failover state cannot be determined will be displayed with a Gray icon. Any device for which the failover state is not Active OR Standby will be indicated with a Green icon.
+
+4. Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
+
+.. note::
+   
+   - If you create an HA pair from two standalone BIG-IP devices in the F5 ACI ServiceCenter, you must log out of the BIG-IP device in the F5 ACI ServiceCenter UI. When you log back in, the F5 ACI ServiceCenter moves the device and its peer under the specified cluster name in the side menu bar.
+
+   - If you change the configuration such that the BIG-IP devices are no longer part of an HA pair, you must log out of the device from within the F5 ACI ServiceCenter UI and log back in, for the F5 ACI ServiceCenter to recognize the changes and remove the cluster from the FASC UI. The devices are then displayed under Standalone BIG-IP Devices.
+
+
+Log out of a BIG-IP device
+--------------------------
+
+1. Click the BIG-IP device host name or IP on the menu bar on the left.
+
+2. In the top right, click :guilabel:`Log Out`.
+
+3. After you log out, you should see the login page again.
+
+Delete a BIG-IP device
+----------------------
+
+1. Log out of the BIG-IP device.
+
+2. On the left menu bar, hover over the BIG-IP device Hostname/IP.
+
+3. Click the X to delete this device from the F5 ACI ServiceCenter.
+
  
 Self Discovery of BIG-IP Devices (Supported in v2.3+)
 =====================================================
@@ -215,7 +219,7 @@ Import DB
 4. Your current database will be completely replaced by this new database file. Hence this operation should only be done in case of application upgrades, otherwise you might lose your app data. 
 
 FAQ
-===============================================
+===
 
 **Q. Why do I see an error "Failed to reach the container" on the application GUI?**
 
