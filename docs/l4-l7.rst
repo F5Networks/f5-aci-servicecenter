@@ -1,4 +1,4 @@
-Use L4-L7 App Services
+L4-L7 App Services
 ======================
 
 For information on how to define a declaration, see https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/.
@@ -347,3 +347,99 @@ For any configuration on the L4-L7 app services tab, all AS3 operations support 
 
 .. note::
 **Pending Tasks** maintains the list of tasks only for the current user session. On closing the F5 ACI ServiceCenter app, the **Pending tasks** table gets cleared. 
+
+FAQ
+```
+**Q. Why is my L4-L7 Configuration tab disabled?**
+
+For the L4-L7 configuration tab to work correctly, f5-appsvcs RPM version 3.19.1 or later is required. Installation steps are available here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html#installation
+
+------
+
+**Q. Why is there a warning about "f5-appsvcs package" installation when I log in to my BIG-IP device?**
+
+See above.
+
+------
+
+**Q. Why do I see error code 503 with the message "Error: Configuration operation in progress on device <BIG-IP IP>, Please try again in 2 minutes" on the 'Pending tasks' table of the app?**
+
+If a BIG-IP is already processing an AS3 asynchronous task, it displays this message for any successive async operations. Once the asynchronous operation is completed, it is possible to perform the next operation like create/update/delete partition or application. Wait for a few minutes and try the configuration again. 
+
+It is also possible that you may see an error message such as **'HTTPError' object has no attribute 'message'**. Wait for a few minutes and try the configuration again.
+
+------
+
+**Q. For all L4-L7 App Services operations, why do I see the message “BIG-IP is processing the request. Please click the 'Pending Tasks' icon to check the status of the pending request.”?**
+
+All the L4-L7 App Services are processed in an asynchronous manner in the background. This message is displayed for every operation done on this tab. The **Pending Tasks** icon shows the status of last few such pending requests and their status. Also, once any such pending task is completed on the BIG-IP, the UI reloads the data to display the latest AS3 information about partitions and applications. 
+
+For more details, see:  https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
+------
+
+**Q. Why do I see warning signs against APIC Endpoints in View EPs table?**
+
+It is possible that the BIG-IP's AS3 plugin is unable to sync the dynamic endpoints and create them as BIG-IP pool members due to various unsupported configurations, such as:
+
+1. A duplicate node with the same IP as the endpoint is already present in another partition.
+
+2. More than 60 endpoints have been added to this BIG-IP pool. AS3 currently supports only a maximum of 60 endpoints in an AS3 application pool.
+
+3. The node IP is a substring of another node IP.
+
+Check if you have done any unsupported configurations. For details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/release-notes.html#dynamic-endpoint-attach-detach
+
+------
+
+**Q. I deleted an application services declaration from the F5 ACI ServiceCenter application. Why do I still see partitions in the declaration?**
+
+If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the AS3 configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration gets removed from the BIG-IP device.
+
+Workaround: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
+
+------
+
+**Q. For L4-L7 App Service tab, why does the partition get deleted when I delete the last application belonging to that partition?**
+
+If there is a single application in a particular partition, and if that application is deleted through the application, the partition that has no other applications under it will be deleted from the BIG-IP device. This is standard F5 BIG-IP behavior. You will be warned about this in the delete confirmation prompt.
+
+------
+
+**Q. When I create an AS3 application using the L4-L7 Application Services → Application → Basic tab, I don’t see this application listed under L4-L7 Application Services → Application → Advanced tab. How shall I view the raw JSON of this AS3 application?**
+
+The Basic and Advanced sub-tabs of 'L4-L7 Application Services → Application' tab list only the applications created from the respective tabs. If you wish to view details (raw JSON) of any AS3 application, please go to L4-L7 Application Services → Application Inventory tab which lists all the applications. Traverse to row with the application of interest and click on the “View Application JSON” icon in the “Action” column to view the raw JSON.
+
+------
+
+**Q. When I create an AS3 application using the L4-L7 Application Services → Application → Basic tab, can I update this application via Application Services → BIG-IP tab?**
+
+The application created through the L4-L7 Application Services → Application → Basic tab should be updated through the same tab. If for some reason it needs to be updated via the BIG-IP tab; For example, if the virtual server address is to be updated from X to Y, then the same value needs to get updated from X to Y in the Constants → appsvcsFormData section of the application JSON from the BIG-IP tab. If the constants section is not updated, it will show inconsistent values when traversed back to Basic tab.
+
+------
+
+**Q. While deleting Partition OR Application using L4-L7 Application Services, why do I get the error “All objects must be removed from a partition <Partition-Name> before the partition may be removed”?**
+
+This issue is observed when there are additional objects created under a BIG-IP Partition. In order to see if which objects are present in this partition:
+1. Login to BIG-IP using ssh and as root user
+2. cd to "/partitions/<Partition-Name>/" and check the contents of the file "bigip.conf"
+3. This file should shows the details of the objects that you need to remove to be able to successfully delete the partition from BIG-IP
+
+------
+
+Dynamic Endpoint Attach Detach
+------------------------------
+
+**Q. When new dynamic endpoints get added on APIC, the nodes aren’t getting updated on BIG-IP devices.**
+
+There is a websocket connection between the F5 ACI ServiceCenter and APIC to listen to new endpoint creation/deletion. If there is an issue with the websocket or the endpoint notification subscriptions, those errors will get logged in the log files on APIC. So please check the files for more details about end point attach detach.
+
+User may observe the error "Unrecoverable error occurred while creating APIC websocket…." on UI or in websocket error log file: /data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_websocket.log 
+
+OR
+
+User may observe the error: "Failed to get a new subscription. Subscription Refresh Thread stopped for APIC for…" on UI or in subscription errors log file: data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_subscription.log
+
+**Workaround:** For any of the above errors in log files: please disable and re-enable the F5 ACI ServiceCenter application to fix the dynamic endpoint attach detach functionality. This will not affect the state of the F5 ACI ServiceCenter and all the data and configuration will still be intact after the disable and re-enable steps.
+
+------
