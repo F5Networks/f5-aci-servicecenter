@@ -218,6 +218,8 @@ Import DB
 
 4. Your current database will be completely replaced by this new database file. Hence this operation should only be done in case of application upgrades, otherwise you might lose your app data. 
 
+------
+
 FAQ
 ===
 
