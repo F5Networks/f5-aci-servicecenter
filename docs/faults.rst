@@ -31,3 +31,10 @@ View BIG-IP Faults
     - On click, each row of the datagrid will display a detailed view for the fault.
     - To see older errors/warnings, SSH to the APIC server and check the log files in /data2/logs/F5Networks_F5ACIServiceCenter/faults/<BIG-IP IP>.log
     - The F5 ACI ServiceCenter currently displays the logs in UTC timezone which is the default timezone of this app.
+ 
+FAQ
+===============================================
+
+**Q. I’m able to see only the last 100 errors/warnings in 'View Faults'. How can I see older faults for my BIG-IP? (View Faults feature is available in versions 2.4+)**
+
+The F5 ACI ServiceCenter UI will show the last 100 errors or warnings which were observed on a particular BIG-IP. To check the older errors/warnings, please ssh to the APIC server which has the app container. The faults logs for BIG-IPs are available at location data2/logs/F5Networks_F5ACIServiceCenter/faults.
