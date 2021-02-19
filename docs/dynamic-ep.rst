@@ -53,3 +53,22 @@ Manual sync of endpoints from APIC Endpoint Group to BIG-IP pool
 2. Go to L4-L7 App Services → Application Inventory → Action column and click the **Sync** icon of the desired AS3 application.
 
 3. All the operational endpoints from the mapped Tenant|App|EPG will be synced to the BIG-IP pool of the AS3 application.
+
+------
+
+FAQ
+===============================================
+
+**Q. When new dynamic endpoints get added on APIC, the nodes aren’t getting updated on BIG-IP devices.**
+
+There is a websocket connection between the F5 ACI ServiceCenter and APIC to listen to new endpoint creation/deletion. If there is an issue with the websocket or the endpoint notification subscriptions, those errors will get logged in the log files on APIC. So please check the files for more details about end point attach detach.
+
+User may observe the error "Unrecoverable error occurred while creating APIC websocket…." on UI or in websocket error log file: /data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_websocket.log 
+
+OR
+
+User may observe the error: "Failed to get a new subscription. Subscription Refresh Thread stopped for APIC for…" on UI or in subscription errors log file: data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_subscription.log
+
+**Workaround:** For any of the above errors in log files: please disable and re-enable the F5 ACI ServiceCenter application to fix the dynamic endpoint attach detach functionality. This will not affect the state of the F5 ACI ServiceCenter and all the data and configuration will still be intact after the disable and re-enable steps.
+
+------
