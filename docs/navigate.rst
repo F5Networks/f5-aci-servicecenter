@@ -1,4 +1,4 @@
-Navigate the F5 ACI ServiceCenter
+Visibility Tab F5 ACI ServiceCenter
 =================================
 
 In the F5 ACI ServiceCenter :guilabel:`Partition` list, :guilabel:`Common Partition` is selected by default. If any other partition is selected, for example the :guilabel:`Sample Partition`, the selected table shows entries that belong to both the sample partition and common partition.
@@ -202,4 +202,71 @@ View Node Dashboard
                                         
          d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node:
                                           1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs
+------
 
+FAQ
+===
+
+**Q. Why do VLANs from the F5 ACI ServiceCenter application visibility table vanish if I destroy and re-create service graph template of my VIRTUAL Logical Device on Cisco APIC?**
+
+For virtual ADC logical devices, if you did the following steps 
+
+-  Take snapshot 
+
+-  Delete service graph template 
+
+-  Revert to snapshot config
+
+The VLAN encap values associated with logical interfaces of the LDEV change and do not remain the same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag. 
+
+After a VLAN tag is updated on BIG-IP, the visibility vlan table will start showing the VLANs again.
+
+------
+
+**Q. Why don't I see all the VLANs/VIPs/Nodes from the BIG-IP in the visibility tables?**
+
+Visibility tables display only those entries from BIG-IP which have corresponding constructs on APIC. For example, a VLAN from BIG-IP will only be displayed if that VLAN also belongs to some Tenant|App Profile|EPG or Tenant|LDEV on APIC. Similarly, a node will only be displayed if it exists as an operational endpoint in one or more of the EPGs on APIC. 
+
+------
+
+**Q. In Visibility tables, why don't I see Common partition entries in VLAN/VIP/Node table when I select a different partition?**
+
+The F5 ACI ServiceCenter Visibility tables have an option to select the **Partition**. The VLAN/VIP/Node tables will only display entries from the selected partition and will not include Common partition entries (although the BIG-IP UI does provide this feature where any partition selected will also show entries from the Common partition). 
+
+Note: This is a new behavior in FASC v2.6 and above. The previous versions do show Common partition entries along with the selected partition entries.
+
+
+Visibility Dashboard
+--------------------
+
+**Q. Why is the BIG-IP Endpoint Details section on the Visibility Dashboard blank?** (Applicable to v2.7+)
+
+BIG-IP Endpoint Details section on the Visibility Dashboard may not display information due to the MAC address table getting flushed on the BIG-IP.
+
+Workaround: Send an ARP request to the host or check the connectivity with the host using the **ping** command.
+
+------
+
+**Q. Why is the 'Interface' column blank in the BIG-IP endpoint details section on the Visibility Dashboard?** (Applicable to v2.7+)
+
+The **Interface** column in the BIG-IP Endpoint Details section on the Visibility Dashboard will be blank for vCMP guests since the behavior of the vCMP Guest BIG-IP also is the same; i.e. no interface information for VLANs.
+
+------
+
+**Q. Why are the pool members displayed on Visibility VIP table, and the pool members displayed on the Visibility VIP dashboard not the same?**
+
+The Visibility VIP table displays the pool members from a BIG-IP VIP, only if they are also present on the APIC. However, the Visibility dashboard shows all the pool members (and associated stats) that are present on the BIG-IP even if they may or may not be present on the APIC. Hence both the outputs may be different.
+
+------
+
+**Q. What does the field 'Route Domain' on the Visibility Dashboard indicate?**
+
+It displays the **default route domain** for the partition to which the Virtual Server (VIP) or Node belongs.
+
+------
+
+**Q. Why don't I see the scrollbar for the 'View Logs' window on the Visibility Dashboard?**
+
+If you encounter this issue, use the 'zoom out' option on your web browser. For example, on Windows, hold the **Ctrl** key, and then click **-** (the dash/minus key).
+
+------
