@@ -97,7 +97,7 @@ APIC 3.2(7f)+ (All supported 3.2.X versions)
 .. note::
    The APIC on which the ap container is running can be found by going to System --> Controllers --> Controllers --> (APIC name) --> Containers and checking if the F5Networks_F5ACIServiceCenter container is present.
    
-Adding/Deleting BIG-IP Devices From FASC
+Adding/Deleting BIG-IP Devices in FASC
 =======================================
 
 Add a new BIG-IP device (Device Login)
