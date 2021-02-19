@@ -244,8 +244,11 @@ Delete Self IPs
 
 The self IPs are deleted from the BIG-IP device, as well as from the application database.
 
+-------
+
 FAQ
-```
+===
+
 **Q. Why do I get an error for VLAN/self IP delete operation from the App?**
 
 This is a known issue for BIG-IP v 12.x. If a pool with nodes is associated with a self IP of the same subnet, BIG-IP doesn’t allow user to delete that self IP. As a result, the VLAN delete operation also fails with the error.
