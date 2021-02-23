@@ -1,7 +1,7 @@
 Pre-requisites
 ==================
 
-Pre-requisites before you install the F5 ACI ServiceCenter:
+Pre-requisites for the F5 ACI ServiceCenter:
 
 - To view the Virtual Server statistics on the Visibility VIP Dashboard, you must install the Telemetry Streaming plugin version 1.17 or higher on the BIG-IP device.
  - Follow the installation steps and default pull consumer configuration details from https://clouddocs.f5.com/f5-aci-servicecenter/latest/navigate.html#configure-telemetry 
