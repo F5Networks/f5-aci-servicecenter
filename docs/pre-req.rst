@@ -11,7 +11,7 @@ Pre-requisites before you install the F5 ACI ServiceCenter:
 - For each BIG-IP device added to the F5 ACI ServiceCenter, only one BIG-IP user can log in at a time.
 - Multiple APIC admin users will see the same view of the app (the same list of BIG-IP devices with the same application data).
 - All BIG-IP devices added to the F5 ACI ServiceCenter should have https support.
-- User must have admin privileges to the APIC and the FASC application should be a part of the default security domain for proper functioning of FASC
+- User must have admin privileges to the APIC and the FASC application should be a part of the default security domain for proper functioning of FASC.
 
 |
 
