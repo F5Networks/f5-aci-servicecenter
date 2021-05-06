@@ -10,10 +10,10 @@ FASC Application Controller Information
 -------------------------------------------
 FASC Application controller information is a troubleshooting tool used to get information and IP of the APIC controller on which the F5 ACI Service Center application container is running. This APIC controller can be accessed (via SSH) to view and retrieve FASC logs and for other debugging purposes.
 
-1.Click the **admin** menu on the top right corner of FASC
+1. Click the **admin** menu on the top right corner of FASC
 
-2.Select **Settings** from the drop down menu.
+2. Select **Settings** from the drop down menu.
 
-3.Click the **Status** selection on the side bar.
+3. Click the **Status** selection on the side bar.
 
-4.APIC controller information and IP address is displayed in the card named **APIC Controller**
+4. APIC controller information and IP address is displayed in the card named **APIC Controller**
