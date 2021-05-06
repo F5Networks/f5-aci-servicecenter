@@ -227,9 +227,13 @@ FAST Template
 
 **Workaround:** Refresh the basic subtab on L4-L7 tab
 
+------
+
 **Dynamic hide/show of sub-forms is not supported for FAST templates**
 
 **Workaround:** User already has the completely expanded form available on FASC’s FAST UI.
+
+------
 
 **Enum fields are not populated as drop-downs in the FASC FAST template support**
 
