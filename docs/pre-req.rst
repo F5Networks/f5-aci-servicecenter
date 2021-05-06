@@ -10,3 +10,5 @@ Pre-requisites for the F5 ACI ServiceCenter:
 - To enable and use the L4-L7 Configuration tab, use the BIG-IP Configuration utility to install the f5-appsvcs package version 3.19.1+ on the BIG-IP device. Follow the installation steps from https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html
 - To enable and view discovered devices in F5 ACI ServicCenter , enable LLDP protocol on both BIG-IP as well as on APIC. Make sure management IP of the BIG-IP is present in the LLDP attributes on BIG-IP(Network->Interfaces->Interfaces List-><interface_id>).
 - To configure and manage the Cisco ACI fabric use the APIC GUI/API, example: to add a logical device, to add a end point group etc. The F5 ACI ServiceCenter has read-only privileges to the Cisco APIC.
+- To enable and use basic subtab of the L4-L7 Configuration tab ,use the BIG-IP Configuration utility to install f5-appsvcs-templates package version 1.8.1+ on the BIG-IP device. Follow the installation steps from https://clouddocs.f5.com/products/extensions/f5-appsvcs-templates/latest/userguide/install-uninstall.html
+
