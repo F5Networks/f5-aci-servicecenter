@@ -8,7 +8,7 @@ To view the BIG-IP version in F5 ACI Service Center, hover over the BIG-IP IP ad
 
 FASC Application Controller Information
 -------------------------------------------
-FASC Application controller information is a troubleshooting tool used to get information and IP of the APIC controller on which the F5 ACI Service Center application container is running. This APIC controller can be accessed (via SSH) to view and retrieve FASC logs and for other debugging purposes.
+FASC Application controller information is a troubleshooting tool used to get information and IP of the APIC controller on which the F5 ACI Service Center application container is running. This APIC controller can be accessed (via SSH) to view and retrieve  F5 ACI Service Center logs and for other debugging purposes.
 
 1. Click the **admin** menu on the top right corner of FASC
 
