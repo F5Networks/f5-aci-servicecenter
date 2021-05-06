@@ -171,20 +171,18 @@ When you delete the last application, the corresponding partition is automatical
    - On clicking :guilabel:`Confirm`, the application is deleted asynchronously in the background. Once the application is deleted successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
-Create a partition using Basic mode (Application subtab)
+Create a partition using FAST template (Basic mode-Application subtab)
 --------------------------------------------------------
 
 1. Select the Basic mode on Application subtab.
 
 2. From the Partition list, click :guilabel:`Create New Partition`. The Application list is disabled.
 
-3. Two new fields, :guilabel:`Partition` and :guilabel:`Application`, are displayed. Enter valid input for both. The new partition can’t be created without providing an application name.
+3. From the Application drop-down, click :guilabel:`Create New Application`.
 
-4. Choose a template from the template drop-down. Fox example :guilabel:`simple http`. A form will be displayed. Fill the form with appropriate values.
+4. Choose a template from the template drop-down. Fox example :guilabel:`service-discovery/http`. A form will be displayed. Fill the form with appropriate values.
 
-5. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
-
-6. Click Submit.
+5. Click Submit.
 
 A new partition is created on the BIG-IP device.
 
@@ -193,9 +191,16 @@ New partitions and applications are listed in the Partition and Application drop
 .. note::
 
    - On clicking :guilabel:`Submit`, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+   
+   - For :guilabel:`service-discovery/http` template, You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the BIG-IP Application’s pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
+   
+   - If :guilabel:`FAST generated pool monitor` is enabled user must fill below fields in the form selected template
+         - Hostname title field for **bigip-fast-templates/dns** template
+         - Application domain name title field in **bigip-fast-templates/microsoft sharepoint** template
+         - Password title field for **bigip-fast-templates/ldap** template
+         - Application domain name title field for **bigip-fast-templates/microsoft sharepoint** template
 
-
-Delete a partition using  Basic mode (Application subtab)
+Delete a partition using FAST Template (Basic mode-Application subtab)
 ---------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
@@ -206,14 +211,13 @@ Delete a partition using  Basic mode (Application subtab)
 
 4. When prompted, confirm that you want to delete the partition.
 
-5. The partition from this BIG-IP device is no longer listed in the Partition list.
 
 .. note::
 
-   - On clicking :guilabel:`Delete`, the partition is deleted asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+   - On clicking :guilabel:`Delete`, the partition is deleted synchronously, application UI loader will appear until operation is completed.
 
 
-Create an application using Basic mode (Application subtab)
+Create an application using FAST Template (Basic mode-Application subtab)
 -----------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
@@ -222,22 +226,19 @@ Create an application using Basic mode (Application subtab)
 
 3. From the :guilabel:`Application` list, click Create New Application.
 
-4. In the Application Name field, enter a valid application name.
+5. Choose a template from the template drop-down. Fox example :guilabel:`bigip-fast-templates/http`. A form will be displayed. Fill the form with appropriate values.
 
-5. Choose a template from the template drop-down. Fox example :guilabel:`simple http`. A form will be displayed. Fill the form with appropriate values.
-
-6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
-
-7. Click Submit.
+6. Click Submit.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list on this tab.
 
 .. note::
 
    - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+   - For :guilabel:`service-discovery/http` template, You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the BIG-IP Application’s pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
 
 
-Update an application using Basic mode (Application subtab)
+Update an application using FAST Template (Basic Mode-Application subtab)
 -----------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
@@ -248,9 +249,7 @@ Update an application using Basic mode (Application subtab)
 
 4. Template name and corresponding pre-filled form will appear on the UI. Update the form values.
 
-5. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to update Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
-
-6. Click Submit.
+5. Click Submit.
 
 The application is updated on the BIG-IP device.
 
@@ -258,7 +257,7 @@ The application is updated on the BIG-IP device.
 
    - On clicking :guilabel:`Submit`, the application is updated asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
-Delete an application using Basic mode (Application subtab)
+Delete an application using FAST Template (Basic mode-Application subtab)
 -----------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
@@ -276,31 +275,56 @@ Delete an application using Basic mode (Application subtab)
    - On clicking :guilabel:`Submit`, the application is deleted asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
-Upload a new AS3 Template using Basic mode (Application subtab)
+Upload a new FAST Template set using Basic mode (Application subtab)
 ---------------------------------------------------------------
 
 1. Select the Basic mode on Application subtab.
 
 2. From the :guilabel:`Template` list, click Upload New Template. An input file browser will appear on the UI.
 
-3. Select a valid AS3 template file from the system.
+3. Select a valid FAST template file from the system.
 
 4. Click Upload.
 
-5. F5 ACI ServiceCenter will validate the template and upload it if valid. This template will be accessible for all BIG-IP devices to be used.
+5. F5 ACI ServiceCenter will upload this FAST template set on BIG-IP
 
-Delete custom AS3 Template using Basic mode (Application subtab)
+.. note::Note
+
+   - Uploaded FAST template set will only be accessible only for the current BIG-IP where template is uploaded.
+
+Upload a new FAST Template set (Dynamic Endpoint Discovery) using Basic mode
+---------------------------------------------------------------------------
+
+F5 ACI ServiceCente provides the dynamic service discovery custom fast template :guilabel:`service_discovery/http` for endpoint attach and detach functionality using FAST templates.
+
+1.Select the Basic mode on the Application subtab.
+
+2.From the Partition list, click on :guilabel:`Create New Partition`.
+
+3.From the :guilabel:`Template` list, click :guilabel:`service-discovery/http`. confirmation window will appear on the UI.
+
+4.Click on :guilabel:`Upload`
+
+
+Delete custom FAST Template Set using Basic mode (Application subtab)
 ----------------------------------------------------------------
 
 1. Select the Basic mode on Application subtab.
 
-2. From the :guilabel:`Template` list, click the template which is to be deleted.
+2. From the Partition list, click :guilabel:`Create New Partition`.
+
+3. From the :guilabel:`Template` list, click the template which is to be deleted.
 
 3. Click the Delete icon besides template name.
 
-4. The template will get deleted from F5 ACI ServiceCenter application. It will not be accessible to any of the BIG-IP devices when accessed from F5 ACI ServiceCenter.
+4. The template will get deleted from the BIG-IP FAST Database.
 
-View AS3 Applications (Application Inventory sub-tab)
+.. note::Note
+   - Deleting the default FAST template set (bigip_fast_templates/) is not allowed from F5 ACI ServiceCenter.
+   - Delete template operation will delete the entire template set from the BIG-IP.
+
+
+View AS3/FAST Applications (Application Inventory sub-tab)
 -----------------------------------------------------
 
 1. Click the Application Inventory tab on the L4-L7 App Services tab.
