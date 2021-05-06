@@ -301,7 +301,7 @@ F5 ACI ServiceCente provides the dynamic service discovery custom fast template 
 
 2.From the Partition list, click on :guilabel:`Create New Partition`.
 
-3.From the :guilabel:`Template` list, click :guilabel:`service-discovery/http`. confirmation window will appear on the UI.
+3.From the :guilabel:`Template` list, click on :guilabel:`service-discovery/http`. confirmation window will appear on the UI.
 
 4.Click on :guilabel:`Upload`
 
@@ -319,8 +319,10 @@ Delete custom FAST Template Set using Basic mode (Application subtab)
 
 4. The template will get deleted from the BIG-IP FAST Database.
 
-.. note::Note
+.. note::
+
    - Deleting the default FAST template set (bigip_fast_templates/) is not allowed from F5 ACI ServiceCenter.
+   
    - Delete template operation will delete the entire template set from the BIG-IP.
 
 
