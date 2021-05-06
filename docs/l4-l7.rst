@@ -439,7 +439,7 @@ The Basic and Advanced sub-tabs of 'L4-L7 Application Services → Application' 
 
 ------
 
-**Q. When I create an AS3 application using the L4-L7 Application Services → Application → Basic tab, can I update this application via Application Services → BIG-IP tab?**
+**Q. When I create an FAST application using the L4-L7 Application Services → Application → Basic tab, can I update this application via Application Services → BIG-IP tab?**
 
 The application created through the L4-L7 Application Services → Application → Basic tab should be updated through the same tab. If for some reason it needs to be updated via the BIG-IP tab; For example, if the virtual server address is to be updated from X to Y, then the same value needs to get updated from X to Y in the Constants → appsvcsFormData section of the application JSON from the BIG-IP tab. If the constants section is not updated, it will show inconsistent values when traversed back to Basic tab.
 
@@ -451,5 +451,17 @@ This issue is observed when there are additional objects created under a BIG-IP 
 1. Login to BIG-IP using ssh and as root user
 2. cd to "/partitions/<Partition-Name>/" and check the contents of the file "bigip.conf"
 3. This file should shows the details of the objects that you need to remove to be able to successfully delete the partition from BIG-IP
+
+------
+
+**Q.Dynamic Endpoint Discovery is not supported for default FAST template set bigip-fast-templates/**
+
+Dynamic Endpoint Discovery functionality provided by F5ACIServiceCenter and hence is only supported by service_discovery/http template. (This template can be accessed from the FASC → L4-L7 App Services → Application → Basic sub-tab’s template drop-down.
+
+------
+
+**Q.Pool members are not displayed if :guilabel:`shared node` option for application created using service discovery fast template is disabled afterwords**
+
+To view pool members after share node option is disabled for an existing partition user need to sync endpoint manually to BIG-IP by Application inventory → Partition → Sync EP icon
 
 ------
