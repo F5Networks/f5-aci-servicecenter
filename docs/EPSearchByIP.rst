@@ -1,7 +1,7 @@
 Endpoint Search by IP
 ======================
 
-F5 ACI Service Center supports searching endpoint IPs. Users can search endpoints below by two methods
+F5 ACI Service Center supports searching endpoint IPs. Users can search endpoints on BIG-IP using useful tools below
 
 1. Local Endpoint Search: Present on a single BIG-IP
 
