@@ -116,6 +116,22 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 -------
 
+**Once all Pool Member cards are removed from template form, adding a new pool member card fails on FASC FAST templates UI**
+
+If user clicks on "-" sign in front on pool members card and tries to add pool member card again by clicking on "+" icon then then pool member card is not populated in template form.
+
+**Workaround:** Refresh the basic subtab on L4-L7 tab
+
+------
+
+**Dynamic hide/show of sub-forms is not supported for FAST templates**
+
+Functionality releated to display a form after enabling the check box in front of FAST template form field is not supported.currently all the fields in template form are displayed in F5 ACI ServiceCenter without hide/show functionality.
+
+**Workaround:** User already has the completely expanded form available on FASC’s FAST UI.
+
+------
+
 
 Dynamic Endpoint Attach Detach
 ------------------------------
@@ -221,25 +237,6 @@ AS3 Service Discovery REST API endpoint on both HA devices should display the sa
 
 ------
 
-FAST Template
-----------
-**Once all Pool Member cards are removed from template form, adding a new pool member card fails on FASC FAST templates UI**
-
-**Workaround:** Refresh the basic subtab on L4-L7 tab
-
-------
-
-**Dynamic hide/show of sub-forms is not supported for FAST templates**
-
-**Workaround:** User already has the completely expanded form available on FASC’s FAST UI.
-
-------
-
-**Enum fields are not populated as drop-downs in the FASC FAST template support**
-
-**Workaround:** User needs to manually enter the details in the form for enum fields like Irules, Endpoint policies, Vlans
-
-------
 
 Release Notes (Version 2.7)
 ===========================
