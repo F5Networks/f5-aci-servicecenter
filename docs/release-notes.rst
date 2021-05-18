@@ -126,7 +126,7 @@ If user clicks on "-" sign in front on pool members card and tries to add pool m
 
 **Dynamic hide/show of sub-forms is not supported for FAST templates**
 
-Functionality releated to display a form after enabling the check box in front of FAST template form field is not supported.currently all the fields in template form are displayed in F5 ACI ServiceCenter without hide/show functionality.
+Functionality releated to displaying a sub-form based on some checkbox selection is not supported by FAST forms on F5 ACI ServiceCenter. Currently all the templates are displayed in a completely expanded layout.
 
 **Workaround:** User already has the completely expanded form available on FASC’s FAST UI.
 
