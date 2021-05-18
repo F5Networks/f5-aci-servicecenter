@@ -39,4 +39,4 @@ FAQ
 
 **Q. I’m able to see only the last 100 errors/warnings in 'View Faults'. How can I see older faults for my BIG-IP? (View Faults feature is available in versions 2.4+)**
 
-The F5 ACI ServiceCenter UI will show the last 100 errors or warnings which were observed on a particular BIG-IP. To check the older errors/warnings,SSH to the APIC server which has the app container.The faults logs for BIG-IPs are available at data2/logs/F5Networks_F5ACIServiceCenter/faults.
+The F5 ACI ServiceCenter UI will show the last 100 errors or warnings which were observed on a particular BIG-IP. To check the older errors/warnings, SSH to the APIC server which has the app container.The faults logs for BIG-IPs are available at data2/logs/F5Networks_F5ACIServiceCenter/faults.
