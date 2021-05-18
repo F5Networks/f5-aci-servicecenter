@@ -219,7 +219,7 @@ For virtual ADC logical devices, if you performed the following steps:
 
 The VLAN encap values associated with logical interfaces of the LDEV change and do not remain the same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag. 
 
-After a VLAN tag is updated on the BIG-IP, the visibility VLAN table will start showing the VLANs again.
+After a VLAN tag is updated on the BIG-IP, the visibility VLAN table starts showing the VLANs again.
 
 ------
 
@@ -247,7 +247,7 @@ Workaround: Send an ARP request to the host or check the connectivity with the h
 
 ------
 
-**Q. On the Visibility Dashboard in v2.7+, why is the 'Interface' column blank in the BIG-IP endpoint details section on the Visibility Dashboard?**
+**Q. On the Visibility Dashboard in v2.7+, why is the 'Interface' column blank in the BIG-IP endpoint details section?**
 
 The **Interface** column in the BIG-IP Endpoint Details section on the Visibility Dashboard will be blank for vCMP guests since the behavior of the vCMP Guest BIG-IP also is the same; i.e. no interface information for VLANs.
 
