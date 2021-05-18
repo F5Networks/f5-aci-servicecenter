@@ -209,7 +209,7 @@ FAQ
 
 **Q. Why do VLANs from the F5 ACI ServiceCenter application visibility table vanish if I destroy and re-create service graph template of my VIRTUAL Logical Device on Cisco APIC?**
 
-For virtual ADC logical devices, if you did the following steps 
+For virtual ADC logical devices, if you performed the following steps: 
 
 -  Take snapshot 
 
@@ -219,13 +219,13 @@ For virtual ADC logical devices, if you did the following steps
 
 The VLAN encap values associated with logical interfaces of the LDEV change and do not remain the same. The application detects this change and shows a warning on the L2-L3 stitching LDEV info page that displays VLANs. You can click the warning to update the VLAN tag. 
 
-After a VLAN tag is updated on BIG-IP, the visibility vlan table will start showing the VLANs again.
+After a VLAN tag is updated on the BIG-IP, the visibility VLAN table will start showing the VLANs again.
 
 ------
 
 **Q. Why don't I see all the VLANs/VIPs/Nodes from the BIG-IP in the visibility tables?**
 
-Visibility tables display only those entries from BIG-IP which have corresponding constructs on APIC. For example, a VLAN from BIG-IP will only be displayed if that VLAN also belongs to some Tenant|App Profile|EPG or Tenant|LDEV on APIC. Similarly, a node will only be displayed if it exists as an operational endpoint in one or more of the EPGs on APIC. 
+Visibility tables display only those entries from the BIG-IP which have corresponding constructs on APIC. For example, a VLAN from the BIG-IP will only be displayed if that VLAN also belongs to some 'Tenant/App Profile/EPG' or 'Tenant/LDEV' on APIC. Similarly, a node will only be displayed if it exists as an operational endpoint in one or more of the EPGs on APIC. 
 
 ------
 
@@ -239,15 +239,15 @@ Note: This is a new behavior in FASC v2.6 and above. The previous versions do sh
 Visibility Dashboard
 --------------------
 
-**Q. Why is the BIG-IP Endpoint Details section on the Visibility Dashboard blank?** (Applicable to v2.7+)
+**Q. On the Visibility Dashboard in v2.7+, why is the BIG-IP Endpoint Details section blank?**
 
-BIG-IP Endpoint Details section on the Visibility Dashboard may not display information due to the MAC address table getting flushed on the BIG-IP.
+The BIG-IP Endpoint Details section on the Visibility Dashboard may not display information due to the MAC address table getting flushed on the BIG-IP.
 
 Workaround: Send an ARP request to the host or check the connectivity with the host using the **ping** command.
 
 ------
 
-**Q. Why is the 'Interface' column blank in the BIG-IP endpoint details section on the Visibility Dashboard?** (Applicable to v2.7+)
+**Q. On the Visibility Dashboard in v2.7+, why is the 'Interface' column blank in the BIG-IP endpoint details section on the Visibility Dashboard?**
 
 The **Interface** column in the BIG-IP Endpoint Details section on the Visibility Dashboard will be blank for vCMP guests since the behavior of the vCMP Guest BIG-IP also is the same; i.e. no interface information for VLANs.
 
