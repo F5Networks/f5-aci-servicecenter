@@ -13,7 +13,7 @@ F5 ACI Service Center supports searching endpoint IPs. Users can search endpoint
 
 Local Endpoint Search (Search on a single BIG-IP)
 --------------------------------------------------
-F5 ACI service Center provides a tool for searching endpoint on a single BIG-IP devices.
+F5 ACI serviceCenter provides a tool for searching endpoint on a single BIG-IP devices.
 
 1.Login to a BIG-IP device.
 
@@ -31,11 +31,11 @@ F5 ACI service Center provides a tool for searching endpoint on a single BIG-IP 
 
 .. note::
   - Users need to provide the exact endpoint IP in the search box to view information related to the endpoint. 
-  - The endpoint IP being searched should be present on both BIG-IP and APIC. If the endpoint is present on BIG-IP and not present on APIC, the search utility will not display that IP. If the endpoint is present on APIC but not present on any of the BIG-IPs, the search utility will not display that IP.
+  - The endpoint IP being searched should be present on both BIG-IP and APIC. If the endpoint is present on the BIG-IP and not present on APIC, the search utility will not display that IP. If the endpoint is present on APIC but not present on any of the BIG-IPs, the search utility will not display that IP.
 
 Global Endpoint Search (Across all BIG-IPs)
 -------------------------------------------
-F5 ACI service Center provide a tool for searching endpoint accross all logged in BIG-IP devices.
+F5 ACI serviceCenter provide a tool for searching endpoint accross all logged in BIG-IP devices.
 
 1.Click the Search icon on the sidebar of the FASC application.
 
@@ -43,10 +43,10 @@ F5 ACI service Center provide a tool for searching endpoint accross all logged i
 
 3.Click the **Search** button.
 
-4.All the VIPs and Nodes with specified IP will be displayed in search results
+4.All the VIPs and Nodes with specified IP will be displayed in the search results.
 
 5.Click any of the entries to view more details about the VIP or Node. Clicking the entry will redirect the user to the Visibility Dashboard.
 
 .. note::
-  - Users need to provide exact endpoint IP in search box to view information related to endpoint
+  - Users need to provide the exact endpoint IP in the search box to view information related to the endpoint.
   - The endpoint IP being searched should be present on both the BIG-IP and APIC. If the endpoint is present on the BIG-IP and not present on APIC, the search utility will not display that IP. If the endpoint is present on APIC but not present on any of the BIG-IPs, the search utility will not display that IP.
