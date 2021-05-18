@@ -59,16 +59,16 @@ Manual sync of endpoints from APIC Endpoint Group to BIG-IP pool
 FAQ
 ====
 
-**Q. When new dynamic endpoints get added on APIC, the nodes aren’t getting updated on BIG-IP devices.**
+**Q. When new dynamic endpoints get added on APIC, why aren’t  the nodes getting updated on BIG-IP devices?**
 
-There is a websocket connection between the F5 ACI ServiceCenter and APIC to listen to new endpoint creation/deletion. If there is an issue with the websocket or the endpoint notification subscriptions, those errors will get logged in the log files on APIC. So please check the files for more details about end point attach detach.
+There is a websocket connection between the F5 ACI ServiceCenter and APIC to listen to new endpoint creation/deletion. If there is an issue with the websocket or the endpoint notification subscriptions, those errors are logged in the log files on APIC. Check the files for more details about end point attach detach.
 
-User may observe the error "Unrecoverable error occurred while creating APIC websocket…." on UI or in websocket error log file: /data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_websocket.log 
+You may observe the error "Unrecoverable error occurred while creating APIC websocket…." on the UI or in the websocket error log file: /data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_websocket.log 
 
 OR
 
-User may observe the error: "Failed to get a new subscription. Subscription Refresh Thread stopped for APIC for…" on UI or in subscription errors log file: data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_subscription.log
+You may observe the error: "Failed to get a new subscription. Subscription Refresh Thread stopped for APIC for…" on the UI or in the subscription errors log file: data2/logs/F5Networks_F5ACIServiceCenter/f5_apic_subscription.log
 
-**Workaround:** For any of the above errors in log files: please disable and re-enable the F5 ACI ServiceCenter application to fix the dynamic endpoint attach detach functionality. This will not affect the state of the F5 ACI ServiceCenter and all the data and configuration will still be intact after the disable and re-enable steps.
+**Workaround:** For any of these errors in log files, disable and re-enable the F5 ACI ServiceCenter application to fix the dynamic endpoint attach detach functionality. This will not affect the state of the F5 ACI ServiceCenter and all the data and configuration will still be intact after the disable and re-enable steps.
 
 ------
