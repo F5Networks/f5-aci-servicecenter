@@ -456,9 +456,21 @@ This issue is observed when there are additional objects created under a BIG-IP 
 
 ------
 
-**Q.Dynamic Endpoint Discovery is not supported for default FAST template set bigip-fast-templates/**
+**Q. Why do I see 'Install f5-appscvs-templates package' warning on L4-L7 tab even though I have added FAST template plugin on BIG-IP?**
 
-Dynamic Endpoint Discovery functionality provided by F5ACIServiceCenter and hence is only supported by service_discovery/http template. (This template can be accessed from the FASC → L4-L7 App Services → Application → Basic sub-tab’s template drop-down.
+If FAST Template plugin api is unable to respond due to a REST operation failure on the BIG-IP, you may see the 'Install f5-appscvs-templates package' warning on L4-L7 UI as FASC doesnt get response from FAST. Check if restnoded and restjavad is working on the BIG-IP.
+
+------
+
+**Q. Why is Dynamic Endpoint Discovery not supported for default FAST template set bigip-fast-templates/?**
+
+Dynamic Endpoint Discovery functionality is provided by F5ACIServiceCenter and hence is only supported by service_discovery/http template. (This template can be accessed from the FASC → L4-L7 App Services → Application → Basic sub-tab’s template drop-down).
+
+------
+
+**Q. Why are 'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates not working in F5 ACI ServiceCenter?**
+
+**bigip-fast-templates/microsoft adfs** and **bigip-fast-templates/microsoft exchange** are FAST Beta Version Templates. They might not work in F5 ACI serviceCenter. Report any issues, or an RFE, on the FAST GitHub repository.
 
 ------
 
