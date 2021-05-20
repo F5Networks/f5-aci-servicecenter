@@ -132,6 +132,13 @@ Functionality releated to displaying a sub-form based on some checkbox selection
 
 ------
 
+**TextBox field displayed for 'Notice: Beta Test' field in 'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates.**
+
+'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates display a text against the 'Notice: Beta Test' field. An error will be seen if this entry is filled in the form submission.
+
+**Workaround:** Leave the 'Notice: Beta Test' field blank during form submission.
+
+------
 
 Dynamic Endpoint Attach Detach
 ------------------------------
