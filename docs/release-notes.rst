@@ -144,11 +144,11 @@ Functionality releated to displaying a sub-form based on some checkbox selection
 
 **Create new partition** workflow does not work with the following steps:
 
--Select ‘Upload new template set’ 
+1. Select ‘Upload new template set’ 
 
--Do not actually upload a new template set.
+2. Do not actually upload a new template set.
 
--Trying to click the ‘Create new partition’ option from Partition drop-down will not work.
+3. Trying to click the ‘Create new partition’ option from Partition drop-down will not work.
 
 **Workaround**: Click the **Reset** button and then select **Create new partition** selection from the **Partition** drop-down
 
