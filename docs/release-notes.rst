@@ -118,7 +118,7 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 **Once all Pool Member cards are removed from template form, adding a new pool member card fails on FASC FAST templates UI**
 
-If user clicks on "-" sign in front on pool members card and tries to add pool member card again by clicking on "+" icon then then pool member card is not populated in template form.
+If a user clicks the "-" sign in front on pool members card and tries to add pool member card again by clicking the "+" icon then pool member card is not populated in template form.
 
 **Workaround:** Refresh the basic subtab on L4-L7 tab
 
@@ -126,9 +126,9 @@ If user clicks on "-" sign in front on pool members card and tries to add pool m
 
 **Dynamic hide/show of sub-forms is not supported for FAST templates**
 
-Functionality releated to displaying a sub-form based on some checkbox selection is not supported by FAST forms on F5 ACI ServiceCenter. Currently all the templates are displayed in a completely expanded layout.
+Functionality related to displaying a sub-form based on some checkbox selection is not supported by FAST forms on F5 ACI ServiceCenter. Currently all the templates are displayed in a completely expanded layout.
 
-**Workaround:** User already has the completely expanded form available on FASC’s FAST UI.
+**Workaround:** User already has the completely expanded form available on FASC's FAST UI.
 
 ------
 
