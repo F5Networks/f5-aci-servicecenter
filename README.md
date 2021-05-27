@@ -15,4 +15,4 @@ F5 ACI ServiceCenter runs natively in APIC, providing administrators a single po
 ## Filing Issues and Getting Help
 If you come across a bug or other issue when using the F5 ACI ServiceCenter, use [GitHub Issues](https://github.com/F5Networks/f5-aci-servicecenter/issues) to submit an issue for the F5 team.  You can also see the current known issues on that page, which are tagged with a purple Known Issue label.
 
-See the [Support page](https://github.com/F5Networks/f5-aci-servicecenter/blob/master/SUPPORT.md) in this repo for more details and supported versions of F5 ACI ServiceCenter.  
+See the [Support page](https://github.com/F5Networks/f5-aci-servicecenter/blob/master/SUPPORT.md) in this repo for more details and supported versions of F5 ACI ServiceCenter.
