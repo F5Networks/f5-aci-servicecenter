@@ -154,6 +154,14 @@ Functionality releated to displaying a sub-form based on some checkbox selection
 
 ------
 
+**'bigip-fast-templates/microsoft exchange' is not supported in F5 ACI ServiceCenter**
+
+If **bigip-fast-templates/microsoft exchange** template is used from the Basic sub-tab of **L4-L7 App Services --> Application**, you may receive a 'Null exception' from BIG-IP.
+
+**Workaround:** Create the microsoft exchange FAST application from BIG-IP's FAST UI.
+
+------
+
 Dynamic Endpoint Attach Detach
 ------------------------------
 
