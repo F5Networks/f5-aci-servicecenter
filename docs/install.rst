@@ -224,7 +224,7 @@ Import DB
 ------
 
 FAQ
-===
+---
 
 **Q. Why do I see an error "Failed to reach the container" on the application GUI?**
 
