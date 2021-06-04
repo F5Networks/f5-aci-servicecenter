@@ -223,8 +223,8 @@ Import DB
 
 ------
 
-FAQ
----
+Frequently Asked Questions (FAQ)
+--------------------------------
 
 **Q. Why do I see an error "Failed to reach the container" on the application GUI?**
 
