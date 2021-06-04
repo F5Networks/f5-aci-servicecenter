@@ -246,8 +246,8 @@ The self IPs are deleted from the BIG-IP device, as well as from the application
 
 -------
 
-FAQ
-===
+Frequently Asked Questions (FAQ)
+--------------------------------
 
 **Q. Why do I get an error for VLAN/self IP delete operation from the App?**
 
