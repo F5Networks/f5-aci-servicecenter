@@ -376,8 +376,8 @@ For any configuration on the L4-L7 app services tab, all AS3 operations support 
 
 ------
 
-FAQ
-===
+Frequently Asked Questions (FAQ)
+--------------------------------
 
 **Q. Why is my L4-L7 Configuration tab disabled?**
 
