@@ -143,31 +143,29 @@ View VIP Dashboard
 
 5. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, route domain, iRules, default pool (and pool information such as load balancing and pool monitor)
          
-         a. The dashboard displays a **Telemetry Consumer** drop-down list. Select the appropriate consumer from which the statistics need to be obtained. The Virtual pool statistics will be displayed on the dashboard including Bits, Packets, Connections and Requests. 
+   a. The dashboard displays a **Telemetry Consumer** drop-down list. Select the appropriate consumer from which the statistics need to be obtained. The Virtual pool statistics will be displayed on the dashboard including Bits, Packets, Connections and Requests. 
          
-            .. note::
+      .. note::
          
-               - The Telemetry Streaming plugin needs to be installed on the BIG-IP to be able to view the Telemetry consumer list and stats from the telemetry consumer. Check the **Configure Telemetry** section for installation and configuration.
+         - The Telemetry Streaming plugin needs to be installed on the BIG-IP to be able to view the Telemetry consumer list and stats from the telemetry consumer. Check the **Configure Telemetry** section for installation and configuration.
             
-               - If there is only a single Telemetry pull consumer configured, then FASC will directly query that consumer and display the stats.
+         - If there is only a single Telemetry pull consumer configured, then FASC will directly query that consumer and display the stats.
             
-         b. **View Stats** - The dashboard displays a **View Stats** link beside the default pool. It displays the total pool member count and the availability and enabled state of the pool  members using a pie chart.
+   b. **View Stats** - The dashboard displays a **View Stats** link beside the default pool. It displays the total pool member count and the availability and enabled state of the pool  members using a pie chart.
          
-         c. **View Logs** - The dashboard displays a **View Logs** link beside the VIP, which, when clicked opens a popup window and displays all the logs for the selected Virtual Server. 
+   c. **View Logs** - The dashboard displays a **View Logs** link beside the VIP, which, when clicked opens a popup window and displays all the logs for the selected Virtual Server. 
          
-            .. note::
+      .. note::
 
-               - It is possible to also view all logs instead of the filtered logs.
+        - It is also possible to view all logs instead of the filtered logs.
             
-               - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
+        - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
 
-         d. **View Connections** - The dashboard displays a **View Connections** link, which, when clicked displays all the active connections to that VIP.
+   d. **View Connections** - The dashboard displays a **View Connections** link, which, when clicked displays all the active connections to that VIP.
          
-         e. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the VIP:
-                                        1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap
+   e. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the VIP: - 1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap
                                         
-         f. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the VIP:
-                                          1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link besides interfaces to view the interface logs) 4. Self IPs
+   f. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the VIP: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link besides interfaces to view the interface logs) 4. Self IPs
 
 
 View Node Dashboard
@@ -181,31 +179,29 @@ View Node Dashboard
 
 4. Click the Node for which the dashboard is to be displayed. This redirects to the Visibility Dashboard sub-tab. 
 
-         .. note::
+   .. note::
    
-            - It is possible to directly click the **Visibility Dashboard** sub-tab and then select the Node, instead of a redirect from **Visibility Table**.
+      - It is possible to directly click the **Visibility Dashboard** sub-tab and then select the Node, instead of a redirect from **Visibility Table**.
       
 5. The Visibility Dashboard displays the information for the selected VIP including Node name, route domain and monitor.
 
-         a. **View Logs** - The dashboard displays a **View Logs** link beside the Node, which, when clicked opens a popup and all the logs for the selected Node.
+   a. **View Logs** - The dashboard displays a **View Logs** link beside the Node, which, when clicked opens a popup and all the logs for the selected Node.
 
-            .. note::
+      .. note::
 
-               - It is possible to also view all logs instead of the filtered logs.
+         - It is also possible to view all logs instead of the filtered logs.
             
-               - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
+         - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
 
-         b. **View Connections** - The dashboard displays a **View Connections** link which, when clicked displays all the active connections to that Node.
+   b. **View Connections** - The dashboard displays a **View Connections** link which, when clicked displays all the active connections to that Node.
 
-         c. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the Node:
-                                        1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap 
+   c. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the Node: - 1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap 
                                         
-         d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node:
-                                          1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs
+   d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs
 ------
 
-FAQ
-===
+Frequently Asked Questions (FAQ)
+--------------------------------
 
 **Q. Why do VLANs from the F5 ACI ServiceCenter application visibility table vanish if I destroy and re-create service graph template of my VIRTUAL Logical Device on Cisco APIC?**
 
