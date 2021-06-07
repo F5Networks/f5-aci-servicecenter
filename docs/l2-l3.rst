@@ -186,19 +186,19 @@ Create a VLAN for HA setup
 
 4. Select one or more VLANs and move them to the Selected box.
 
-5. The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name.After selecting the VLANS click Manage Selected.
+5. The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name. After selecting the VLANS click Manage Selected.
 
 .. note::
     - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Name (2) Tag (3) Interface.
     - If a configuration with 2 vCMP guests on separate vCMP hosts in HA configuration has to be supported, the 2 vCMP hosts will need to have the same VLAN name. Hence please add the same VLAN Name for such vCMP Hosts - guests of which hosts are going to form HA pair. The steps to do so are as follows:
     
-      - Create VLAN on vCMP host 1
+      - Create a VLAN on vCMP host 1
       
-      - Copy VLAN name from host 1 and create VLAN on host 2 with same name
+      - Copy the VLAN name from host 1 and create VLAN on host 2 with same name
       
-      - Assign these VLANs to corresponding vCMP Guests vCMP guest 1 (on host 1) and vCMP guest 2 (on host 2)
+      - Assign these VLANs to the corresponding vCMP Guests vCMP guest 1 (on host 1) and vCMP guest 2 (on host 2)
       
-      - Create local and floating ips for these VLANs. VLAN and local Self IP should be present on both the BIG-IP devices of the HA pair before Floating Self IPs can be created.
+      - Create local and floating IPs for these VLANs. The VLAN and local Self IP should be present on both the BIG-IP devices of the HA pair before Floating Self IPs can be created.
       
       - Click Submit.
 
@@ -216,7 +216,7 @@ Create Self IPs
 ```````````````````````````
 
 1. Click the L2-L3 Network Management tab.
-2. Select one or more available vlans and move them to the Selected box. These VLANs are already present on the vCMP Guest BIG-IP device After selecting the VLANS click Manage Selected.
+2. Select one or more available VLANs and move them to the Selected box. These VLANs are already present on the vCMP Guest BIG-IP device. After selecting the VLANS click Manage Selected.
 
 .. note::
     - A VLAN configuration form is displayed to add Self IPs. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
