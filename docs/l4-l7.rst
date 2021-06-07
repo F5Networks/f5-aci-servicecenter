@@ -97,21 +97,15 @@ Create an application using Advanced mode (Application subtab)
 --------------------------------------------------------------
 
 1. Select the Advanced mode on the Application subtab.
-
 2. From the :guilabel:`Partition` list, click the partition you want to
    create the new app in.
-
 3. From the :guilabel:`Application` list, click :guilabel:`Create New Application`.
 
-   .. note::
+.. note::
       Application stub code is displayed in the text box.
-
 4. In the :guilabel:`Application Name` field, enter a valid application name.
-
 5. Update the stub code which appears in the JSON box with appropriate values.
-
 6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
-
 7. Click :guilabel:`Submit`.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list.
@@ -172,7 +166,7 @@ When you delete the last application, the corresponding partition is automatical
 
 
 Create a partition using FAST template (Basic mode-Application subtab)
---------------------------------------------------------
+----------------------------------------------------------------------
 
 1. Select the Basic mode on Application subtab.
 
@@ -195,13 +189,14 @@ New partitions and applications are listed in the Partition and Application drop
    - For :guilabel:`service-discovery/http` template, You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the BIG-IP Application’s pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
    
    - If :guilabel:`FAST generated pool monitor` is enabled user must fill below fields in the form selected template
-         - Hostname title field for **bigip-fast-templates/dns** template
-         - Application domain name title field in **bigip-fast-templates/microsoft sharepoint** template
-         - Password title field for **bigip-fast-templates/ldap** template
-         - Application domain name title field for **bigip-fast-templates/microsoft sharepoint** template
+   
+     - Hostname title field for **bigip-fast-templates/dns** template
+     - Application domain name title field in **bigip-fast-templates/microsoft_sharepoint** template
+     - Password title field for **bigip-fast-templates/ldap** template
+     - Domain Name title field for **bigip-fast-templates/smtp** template
 
 Delete a partition using FAST Template (Basic mode-Application subtab)
----------------------------------------------------------
+----------------------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
 
@@ -218,7 +213,7 @@ Delete a partition using FAST Template (Basic mode-Application subtab)
 
 
 Create an application using FAST Template (Basic mode-Application subtab)
------------------------------------------------------------
+-------------------------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
 
@@ -226,9 +221,9 @@ Create an application using FAST Template (Basic mode-Application subtab)
 
 3. From the :guilabel:`Application` list, click Create New Application.
 
-5. Choose a template from the template drop-down. Fox example :guilabel:`bigip-fast-templates/http`. A form will be displayed. Fill the form with appropriate values.
+4. Choose a template from the template drop-down. Fox example :guilabel:`bigip-fast-templates/http`. A form will be displayed. Fill the form with appropriate values.
 
-6. Click Submit.
+5. Click Submit.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list on this tab.
 
@@ -239,7 +234,7 @@ The new application is created on this BIG-IP device in the specified partition,
 
 
 Update an application using FAST Template (Basic Mode-Application subtab)
------------------------------------------------------------
+-------------------------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
 
@@ -258,7 +253,7 @@ The application is updated on the BIG-IP device.
    - On clicking :guilabel:`Submit`, the application is updated asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 Delete an application using FAST Template (Basic mode-Application subtab)
------------------------------------------------------------
+-------------------------------------------------------------------------
 
 1. Select the Basic mode on the Application subtab.
 
@@ -276,7 +271,7 @@ Delete an application using FAST Template (Basic mode-Application subtab)
 
 
 Upload a new FAST Template set using Basic mode (Application subtab)
----------------------------------------------------------------
+--------------------------------------------------------------------
 
 1. Select the Basic mode on Application subtab.
 
@@ -293,21 +288,21 @@ Upload a new FAST Template set using Basic mode (Application subtab)
    - Uploaded FAST template set will only be accessible only for the current BIG-IP where template is uploaded.
 
 Upload a new FAST Template set (Dynamic Endpoint Discovery) using Basic mode
----------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 F5 ACI ServiceCente provides the dynamic service discovery custom fast template :guilabel:`service_discovery/http` for endpoint attach and detach functionality using FAST templates.
 
-1.Select the Basic mode on the Application subtab.
+1. Select the Basic mode on the Application subtab.
 
-2.From the Partition list, click on :guilabel:`Create New Partition`.
+2. From the Partition list, click on :guilabel:`Create New Partition`.
 
-3.From the :guilabel:`Template` list, click on :guilabel:`service-discovery/http`. confirmation window will appear on the UI.
+3. From the :guilabel:`Template` list, click on :guilabel:`service-discovery/http`. confirmation window will appear on the UI.
 
-4.Click on :guilabel:`Upload`
+4. Click on :guilabel:`Upload`
 
 
 Delete custom FAST Template Set using Basic mode (Application subtab)
-----------------------------------------------------------------
+---------------------------------------------------------------------
 
 1. Select the Basic mode on Application subtab.
 
@@ -315,9 +310,9 @@ Delete custom FAST Template Set using Basic mode (Application subtab)
 
 3. From the :guilabel:`Template` list, click the template which is to be deleted.
 
-3. Click the Delete icon besides template name.
+4. Click the Delete icon besides template name.
 
-4. The template will get deleted from the BIG-IP FAST Database.
+5. The template will get deleted from the BIG-IP FAST Database.
 
 .. note::
 
@@ -327,29 +322,34 @@ Delete custom FAST Template Set using Basic mode (Application subtab)
 
 
 View AS3/FAST Applications (Application Inventory sub-tab)
------------------------------------------------------
+----------------------------------------------------------
 
 1. Click the Application Inventory tab on the L4-L7 App Services tab.
 
 2. This will display a list of all the AS3 applications present on the BIG-IP device. The list will have the following columns:
 
-Partition   
-            - Displays BIG-IP partition of the application
+   **Partition**   
+   
+   - Displays BIG-IP partition of the application
 
-Application 
-            - Displays application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
+   **Application** 
+    
+   - Displays application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
 
-Template    
-            - Displays the name of the template used. If the application was created using Advanced mode, this column will display 'No Information'.
+   **Template**    
+   
+   - Displays the name of the template used. If the application was created using Advanced mode, this column will display 'No Information'.
 
-Pool        
-            - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has hyperlink to BIG-IP UI to the same pool.
+   **Pool**    
+   
+   - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has hyperlink to BIG-IP UI to the same pool.
 
-Action      
-            - View details icon - Shows the raw JSON of the AS3 application
-            - Sync Endpoints to BIG-IP icon - Retrieves all the Endpoints from associated Tenant|Application|EPG and creates them to the associated pool of the application
-            - View Pool Endpoints icon - Lists the endpoints present in the service discovery endpoint of the BIG-IP https:///<BIG-IP>/mgmt/shared/service-discovery/task/~Partition~Application~Pool
-            - View Application JSON icon - Shows the raw JSON of the AS3 application
+   **Action**   
+   
+   - View details icon - Shows the raw JSON of the AS3 application
+   - Sync Endpoints to BIG-IP icon - Retrieves all the Endpoints from associated Tenant|Application|EPG and creates them to the associated pool of the application
+   - View Pool Endpoints icon - Lists the endpoints present in the service discovery endpoint of the BIG-IP https:///<BIG-IP>/mgmt/shared/service-discovery/task/~Partition~Application~Pool
+   - View Application JSON icon - Shows the raw JSON of the AS3 application
 
 
 Refresh L4-L7 Configuration tab
