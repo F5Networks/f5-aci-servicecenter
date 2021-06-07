@@ -56,8 +56,8 @@ Manual sync of endpoints from APIC Endpoint Group to BIG-IP pool
 
 ------
 
-FAQ
----
+Frequently Asked Questions (FAQ)
+--------------------------------
 
 **Q. When new dynamic endpoints get added on APIC, why aren’t  the nodes getting updated on BIG-IP devices?**
 
