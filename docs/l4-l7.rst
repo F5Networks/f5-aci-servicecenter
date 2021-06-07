@@ -310,9 +310,9 @@ Delete custom FAST Template Set using Basic mode (Application subtab)
 
 3. From the :guilabel:`Template` list, click the template which is to be deleted.
 
-4. Click the Delete icon besides template name.
+4. Click the Delete icon next to the template name.
 
-5. The template will get deleted from the BIG-IP FAST Database.
+5. The template will be deleted from the BIG-IP FAST Database.
 
 .. note::
 
@@ -330,11 +330,11 @@ View AS3/FAST Applications (Application Inventory sub-tab)
 
    **Partition**   
    
-   - Displays BIG-IP partition of the application
+   - Displays the BIG-IP partition of the application
 
    **Application** 
     
-   - Displays application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
+   - Displays the application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
 
    **Template**    
    
