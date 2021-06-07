@@ -157,7 +157,7 @@ View VIP Dashboard
          
       .. note::
 
-        - It is possible to also view all logs instead of the filtered logs.
+        - It is also possible to view all logs instead of the filtered logs.
             
         - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
 
@@ -189,7 +189,7 @@ View Node Dashboard
 
       .. note::
 
-         - It is possible to also view all logs instead of the filtered logs.
+         - It is also possible to view all logs instead of the filtered logs.
             
          - It is possible to specify a UTC from and to Date/Time for the logs to be retrieved. The From/To time should be specified in UTC timezone. The response too will be in UTC.
 
