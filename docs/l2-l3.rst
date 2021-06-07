@@ -1,4 +1,4 @@
-L2-L3 Stitching
+L2-L3 Network Management
 =========================
 
 In the top-left of L2-L3 tab, the :guilabel:`Logical Device` list filters devices based on high availability type (standalone or HA) and on device type (physical or virtual). If someone is logged in to a physical standalone BIG-IP device, the list shows only APIC logical devices of devtype :guilabel:`physical`, which have a single APIC Concrete device entry (CDEV) associated with them.
