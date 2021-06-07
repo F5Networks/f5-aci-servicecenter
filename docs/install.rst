@@ -75,7 +75,7 @@ APIC 4.1(1k)+
   
 6. APIC will upgrade the application from v2.0 to v2.1+ version and also retain the database. 
   
-7. Please open the app and check whether the added BIG-IP devices list is visible. User will have to re-login to the BIG-IP devices using the upgraded app.
+7. Open the app and check whether the added BIG-IP devices list is visible. The user will have to re-login to the BIG-IP devices using the upgraded app.
  
 
 APIC 3.2(7f)+ (All supported 3.2.X versions)
@@ -85,15 +85,15 @@ APIC 3.2(7f)+ (All supported 3.2.X versions)
   
 2. SSH into the APIC server which has the F5 ACI ServiceCenter app container running.
   
-3. cd /data2/gluster/gv0/F5Networks_F5ACIServiceCenter
+3. Change directories using the following command: cd /data2/gluster/gv0/F5Networks_F5ACIServiceCenter
   
-4. Copy out the f5.db file from this location to your local system to create the database backup.
+4. Copy the f5.db file from this location to your local system to create the database backup.
   
 5. Uninstall the current app and re-install the F5 ACI ServiceCenter v2.1+ as specified in the installation steps.
   
 6. Open the new upgraded version of the app. Click the drop-down --> Import DB on the top right corner of F5 ACI ServiceCenter.
   
-7. Select the f5.db file from your local system which you saved in step 4. and click Submit.
+7. Select the f5.db file from your local system which you saved in step 4 and then click Submit.
   
 8. The application restores the selected database file and the upgrade process is complete.
   
@@ -161,9 +161,9 @@ Users may click on any of the discovered devices and login to the device. Once l
 
     - In order for the BIG-IP devices to be discovered via LLDP protocol, LLDP needs to be enabled on the BIG-IPs as well as on APIC. To enable LLDP on BIG-IP:
 
-      1. Login to BIG-IP
+      1. Log in to the BIG-IP.
 
-      2. Click on Interfaces → LLDP → General
+      2. Click Interfaces → LLDP → General
 
       3. Select 'Enabled' for the LLDP property
 
