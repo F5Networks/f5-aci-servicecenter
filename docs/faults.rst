@@ -34,8 +34,8 @@ View BIG-IP Faults
 
 ------------------ 
 
-FAQ
-===============================================
+Frequently Asked Questions (FAQ)
+------------------------------------
 
 **Q. I’m only able to see the last 100 errors/warnings in 'View Faults' (View Faults feature is available in versions 2.4+). How can I see older faults for my BIG-IP?**
 
