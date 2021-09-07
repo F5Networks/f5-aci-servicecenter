@@ -14,7 +14,7 @@ View VLAN table
 
    The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding **Logical Device|Tenant** entry on the APIC.
    
-   The table shows all the VLANs (vlan encaps), Self IP, Interfaces from the BIG-IP device that have a corresponding **Endpoint Group|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**.
+   The table shows all the VLANs (vlan encaps), Self IP, Interfaces from the BIG-IP device that have a corresponding **Endpoint Group|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**. Users are able to view information related to Self IPs and interfaces by clicking on the dropdown icon in Self IP and interface columns respectively.
 
    The table does not show VLANs from BIG-IPs that don't have corresponding APIC entries.
    
