@@ -140,8 +140,9 @@ View VIP Dashboard
    
       - It is possible to directly click the **Visibility Dashboard** sub-tab and then select the VIP, instead of a redirect from **Visibility Table**.
       
+5. F5 ACI ServiceCenter supports MAC masquerade mac display under BIG-IP endpoint details on VIP visibility dashboard. MAC address type details( eg. MAC masquerade MAC or Normal MAC ) will be displayed on hover over the information icon in the MAC column of BIG-IP endpoint details table.
 
-5. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, route domain, iRules, default pool (and pool information such as load balancing and pool monitor)
+6. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, route domain, iRules, default pool (and pool information such as load balancing and pool monitor)
          
    a. The dashboard displays a **Telemetry Consumer** drop-down list. Select the appropriate consumer from which the statistics need to be obtained. The Virtual pool statistics will be displayed on the dashboard including Bits, Packets, Connections and Requests. 
          
@@ -198,6 +199,13 @@ View Node Dashboard
    c. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the Node: - 1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap 
                                         
    d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs
+   
+6. F5 ACI ServiceCenter supports VXLAN tunnel interfaces along with individual, Port channel, Virtual port channel interfaces on Node table visibility dashboard.
+   
+   To view details of the VXLAN tunnel interfaces, Click on Node IP in Node information table -> Scroll down to APIC Endpoint details table. All interfaces associated with the node like VPC/PC/Individual/tunnel are displayed in the interface column and On click over the interface additional information related to VPC/PC/Individual/tunnel interface will be displayed in the side panel.
+
+
+
 ------
 
 Frequently Asked Questions (FAQ)
@@ -264,5 +272,11 @@ It displays the **default route domain** for the partition to which the Virtual 
 **Q. Why don't I see the scrollbar for the 'View Logs' window on the Visibility Dashboard?**
 
 If you encounter this issue, use the 'zoom out' option on your web browser. For example, on Windows, hold the **Ctrl** key, and then click **-** (the dash/minus key).
+
+------
+
+**Q. VIP MAC masquerade Address might display old MAC on the visibility dashboard**
+
+Due to APIC endpoint learning and retention behavior, it takes 10-15 mins time for updated MAC details to be available on APIC endpoint tracker. Until APIC updates the MAC address, FASC visibility dashboard displays the old MAC address. Refer this link for recommended actions:  https://support.f5.com/csp/article/K44023455
 
 ------
