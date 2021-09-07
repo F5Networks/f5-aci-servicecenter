@@ -122,7 +122,7 @@ Add a new BIG-IP device (Device Login)
 
 4. Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
 
-5. F5 ACI ServiceCenter v2.9 onwards LDAP support is added for BIG-IP login.
+5. F5 ACI ServiceCenter v2.9 onwards supports LDAP authentication for BIG-IP login.
 
 .. note::
    
