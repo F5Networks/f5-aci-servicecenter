@@ -159,20 +159,6 @@ Functionality releated to displaying a sub-form based on some checkbox selection
 
 ------
 
-**‘Create new partition’ workflow does not work when users select ‘Upload new template set’ without actually uploading the new template set**
-
-**Create new partition** workflow does not work with the following steps:
-
-1. Select ‘Upload new template set’ 
-
-2. Do not actually upload a new template set.
-
-3. Trying to click the ‘Create new partition’ option from Partition drop-down will not work.
-
-**Workaround**: Click the **Reset** button and then select **Create new partition** selection from the **Partition** drop-down
-
-------
-
 **'bigip-fast-templates/microsoft_exchange' template is not supported in F5 ACI ServiceCenter**
 
 If **bigip-fast-templates/microsoft_exchange** template is used from the Basic sub-tab of **L4-L7 App Services --> Application**, you may receive a 'Null exception' from BIG-IP.
