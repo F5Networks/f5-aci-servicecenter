@@ -6,7 +6,7 @@ General
 
 **File system convergence**
 
-APIC Filesystem Glusterfs takes 15 to 20 Minutes to recover when APIC cluster goes unhealthy.
+APIC Filesystem Glusterfs takes 15 to 20 minutes to recover when the APIC cluster goes unhealthy.
 
 During APIC operations like APIC reboot, upgrade, or decommission/recommission, the APIC filesystem needs some time to recover and resume.
 
@@ -21,14 +21,14 @@ Symptoms users may see:
 
 **Export db does not work on APIC version 5.0.1**
 
-The user menu on the top-right corner of the F5 ACI ServiceCenter has an option for exporting F5 ACI ServiceCenter database (**Export/Import DB > Export DB**). This option does not work on APIC versions 5.0.1. This is working as expected on prior versions of the APIC and also on versions 5.0(2e) and higher. 
+The User menu on the top-right corner of the F5 ACI ServiceCenter has an option for exporting the F5 ACI ServiceCenter database (**Export/Import DB > Export DB**). This option does not work on APIC versions 5.0.1. This is working as expected on prior versions of the APIC and also on versions 5.0(2e) and higher. 
 
 **Workaround:** Backup the F5 ACI ServiceCenter database using the following steps:
 1. Login to the APIC server via SSH.
 
 2. Change directories to F5Networks_F5ACIServiceCenter: **cd /data2/gluster/gv0/F5Networks_F5ACIServiceCenter**.
 
-3. Use scp, winscp or any other preferred tool to copy out the f5.db file from this location. 
+3. Use scp, winscp or any other preferred tool to copy the f5.db file from this location. 
 
 ------
 
@@ -48,11 +48,11 @@ When you click the Topology icon in any one of the tabs (Visibility, Network Man
 
 ------
 
-**BIG-IP version may not be displayed correctly in FASC when BIG-IP version is upgraded or downgraded.**
+**BIG-IP version may not be displayed correctly in FASC when the BIG-IP version is upgraded or downgraded.**
 
-The BIG-IP version displayed on hover over the BIG-IP IP address may not be displayed correctly when BIG-IP is upgraded or downgraded.
+The BIG-IP version when hovering over the BIG-IP IP address may not be displayed correctly when BIG-IP is upgraded or downgraded.
 
-**Workaround:** Log-out and re-login the BIG-IP device in the FASC application.
+**Workaround:** Log-out and re-login to the BIG-IP device in the FASC application.
 
 ------
 
@@ -62,7 +62,7 @@ Non-admin BIG-IP users have restricted access to F5 ACI ServiceCenter, however d
 
 **Ansible Defect:** https://github.com/F5Networks/f5-ansible/issues/2088
 
-**Workaround:** Use BIG-IP admin account for F5 ACI ServiceCenter Default Gateway operations.
+**Workaround:** Use the BIG-IP admin account for F5 ACI ServiceCenter Default Gateway operations.
 
 ------
 
@@ -70,7 +70,7 @@ Non-admin BIG-IP users have restricted access to F5 ACI ServiceCenter, however d
 
 Access to the F5 ACI ServiceCenter operations for LDAP users depends upon whether the user is admin or non-admin. F5 ACI ServiceCenter is not able to distinguish between non-admin access roles such as operator, guest, no access and so on, hence users with role **No-Access** might be able to login to F5 ACI ServiceCenter with limited access.
 
-**Workaround:** Use BIG-IP admin account for F5 ACI ServiceCenter operations. 
+**Workaround:** Use the BIG-IP admin account for F5 ACI ServiceCenter operations. 
 
 ------
 
@@ -118,7 +118,7 @@ This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com
 
 **Visibility Dashboard filter may display additional logs with interface filter.**
 
-**Visibility Dashboard → BIG-IP Endpoint Details → Interface → View Logs** (for BIG-IP interfaces) displays interface logs. By default it applies the filter of interface name (for example: 1.1 or 1.2); and hence only the logs with interface name in them are displayed. This filtering logic may not work as expected and display additional logs which have interface name as a substring (For example: **1.2** is a substring in the log "Pool /Partition/Application/web_pool member **/Partition/12.14.1.2:8080** monitor status down").
+**Visibility Dashboard → BIG-IP Endpoint Details → Interface → View Logs** (for BIG-IP interfaces) displays interface logs. By default it applies the filter of interface name (for example: 1.1 or 1.2); and hence only the logs with interface name in them are displayed. This filtering logic may not work as expected and display additional logs which have interface names as a substring (For example: **1.2** is a substring in the log "Pool /Partition/Application/web_pool member **/Partition/12.14.1.2:8080** monitor status down").
 
 **Workaround:** None.
 
@@ -135,11 +135,11 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 -------
 
-**Once all Pool Member cards are removed from template form, adding a new pool member card fails on FASC FAST templates UI**
+**Once all Pool Member cards are removed from the template form, adding a new pool member card fails on FASC FAST templates UI**
 
-If user clicks on "-" sign in front on pool members card and tries to add pool member card again by clicking on "+" icon then then pool member card is not populated in template form.
+If a user clicks the "-" sign in front of the pool members card and tries to add pool member card again by clicking the "+" icon, then the pool member card is not populated in template form.
 
-**Workaround:** Refresh the basic subtab on L4-L7 tab
+**Workaround:** Refresh the basic subtab on the L4-L7 tab
 
 ------
 
@@ -151,7 +151,7 @@ Functionality releated to displaying a sub-form based on some checkbox selection
 
 ------
 
-**TextBox field displayed for 'Notice: Beta Test' field in 'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates.**
+**A TextBox field is displayed with 'Notice: Beta Test' field in 'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates.**
 
 'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates display a text against the 'Notice: Beta Test' field. An error will be seen if this entry is filled in the form submission.
 
@@ -183,7 +183,10 @@ When a dynamic endpoint mapping is added to an application using **Manage Endpoi
 
 **AS3 applications can either have static nodes or dynamic nodes but not both**
 
-AS3 applications will support either static nodes or dynamic nodes (using the **Manage Endpoint Mappings** button) but not both. 
+AS3 applications will support either static nodes or dynamic nodes (using the **Manage Endpoint Mappings** button) but not both.
+
+**Workaround:** None
+
 
 ------
 
@@ -243,7 +246,7 @@ If an APIC Tenant|App|EPG mapped to a BIG-IP pool has an endpoint with an IP add
 
 Workaround: Remove the duplicate IPs from the endpoint list on APIC and retry a manual sync of Endpoints from L4-L7 App Services --> Application Inventory --> Sync EPs icon. 
 
-Note: Similar issues might be seen with other erronous configurations such as unsupported IPv4 formats like 1.2.3.4/24 instead of 1.2.3.4
+Note: Similar issues might be seen with other erroneous configurations such as unsupported IPv4 formats like 1.2.3.4/24 instead of 1.2.3.4
 
 AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
