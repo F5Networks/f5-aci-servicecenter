@@ -10,11 +10,11 @@ View VLAN table
 
    In the :guilabel:`Table` list, the VLAN table is selected by default.
 
-2. From the :guilabel:`Partition` list, select the partition you’re interested in.
+2. From the :guilabel:`Partition` list, select the partition you’re interested in. The **All partition** option is supported for the VLAN table in v2.9 and later.
 
    The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding **Logical Device|Tenant** entry on the APIC.
    
-   The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding **Endpoint Group|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**.
+   The table shows all the VLANs (vlan encaps), Self IP, Interfaces from the BIG-IP device that have a corresponding **Endpoint Group|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**. Users are able to view information related to Self IPs and interfaces by clicking the dropdown icon in the Self IP and Interface columns respectively.
 
    The table does not show VLANs from BIG-IPs that don't have corresponding APIC entries.
    
@@ -24,7 +24,7 @@ View VIP table
 
 1. Click the Visibility tab, and then from the :guilabel:`Table` list, click the :guilabel:`VIP` table.
 
-2. From the :guilabel:`Partition` list, click the partition you're interested in.
+2. From the :guilabel:`Partition` list, click the partition you're interested in. The **All partition** option is supported for the VIP table in v2.9 and later.
 
    This table shows all the VIPs (virtual servers) from the BIG-IP device. It also shows the pool and nodes for this VIP. For each node, it displays the corresponding Tenant, Application, and End Point
    Group entries from APIC.
@@ -43,7 +43,7 @@ View Node table
 
 1. Click the Visibility tab, and then click the :guilabel:`Node` table from the Table list.
 
-2. From the :guilabel:`Partition` list, click the partition.
+2. From the :guilabel:`Partition` list, click the partition. The **All partition** option is supported for the Node table in v2.9 and later.
 
    This table shows all the Nodes from this BIG-IP device, provided they have a corresponding Tenant Application and EPG entry on the APIC. It also displays the pools that the node belongs to. For each pool, it
    shows the corresponding VIPs (virtual servers).
@@ -140,8 +140,9 @@ View VIP Dashboard
    
       - It is possible to directly click the **Visibility Dashboard** sub-tab and then select the VIP, instead of a redirect from **Visibility Table**.
       
+5. F5 ACI ServiceCenter supports MAC masquerade MAC display under BIG-IP endpoint details on the VIP visibility dashboard. MAC address type details (such as MAC masquerade or normal MAC) are displayed when you hover over the Information icon in the MAC column of the BIG-IP endpoint details table.
 
-5. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, route domain, iRules, default pool (and pool information such as load balancing and pool monitor)
+6. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, route domain, iRules, default pool (and pool information such as load balancing and pool monitor)
          
    a. The dashboard displays a **Telemetry Consumer** drop-down list. Select the appropriate consumer from which the statistics need to be obtained. The Virtual pool statistics will be displayed on the dashboard including Bits, Packets, Connections and Requests. 
          
@@ -198,6 +199,13 @@ View Node Dashboard
    c. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the Node: - 1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap 
                                         
    d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs
+   
+6. F5 ACI ServiceCenter supports VXLAN tunnel interfaces along with individual, Port channel, and Virtual port channel interfaces on the Node table visibility dashboard.
+   
+   To view details of the VXLAN tunnel interfaces, click Node IP in the Node information table, and then scroll down to the APIC Endpoint details table. All interfaces associated with the node, such as VPC, PC, Individual, and Tunnel, are displayed in the interface column. When you click the interface, additional information related to these interfaces displays in the side panel.
+
+
+
 ------
 
 Frequently Asked Questions (FAQ)
@@ -264,5 +272,11 @@ It displays the **default route domain** for the partition to which the Virtual 
 **Q. Why don't I see the scrollbar for the 'View Logs' window on the Visibility Dashboard?**
 
 If you encounter this issue, use the 'zoom out' option on your web browser. For example, on Windows, hold the **Ctrl** key, and then click **-** (the dash/minus key).
+
+------
+
+**Q. VIP MAC masquerade address might display an old MAC on the visibility dashboard**
+
+Due to the APIC endpoint learning and retention behavior, it takes 10-15 minutes for the updated MAC details to be available on the APIC endpoint tracker. Until APIC updates the MAC address, the FASC visibility dashboard displays the old MAC address. Refer this link for recommended actions:  https://support.f5.com/csp/article/K44023455
 
 ------

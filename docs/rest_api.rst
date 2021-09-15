@@ -5087,63 +5087,65 @@ getvlanstats.json
 |                    |                                                                                                                                                           |
 |                    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
-|                    | "vlans": [                                                                                                                                                |
+|                    | "vlan": "/Common/vlan-40",                                                                                                                                |
 |                    |                                                                                                                                                           |
-|                    | "/Common/vlan-22",                                                                                                                                        |
-|                    |                                                                                                                                                           |
-|                    | "/Common/vlan-21"                                                                                                                                         |
-|                    |                                                                                                                                                           |
-|                    | ],                                                                                                                                                        |
-|                    |                                                                                                                                                           |
-|                    | "exportedTenants": [],                                                                                                                                    |
-|                    |                                                                                                                                                           |
-|                    | "ldev": {                                                                                                                                                 |
-|                    |                                                                                                                                                           |
-|                    | "dn": "uni/tn-Demo/lDevVip-Demo-LogicalDevice",                                                                                                           |
-|                    |                                                                                                                                                           |
-|                    | "name": "Demo-LogicalDevice"                                                                                                                              |
-|                    |                                                                                                                                                           |
-|                    | },                                                                                                                                                        |
-|                    |                                                                                                                                                           |
-|                    | "tenant": {                                                                                                                                               |
-|                    |                                                                                                                                                           |
-|                    | "dn": "uni/tn-Demo",                                                                                                                                      |
-|                    |                                                                                                                                                           |
-|                    | "name": "Demo"                                                                                                                                            |
-|                    |                                                                                                                                                           |
-|                    | }                                                                                                                                                         |
-|                    |                                                                                                                                                           |
-|                    | },                                                                                                                                                        |
+|                    | "ldevs": [                                                                                                                                                |
 |                    |                                                                                                                                                           |
 |                    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
-|                    | "vlans": [                                                                                                                                                |
-|                    |                                                                                                                                                           |
-|                    | "/Common/vlan-300"                                                                                                                                        |
-|                    |                                                                                                                                                           |
-|                    | ],                                                                                                                                                        |
-|                    |                                                                                                                                                           |
-|                    | "exportedTenants": [],                                                                                                                                    |
-|                    |                                                                                                                                                           |
 |                    | "ldev": {                                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "dn": "uni/tn-Student3/lDevVip-Student3-LogicalDevice",                                                                                                   |
+|                    | "name": "10.107.0.25_ldev",                                                                                                                               |
 |                    |                                                                                                                                                           |
-|                    | "name": "Student3-LogicalDevice"                                                                                                                          |
+|                    | "dn": "uni/tn-GS3_Tenant/lDevVip-10.107.0.25_ldev"                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | },                                                                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | "tenant": {                                                                                                                                               |
 |                    |                                                                                                                                                           |
-|                    | "dn": "uni/tn-Student3",                                                                                                                                  |
+|                    | "name": "GS3_Tenant",                                                                                                                                     |
 |                    |                                                                                                                                                           |
-|                    | "name": "Student3"                                                                                                                                        |
+|                    | "dn": "uni/tn-GS3_Tenant"                                                                                                                                 |
+|                    |                                                                                                                                                           |
+|                    | },                                                                                                                                                        |
+|                    |                                                                                                                                                           |
+|                    | "exportedTenants": []                                                                                                                                     |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | ],                                                                                                                                                        |
+|                    | "epgs": [],                                                                                                                                               |
+|                    |                                                                                                                                                           |
+|                    | "selfips": [                                                                                                                                              |
+|                    |                                                                                                                                                           |
+|                    | {                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | "traffic_group": "traffic-group-1",                                                                                                                       |
+|                    |                                                                                                                                                           |
+|                    | "allow_service": "all",                                                                                                                                   |
+|                    |                                                                                                                                                           |
+|                    | "address": "192.168.1.5/24"                                                                                                                               |
+|                    |                                                                                                                                                           |
+|                    | "name": "192.168.1.5",                                                                                                                                    |
+|                    |                                                                                                                                                           |
+|                    | }                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | ],                                                                                                                                                        |
+|                    |                                                                                                                                                           |
+|                    | "interfaces": [                                                                                                                                           |
+|                    |                                                                                                                                                           |
+|                    | {                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | "name": "1.2",                                                                                                                                            |
+|                    |                                                                                                                                                           |
+|                    | "tagged": "tagged"                                                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | ]                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | }                                                                                                                                                         |
+|                    |]                                                                                                                                                          |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Error Response     | Code: 4XX                                                                                                                                                 |
 |                    |                                                                                                                                                           |
@@ -5186,19 +5188,23 @@ getvipstats.json
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Example Response   | [                                                                                                                                                         |
 |                    |                                                                                                                                                           |
+|                    | "pool": {                                                                                                                                                 |
+|                    |                                                                                                                                                           |
 |                    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
-|                    | "vip": {                                                                                                                                                  |
-|                    |                                                                                                                                                           |
-|                    | "status": "offline",                                                                                                                                      |
-|                    |                                                                                                                                                           |
-|                    | "name": "http\_vs",                                                                                                                                       |
-|                    |                                                                                                                                                           |
-|                    | "address": "10.0.0.156:80",                                                                                                                               |
+|                    | "name": "pool12",                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | "partition": "Common",                                                                                                                                    |
 |                    |                                                                                                                                                           |
-|                    | "enabled": "enabled"                                                                                                                                      |
+|                    | "status": "unknown",                                                                                                                                      |
+|                    |                                                                                                                                                           |
+|                    | "enabled": "enabled",                                                                                                                                     |
+|                    |                                                                                                                                                           |
+|                    | "fullpath": "/Common/pool12",                                                                                                                             |
+|                    |                                                                                                                                                           |
+|                    | "monitor": null,                                                                                                                                          |
+|                    |                                                                                                                                                           |
+|                    | "loadBalancingMode": "round-robin"                                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | },                                                                                                                                                        |
 |                    |                                                                                                                                                           |
@@ -5206,61 +5212,87 @@ getvipstats.json
 |                    |                                                                                                                                                           |
 |                    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
-|                    | "status": "offline",                                                                                                                                      |
+|                    | "name": "192.168.1.2",                                                                                                                                    |
 |                    |                                                                                                                                                           |
-|                    | "name": "10.0.0.112:80",                                                                                                                                  |
+|                    | "address": "192.168.1.2",                                                                                                                                 |
 |                    |                                                                                                                                                           |
-|                    | "address": "10.0.0.112",                                                                                                                                  |
+|                    | "fqdn": null,                                                                                                                                             |
+|                    |                                                                                                                                                           |
+|                    | "partition": "Common",                                                                                                                                    |
+|                    |                                                                                                                                                           |
+|                    | "fullpath": "/Common/192.168.1.2:80",                                                                                                                     |
+|                    |                                                                                                                                                           |
+|                    | "status": "unknown",                                                                                                                                      |
+|                    |                                                                                                                                                           |
+|                    | "enabled": "enabled"                                                                                                                                      |
+|                    |                                                                                                                                                           |
+|                    | }                                                                                                                                                         |
+|                    |                                                                                                                                                           |
+|                    | ],                                                                                                                                                        |
+|                    |                                                                                                                                                           |
+|                    | "vip": {                                                                                                                                                  |
+|                    |                                                                                                                                                           |
+|                    | "name": "192.168.1.3",                                                                                                                                    |
+|                    |                                                                                                                                                           |
+|                    | "address": "192.168.1.3:80",                                                                                                                              |
+|                    |                                                                                                                                                           |
+|                    | "status": "unknown",                                                                                                                                      |
+|                    |                                                                                                                                                           |
+|                    | "enabled": "enabled",                                                                                                                                     |
+|                    |                                                                                                                                                           |
+|                    | "partition": "Common",                                                                                                                                    |
+|                    |                                                                                                                                                           |
+|                    | "fullpath": "/Common/192.168.1.3:80",                                                                                                                     |
+|                    |                                                                                                                                                           |
+|                    | "vipFullPath": "/Common/192.168.1.3",                                                                                                                     |
+|                    |                                                                                                                                                           |
+|                    | "ipProtocol": "tcp",                                                                                                                                      |
+|                    |                                                                                                                                                           |
+|                    | "sourceAddressTranslation": {                                                                                                                             |
+|                    |                                                                                                                                                           |
+|                    | "type": "none"                                                                                                                                            |
+|                    |                                                                                                                                                           |
+|                    | },                                                                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | "epgs": [                                                                                                                                                 |
 |                    |                                                                                                                                                           |
 |                    | {                                                                                                                                                         |
 |                    |                                                                                                                                                           |
-|                    | "tenant": "gstenant",                                                                                                                                     |
+|                    | "tenant": {                                                                                                                                               |
 |                    |                                                                                                                                                           |
-|                    | "app": "gsApp",                                                                                                                                           |
+|                    | "name": "GS3_Tenant",                                                                                                                                     |
 |                    |                                                                                                                                                           |
-|                    | "epg": "consumerEPG",                                                                                                                                     |
-|                    |                                                                                                                                                           |
-|                    | }                                                                                                                                                         |
-|                    |                                                                                                                                                           |
-|                    | ],                                                                                                                                                        |
-|                    |                                                                                                                                                           |
-|                    | "partition": "Common",                                                                                                                                    |
-|                    |                                                                                                                                                           |
-|                    | "enabled": "enabled"                                                                                                                                      |
+|                    | "dn": "uni/tn-GS3_Tenant"                                                                                                                                 |
 |                    |                                                                                                                                                           |
 |                    | },                                                                                                                                                        |
 |                    |                                                                                                                                                           |
-|                    | {                                                                                                                                                         |
+|                    | "app": {                                                                                                                                                  |
 |                    |                                                                                                                                                           |
-|                    | "status": "offline",                                                                                                                                      |
+|                    | "name": "Ap1",                                                                                                                                            |
 |                    |                                                                                                                                                           |
-|                    | "name": "10.0.0.140:80",                                                                                                                                  |
+|                    | "dn": "uni/tn-GS3_Tenant/ap-Ap1"                                                                                                                          |
 |                    |                                                                                                                                                           |
-|                    | "address": "10.0.0.140",                                                                                                                                  |
+|                    | },                                                                                                                                                        |
 |                    |                                                                                                                                                           |
-|                    | "partition": "Common",                                                                                                                                    |
+|                    | "epg": {                                                                                                                                                  |
 |                    |                                                                                                                                                           |
-|                    | "enabled": "enabled"                                                                                                                                      |
+|                    | "name": "EPG11",                                                                                                                                          |
+|                    |                                                                                                                                                           |
+|                    | "dn": "uni/tn-GS3_Tenant/ap-Ap1/epg-EPG11"                                                                                                                |
+|                    |                                                                                                                                                           |
+|                    | }                                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 |                    |                                                                                                                                                           |
 |                    | ],                                                                                                                                                        |
 |                    |                                                                                                                                                           |
-|                    | "pool": {                                                                                                                                                 |
+|                    | "ldevs": [],                                                                                                                                              |
 |                    |                                                                                                                                                           |
-|                    | "status": "offline",                                                                                                                                      |
-|                    |                                                                                                                                                           |
-|                    | "name": "http\_pool",                                                                                                                                     |
-|                    |                                                                                                                                                           |
-|                    | "partition": "Common",                                                                                                                                    |
-|                    |                                                                                                                                                           |
-|                    | "enabled": "enabled"                                                                                                                                      |
+|                    | "rules": null                                                                                                                                             |
 |                    |                                                                                                                                                           |
 |                    | }                                                                                                                                                         |
 |                    |                                                                                                                                                           |
-|                    | }                                                                                                                                                         |
+|                    | },                                                                                                                                                        |
 |                    |                                                                                                                                                           |
 |                    | ]                                                                                                                                                         |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5681,30 +5713,35 @@ getendpointdetails.json
 |                    | "message": {                                                          |
 |                    |                                                                       |
 |                    | "apic": [                                                             |
-|                    |                                                                       |
 |                    | {                                                                     |
 |                    |                                                                       |
-|                    | "encap": "vlan-364",                                                  |
+|                    | "encap": "vlan-320",                                                  |
 |                    |                                                                       |
-|                    | "epg": "Traffic_flow/AP1/EPG_external",                               |
+|                    | "epg": "Traffic_flow/LDevInst-                                        |
+|                    |         [uni/tn-Traffic_flow/lDevVip-BIGIP23]-ctx-vrf1/               |
+|                    |         G-BIGIP23ctxvrf1-N-BD-external-C-External",                   |
 |                    |                                                                       |
-|                    | "interface": {                                                        |
+|                    | "interfaces": [                                                       |
+|                    |                                                                       |
+|                    | {                                                                     |
 |                    |                                                                       |
 |                    | "adminSt": "Up",                                                      |
 |                    |                                                                       |
 |                    | "children": [],                                                       |
 |                    |                                                                       |
-|                    | "name": "eth1/2",                                                     |
+|                    | "name": "eth1/24",                                                    |
+|                    |                                                                       |
+|                    | "node": "Pod-1/Node-101",                                             |
 |                    |                                                                       |
 |                    | "operSt": "Up",                                                       |
 |                    |                                                                       |
 |                    | "type": "Not Aggregated"                                              |
 |                    |                                                                       |
-|                    | },                                                                    |
+|                    | }                                                                     |
 |                    |                                                                       |
-|                    | "mac": "00:50:56:BA:35:5A",                                           |
+|                    | ],                                                                    |
 |                    |                                                                       |
-|                    | "node": "Pod-1/Node-102"                                              |
+|                    | "mac": "00:23:E9:E8:02:85"                                            |
 |                    |                                                                       |
 |                    | }                                                                     |
 |                    |                                                                       |
@@ -5725,22 +5762,21 @@ getendpointdetails.json
 |                    | "status": "UP"                                                        |
 |                    |                                                                       |
 |                    | }                                                                     |
-|                    |                                                                       |
 |                    | ],                                                                    |
 |                    |                                                                       |
-|                    | "mac": "00:50:56:BA:35:5A",                                           |
+|                    | "isMasquerade": false,                                                |
+|                    |                                                                       |
+|                    | "mac": "00:23:E9:E8:02:85",                                           |
 |                    |                                                                       |
 |                    | "selfips": [                                                          |
 |                    |                                                                       |
 |                    | {                                                                     |
+|                    | "selfip": "192.168.11.59/24"                                          |
 |                    |                                                                       |
-|                    | "selfip": "192.168.11.40/24"                                          |
-|                    |                                                                       |
-|                    | },                                                                    |
+|                    | }                                                                     |
 |                    |                                                                       |
 |                    | ],                                                                    |
-|                    |                                                                       |
-|                    | "vlan": "413"                                                         |
+|                    | "vlan": "320"                                                         |
 |                    |                                                                       |
 |                    | }                                                                     |
 |                    |                                                                       |
@@ -5748,7 +5784,6 @@ getendpointdetails.json
 |                    |                                                                       |
 |                    | }                                                                     |
 |                    |                                                                       |
-|                    | }                                                                     |
 +--------------------+-----------------------------------------------------------------------+
 | Error Response     | Code: 400                                                             |
 |                    |                                                                       |
