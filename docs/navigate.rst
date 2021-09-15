@@ -10,7 +10,7 @@ View VLAN table
 
    In the :guilabel:`Table` list, the VLAN table is selected by default.
 
-2. From the :guilabel:`Partition` list, select the partition you’re interested in. The **All partition** partition is supported for the VLAN table in v2.9 and later.
+2. From the :guilabel:`Partition` list, select the partition you’re interested in. The **All partition** option is supported for the VLAN table in v2.9 and later.
 
    The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding **Logical Device|Tenant** entry on the APIC.
    
@@ -24,7 +24,7 @@ View VIP table
 
 1. Click the Visibility tab, and then from the :guilabel:`Table` list, click the :guilabel:`VIP` table.
 
-2. From the :guilabel:`Partition` list, click the partition you're interested in. The **All partition** partition is supported for the VIP table in v2.9 and later.
+2. From the :guilabel:`Partition` list, click the partition you're interested in. The **All partition** option is supported for the VIP table in v2.9 and later.
 
    This table shows all the VIPs (virtual servers) from the BIG-IP device. It also shows the pool and nodes for this VIP. For each node, it displays the corresponding Tenant, Application, and End Point
    Group entries from APIC.
@@ -43,7 +43,7 @@ View Node table
 
 1. Click the Visibility tab, and then click the :guilabel:`Node` table from the Table list.
 
-2. From the :guilabel:`Partition` list, click the partition. **All partition** partition is supported for the Node table in v2.9 and later.
+2. From the :guilabel:`Partition` list, click the partition. The **All partition** option is supported for the Node table in v2.9 and later.
 
    This table shows all the Nodes from this BIG-IP device, provided they have a corresponding Tenant Application and EPG entry on the APIC. It also displays the pools that the node belongs to. For each pool, it
    shows the corresponding VIPs (virtual servers).
