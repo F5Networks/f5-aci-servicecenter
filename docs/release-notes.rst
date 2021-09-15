@@ -48,7 +48,7 @@ When you click the Topology icon in any one of the tabs (Visibility, Network Man
 
 ------
 
-**BIG-IP version may not be displayed correctly in FASC when the BIG-IP version is upgraded or downgraded.**
+**BIG-IP version may not be displayed correctly in FASC when the BIG-IP version is upgraded or downgraded**
 
 The BIG-IP version when hovering over the BIG-IP IP address may not be displayed correctly when BIG-IP is upgraded or downgraded.
 
@@ -56,7 +56,7 @@ The BIG-IP version when hovering over the BIG-IP IP address may not be displayed
 
 ------
 
-**For non-admin BIG-IP users, Default Gateway CRUD operations show success even though the corresponding operation on the BIG-IP is not permitted and failed.**
+**For non-admin BIG-IP users, Default Gateway CRUD operations show success even though the corresponding operation on the BIG-IP is not permitted and failed**
 
 Non-admin BIG-IP users have restricted access to F5 ACI ServiceCenter, however due to an Ansible defect, users might see success messages for Default Gateway operations despite those operations failing on the BIG-IP. 
 
@@ -102,13 +102,13 @@ This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com
 
 ------
 
-**Visibility table status icons render few seconds after data for scale configs.**
+**Visibility table status icons render few seconds after data for scale configs**
 
 **Workaround:** None
 
 ------
 
-**BIG-IP v12 displays BIG-IP logs in local timezone.**
+**BIG-IP v12 displays BIG-IP logs in local timezone**
 
 **Visibility Dashboard → View Logs** (for both VIP and Node) will display logs in UTC. But for BIG-IP v12, the logs are displayed in local timezone (timezone of the BIG-IP).
 
@@ -116,7 +116,7 @@ This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com
 
 ------
 
-**Visibility Dashboard filter may display additional logs with interface filter.**
+**Visibility Dashboard filter may display additional logs with interface filter**
 
 **Visibility Dashboard → BIG-IP Endpoint Details → Interface → View Logs** (for BIG-IP interfaces) displays interface logs. By default it applies the filter of interface name (for example: 1.1 or 1.2); and hence only the logs with interface name in them are displayed. This filtering logic may not work as expected and display additional logs which have interface names as a substring (For example: **1.2** is a substring in the log "Pool /Partition/Application/web_pool member **/Partition/12.14.1.2:8080** monitor status down").
 
@@ -131,7 +131,7 @@ L4-L7 App Services
 
 If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, the Application Services configuration may not be deleted completely, even after multiple attempts from the application UI. However, the configuration is removed from the BIG-IP device.
 
-**Workaround**: Upload one more AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
+**Workaround**: Upload an AS3 sample declaration to the app and then perform a :guilabel:`Delete all` operation. (Use :guilabel:`View AS3 Declaration` and click :guilabel:`Delete`.)
 
 -------
 
@@ -151,9 +151,9 @@ Functionality releated to displaying a sub-form based on some checkbox selection
 
 ------
 
-**A TextBox field is displayed with 'Notice: Beta Test' field in 'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates.**
+**A Text input field is wrongly displayed for 'Notice: Beta Test' in 'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates**
 
-'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates display a text against the 'Notice: Beta Test' field. An error will be seen if this entry is filled in the form submission.
+'bigip-fast-templates/microsoft adfs' and 'bigip-fast-templates/microsoft exchange' FAST templates display a text input against the 'Notice: Beta Test' field. An error will be seen if this entry is filled during the form submission.
 
 **Workaround:** Leave the 'Notice: Beta Test' field blank during form submission.
 
@@ -240,7 +240,7 @@ If a node (for example a node with IP 1.2.3.4) is deleted from APIC, and there i
 
 ------
 
-**Dynamic EP discovery does not work if a duplicate IP already exists on a different partition.**
+**Dynamic EP discovery does not work if a duplicate IP already exists on a different partition**
 
 If an APIC Tenant|App|EPG mapped to a BIG-IP pool has an endpoint with an IP address which already exists on the BIG-IP but in a different partition, then the APIC endpoint will not get added to BIG-IP pool. Also any successive configurations and endpoints also will not be discovered/deleted from this BIG-IP pool. 
 
@@ -252,7 +252,7 @@ AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
 ------
 
-**Pool members deleted or added directly to BIG-IP don't get updated automatically after clicking "Sync EPs".**
+**Pool members deleted or added directly to BIG-IP don't get updated automatically after clicking "Sync EPs"**
 
 1. If BIG-IP pool members are automatically added by the **Dynamic endpoint discovery** feature, but then a few endpoints are deleted directly from the BIG-IP (i.e. out of band); these endpoints do not get created again when clicking **L4-L7 App Services --> Application Inventory --> Sync EPs** for that application. 
 
@@ -264,7 +264,7 @@ AS3 Defect: https://github.com/F5Networks/f5-appsvcs-extension/issues/287
 
 ------
 
-**Pool members are not synced on AS3 service discovery REST API endpoint for HA devices.**
+**Pool members are not synced on AS3 service discovery REST API endpoint for HA devices**
 
 AS3 Service Discovery REST API endpoint on both HA devices should display the same pool member list for the specified pool path (For. ex. https://BIG-IP/mgmt/shared/service-discovery/task/~Partition~Application~Pool). But AS3 service discovery fails to perform this sync between the HA devices.
 
