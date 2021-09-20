@@ -57,6 +57,7 @@ For details on supported versions, see :doc:`Support <support>`.
    faults.rst
    background-services.rst
    teem.rst
+   searchip.rst
    tech-support-and-logs.rst
    faq.rst
    release-notes.rst

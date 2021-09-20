@@ -122,11 +122,15 @@ Add a new BIG-IP device (Device Login)
 
 4. Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
 
+5. F5 ACI ServiceCenter (v2.9+) supports LDAP authentication for BIG-IP login. Admin LDAP users will be able to use all the features of the application.
+
 .. note::
    
    - If you create an HA pair from two standalone BIG-IP devices in the F5 ACI ServiceCenter, you must log out of the BIG-IP device in the F5 ACI ServiceCenter UI. When you log back in, the F5 ACI ServiceCenter moves the device and its peer under the specified cluster name in the side menu bar.
 
    - If you change the configuration such that the BIG-IP devices are no longer part of an HA pair, you must log out of the device from within the F5 ACI ServiceCenter UI and log back in, for the F5 ACI ServiceCenter to recognize the changes and remove the cluster from the FASC UI. The devices are then displayed under Standalone BIG-IP Devices.
+   
+   - **Non-Admin** local as well as LDAP users can access F5 ACI ServiceCenter with limited access.
 
 
 Log out of a BIG-IP device
