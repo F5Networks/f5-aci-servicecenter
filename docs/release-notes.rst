@@ -1,3 +1,32 @@
+Release Notes (Version 2.10)
+===========================
+
+L4-L7 App Services
+-------
+
+**FAST input fields do not display any validation errors until the field is touched**
+
+Due to Angular Forms behaviour, for FAST input fields that have any validations, display a validation error message only when that field is clicked/touched explicitly. There is no indication given to the user for the validations that are applied to these fields. 
+
+1. Blue Pool Name, Green Pool Name - Blue Green Template
+2. Host name - DNS Template
+3. Password - LDAP Template
+4. Application Domain Name - Microsoft Sharepoint Template
+5. Domain Name - SMTP Template
+
+**Workaround**: FAST input fields can be clicked for the validation error message to be displayed.
+
+------
+
+**Bluegreen Template FAST form displays some extra fields within Service Discovery Type which are not displayed on BIG-IP FAST Form**
+
+As in the latest FAST plugin v1.14 a different format for defining dependencies, the following FAST input fields (API Key, Application ID, Directory ID, FQDN, Region, Resource Group, Resource ID, Resource Type, Subscription ID, tagKey, tagValue, URI) were not evaluated correctly on the UI. Due to this these are displayed on the FASC FAST form whereas the BIG-IP UI does not display them by default. 
+
+**Workaround**: Users can keep these fields empty while creating an application.
+
+------
+
+
 Release Notes (Version 2.9)
 ===========================
 
