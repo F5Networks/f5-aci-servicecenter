@@ -43,17 +43,17 @@ The default docker0 bridge IP has the address **172.17.0.1**. If the docker0 bri
 
 **Zoom In/Out for Device Discovery Topology diagrams may get stuck on Internet Explorer**
 
-When you click the Topology icon in any one of the tabs (Visibility, Network Management, and L4-L7 App Services), the Topology diagrams may get stuck when zooming in and out. The position of the topology diagram can also not be changed once this issue is observed. 
+When you click the Topology icon in any one of the tabs (Visibility, Network Management, and L4-L7 App Services), the Topology diagrams may get stuck when zooming in and out. Once this issue is observed, the position of the topology diagram cannot be changed. 
 
-**Workaround:** Use a different browser than IE.
+**Workaround:** Use a different browser than Internet Explorer.
 
 ------
 
 **BIG-IP version may not be displayed correctly in FASC when the BIG-IP version is upgraded or downgraded**
 
-The BIG-IP version when hovering over the BIG-IP IP address may not be displayed correctly when BIG-IP is upgraded or downgraded.
+When hovering over the BIG-IP IP address, the BIG-IP version may not be displayed.
 
-**Workaround:** Log-out and re-login to the BIG-IP device in the FASC application.
+**Workaround:** Log out and re-login to the BIG-IP device in the FASC application.
 
 ------
 
@@ -67,7 +67,7 @@ Non-admin BIG-IP users have restricted access to F5 ACI ServiceCenter, however d
 
 ------
 
-**BIG-IP LDAP User with role "No-Access" can login to F5 ACI ServiceCenter with limited access**
+**A BIG-IP LDAP User with role "No-Access" can login to F5 ACI ServiceCenter with limited access**
 
 Access to the F5 ACI ServiceCenter operations for LDAP users depends upon whether the user is admin or non-admin. F5 ACI ServiceCenter is not able to distinguish between non-admin access roles such as operator, guest, no access and so on, hence users with role **No-Access** might be able to login to F5 ACI ServiceCenter with limited access.
 
@@ -103,7 +103,7 @@ This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com
 
 ------
 
-**Visibility table status icons render few seconds after data for scale configs**
+**Visibility table status icons render a few seconds after data for scale configs**
 
 **Workaround:** None
 
@@ -138,7 +138,7 @@ If your AS3 declaration contains “optimisticLockKey” mentioned explicitly, t
 
 **Once all Pool Member cards are removed from the template form, adding a new pool member card fails on FASC FAST templates UI**
 
-If a user clicks the "-" sign in front of the pool members card and tries to add pool member card again by clicking the "+" icon, then the pool member card is not populated in template form.
+If a user clicks the "-" sign in front of the pool members card, and then tries to add the pool member card again by clicking the "+" icon, the pool member card is not populated in template form.
 
 **Workaround:** Refresh the basic subtab on the L4-L7 tab
 
@@ -160,7 +160,7 @@ Dynamic Endpoint Attach Detach
 
 **Error on EPG mapping delete operation**
 
-When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application is created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, users may encounter an error "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found."
+When a dynamic endpoint mapping is added to an application using **Manage Endpoint Mappings**, the application is created on the BIG-IP. If this mapping is deleted using the **RESET** button on **Manage Endpoint Mappings** form, users may encounter an error such as "The requested Pool Member (/Partition/App/Pool /NodePartition/NodeIP) was not found."
 
 **Workaround:** Click the **Submit** button again, and the mapping will be reset properly without any errors. 
 
@@ -263,7 +263,7 @@ AS3 Service Discovery REST API endpoint on both HA devices should display the sa
 
 **FAST input fields do not display any validation errors until the field is touched**
 
-Due to Angular Forms behaviour, for FAST input fields that have any validations, display a validation error message only when that field is clicked/touched explicitly. There is no indication given to the user for the validations that are applied to these fields. 
+Due to Angular Forms behavior, FAST input fields that have any validation display a validation error message only when that field is clicked/touched explicitly. There is no indication given to the user for the validation that is applied to these fields.
 
 1. Blue Pool Name, Green Pool Name - Blue Green Template
 2. Host name - DNS Template
@@ -277,7 +277,7 @@ Due to Angular Forms behaviour, for FAST input fields that have any validations,
 
 **Bluegreen Template FAST form displays some extra fields within Service Discovery Type which are not displayed on BIG-IP FAST Form**
 
-As in the latest FAST plugin v1.14 a different format for defining dependencies, the following FAST input fields (API Key, Application ID, Directory ID, FQDN, Region, Resource Group, Resource ID, Resource Type, Subscription ID, tagKey, tagValue, URI) were not evaluated correctly on the UI. Due to this these are displayed on the FASC FAST form whereas the BIG-IP UI does not display them by default. 
+The latest FAST plugin (v1.14) introduced a different format for defining dependencies, so the following FAST input fields are not evaluated correctly in the UI: API Key, Application ID, Directory ID, FQDN, Region, Resource Group, Resource ID, Resource Type, Subscription ID, tagKey, tagValue, URI. Because of this, these fields are displayed on the FASC FAST form whereas the BIG-IP UI does not display them by default. 
 
 **Workaround**: Users can keep these fields empty while creating an application.
 
