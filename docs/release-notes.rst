@@ -287,7 +287,7 @@ The latest FAST plugin (v1.14) introduced a different format for defining depend
 
 On update operation of FAST application, the FAST form displays duplicate pool member fields. These duplicate fields do not appear in the BIG-IP FAST Applications UI. This issue still exists when trying to reload the L4-L7 tab. If a user tries to submit the application again with those duplicate fields, ‘Pool members should not have duplicate items’ error is received from BIG-IP. 
 
-**Workaround**: Users can select the Create New Partition option from the Partition dropdown and then select the FAST application again.
+**Workaround**: Users can select the **Create New Partition** option from the **Partition** dropdown and then select the FAST application again.
 
 ------
 
