@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "fa1be9a6-6c38-4f06-a2cb-03b83b716317",
-		"name": "F5 ACI ServiceCenter API v2.8",
+		"name": "F5 ACI ServiceCenter API v2.10",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
