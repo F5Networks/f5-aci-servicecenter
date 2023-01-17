@@ -128,9 +128,9 @@ This is a known ag-grid issue on the Mozilla Firefox browser: https://github.com
 L2-L3 App Services
 ------------------
 
-**“Failed to Delete Self IP” error is retrieved when the last Self IP of a VLAN is deleted and there is an existing Default Route present on that VLAN.**
+**“Failed to Delete Self IP” error occurs when the last non-floating Self IP of a VLAN is updated or deleted and there is an existing Default Route present on that VLAN.**
 
-If a VLAN has a Default Route present on the BIG-IP in the same network as of its Self IPs then deleting the last Self IP of that VLAN from BIG-IP gives the following error "Cannot delete IP because it would leave a route unreachable". However, if we try to delete the same Self IP from the FASC application, it gives the following error “Failed to Delete Self IP”. This is an expected behavior on BIG-IP that a Self IP cannot be deleted if there is an existing route as its next-hop/gateway address is only reachable via that same Self IP. Here is the link for the article present on the AskF5 forum which indicates the condition why a Self IP cannot be deleted ( https://support.f5.com/csp/article/K93641063 )
+If a VLAN has a Default Route present on the BIG-IP in the same network as of its Self IPs then updating or deleting the last non-floating Self IP of that VLAN from BIG-IP gives the following error "Cannot delete IP because it would leave a route unreachable". However, if we try to update or delete the same Self IP from the FASC application, it gives the following error “Failed to Delete Self IP”. This is an expected behavior on BIG-IP that a Self IP cannot be deleted if there is an existing route and its next-hop/gateway address is only reachable via that same Self IP. Here is the link for the article present on the AskF5 forum which indicates the condition why a Self IP cannot be deleted ( https://support.f5.com/csp/article/K93641063 ). The reason this error is retrieved while updating the Self IP is because any update operation for a VLAN, Self IP or a Default Route on the FASC application is performed by first deleting the existing configuration for that resource and creating a new configuration. As this operation involves deleting of the existing Self IP, the FASC application gives the following error “Failed to Delete Self IP” if there is an existing Default Route present on that VLAN
 
 **Workaround**: Users should delete the default route of that VLAN prior to deleting the Self IP.
 
@@ -165,11 +165,28 @@ If a user clicks the "-" sign in front of the pool members card, and then tries 
 ------
 
 
-**AS3 plugin versions older than v3.37 are not be supported with FASC Application**
+**AS3 plugin versions older than v3.41 are not be supported with FASC Application**
 
-The L4-L7 Advanced tab in FASC Application supports adding new configuration such as new key-value pairs in the default AS3 Application JSON data. The new configuration is respectively applied to that application on the BIG-IP as well. However, it was observed that AS3 plugins older than v3.37 do not support adding new configuration to the existing AS3 Application JSON data. The new configuration data from the Application JSON is lost and does not get applied to the respective application on the BIG-IP as well. However it is suggested that the user should always install the latest version of AS3 on the BIG-IP
+The L4-L7 Advanced tab in FASC Application supports adding new configuration such as new key-value pairs in the default AS3 Application JSON data. The new configuration is respectively applied to that application on the BIG-IP as well. However, it was observed that AS3 plugins older than v3.41 do not support adding new configuration to the existing AS3 Application JSON data. The new configuration data from the Application JSON is lost and does not get applied to the respective application on the BIG-IP as well. However it is suggested that the user should always install the latest version of AS3 on the BIG-IP
 
 **Workaround**: Users should always install the latest version of AS3 plugin on the BIG-IP.
+
+------
+
+
+**Older partitions that no longer exist on the BIG-IP are still retrieved by the AS3 endpoint**
+
+The L4-L7 Application Inventory tab in FASC Application displays a list of all FAST and AS3 applications created on the BIG-IP device as well as on the FASC application. On deleting any FAST/AS3 application or partitions from the FASC app, the AS3 configuration respective to those applications are also removed from the BIG-IP. The Application Inventory tab on FASC always pulls the current AS3 configurations present on the BIG-IP device and it gets updated whenever the tab is clicked or reloaded. However in case of misconfigurations or configuration failures on the BIG-IP, users might see certain FAST/AS3 applications displaying on the Application Inventory tab which no longer exist on the BIG-IP. In such a scenario, even though the Partition does not show up in the Partitions List on the BIG-IP, the FAST/AS3 application’s configuration data is still present with the BIG-IP. Hence, these applications would still be retrieved when the user tries to pull the latest applications from the AS3 Endpoint. To troubleshoot this issue, the users can do a GET request through Postman on the following AS3 Endpoint API and verify if the concerned partition is still present in the API response. Following are the details of the AS3 Endpoint API. The users can report this bug with the F5 BIG-IP AS3 team if the partitions are still retrieved in the AS3 API response.
+
+API URL: https://<BIGIP-IP:Port-Here>/mgmt/shared/appsvcs/declare?showHash=true
+
+Request type: GET
+
+Authentication type: Basic Auth (Enter username & password of the BIG-IP here)
+
+
+
+**Workaround**: Users can report this bug with the F5 BIG-IP AS3 team if the partitions are still retrieved in the AS3 API response.
 
 ------
 
