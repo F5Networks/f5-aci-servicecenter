@@ -200,6 +200,7 @@ View BIG-IP Connectivity
 .. note::
 
    - LLDP needs to be enabled on the BIG-IP for this topology view to be seen.
+   - This topology view can be viewed for PHYSICAL and vCMP Host BIG-IP devices.
    
 Database Export and Import (Supported in v2.1+)
 ===============================================
