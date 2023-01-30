@@ -2,9 +2,12 @@ What's New in Version 2.11
 ===========================
 
 
-**VRF to Route Domain Mapping Support for Tenant|Application|EPG Mapping**
-**Partition and Route Domain Support for L2-L3 Network Management including VLANs, Self IPs & Default Routes**
-**Default Routes Support for each Route Domain**
+1. VRF to Route Domain Mapping Support for Tenant|Application|EPG Mapping
+2. Partition and Route Domain Support for L2-L3 Network Management including VLANs, Self IPs & Default Routes
+3. Default Routes Support for each Route Domain
+
+------
+
 
 Known Issues (Version 2.11)
 ===========================
