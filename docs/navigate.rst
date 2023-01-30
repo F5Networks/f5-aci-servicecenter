@@ -14,7 +14,7 @@ View VLAN table
 
    The table shows all the VLANs (vlan encaps) from the BIG-IP device that have a corresponding **Logical Device|Tenant** entry on the APIC.
    
-   The table shows all the VLANs (vlan encaps), Self IP, Interfaces from the BIG-IP device that have a corresponding **Endpoint Group|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**. Users are able to view information related to Self IPs and interfaces by clicking the dropdown icon in the Self IP and Interface columns respectively.
+   The table shows all the VLANs (vlan encaps), Self IP, Interfaces, Route Domain from the BIG-IP device that have a corresponding **Endpoint Group|VRF|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**. Users are able to view information related to Self IPs and interfaces by clicking the dropdown icon in the Self IP and Interface columns respectively.
 
    The table does not show VLANs from BIG-IPs that don't have corresponding APIC entries.
    
@@ -26,16 +26,17 @@ View VIP table
 
 2. From the :guilabel:`Partition` list, click the partition you're interested in. The **All partition** option is supported for the VIP table in v2.9 and later.
 
-   This table shows all the VIPs (virtual servers) from the BIG-IP device. It also shows the pool and nodes for this VIP. For each node, it displays the corresponding Tenant, Application, and End Point
-   Group entries from APIC.
+   This table shows all the VIPs (virtual servers) from the BIG-IP device. It also shows the associated Route Domain, pool and nodes for this VIP. For each node, it displays the corresponding Tenant, Application, End Point
+   Group and VRF entries from APIC.
    
    If you check the APIC GUI for the Tenant, Application, or End Point Group, you will see these node IPs under the Operational tab.
 
    -  If a node is not operational on the APIC, it is not displayed in the VIP table.
    -  If a pool is empty and does not have any nodes, a pool entry is not displayed in the VIP table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in the VIP table.
+   -  If a VIP is not operational on the APIC, the VIP is not learned by APIC and hence, the VIP table displays "VIP not Learned" under APIC Information Section.
    -  If any of the node members have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
-   -  Route domain entries are supported by the VIP table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the VIP table (Supported in v2.6+). 
+   -  Route Domain entries are supported by the VIP table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the VIP table (Supported in v2.6+). 
 
 
 View Node table
@@ -45,7 +46,7 @@ View Node table
 
 2. From the :guilabel:`Partition` list, click the partition. The **All partition** option is supported for the Node table in v2.9 and later.
 
-   This table shows all the Nodes from this BIG-IP device, provided they have a corresponding Tenant Application and EPG entry on the APIC. It also displays the pools that the node belongs to. For each pool, it
+   This table shows all the Nodes from this BIG-IP device, provided they have a corresponding Tenant Application EPG and VRF entry on the APIC. It also displays the associated Route Domain and the pools that the node belongs to. For each pool, it
    shows the corresponding VIPs (virtual servers).
 
    If you check the APIC GUI for the specified Tenant, Application, or End Point Group, you will see these node IPs under the Operational tab.
@@ -54,7 +55,7 @@ View Node table
    -  If a pool does not have any nodes, the pool is not displayed in any of the entries in the Node table.
    -  If a VIP does not have an assigned default pool, the VIP is not displayed in any of the entries in the Node table.
    -  If any of the nodes have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
-   -  Route domain entries are supported by the Node table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the Node table (Supported in v2.6+).
+   -  Route Domain entries are supported by the Node table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the Node table (Supported in v2.6+).
 
    
 
@@ -142,7 +143,7 @@ View VIP Dashboard
       
 5. F5 ACI ServiceCenter supports MAC masquerade MAC display under BIG-IP endpoint details on the VIP visibility dashboard. MAC address type details (such as MAC masquerade or normal MAC) are displayed when you hover over the Information icon in the MAC column of the BIG-IP endpoint details table.
 
-6. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, route domain, iRules, default pool (and pool information such as load balancing and pool monitor)
+6. Visibility Dashboard displays the information for the selected VIP including VIP name, service port, protocol, SNAT, Route Domain, iRules, default pool (and pool information such as load balancing and pool monitor)
          
    a. The dashboard displays a **Telemetry Consumer** drop-down list. Select the appropriate consumer from which the statistics need to be obtained. The Virtual pool statistics will be displayed on the dashboard including Bits, Packets, Connections and Requests. 
          
@@ -164,9 +165,9 @@ View VIP Dashboard
 
    d. **View Connections** - The dashboard displays a **View Connections** link, which, when clicked displays all the active connections to that VIP.
          
-   e. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the VIP: - 1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap
+   e. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the VIP: - 1. MAC 2. EPG 3. VRF 4. Node 5. Interface 6. VLAN Encap
                                         
-   f. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the VIP: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link besides interfaces to view the interface logs) 4. Self IPs
+   f. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the VIP: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link besides interfaces to view the interface logs) 4. Self IPs 5. Route Domain
 
 
 View Node Dashboard
@@ -184,7 +185,7 @@ View Node Dashboard
    
       - It is possible to directly click the **Visibility Dashboard** sub-tab and then select the Node, instead of a redirect from **Visibility Table**.
       
-5. The Visibility Dashboard displays the information for the selected VIP including Node name, route domain and monitor.
+5. The Visibility Dashboard displays the information for the selected VIP including Node name, Route Domain and monitor.
 
    a. **View Logs** - The dashboard displays a **View Logs** link beside the Node, which, when clicked opens a popup and all the logs for the selected Node.
 
@@ -196,9 +197,9 @@ View Node Dashboard
 
    b. **View Connections** - The dashboard displays a **View Connections** link which, when clicked displays all the active connections to that Node.
 
-   c. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the Node: - 1. MAC 2. EPG 3. Node 4. Interface 5. VLAN Encap 
+   c. **APIC Endpoint Details** - The Visibility dashboard displays APIC details for the Node: - 1. MAC 2. EPG 3. VRF 4. Node 5. Interface 6. VLAN Encap 
                                         
-   d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs
+   d. **BIG-IP Endpoint Details** - The Visibility dashboard displays BIG-IP details for the Node: - 1. MAC 2. VLAN 3. Interfaces (There is a **View Logs** link beside interfaces to view the interface logs) 4. Self IPs 5. Route Domain
    
 6. F5 ACI ServiceCenter supports VXLAN tunnel interfaces along with individual, Port channel, and Virtual port channel interfaces on the Node table visibility dashboard.
    
@@ -265,7 +266,7 @@ The Visibility VIP table displays the pool members from a BIG-IP VIP, only if th
 
 **Q. What does the field 'Route Domain' on the Visibility Dashboard indicate?**
 
-It displays the **default route domain** for the partition to which the Virtual Server (VIP) or Node belongs.
+It displays the **default Route Domain** for the partition to which the Virtual Server (VIP) or Node belongs.
 
 ------
 
