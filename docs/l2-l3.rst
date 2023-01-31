@@ -24,9 +24,9 @@ Create VLAN and Self IP
 
    .. note::
       - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Tag (2) Interface (3) Partition (4) Route Domain. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
-      - Partitions and Route Domains should be created from BIG-IP UI
-      - If Partition and Route Domain is not selected during creation of VLAN/Self IP, it will be assumed to be Common Partition and Route Domain 0 by default.
-      - Route Domain dropdown would display Route Domains present in the selected partition.
+      - Partitions and Route Domains should be created from the BIG-IP UI.
+      - If a Partition and Route Domain are not selected during the creation of the VLAN/self IP, it defaults to the Common Partition and Route Domain 0.
+      - The Route Domain dropdown list displays Route Domains present in the selected partition.
       - For an HA setup, the floating self IPs will automatically sync to the BIG-IP peer device.
       - Whether the interface is tagged or untagged depends on its device type. For a Physical device, VLANs are tagged and for virtual devices, VLANs are untagged. This option isn’t configurable or supported.
       - The only options available for port lockdown are All, None, and Default.
@@ -98,7 +98,7 @@ Create Default Gateway
 The default gateway is created on the BIG-IP device and is added to the application database. For an HA setup, the default gateway will automatically sync to the BIG-IP peer device. F5 ACI ServiceCenter v2.9 added support for a brownfield default gateway, where the default gateway automatically syncs to the FASC database once the user navigates to the L2-L3 tab. FASC added support to allow any Default Gateway name to be synced to the FASC database (in previous versions, the only supported default gateway name was **apic-default-gateway**). 
 
    .. note::
-      - Partition and Route Domain configuration is supported in v2.11+
+      - Partition and Route Domain configuration are supported in v2.11+
 
 Update Default Gateway
 ``````````````````````
@@ -296,12 +296,12 @@ Do not delete Logical devices from APIC directly. Instead, as a first step, dele
 
 -----
 
-**Q. Why do I see “Sync Failed” state on both the HA devices when Sync to BIG-IP button is clicked on L2-L3 Stitching Tab?**
+**Q. Why do I see a "Sync Failed" state on both the HA devices when clicking the Sync to BIG-IP button on the L2-L3 Stitching Tab?**
 
-In a BIG-IP HA setup, the recommended workflow of Network configuration is as follows:
+In a BIG-IP HA setup, the recommended workflow of the Network configuration is:
 
-1. Create a VLAN and at least 1 local self IP on each of the devices of the BIG-IP. Ensure that both the BIG-IPs have the same VLAN name. If not, delete either of the VLANs and recreate it. F5 ACI ServiceCenter should take care of creating the same VLAN name.
-2. Create any number of additional local and floating self IPs on either of the BIG-IPs. When floating IP synchronizes from 1 BIG-IP to the other out of band, F5 ACI ServiceCenter will automatically sync it to the database.
+1. Create a VLAN and at least 1 local self IP on the BIG-IP. Ensure that both the BIG-IPs have the same VLAN name. If not, delete either of the VLANs and recreate it. F5 ACI ServiceCenter should take care of creating the same VLAN name.
+2. Create any number of additional local and floating self IPs on either of the BIG-IPs. When the floating IP synchronizes from 1 BIG-IP to the other out of band, F5 ACI ServiceCenter will automatically sync it to the database.
 
-Hence It is important to create VLAN on both the devices before a floating IP can be created on both devices. If this prerequisite is not met, the HA devices can enter the ‘Sync Failed’ state.
+Therefore, it is important to create VLANs on both the devices before a floating IP can be created on both devices. If this prerequisite is not met, the HA devices can enter the ‘Sync Failed’ state.
 

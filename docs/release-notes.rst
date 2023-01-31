@@ -185,6 +185,16 @@ The L4-L7 Advanced tab in FASC Application supports adding new configuration suc
 ------
 
 
+**The FASC application throws an error while updating the Route domain of an AS3/FAST Application**
+
+The FASC application throws the following error message while trying to update the Route Domain from one Route Domain to another Route Domain - Error Message - “On updating the Route domain of this application, the Virtual Server of this application would reference the new Route domain. However, the Pool members of this Endpoint group may not reference the new Route domain. To continue, kindly delete this application and create a new one with the required Route domain.” This behavior was observed due to an existing bug in the AS3 Service Discovery plugin v3.41, where on moving an existing AS3 application from one Route Domain to another, the Service Discovery nodes are not updated to the new Route Domain. For example, if an application is mapped to a Tenant | Application Profile | EPG from the APIC and you are trying to update the Route Domain of this application from 0 to a non-zero Route Domain then the Virtual Server of this application will get updated with the newly assigned Route Domain. However, the EPG members from the APIC would still reference the older Route Domain inside the application Pool on the BIG-IP.
+
+**Workaround**:  Users can delete this AS3/FAST application and create a new one with the desired Route Domain. 
+
+**AS3 Defect:** https://github.com/F5Networks/f5-appsvcs-extension/issues/669
+
+------
+
 
 Dynamic Endpoint Attach Detach
 ------------------------------

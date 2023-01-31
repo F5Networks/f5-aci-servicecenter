@@ -114,7 +114,7 @@ The new application is created on this BIG-IP device in the specified partition,
 
 .. note::
 
-   - Route Domain must be created on the BIG-IP since the L2-L3 Network Management Tab as well as AS3 configuration does not support creation of Route Domains.
+   - Route Domains must be created on the BIG-IP since the L2-L3 Network Management Tab, as well as AS3 configuration, does not support creation of Route Domains.
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
    - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the application is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
@@ -134,7 +134,7 @@ Update an application using Advanced mode (Application subtab)
 
 4. Update the application JSON.
 
-5. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to update Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool.The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+5. Optionally, click :guilabel:`Manage Endpoint Mappings` to update Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool.The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
 
 6. Click :guilabel:`Submit`.
 
@@ -142,7 +142,7 @@ The application is updated on the BIG-IP device.
 
 .. note::
 
-   - Route Domain must be created on the BIG-IP since the L2-L3 Network Management Tab as well as AS3 configuration does not support creation of Route Domains.
+   - Route Domains must be created on the BIG-IP since the L2-L3 Network Management Tab, as well as AS3 configuration, does not support creation of Route Domains.
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
    - On clicking :guilabel:`Submit`, the application is updated asynchronously in the background. Once the application is updated successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
@@ -192,9 +192,9 @@ New partitions and applications are listed in the Partition and Application drop
 
    - On clicking :guilabel:`Submit`, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
    
-   - For :guilabel:`service-discovery/http` template, You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the BIG-IP Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the provided dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
+   - For the :guilabel:`service-discovery/http` template, you can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the BIG-IP Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the drop-down lists to associate them with the Application's pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
 
-   - Route Domain must be created on the BIG-IP since the L2-L3 Network Management Tab as well as AS3 configuration does not support creation of Route Domains.
+   - Route Domains must be created on the BIG-IP since the L2-L3 Network Management Tab, as well as AS3 configuration, does not support creation of Route Domains.
 
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
 
@@ -240,7 +240,7 @@ The new application is created on this BIG-IP device in the specified partition,
 .. note::
 
    - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
-   - For :guilabel:`service-discovery/http` template, You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the BIG-IP Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
+   - For the :guilabel:`service-discovery/http` template, you can select APIC Tenant, Application, Endpoint Group from the drop-downs lists to associate them with the BIG-IP Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
    - Route Domain must be created on the BIG-IP since the L2-L3 Network Management Tab as well as AS3 configuration does not support creation of Route Domains.
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
 
@@ -516,37 +516,37 @@ To view pool members after share node option is disabled for an existing partiti
 
 ------
 
-**Q.Why older partitions that no longer exist on the BIG-IP are still retrieved by the AS3 endpoint?**
+**Q.Why are older partitions that no longer exist on the BIG-IP still retrieved by the AS3 endpoint?**
 
-The L4-L7 Application Inventory tab in FASC Application displays a list of all FAST and AS3 applications created on the BIG-IP device as well as on the FASC application. The Application Inventory tab on FASC always pulls the current AS3 configurations present on the BIG-IP device and it gets updated whenever the tab is clicked or reloaded. However in case of misconfigurations or configuration failures on the BIG-IP, users might see certain FAST/AS3 applications displaying on the Application Inventory tab which no longer exist on the BIG-IP.  If you run into this condition,  you can do a GET request through Postman on the following AS3 Endpoint API to verify if the concerned partition is still present on the BIG-IP in the API response.
+The L4-L7 Application Inventory tab in FASC Application displays a list of all FAST and AS3 applications created on the BIG-IP device as well as on the FASC application. The Application Inventory tab on FASC always pulls the current AS3 configurations present on the BIG-IP device and it gets updated whenever the tab is clicked or reloaded. However in case of misconfigurations or configuration failures on the BIG-IP, users might see certain FAST/AS3 applications displaying on the Application Inventory tab which no longer exist on the BIG-IP.  If you run into this condition,  you can do a GET request through Postman on the following AS3 Endpoint API to verify if the relevant partition is still present on the BIG-IP in the API response.
 
 API URL: https://<BIGIP-IP:Port-Here>/mgmt/shared/appsvcs/declare?showHash=true
 Request type: GET
 Authentication type: Basic Auth (Enter username & password of the BIG-IP here)
 
-Hence, If the concerned partition is present in the API response, please report this issue/bug with the F5 BIG-IP AS3 team.  If the concerned partition is not present in the API response, please report this issue with F5 FASC team at https://github.com/F5Networks/f5-aci-servicecenter/issues
+Therefore, if the relevant partition is present in the API response, report this issue with the F5 BIG-IP AS3 team.  If the relevant partition is not present in the API response, report this issue with F5 FASC team at https://github.com/F5Networks/f5-aci-servicecenter/issues
 
 ------
 
 **Q.Why do I receive an error while updating the Route domain of an AS3/FAST Application?**
 
-The FASC application throws the following error message while trying to update the Route Domain from one Route Domain to another Route Domain - Error Message - “On updating the Route domain of this application, the Virtual Server of this application would reference the new Route domain. However, the Pool members of this Endpoint group may not reference the new Route domain. To continue, kindly delete this application and create a new one with the required Route domain.” This behavior was observed due to an existing bug in the AS3 Service Discovery plugin v3.41, where on moving an existing AS3 application from one Route Domain to another, the Service Discovery nodes are not updated to the new Route Domain. For example, if an application is mapped to a Tenant | Application Profile | EPG from the APIC and you are trying to update the Route Domain of this application from 0 to a non-zero Route Domain then the Virtual Server of this application will get updated with the newly assigned Route Domain. However, the EPG members from the APIC would still reference the older Route Domain inside the application Pool on the BIG-IP. Here is the link for the bug filed with AS3 Team - https://github.com/F5Networks/f5-appsvcs-extension/issues/669 . As a workaround suggested in the error message, you can delete this AS3/FAST application and create a new one with the desired Route Domain. 
+The FASC application throws the following error message while trying to update the Route Domain from one Route Domain to another Route Domain: “On updating the Route domain of this application, the Virtual Server of this application would reference the new Route domain. However, the Pool members of this Endpoint group may not reference the new Route domain. To continue, kindly delete this application and create a new one with the required Route domain.” This behavior was observed due to an existing bug in the AS3 Service Discovery plugin v3.41, where on moving an existing AS3 application from one Route Domain to another, the Service Discovery nodes are not updated to the new Route Domain. For example, if an application is mapped to a Tenant | Application Profile | EPG from the APIC and you are trying to update the Route Domain of this application from 0 to a non-zero Route Domain then the Virtual Server of this application will get updated with the newly assigned Route Domain. However, the EPG members from the APIC would still reference the older Route Domain inside the application Pool on the BIG-IP. Here is the link for the bug filed with AS3 Team - https://github.com/F5Networks/f5-appsvcs-extension/issues/669 . As a workaround suggested in the error message, you can delete this AS3/FAST application and create a new one with the desired Route Domain. 
 
-Note that, if the application that is deleted is the only application in that Partition, then the FASC App will attempt to delete the Partition from the BIG-IP. However, the BIG-IP does not support deleting a Partition if there are any existing objects present in it, in our case - Route Domain. Hence, the delete application operation would fail in this scenario. You are suggested to create a new application in this partition first and then delete the older application.
+Note that if the application that is deleted is the only application in that Partition, then the FASC App will attempt to delete the Partition from the BIG-IP. However, the BIG-IP does not support deleting a Partition if there are any existing objects present in it, in our case - Route Domain. Hence, the delete application operation would fail in this scenario. We suggest you create a new application in this partition first and then delete the older application.
 
 ------
 
-**Why does AS3/FAST form display Route Domains in Common partition when user selects “Create New Partition” from the Partition dropdown?**
+**Why does the AS3/FAST form display Route Domains in the Common partition when the user selects “Create New Partition” from the Partition dropdown?**
 
-When a new partition is created from the L4-L7 Basic or Advanced tab, the Route domain dropdown on the AS3/FAST form displays only the Route Domains which are part of the Common partition. To create a partition and associate the application with a Route Domain in non-common partition, it is required to first create a new Partition by associating it with Route Domain 0. Since, creating Route Domains is not supported by the FASC Application, you should create the Route Domains inside the said Partition from the BIG-IP. After reloading the L4-L7 Tab on FASC application, these newly created Route Domains would appear in the dropdown on AS3/FAST forms for the said Partition. 
+When a new partition is created from the L4-L7 Basic or Advanced tab, the Route domain dropdown on the AS3/FAST form displays only the Route Domains which are part of the Common partition. To create a partition and associate the application with a Route Domain in a non-common partition, you must create a new Partition by associating it with Route Domain 0. Since creating Route Domains is not supported by the FASC Application, you should create the Route Domains inside the said Partition from the BIG-IP. After reloading the L4-L7 Tab on FASC application, these newly created Route Domains would appear in the dropdown on the AS3/FAST forms for the said Partition. 
 
 Recommended Actions:
 
-1. Select “Create new Partition” option from the L4-L7 Basic or Advanced tab and enter the desired Partition Name.
-2. Select “Create new Application” option from the L4-L7 Basic or Advanced tab and enter the desired Application Name.
-3. Select a Route Domain from the Route Domains dropdown. Note that this dropdown would display Route Domains in Common Partition while creating a new Application. Route Domain 0 will be preselected in this form.
-4. On submitting this form the AS3 application would be created on the BIG-IP.
-5. Go to BIG-IP UI and create a new Route domain inside this partition.
-6. Reload the L4-L7 Tab on the FASC application. After the reload the Route Domains dropdown will display the new Route Domains
+1. Select the "Create new Partition" option from the L4-L7 Basic or Advanced tab, and then type a Partition name.
+2. Select the "Create new Application" option from the L4-L7 Basic or Advanced tab, and then type an Application name.
+3. Select a Route Domain from the Route Domains dropdown. Note that this dropdown would display Route Domains in the Common Partition while creating a new Application. Route Domain 0 will be preselected in this form.
+4. On submitting this form, the AS3 application is created on the BIG-IP.
+5. Go to the BIG-IP UI and create a new Route domain inside this partition.
+6. Reload the L4-L7 Tab on the FASC application. After the reload the Route Domains dropdown will display the new Route Domains.
 
 ------

@@ -323,7 +323,7 @@ The app has been tested with IE11, Mozilla FireFox 56 and Google Chrome v72.
 +-----------------------------------+----------------+
 | APIC logical devices              | 60             | 
 +-----------------------------------+----------------+ 
-| Per BIG-IP nodes members          | 100            | 
+| Per BIG-IP node members          | 100             | 
 +-----------------------------------+----------------+
 | Concurrent app operations         | 4 BIG-IPs      | 
 +-----------------------------------+----------------+
