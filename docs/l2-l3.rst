@@ -305,3 +305,8 @@ In a BIG-IP HA setup, the recommended workflow of the Network configuration is:
 
 Therefore, it is important to create VLANs on both the devices before a floating IP can be created on both devices. If this prerequisite is not met, the HA devices can enter the ‘Sync Failed’ state.
 
+-----
+
+**Q. Why do I have to configure a new Partition using L4-L7 Application Services first before setting up a L2-L3 Network Configuration in that Partition?**
+
+The L2-L3 Network Management Tab on FASC application does not support creating a new Partition. In order to set up a Network Configuration in a non-Common partition, it is necessary for the non-Common partition to be present on the BIG-IP. Hence, you should first create a new partition to deploy a new application using the L4-L7 Application tab. This will create the Partition on the BIG-IP. On reloading the L2-L3 Network Tab, this newly created partition would display in the Partitions dropdown. You can then use this Partition to set up a VLAN/self IP Network configuration.

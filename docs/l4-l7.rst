@@ -528,25 +528,32 @@ Therefore, if the relevant partition is present in the API response, report this
 
 ------
 
-**Q.Why do I receive an error while updating the Route domain of an AS3/FAST Application?**
+**Q.Why do I receive an error when updating the Route Domain of an AS3/FAST Application with Service Discovery?**
 
-The FASC application throws the following error message while trying to update the Route Domain from one Route Domain to another Route Domain: “On updating the Route domain of this application, the Virtual Server of this application would reference the new Route domain. However, the Pool members of this Endpoint group may not reference the new Route domain. To continue, kindly delete this application and create a new one with the required Route domain.” This behavior was observed due to an existing bug in the AS3 Service Discovery plugin v3.41, where on moving an existing AS3 application from one Route Domain to another, the Service Discovery nodes are not updated to the new Route Domain. For example, if an application is mapped to a Tenant | Application Profile | EPG from the APIC and you are trying to update the Route Domain of this application from 0 to a non-zero Route Domain then the Virtual Server of this application will get updated with the newly assigned Route Domain. However, the EPG members from the APIC would still reference the older Route Domain inside the application Pool on the BIG-IP. Here is the link for the bug filed with AS3 Team - https://github.com/F5Networks/f5-appsvcs-extension/issues/669 . As a workaround suggested in the error message, you can delete this AS3/FAST application and create a new one with the desired Route Domain. 
+The FASC application throws the following error message when trying to update the Route Domain with Service Discovery: *“On updating the Route domain of this application, the Virtual Server of this application would reference the new Route domain. However, the Pool members of this Endpoint group may not reference the new Route domain. To continue, kindly delete this application and create a new one with the required Route domain.”* This behavior was observed due to an existing bug in the AS3 Service Discovery plugin found in v3.41, where on moving an existing AS3 application from one Route Domain to another, the Service Discovery nodes are not updated to the new Route Domain. For example, if an application is mapped to a Tenant | Application Profile | EPG from the APIC and you are trying to update the Route Domain of this application from the default Route Domain 0 to a non-default Route Domain, the Virtual Server of this application will get updated with the newly assigned Route Domain while the pool members learned from the APIC by Service Discovery will still reference to the original default Route Domain 0 on the BIG-IP.  Please refer to below URL for more info on this AS3 Service Discovery bug: https://github.com/F5Networks/f5-appsvcs-extension/issues/669.
 
-Note that if the application that is deleted is the only application in that Partition, then the FASC App will attempt to delete the Partition from the BIG-IP. However, the BIG-IP does not support deleting a Partition if there are any existing objects present in it, in our case - Route Domain. Hence, the delete application operation would fail in this scenario. We suggest you create a new application in this partition first and then delete the older application.
+As a workaround suggested in the error message, you can delete the AS3/FAST application and create a new one with the desired Route Domain.  Please note that if the application is the only application in that partition, the FASC App will attempt to delete the partition from the BIG-IP as well.  Since the BIG-IP does not support deleting a partition if there are any **existing objects** present in it, in our case - the Route Domain, the delete application operation would fail.  In this scenario, you should create a new application in this partition first and then delete the older application instead as a workaround.
 
 ------
 
-**Why does the AS3/FAST form display Route Domains in the Common partition when the user selects “Create New Partition” from the Partition dropdown?**
+**When I try to create a new partition to deploy a new application with Service Discovery, why don’t I find the options to map the APIC endpoints to a Route Domain that resides in a non-common partition?**
 
-When a new partition is created from the L4-L7 Basic or Advanced tab, the Route domain dropdown on the AS3/FAST form displays only the Route Domains which are part of the Common partition. To create a partition and associate the application with a Route Domain in a non-common partition, you must create a new Partition by associating it with Route Domain 0. Since creating Route Domains is not supported by the FASC Application, you should create the Route Domains inside the said Partition from the BIG-IP. After reloading the L4-L7 Tab on FASC application, these newly created Route Domains would appear in the dropdown on the AS3/FAST forms for the said Partition. 
+Currently, when trying to create a new partition from the L4-L7 Basic or Advanced tab, the Route Domain dropdown can only display the Route Domains that reside in the common partition from the BIG-IP.  If you would like to create a new partition and associate its application with a Route Domain that resides in a non-common partition, please follow the steps below:
 
-Recommended Actions:
+1. Select “Create New Partition” option from the L4-L7 Basic or Advanced tab and enter the desired partition name.
+2. Enter “To-Be-Deleted” as the Application Name.
+3. In the “Route Domain” field, Select a Route Domain from the Route Domains dropdown.
+4. Click “Submit” and the AS3 application “To-Be-Deleted” will be created in the newly created partition on the BIG-IP.
+5. Next, go to the BIG-IP UI and create a new Route Domain per your requirement under the newly created partition.
+6. Refresh the L4-L7 Tab on the FASC application.  After the refresh, the Route Domains dropdown will now display the new Route Domain under the newly created partition at step 1.
+7. Next, under the same partition created at step 1, select “Create New Application” and enter the desired application name. In the “Route Domain” field, select the new Route Domain created at step 6 from the Route Domains dropdown.
+8. Click “Submit” and the new AS3 application will be created in the Route Domain that resides in the non-common partition on the BIG-IP.
+9. Last, delete the “To-Be-Deleted” application.
 
-1. Select the "Create new Partition" option from the L4-L7 Basic or Advanced tab, and then type a Partition name.
-2. Select the "Create new Application" option from the L4-L7 Basic or Advanced tab, and then type an Application name.
-3. Select a Route Domain from the Route Domains dropdown. Note that this dropdown would display Route Domains in the Common Partition while creating a new Application. Route Domain 0 will be preselected in this form.
-4. On submitting this form, the AS3 application is created on the BIG-IP.
-5. Go to the BIG-IP UI and create a new Route domain inside this partition.
-6. Reload the L4-L7 Tab on the FASC application. After the reload the Route Domains dropdown will display the new Route Domains.
+------
+
+**Why do I receive an AS3 error “TMSH CLI script failed during execution” when trying to delete a partition or an application with a Route Domain that resides in a non-common partition?**
+
+Please note that if the application is the only application in a partition, the FASC App will attempt to delete the partition from the BIG-IP as well.  Thus, when you are trying to delete a partition or the only application in a partition that resides in a non-default Route Domain 0, you must remove the Route Domain from the BIG-IP first.  It is because BIG-IP does not support deleting a partition if there are any **existing objects** present in it including the Route Domain.
 
 ------
