@@ -23,7 +23,10 @@ Create VLAN and Self IP
 4. After selecting the VLANS click :guilabel:`Manage Selected`.
 
    .. note::
-      - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Tag (2) Interface. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
+      - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Tag (2) Interface (3) Partition (4) Route Domain. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
+      - Partitions and Route Domains should be created from the BIG-IP UI.
+      - If a Partition and Route Domain are not selected during the creation of the VLAN/self IP, it defaults to the Common Partition and Route Domain 0.
+      - The Route Domain dropdown list displays Route Domains present in the selected partition.
       - For an HA setup, the floating self IPs will automatically sync to the BIG-IP peer device.
       - Whether the interface is tagged or untagged depends on its device type. For a Physical device, VLANs are tagged and for virtual devices, VLANs are untagged. This option isn’t configurable or supported.
       - The only options available for port lockdown are All, None, and Default.
@@ -86,13 +89,16 @@ Create Default Gateway
 
    A form is displayed.
 
-3. In the :guilabel:`Gateway IP` field, enter the default gateway IP address. All other
+3. In the :guilabel:`Gateway IP` field, enter the default gateway IP address. The Default Gateway form also displays Partition and Route Domain fields. All other
    fields are disabled for user configuration, but are displayed in
    the Default Gateway form.
 
 4. Click :guilabel:`Submit`.
 
 The default gateway is created on the BIG-IP device and is added to the application database. For an HA setup, the default gateway will automatically sync to the BIG-IP peer device. F5 ACI ServiceCenter v2.9 added support for a brownfield default gateway, where the default gateway automatically syncs to the FASC database once the user navigates to the L2-L3 tab. FASC added support to allow any Default Gateway name to be synced to the FASC database (in previous versions, the only supported default gateway name was **apic-default-gateway**). 
+
+   .. note::
+      - Partition and Route Domain configuration are supported in v2.11+
 
 Update Default Gateway
 ``````````````````````
@@ -287,3 +293,20 @@ The application displays APIC VLAN tags for a particular Logical Device Cluster 
 **Q. What is the best way to delete LDEV from APIC?**
 
 Do not delete Logical devices from APIC directly. Instead, as a first step, delete self IPs, VLANs and routes from the BIG-IP device by using the application. When you are done, you can delete the Logical Device from APIC. This ensures there are no stale self IP, VLAN, and route entries on the BIG-IP.
+
+-----
+
+**Q. Why do I see a "Sync Failed" state on both the HA devices when clicking the Sync to BIG-IP button on the L2-L3 Stitching Tab?**
+
+In a BIG-IP HA setup, the recommended workflow of the Network configuration is:
+
+1. Create a VLAN and at least 1 local self IP on the BIG-IP. Ensure that both the BIG-IPs have the same VLAN name. If not, delete either of the VLANs and recreate it. F5 ACI ServiceCenter should take care of creating the same VLAN name.
+2. Create any number of additional local and floating self IPs on either of the BIG-IPs. When the floating IP synchronizes from 1 BIG-IP to the other out of band, F5 ACI ServiceCenter will automatically sync it to the database.
+
+Therefore, it is important to create VLANs on both the devices before a floating IP can be created on both devices. If this prerequisite is not met, the HA devices can enter the ‘Sync Failed’ state.
+
+-----
+
+**Q. Why do I have to configure a new Partition using L4-L7 Application Services first before setting up a L2-L3 Network Configuration in that Partition?**
+
+The L2-L3 Network Management Tab on FASC application does not support creating a new Partition. In order to set up a Network Configuration in a non-Common partition, it is necessary for the non-Common partition to be present on the BIG-IP. Hence, you should first create a new partition to deploy a new application using the L4-L7 Application tab. This will create the Partition on the BIG-IP. On reloading the L2-L3 Network Tab, this newly created partition would display in the Partitions dropdown. You can then use this Partition to set up a VLAN/self IP Network configuration.

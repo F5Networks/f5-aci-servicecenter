@@ -200,6 +200,7 @@ View BIG-IP Connectivity
 .. note::
 
    - LLDP needs to be enabled on the BIG-IP for this topology view to be seen.
+   - This topology view can be viewed for PHYSICAL and vCMP Host BIG-IP devices.
    
 Database Export and Import (Supported in v2.1+)
 ===============================================
@@ -322,22 +323,20 @@ The app has been tested with IE11, Mozilla FireFox 56 and Google Chrome v72.
 +-----------------------------------+----------------+
 | APIC logical devices              | 60             | 
 +-----------------------------------+----------------+ 
-| Per BIG-IP nodes members          | 4              | 
+| Per BIG-IP node members          | 100             | 
 +-----------------------------------+----------------+
 | Concurrent app operations         | 4 BIG-IPs      | 
 +-----------------------------------+----------------+
 
+Note:
+
+1. These scale numbers are tested individually and do not have any correlation between the particulars.
+
+2. These scale numbers are the safe limit but not the upper limit for the supported resources.
+
 ------
 
 **Q. What is the Compatibility Matrix for the various features supported by F5 ACI ServiceCenter?**
-
-Note:
-
-1. APIC minimum version supported for 3.2.x: 3.2(7f)
-
-2. APIC minimum version supported for 4.1.x: 4.1(1k)
-
-3. APIC minimum version supported for 5.0.x: 5.0(1k)
 
 Note: To enable the L4-L7 App services tab, you must be using AS3 version 3.19.1 or higher.
 

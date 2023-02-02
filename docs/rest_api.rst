@@ -2430,7 +2430,11 @@ updatefastdata.json
 |                    |                                                                                                            |
 |                    | "4_apic_service_discovery_port": 80,                                                                       |
 |                    |                                                                                                            |
-|                    | "acceleration_profile_name": "/Common/webacceleration",                                                    |
+|                    | "5_apic_service_discovery_vrf": "vrf-test",                                                                |
+|                    |                                                                                                            |
+|                    | "6_apic_service_discovery_route_domain": 0,                                                                |
+|                    |                                                                                                            |
+|                    | "7_apic_service_discovery_default_route_domain": 0,                                                        |
 |                    |                                                                                                            |
 |                    | "app_name": "app23",                                                                                       |
 |                    |                                                                                                            |
@@ -3548,6 +3552,10 @@ getldevinfo.json
 |                    |                                                                                                                                                                             |
 |                    | "lIfCtxDn": null,                                                                                                                                                           |
 |                    |                                                                                                                                                                             |
+|                    | "partition": "As3Part1",                                                                                                                                                    |
+|                    |                                                                                                                                                                             |
+|                    | "route_domain": 5,                                                                                                                                                          |
+|                    |                                                                                                                                                                             |
 |                    | "selfips": []                                                                                                                                                               |
 |                    |                                                                                                                                                                             |
 |                    | },                                                                                                                                                                          |
@@ -3840,6 +3848,10 @@ createbigipvlans.json
 |                              |                                                                                                                                                                                            |
 |                              | "tag": 300,                                                                                                                                                                                |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
+|                              | "route_domain": 5,                                                                                                                                                                         |
+|                              |                                                                                                                                                                                            |
 |                              | "interfaces": [                                                                                                                                                                            |
 |                              |                                                                                                                                                                                            |
 |                              | "1.1"                                                                                                                                                                                      |
@@ -3854,6 +3866,8 @@ createbigipvlans.json
 |                              |                                                                                                                                                                                            |
 |                              | "netmask": "255.255.255.0",                                                                                                                                                                |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
 |                              | "traffic\_group": "traffic-group-local-only",                                                                                                                                              |
 |                              |                                                                                                                                                                                            |
 |                              | "allow\_service": "none"                                                                                                                                                                   |
@@ -3865,6 +3879,8 @@ createbigipvlans.json
 |                              | "address": "192.198.4.9",                                                                                                                                                                  |
 |                              |                                                                                                                                                                                            |
 |                              | "netmask": "255.255.255.0",                                                                                                                                                                |
+|                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
 |                              |                                                                                                                                                                                            |
 |                              | "traffic\_group": "traffic-group-local-only",                                                                                                                                              |
 |                              |                                                                                                                                                                                            |
@@ -3900,6 +3916,10 @@ createbigipvlans.json
 |                              |                                                                                                                                                                                            |
 |                              | "tag": "375",                                                                                                                                                                              |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
+|                              | "route_domain": 5,                                                                                                                                                                         |
+|                              |                                                                                                                                                                                            |
 |                              | "interfaces": [                                                                                                                                                                            |
 |                              |                                                                                                                                                                                            |
 |                              | "1.1"                                                                                                                                                                                      |
@@ -3914,6 +3934,8 @@ createbigipvlans.json
 |                              |                                                                                                                                                                                            |
 |                              | "netmask": "255.255.255.0",                                                                                                                                                                |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
 |                              | "traffic\_group": "traffic-group-local-only",                                                                                                                                              |
 |                              |                                                                                                                                                                                            |
 |                              | "allow\_service": "all"                                                                                                                                                                    |
@@ -3925,6 +3947,8 @@ createbigipvlans.json
 |                              | "address": "192.168.14.202",                                                                                                                                                               |
 |                              |                                                                                                                                                                                            |
 |                              | "netmask": "255.255.255.0",                                                                                                                                                                |
+|                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
 |                              |                                                                                                                                                                                            |
 |                              | "traffic\_group": "traffic-group-local-only",                                                                                                                                              |
 |                              |                                                                                                                                                                                            |
@@ -4001,6 +4025,10 @@ deletebigipselfips.json
 |                              |                                                                                                                                                                                            |
 |                              | "name": "apic-selfip-192.198.4.8"                                                                                                                                                          |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
+|                              | "traffic_group": "/Common/traffic-group-local-only"                                                                                                                                        |
+|                              |                                                                                                                                                                                            |
 |                              | }                                                                                                                                                                                          |
 |                              |                                                                                                                                                                                            |
 |                              | ]                                                                                                                                                                                          |
@@ -4034,6 +4062,10 @@ deletebigipselfips.json
 |                              | {                                                                                                                                                                                          |
 |                              |                                                                                                                                                                                            |
 |                              | "name": "apic-selfip-192.168.14.202"                                                                                                                                                       |
+|                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
+|                              | "traffic_group": "/Common/traffic-group-local-only"                                                                                                                                        |
 |                              |                                                                                                                                                                                            |
 |                              | }                                                                                                                                                                                          |
 |                              |                                                                                                                                                                                            |
@@ -4149,6 +4181,8 @@ vlansynctobigip.json
 |                              |                                                                                                                                                                                            |
 |                              | "name": "<name>",                                                                                                                                                                          |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
 |                              | "lIfCtxDn": null,                                                                                                                                                                          |
 |                              |                                                                                                                                                                                            |
 |                              | "devtype": "<device\_type>"                                                                                                                                                                |
@@ -4167,6 +4201,8 @@ vlansynctobigip.json
 |                              |                                                                                                                                                                                            |
 |                              | "name": "apic-vlan-8ac36350",                                                                                                                                                              |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
 |                              | "lIfCtxDn": null                                                                                                                                                                           |
 |                              |                                                                                                                                                                                            |
 |                              | }                                                                                                                                                                                          |
@@ -4182,6 +4218,8 @@ vlansynctobigip.json
 |                              | "devtype": "VIRTUAL",                                                                                                                                                                      |
 |                              |                                                                                                                                                                                            |
 |                              | "name": "apic-vlan-f69ac7e0",                                                                                                                                                              |
+|                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
 |                              |                                                                                                                                                                                            |
 |                              | "lIfCtxDn": "uni/tn-f5-gs/GraphInst\_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider"                              |
 |                              |                                                                                                                                                                                            |
@@ -4218,6 +4256,8 @@ vlansynctodb.json
 |                              |                                                                                                                                                                                            |
 |                              | "name": "<vlan\_name>",                                                                                                                                                                    |
 |                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
+|                              |                                                                                                                                                                                            |
 |                              | "lIfCtxDn": null,                                                                                                                                                                          |
 |                              |                                                                                                                                                                                            |
 |                              | "devtype": "<device\_type>"                                                                                                                                                                |
@@ -4235,6 +4275,8 @@ vlansynctodb.json
 |                              | "devtype": "PHYSICAL",                                                                                                                                                                     |
 |                              |                                                                                                                                                                                            |
 |                              | "name": "apic-vlan-8ac36350",                                                                                                                                                              |
+|                              |                                                                                                                                                                                            |
+|                              | "partition": "As3Part1",                                                                                                                                                                   |
 |                              |                                                                                                                                                                                            |
 |                              | "lIfCtxDn": null                                                                                                                                                                           |
 |                              |                                                                                                                                                                                            |
@@ -4305,6 +4347,8 @@ getrouteinfo.json
 |                    |                                                                       |
 |                    | "name": "apic-default-gateway",                                       |
 |                    |                                                                       |
+|                    | "route_domain": 0,                                                    |
+|                    |                                                                       |
 |                    | "gateway": "192.198.4.19"                                             |
 |                    |                                                                       |
 |                    | },                                                                    |
@@ -4316,6 +4360,8 @@ getrouteinfo.json
 |                    | "name": "apic-default-gateway",                                       |
 |                    |                                                                       |
 |                    | "destination": "0.0.0.0",                                             |
+|                    |                                                                       |
+|                    | "route_domain": 0,                                                    |
 |                    |                                                                       |
 |                    | "netmask": "0.0.0.0",                                                 |
 |                    |                                                                       |
@@ -4360,7 +4406,11 @@ createbigiproutes.json
 |                    |                                                                                                                             |
 |                    | "destination": "0.0.0.0",                                                                                                   |
 |                    |                                                                                                                             |
-|                    | "name": "apic-default-gateway"                                                                                              |
+|                    | "name": ""                                                                                                                  |
+|                    |                                                                                                                             |
+|                    | "partition": "Partition1",                                                                                                  |
+|                    |                                                                                                                             |
+|                    | "route_domain":"1"                                                                                                          |
 |                    |                                                                                                                             |
 |                    | }                                                                                                                           |
 |                    |                                                                                                                             |
@@ -4413,7 +4463,7 @@ deletebigiproutes.json
 |                    |                                                                                                                                |
 |                    | {                                                                                                                              |
 |                    |                                                                                                                                |
-|                    | "name": "apic-default-gateway"                                                                                                 |
+|                    | "name": "apic-default-route-1"                                                                                                 |
 |                    |                                                                                                                                |
 |                    | }                                                                                                                              |
 |                    |                                                                                                                                |
@@ -4448,7 +4498,7 @@ routesynctodb.json
 |                    |                                                                                                                                                         |
 |                    | "route": {                                                                                                                                              |
 |                    |                                                                                                                                                         |
-|                    | "name": "apic-default-gateway"                                                                                                                          |
+|                    | "name": "apic-default-route-1"                                                                                                                          |
 |                    |                                                                                                                                                         |
 |                    | }                                                                                                                                                       |
 |                    |                                                                                                                                                         |
@@ -4481,7 +4531,7 @@ routesynctobigip.json
 |                    |                                                                                                                                                         |
 |                    | "route": {                                                                                                                                              |
 |                    |                                                                                                                                                         |
-|                    | "name": "apic-default-gateway"                                                                                                                          |
+|                    | "name": "apic-default-route-1"                                                                                                                          |
 |                    |                                                                                                                                                         |
 |                    | }                                                                                                                                                       |
 |                    |                                                                                                                                                         |
@@ -4528,6 +4578,10 @@ createbigipselfips.json
 |                    |                                                                       |
 |                    | "netmask": "<Netmask>",                                               |
 |                    |                                                                       |
+|                    | "route_domain": "<Route Domain ID>",                                  |
+|                    |                                                                       |
+|                    | "partition": "<Partition>",                                           |
+|                    |                                                                       |
 |                    | "traffic_group": "<traffic-group-local-only>" OR “<traffic-group-1>”, |
 |                    |                                                                       |
 |                    | "allow_service": "<all>" OR “<none>” OR  “<default>”                  |
@@ -4556,6 +4610,10 @@ createbigipselfips.json
 |                    |                                                                       |
 |                    | "tag": 25,                                                            |
 |                    |                                                                       |
+|                    | "route_domain": 0,                                                    |
+|                    |                                                                       |
+|                    | "partition": "Common",                                                |
+|                    |                                                                       |
 |                    | "selfips": [                                                          |
 |                    |                                                                       |
 |                    | {                                                                     |
@@ -4563,6 +4621,8 @@ createbigipselfips.json
 |                    | "address": "10.10.10.35",                                             |
 |                    |                                                                       |
 |                    | "netmask": "255.255.255.0",                                           |
+|                    |                                                                       |
+|                    | "partition": "Common",                                                |
 |                    |                                                                       |
 |                    | "traffic_group": "traffic-group-local-only”,                          |
 |                    |                                                                       |
