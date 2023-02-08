@@ -536,7 +536,7 @@ As a workaround suggested in the error message, you can delete the AS3/FAST appl
 
 ------
 
-**When I try to create a new partition to deploy a new application with Service Discovery, why don’t I find the options to map the APIC endpoints to a Route Domain that resides in a non-common partition?**
+**Q. When I try to create a new partition to deploy a new application with Service Discovery, why don’t I find the options to map the APIC endpoints to a Route Domain that resides in a non-common partition?**
 
 Currently, when trying to create a new partition from the L4-L7 Basic or Advanced tab, the Route Domain dropdown can only display the Route Domains that reside in the common partition from the BIG-IP.  If you would like to create a new partition and associate its application with a Route Domain that resides in a non-common partition, please follow the steps below:
 
@@ -552,7 +552,7 @@ Currently, when trying to create a new partition from the L4-L7 Basic or Advance
 
 ------
 
-**Why do I receive an AS3 error “TMSH CLI script failed during execution” when trying to delete a partition or an application with a Route Domain that resides in a non-common partition?**
+**Q. Why do I receive an AS3 error “TMSH CLI script failed during execution” when trying to delete a partition or an application with a Route Domain that resides in a non-common partition?**
 
 Please note that if the application is the only application in a partition, the FASC App will attempt to delete the partition from the BIG-IP as well.  Thus, when you are trying to delete a partition or the only application in a partition that resides in a non-default Route Domain 0, you must remove the Route Domain from the BIG-IP first.  It is because BIG-IP does not support deleting a partition if there are any **existing objects** present in it including the Route Domain.
 
