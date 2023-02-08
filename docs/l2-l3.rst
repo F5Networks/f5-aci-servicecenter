@@ -97,8 +97,8 @@ Create Default Gateway
 
 The default gateway is created on the BIG-IP device and is added to the application database. For an HA setup, the default gateway will automatically sync to the BIG-IP peer device. F5 ACI ServiceCenter v2.9 added support for a brownfield default gateway, where the default gateway automatically syncs to the FASC database once the user navigates to the L2-L3 tab. FASC added support to allow any Default Gateway name to be synced to the FASC database (in previous versions, the only supported default gateway name was **apic-default-gateway**). 
 
-   .. note::
-      - Partition and Route Domain configuration are supported in v2.11+
+.. note::
+    - Partition and Route Domain configuration are supported in v2.11+
 
 Update Default Gateway
 ``````````````````````
