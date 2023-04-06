@@ -2,9 +2,27 @@ What's New in Version 2.11
 ===========================
 
 
+**Multi-tenancy Support** which includes:
 1. VRF to Route Domain Mapping Support for Tenant|Application|EPG Mapping
 2. Partition and Route Domain Support for L2-L3 Network Management including VLANs, Self IPs & Default Routes
 3. Default Routes Support for each Route Domain
+
+------
+
+
+Fixed Caveats in v2.11.1
+===========================
+
+
+**1. Route Domain information is not displayed in VLAN table if Common partition with non-default Route Domain is selected**
+
+When Common Partition with non-default Route Domain is selected in VLAN table, Route Domain information is not displayed for Self IPs.
+
+------
+
+**2. Visibility table displays information from all Route Domains even a particular Route Domain is selected**
+
+If the same VIP or node is assigned to multiple Route Domains, the Visibility table displays information from all Route Domains even if a particular Route Domain is selected.
 
 ------
 
