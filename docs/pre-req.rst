@@ -6,7 +6,7 @@ Pre-requisites for the F5 ACI ServiceCenter:
 - F5 ACI ServiceCenter should be a part of the default security domain for proper functioning.
 - Cisco APIC users who access F5 ACI ServiceCenter must have admin privileges to the Cisco APIC.
 - All BIG-IP devices added to the F5 ACI ServiceCenter should have https support.
-- To enable F5 ACI ServiceCenter L4-L7 Application Services tab, use the BIG-IP Configuration utility to install the latest version of AS3 (f5-appsvcs package) and FAST (f5-appsvcs-templates) on the BIG-IP device.
+- To enable F5 ACI ServiceCenter L4-L7 Application Services tab, use the BIG-IP Configuration utility to install the latest version of **AS3 (f5-appsvcs package)** and **FAST (f5-appsvcs-templates)** on the BIG-IP device.
     - AS3 installation https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html
     - Fast Installation https://clouddocs.f5.com/products/extensions/f5-appsvcs-templates/latest/userguide/install-uninstall.html
 - To view the Virtual Server statistics on the Visibility VIP Dashboard, you must install the Telemetry Streaming plugin version 1.17 or higher on the BIG-IP device. Follow the installation steps and the default pull consumer configuration details from https://clouddocs.f5.com/f5-aci-servicecenter/latest/navigate.html#configure-telemetry
@@ -30,6 +30,7 @@ Pre-requisites for the F5 ACI ServiceCenter:
   | 2.10                        | 3.19.1+                | 1.17.0+                        |  1.8.1+                               |
   +-----------------------------+------------------------+--------------------------------+---------------------------------------+
   | 2.11                        | 3.41.1+                | 1.17.0+                        |  1.9.1+                               |
+  |                             |                        |                                |                                       |
   | 2.11.1                      |                        |                                |                                       |
   +-----------------------------+------------------------+--------------------------------+---------------------------------------+
 
