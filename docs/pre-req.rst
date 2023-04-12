@@ -8,10 +8,10 @@ Pre-requisites for the F5 ACI ServiceCenter:
 - All BIG-IP devices added to the F5 ACI ServiceCenter should have https support.
 - To enable F5 ACI ServiceCenter L4-L7 Application Services tab, use the BIG-IP Configuration utility to install the latest version of **AS3 (f5-appsvcs package)** and **FAST (f5-appsvcs-templates)** on the BIG-IP device.
     - AS3 installation https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html
-    - Fast Installation https://clouddocs.f5.com/products/extensions/f5-appsvcs-templates/latest/userguide/install-uninstall.html
+    - FAST installation https://clouddocs.f5.com/products/extensions/f5-appsvcs-templates/latest/userguide/install-uninstall.html
 - To view the Virtual Server statistics on the Visibility VIP Dashboard, you must install the Telemetry Streaming plugin version 1.17 or higher on the BIG-IP device. Follow the installation steps and the default pull consumer configuration details from https://clouddocs.f5.com/f5-aci-servicecenter/latest/navigate.html#configure-telemetry
-- To allow self discovery of BIG-IP devices on F5 ACI ServiceCenter, enable LLDP protocol on BIG-IP devices and Cisco APIC.Make sure LLDP attribute ”Management Address” is present in the LLDP attributes send list on BIG-IP devices (Network->Interfaces->Interfaces List-><interface_id>).
-- F5 ACI ServiceCenter has read-only privilege to the Cisco APIC.  To configure and manage the Cisco APIC, use the Cisco APIC GUI/API, example: use the Cisco APIC GUI/API to add a logical device or to add an endpoint group etc.
+- To allow self discovery of BIG-IP devices on F5 ACI ServiceCenter, enable the LLDP protocol on BIG-IP devices and Cisco APIC. Make sure the LLDP attribute ”Management Address” is present in the LLDP attributes send list on BIG-IP devices (Network->Interfaces->Interfaces List-><interface_id>).
+- F5 ACI ServiceCenter has read-only privileges to the Cisco APIC. To configure and manage the Cisco APIC, use the Cisco APIC GUI/API. For example, use the Cisco APIC GUI/API to add a logical device or to add an endpoint group etc.
 - The minimum BIG-IP Plugin versions supported by the F5 ACI ServiceCenter:
 
   +-----------------------------+------------------------+--------------------------------+---------------------------------------+
