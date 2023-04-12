@@ -15,13 +15,13 @@ Fixed Caveats in v2.11.1
 ===========================
 
 
-**1. Route Domain information is not displayed in VLAN table if Common partition with non-default Route Domain is selected**
+**1. Route Domain information is not displayed in VLAN tables if the Common partition with a non-default Route Domain is selected**
 
-When Common Partition with non-default Route Domain is selected in VLAN table, Route Domain information is not displayed for Self IPs.
+When the Common Partition with a non-default Route Domain is selected in a VLAN table, Route Domain information is not displayed for Self IPs.
 
 ------
 
-**2. Visibility table displays information from all Route Domains even a particular Route Domain is selected**
+**2. The Visibility table displays information from all Route Domains even if a particular Route Domain is selected**
 
 If the same VIP or node is assigned to multiple Route Domains, the Visibility table displays information from all Route Domains even if a particular Route Domain is selected.
 
