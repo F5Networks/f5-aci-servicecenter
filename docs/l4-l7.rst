@@ -61,7 +61,7 @@ Create a partition using Advanced mode (Application subtab)
 
 5. Update the stub code with valid inputs.
 
-6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+6. Optionally, click :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
 
 7. Click :guilabel:`Submit`.
 
@@ -71,8 +71,9 @@ New partitions and applications are listed in the Partition and Application list
 
 .. note::
 
-   - Route Domain must be created on the BIG-IP since the L2-L3 Network Management Tab as well as AS3 configuration does not support creation of Route Domains.
-   - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
+   - Minimum supported AS3 version for VRF to Route Domain mapping support is v3.41.
+   - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
+   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided information.
    - On clicking :guilabel:`Submit`, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
@@ -107,15 +108,16 @@ Create an application using Advanced mode (Application subtab)
       Application stub code is displayed in the text box.
 4. In the :guilabel:`Application Name` field, enter a valid application name.
 5. Update the stub code which appears in the JSON box with appropriate values.
-6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to add Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+6. Optionally, click :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups. 
 7. Click :guilabel:`Submit`.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list.
 
 .. note::
 
-   - Route Domains must be created on the BIG-IP since the L2-L3 Network Management Tab, as well as AS3 configuration, does not support creation of Route Domains.
-   - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
+   - Minimum supported AS3 version for VRF to Route Domain mapping support is v3.41.
+   - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
+   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided information.
    - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the application is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
@@ -130,11 +132,11 @@ Update an application using Advanced mode (Application subtab)
    to update.
 
    .. note::
-      Application contents is retrieved through AS3 APIs from the BIG-IP device and displayed in the text box.
+      Application content is retrieved through AS3 APIs from the BIG-IP device and displayed in the text box.
 
 4. Update the application JSON.
 
-5. Optionally, click :guilabel:`Manage Endpoint Mappings` to update Dynamic Endpoint Mappings for endpoint discovery. You can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the Application’s pool.The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have an endpoint list updated, the AS3 application’s pool will also have the same set of endpoints in it on the BIG-IP. 
+5. Optionally, click :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
 
 6. Click :guilabel:`Submit`.
 
@@ -142,8 +144,9 @@ The application is updated on the BIG-IP device.
 
 .. note::
 
-   - Route Domains must be created on the BIG-IP since the L2-L3 Network Management Tab, as well as AS3 configuration, does not support creation of Route Domains.
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
+   - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
+   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided information.
    - On clicking :guilabel:`Submit`, the application is updated asynchronously in the background. Once the application is updated successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
@@ -190,13 +193,14 @@ New partitions and applications are listed in the Partition and Application drop
 
 .. note::
 
-   - On clicking :guilabel:`Submit`, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
-   
-   - For the :guilabel:`service-discovery/http` template, you can select APIC Tenant, Application, Endpoint Group from the provided drop-downs to associate them with the BIG-IP Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the drop-down lists to associate them with the Application's pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
+   - Minimum supported AS3 version for VRF to Route Domain mapping is v3.41.
+   -  :guilabel:`Service-discovery/http template` provides endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
+   - On upgrading FASC to v2.11 from any prior versions, users must remove the existing :guilabel:`service-discovery/http` template from the BIG-IP and install the latest version of :guilabel:`service-discovery/http` template from L4-L7 Application Services Tab for VRF to Route Domain mapping support.
 
    - Route Domains must be created on the BIG-IP since the L2-L3 Network Management Tab, as well as AS3 configuration, does not support creation of Route Domains.
 
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
+   - FASC does not support the creation of Route Domains. Route Domains must be created on the BIG-IP.
 
    - If :guilabel:`FAST generated pool monitor` is enabled user must fill below fields in the form selected template
    
@@ -204,6 +208,7 @@ New partitions and applications are listed in the Partition and Application drop
      - Application domain name title field in **bigip-fast-templates/microsoft_sharepoint** template
      - Password title field for **bigip-fast-templates/ldap** template
      - Domain Name title field for **bigip-fast-templates/smtp** template
+   - On clicking Submit, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 Delete a partition using FAST Template (Basic mode-Application subtab)
 ----------------------------------------------------------------------
@@ -239,10 +244,12 @@ The new application is created on this BIG-IP device in the specified partition,
 
 .. note::
 
-   - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
-   - For the :guilabel:`service-discovery/http` template, you can select APIC Tenant, Application, Endpoint Group from the drop-downs lists to associate them with the BIG-IP Application’s pool. The VRF field is a read-only field and is retrieved from the APIC’s Endpoint Group itself. You can select Route Domain from the dropdown options to associate them with the Application's pool. Whenever the APIC Endpoint Group will have a new endpoint attached or detached from it, the FAST application’s pool will also have the same set of endpoints in it on the BIG-IP.
-   - Route Domain must be created on the BIG-IP since the L2-L3 Network Management Tab as well as AS3 configuration does not support creation of Route Domains.
-   - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
+   - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41. 
+   - :guilabel:`Service-discovery/http` template provides endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
+   - On upgrading FASC to :guilabel:`v2.11` from any prior versions, users must remove the existing :guilabel:`service-discovery/http` template from the BIG-IP and install the latest version of :guilabel:`service-discovery/http` template from L4-L7 Application Services Tab for VRF to Route Domain mapping support.
+   - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
+   - On clicking Submit, the application is created asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
+
 
 
 Update an application using FAST Template (Basic Mode-Application subtab)
@@ -346,7 +353,7 @@ View AS3/FAST Applications (Application Inventory sub-tab)
 
    **Application** 
     
-   - Displays the application name. Each application name in this table has a hyperlink to the Application sub-tab to respective mode (either Basic/Advanced) used during creation of the application.
+   - Displays the application name. Each application name in this table has a hyperlink to the Application sub-tab to the respective mode (either Basic/Advanced) used during creation of the application.
 
    **Template**    
    
@@ -354,7 +361,7 @@ View AS3/FAST Applications (Application Inventory sub-tab)
 
    **Pool**    
    
-   - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has hyperlink to BIG-IP UI to the same pool.
+   - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has a hyperlink to the BIG-IP UI to the same pool.
    
    **Route Domain**    
    
@@ -388,10 +395,10 @@ View AS3/FAST Applications (Application Inventory sub-tab)
    - View Application JSON icon - Shows the raw JSON of the AS3 application
 
 
-Refresh L4-L7 Configuration tab
+Refresh the L4-L7 App Services tab
 -------------------------------
 
-- In the top right of L4-L7 Configuration tab, click :guilabel:`Refresh`.
+- In the top right of the L4-L7 App Services tab, click :guilabel:`Refresh`.
 
 The content on the tab is refreshed.
 
@@ -415,9 +422,9 @@ For any configuration on the L4-L7 app services tab, all AS3 operations support 
 Frequently Asked Questions (FAQ)
 --------------------------------
 
-**Q. Why is my L4-L7 Configuration tab disabled?**
+**Q. Why is my L4-L7 App Services tab disabled?**
 
-For the L4-L7 configuration tab to work correctly, f5-appsvcs RPM version 3.19.1 or later is required. Installation steps are available here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html#installation
+For the L4-L7 App Services tab to work correctly, f5-appsvcs RPM version 3.19.1 or later is required. Installation steps are available here: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html#installation
 
 ------
 
@@ -431,19 +438,19 @@ See above.
 
 If a BIG-IP is already processing an AS3 asynchronous task, it displays this message for any successive async operations. Once the asynchronous operation is completed, it is possible to perform the next operation like create/update/delete partition or application. Wait for a few minutes and try the configuration again. 
 
-It is also possible that you may see an error message such as **'HTTPError' object has no attribute 'message'**. Wait for a few minutes and try the configuration again.
+It is also possible that you may see an error message such as **'HTTPError' object that has no attribute 'message'**. Wait for a few minutes and try the configuration again.
 
 ------
 
 **Q. For all L4-L7 App Services operations, why do I see the message “BIG-IP is processing the request. Please click the 'Pending Tasks' icon to check the status of the pending request.”?**
 
-All the L4-L7 App Services are processed in an asynchronous manner in the background. This message is displayed for every operation done on this tab. The **Pending Tasks** icon shows the status of last few such pending requests and their status. Also, once any such pending task is completed on the BIG-IP, the UI reloads the data to display the latest AS3 information about partitions and applications. 
+All the L4-L7 App Services are processed in an asynchronous manner in the background. This message is displayed for every operation done on this tab. The **Pending Tasks** icon shows the status of the latest few such pending requests and their status. Also, once any such pending task is completed on the BIG-IP, the UI reloads the data to display the latest AS3 information about partitions and applications. 
 
 For more details, see:  https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 ------
 
-**Q. Why do I see warning signs against APIC Endpoints in View EPs table?**
+**Q. Why do I see warning signs against APIC Endpoints in the View EPs table?**
 
 It is possible that the BIG-IP's AS3 plugin is unable to sync the dynamic endpoints and create them as BIG-IP pool members due to various unsupported configurations, such as:
 
@@ -465,13 +472,13 @@ Workaround: Upload one more AS3 sample declaration to the app and then perform a
 
 ------
 
-**Q. For L4-L7 App Service tab, why does the partition get deleted when I delete the last application belonging to that partition?**
+**Q. For the L4-L7 App Service tab, why does the partition get deleted when I delete the last application belonging to that partition?**
 
 If there is a single application in a particular partition, and if that application is deleted through the application, the partition that has no other applications under it will be deleted from the BIG-IP device. This is standard F5 BIG-IP behavior. You will be warned about this in the delete confirmation prompt.
 
 ------
 
-**Q. When I create an AS3 application using the L4-L7 Application Services → Application → Basic tab, I don’t see this application listed under L4-L7 Application Services → Application → Advanced tab. How shall I view the raw JSON of this AS3 application?**
+**Q. When I create an AS3 application using the L4-L7 Application Services → Application → Basic tab, I don’t see this application listed under the L4-L7 Application Services → Application → Advanced tab. How shall I view the raw JSON of this AS3 application?**
 
 The Basic and Advanced sub-tabs of 'L4-L7 Application Services → Application' tab list only the applications created from the respective tabs. If you wish to view details (raw JSON) of any AS3 application, please go to L4-L7 Application Services → Application Inventory tab which lists all the applications. Traverse to row with the application of interest and click on the “View Application JSON” icon in the “Action” column to view the raw JSON.
 
@@ -479,13 +486,13 @@ The Basic and Advanced sub-tabs of 'L4-L7 Application Services → Application' 
 
 **Q. When I create an FAST application using the L4-L7 Application Services → Application → Basic tab, can I update this application via Application Services → BIG-IP tab?**
 
-The application created through the L4-L7 Application Services → Application → Basic tab should be updated through the same tab. If for some reason it needs to be updated via the BIG-IP tab; For example, if the virtual server address is to be updated from X to Y, then the same value needs to get updated from X to Y in the Constants → appsvcsFormData section of the application JSON from the BIG-IP tab. If the constants section is not updated, it will show inconsistent values when traversed back to Basic tab.
+The application created through the L4-L7 Application Services → Application → Basic tab should be updated through the same tab. If for some reason it needs to be updated via the BIG-IP tab; For example, if the virtual server address is to be updated from X to Y, then the same value needs to get updated from X to Y in the Constants → appsvcsFormData section of the application JSON from the BIG-IP tab. If the constants section is not updated, it will show inconsistent values when traversed back to the Basic tab.
 
 ------
 
 **Q. While deleting Partition OR Application using L4-L7 Application Services, why do I get the error “All objects must be removed from a partition <Partition-Name> before the partition may be removed”?**
 
-This issue is observed when there are additional objects created under a BIG-IP Partition. In order to see if which objects are present in this partition:
+This issue is observed when there are additional objects created under a BIG-IP Partition. In order to see which objects are present in this partition:
 1. Login to BIG-IP using ssh and as root user
 2. cd to "/partitions/<Partition-Name>/" and check the contents of the file "bigip.conf"
 3. This file should shows the details of the objects that you need to remove to be able to successfully delete the partition from BIG-IP
@@ -518,7 +525,7 @@ To view pool members after share node option is disabled for an existing partiti
 
 **Q.Why are older partitions that no longer exist on the BIG-IP still retrieved by the AS3 endpoint?**
 
-The L4-L7 Application Inventory tab in FASC Application displays a list of all FAST and AS3 applications created on the BIG-IP device as well as on the FASC application. The Application Inventory tab on FASC always pulls the current AS3 configurations present on the BIG-IP device and it gets updated whenever the tab is clicked or reloaded. However in case of misconfigurations or configuration failures on the BIG-IP, users might see certain FAST/AS3 applications displaying on the Application Inventory tab which no longer exist on the BIG-IP.  If you run into this condition,  you can do a GET request through Postman on the following AS3 Endpoint API to verify if the relevant partition is still present on the BIG-IP in the API response.
+The Application Inventory tab under L4-L7 App Services in FASC Application displays a list of all FAST and AS3 applications created on the BIG-IP device as well as on the FASC application. The Application Inventory tab on FASC always pulls the current AS3 configurations present on the BIG-IP device and it gets updated whenever the tab is clicked or reloaded. However in case of misconfigurations or configuration failures on the BIG-IP, users might see certain FAST/AS3 applications displaying on the Application Inventory tab which no longer exist on the BIG-IP.  If you run into this condition,  you can do a GET request through Postman on the following AS3 Endpoint API to verify if the relevant partition is still present on the BIG-IP in the API response.
 
 API URL: https://<BIGIP-IP:Port-Here>/mgmt/shared/appsvcs/declare?showHash=true
 Request type: GET

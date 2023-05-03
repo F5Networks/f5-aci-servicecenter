@@ -4,9 +4,32 @@ What's New in Version 2.11
 
 **Multi-tenancy Support** which includes:
 
-1. VRF to Route Domain Mapping Support for Tenant|Application|EPG Mapping
+1. VRF to Route Domain Mapping Support for Tenant|Application|EPG Mapping in Visibility Tables, Visibility Dashboards and L4-L7 Application Services.
 2. Partition and Route Domain Support for L2-L3 Network Management including VLANs, Self IPs & Default Routes
 3. Default Routes Support for each Route Domain
+
+------
+
+
+Open Caveats in v2.11.1
+===========================
+
+
+**1. VIP Visibility Dashboard does not display APIC information for dynamically learned VIPs**
+
+VIP Visibility Dashboard only displays APIC information for VIPs that are defined as static endpoints on the APIC.  VIP Visibility Dashboard does not display APIC information for VIPs that are dynamically learned on the APIC.
+
+------
+
+**2. The VIP and VLAN Visibility Table does not display APIC VRF information for dynamically learned VIPs**
+
+The VIP and VLAN Visibility Table does not display VRF information if the VIP is dynamically learned on the APIC.  VRF information is displayed if the VIP is defined as a static endpoint on the APIC.
+
+------
+
+**3. Node information is not displayed in the Node Visibility Table or Node Visibility Dashboard when a second application is created using L4-L7 Application Services**
+
+Though a second application is created successfully on the BIG-IP using Advanced mode (AS3) in L4-L7 Application Services, Node information is not shown in the Node Visibility Table or Node Visibility Dashboard.
 
 ------
 
