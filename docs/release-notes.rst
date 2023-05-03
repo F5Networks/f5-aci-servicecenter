@@ -21,9 +21,9 @@ VIP Visibility Dashboard only displays APIC information for VIPs that are define
 
 ------
 
-**2. VIP and VLAN Visibility Table does not display APIC VRF information for dynamically learned VIPs**
+**2. The VIP and VLAN Visibility Table does not display APIC VRF information for dynamically learned VIPs**
 
-VIP and VLAN Visibility Table does not display VRF information if the VIP is dynamically learned on the APIC.  VRF information is displayed if the VIP is defined as a static endpoint on the APIC.
+The VIP and VLAN Visibility Table does not display VRF information if the VIP is dynamically learned on the APIC.  VRF information is displayed if the VIP is defined as a static endpoint on the APIC.
 
 ------
 
