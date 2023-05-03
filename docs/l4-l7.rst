@@ -61,7 +61,7 @@ Create a partition using Advanced mode (Application subtab)
 
 5. Update the stub code with valid inputs.
 
-6. Optionally, click on :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints get attached or detached from APIC Endpoint Groups.
+6. Optionally, click :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
 
 7. Click :guilabel:`Submit`.
 
@@ -73,7 +73,7 @@ New partitions and applications are listed in the Partition and Application list
 
    - Minimum supported AS3 version for VRF to Route Domain mapping support is v3.41.
    - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
-   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided info.
+   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided information.
    - On clicking :guilabel:`Submit`, the partition is created asynchronously in the background. Once the partition is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
@@ -108,7 +108,7 @@ Create an application using Advanced mode (Application subtab)
       Application stub code is displayed in the text box.
 4. In the :guilabel:`Application Name` field, enter a valid application name.
 5. Update the stub code which appears in the JSON box with appropriate values.
-6. Optionally, Click on :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints get attached or detached from APIC Endpoint Groups. 
+6. Optionally, click :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups. 
 7. Click :guilabel:`Submit`.
 
 The new application is created on this BIG-IP device in the specified partition, and the app is listed in the Application list.
@@ -117,7 +117,7 @@ The new application is created on this BIG-IP device in the specified partition,
 
    - Minimum supported AS3 version for VRF to Route Domain mapping support is v3.41.
    - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
-   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided info.
+   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided information.
    - On clicking :guilabel:`Submit`, the application is created asynchronously in the background. Once the application is created successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
@@ -136,7 +136,7 @@ Update an application using Advanced mode (Application subtab)
 
 4. Update the application JSON.
 
-5. Optionally, click :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints get attached or detached from APIC Endpoint Groups.
+5. Optionally, click :guilabel:`Manage Endpoint Mappings` to configure Dynamic Endpoint Mappings for endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
 
 6. Click :guilabel:`Submit`.
 
@@ -146,7 +146,7 @@ The application is updated on the BIG-IP device.
 
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41.
    - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
-   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided info.
+   - :guilabel:`Manage Endpoint Mappings` APIC VRF field is read-only and is retrieved from the APIC based on the provided information.
    - On clicking :guilabel:`Submit`, the application is updated asynchronously in the background. Once the application is updated successfully, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
 
 
@@ -194,7 +194,7 @@ New partitions and applications are listed in the Partition and Application drop
 .. note::
 
    - Minimum supported AS3 version for VRF to Route Domain mapping is v3.41.
-   -  :guilabel:`Service-discovery/http template` provides endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints get attached or detached from APIC Endpoint Groups.
+   -  :guilabel:`Service-discovery/http template` provides endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
    - On upgrading FASC to v2.11 from any prior versions, users must remove the existing :guilabel:`service-discovery/http` template from the BIG-IP and install the latest version of :guilabel:`service-discovery/http` template from L4-L7 Application Services Tab for VRF to Route Domain mapping support.
 
    - Route Domains must be created on the BIG-IP since the L2-L3 Network Management Tab, as well as AS3 configuration, does not support creation of Route Domains.
@@ -245,7 +245,7 @@ The new application is created on this BIG-IP device in the specified partition,
 .. note::
 
    - Minimum supported AS3 version for the VRF to Route Domain mapping support is v3.41. 
-   - :guilabel:`Service-discovery/http` template provides endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints get attached or detached from APIC Endpoint Groups.
+   - :guilabel:`Service-discovery/http` template provides endpoint discovery, which dynamically updates endpoints in BIG-IP pools whenever endpoints are attached or detached from APIC Endpoint Groups.
    - On upgrading FASC to :guilabel:`v2.11` from any prior versions, users must remove the existing :guilabel:`service-discovery/http` template from the BIG-IP and install the latest version of :guilabel:`service-discovery/http` template from L4-L7 Application Services Tab for VRF to Route Domain mapping support.
    - Route Domains must be created on the BIG-IP.  FASC does not support the creation of Route Domains.
    - On clicking Submit, the application is created asynchronously in the background. Once the operation is successful, the app UI loads the latest data. For more details, refer to https://clouddocs.f5.com/f5-aci-servicecenter/latest/l4-l7.html#as3-async-task-processing
@@ -361,7 +361,7 @@ View AS3/FAST Applications (Application Inventory sub-tab)
 
    **Pool**    
    
-   - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has a hyperlink to BIG-IP UI to the same pool.
+   - BIG-IP pool names which are present in this application. Each pool should be displayed on a separate row. The pool has a hyperlink to the BIG-IP UI to the same pool.
    
    **Route Domain**    
    
@@ -395,7 +395,7 @@ View AS3/FAST Applications (Application Inventory sub-tab)
    - View Application JSON icon - Shows the raw JSON of the AS3 application
 
 
-Refresh L4-L7 App Services tab
+Refresh the L4-L7 App Services tab
 -------------------------------
 
 - In the top right of the L4-L7 App Services tab, click :guilabel:`Refresh`.
