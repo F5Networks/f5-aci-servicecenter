@@ -559,7 +559,7 @@ Currently, when trying to create a new partition from the L4-L7 Basic or Advance
 8. Click “Submit” and the new AS3 application will be created in the Route Domain that resides in the non-common partition on the BIG-IP.
 9. Last, delete the “To-Be-Deleted” application.
 
-This limitation is not seen in v2.11.2 and onwards.
+Starting from v2.11.2, you no longer need to create a dummy application “To-Be-Deleted” first in order to place your new application in a Route Domain that resides in a non-common partition. 
 
 ------
 
