@@ -11,7 +11,7 @@ What's New in Version 2.11
 ------
 
 
-Open Caveats in v2.11.1
+Fixed Caveats in v2.11.2
 ===========================
 
 

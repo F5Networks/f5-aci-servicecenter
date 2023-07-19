@@ -17,7 +17,10 @@ View VLAN table
    The table shows all the VLANs (vlan encaps), Self IP, Interfaces, Route Domain from the BIG-IP device that have a corresponding **Endpoint Group|VRF|Application Profile|Tenant** entry on the APIC. These correspond to the **Static Port VLANs** and **Static Leaf VLANs** under the aforementioned **Endpoint Group**. Users are able to view information related to Self IPs and interfaces by clicking the dropdown icon in the Self IP and Interface columns respectively.
 
    The table does not show VLANs from BIG-IPs that don't have corresponding APIC entries.
-   
+
+.. note::
+
+   - A warning icon will display in the VRF column if the VRF of the application has been modified or no longer exists on the APIC.   
 
 View VIP table
 ---------------
@@ -38,6 +41,9 @@ View VIP table
    -  If any of the node members have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
    -  Route Domain entries are supported by the VIP table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the VIP table (Supported in v2.6+). 
 
+.. note::
+
+   - A warning icon will display in the VRF column if the VRF of the application has been modified or no longer exists on the APIC.   
 
 View Node table
 ---------------
@@ -57,6 +63,9 @@ View Node table
    -  If any of the nodes have an associated FQDN, it will be displayed in the FQDN column (Supported in v2.4+).
    -  Route Domain entries are supported by the Node table. Nodes on the BIG-IP of the form **IP%RD** will be displayed in the Node table (Supported in v2.6+).
 
+.. note::
+
+   - A warning icon will display in the VRF column if the VRF of the application has been modified or no longer exists on the APIC.   
    
 
 Download report
@@ -266,7 +275,7 @@ The Visibility VIP table displays the pool members from a BIG-IP VIP, only if th
 
 **Q. What does the field 'Route Domain' on the Visibility Dashboard indicate?**
 
-It displays the **default Route Domain** for the partition to which the Virtual Server (VIP) or Node belongs.
+It displays the **default Route Domain** for the partition to which the Virtual Server (VIP) or Node belongs. Note that this field was changed to “Default Route Domain” from  v2.11.2 onwards.
 
 ------
 
