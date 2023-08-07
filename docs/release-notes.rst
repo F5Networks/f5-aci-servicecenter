@@ -11,6 +11,17 @@ What's New in Version 2.11
 ------
 
 
+Open Caveats in v2.11.2
+===========================
+
+
+**1. APIC Endpoints in non-Common Route Domains are not dynamically detached from the BIG-IP pool until a manual sync is done**
+
+When the endpoints of an EPG are detached from the APIC, these endpoints are not dynamically removed/detached from the corresponding pool on the BIG-IP if these endpoints are in a non-Common Route Domain. A manual sync operation is required for the endpoints to be removed/detached from the BIG-IP. This issue is not seen for the partition default Route Domain in the Common partition.
+
+------
+
+
 Fixed Caveats in v2.11.2
 ===========================
 
