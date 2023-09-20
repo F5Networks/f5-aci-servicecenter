@@ -32,4 +32,4 @@ Pre-requisites for the F5 ACI ServiceCenter:
   | 2.11, 2.11.x                | 3.45.0+                | 1.17.0+                        |  1.9.1+                               |
   +-----------------------------+------------------------+--------------------------------+---------------------------------------+
 
-Note:  It is **recommended** to always install the latest plugin version on the BIG-IP device.
+Note:  It is **recommended** to always install the **latest** plugin version on the BIG-IP device.
