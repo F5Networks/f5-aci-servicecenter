@@ -12,7 +12,7 @@ Pre-requisites for the F5 ACI ServiceCenter:
 - To view the Virtual Server statistics on the Visibility VIP Dashboard, you must install the Telemetry Streaming plugin version 1.17 or higher on the BIG-IP device. Follow the installation steps and the default pull consumer configuration details from https://clouddocs.f5.com/f5-aci-servicecenter/latest/navigate.html#configure-telemetry
 - To allow self discovery of BIG-IP devices on F5 ACI ServiceCenter, enable the LLDP protocol on BIG-IP devices and Cisco APIC. Make sure the LLDP attribute ”Management Address” is present in the LLDP attributes send list on BIG-IP devices (Network->Interfaces->Interfaces List-><interface_id>).
 - F5 ACI ServiceCenter has read-only privileges to the Cisco APIC. To configure and manage the Cisco APIC, use the Cisco APIC GUI/API. For example, use the Cisco APIC GUI/API to add a logical device or to add an endpoint group etc.
-- The minimum BIG-IP Plugin versions supported by the F5 ACI ServiceCenter:
+- The **minimum** BIG-IP Plugin versions supported by the F5 ACI ServiceCenter:
 
   +-----------------------------+------------------------+--------------------------------+---------------------------------------+
   | Package Version             | AS3 Version            | Telemetry Version              | FAST Version                          |
@@ -32,4 +32,4 @@ Pre-requisites for the F5 ACI ServiceCenter:
   | 2.11, 2.11.x                | 3.45.0+                | 1.17.0+                        |  1.9.1+                               |
   +-----------------------------+------------------------+--------------------------------+---------------------------------------+
 
-Note:  It is recommended to always install the latest plugin version on the BIG-IP device.
+Note:  F5 **recommends** always installing the **latest** plugin version on the BIG-IP device.

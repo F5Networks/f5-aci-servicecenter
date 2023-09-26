@@ -1,7 +1,7 @@
 Support
 =======
 
-F5 ACI ServiceCenter supports the currently supported BIG-IP releases from F5 and ACI releases from Cisco.  The following versions of BIG-IP and APIC are currently supported for the F5 ACI ServiceCenter:
+F5 ACI ServiceCenter **supports the currently supported** BIG-IP releases from F5 and ACI releases from Cisco.  The following versions of BIG-IP and APIC are currently supported for the F5 ACI ServiceCenter:
 
 +-----------------+------------------------------+------------------------------------------------------------+
 | Package Version | BIG-IP Version               | APIC Version                                               |
