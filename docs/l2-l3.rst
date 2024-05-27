@@ -225,7 +225,90 @@ Create Self IPs
 2. Select one or more available VLANs and move them to the Selected box. These VLANs are already present on the vCMP Guest BIG-IP device. After selecting the VLANS click Manage Selected.
 
 .. note::
-    - A VLAN configuration form is displayed to add Self IPs. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
+    - A VLAN configuration form is displayed to add Self IPs. For VLAN, the fields to be configured are (1) Partition and (2) Route Domain. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
+    - Partitions and Route Domains should be created from BIG-IP UI
+    - If the Partition and Route Domain is not selected during creation of VLAN/Self IP, it will be assumed to be Common Partition and Route Domain 0 by default.
+    - Route Domain dropdown would display Route Domains present in the selected partition.
+    - The only options available for port lockdown are All, None, and Default.
+    - ACI ServiceCenter doesn’t support custom port lockdown (which is supported by BIG-IP).
+    - For an HA setup, the floating self IPs will automatically sync to the BIG-IP peer device.
+
+3. Click Submit.
+
+The BIG-IP device now has the new Self IPs created.
+
+Update Self IPs
+```````````````````````````
+
+1. There are two options for updating self IPs.
+
+2. Follow the steps as mentioned in the previous Create Self IPs task and edit the values in the VLAN configuration. The only difference is, when you click Manage Selected, the VLAN form is pre-populated with information from the existing self IP configuration. Or For self IP edit: From L2-L3 network management section, select the self IP and use the Edit icon in the top right of the card.
+
+3. For individual self IP edit: From the L2-L3 network management tab, select the VLAN and use the Edit icon, located next to the self IP under Action. For an HA setup, the floating self IPs will automatically sync to the BIG-IP peer device.
+
+Delete Self IPs
+```````````````````````````
+
+1. Next to the self IP entry you want to delete on a specific VLAN card, click the Delete icon OR click the Delete icon of the card to delete all self IPs.
+
+2. When prompted, click Confirm.
+
+The self IPs are deleted from the BIG-IP device, as well as from the application database.
+
+
+F5OS
+----------------------------------------
+Features available on F5OS:
+- Visibility: Only VLAN table will be available;VIP table and Node table will not be available. 
+- L2-L3 Network Management: VLAN configuration will be available. Self IP and Default Gateway configuration will be disabled. All the VLAN workflows will be the same as mentioned in VLAN workflows.
+- L4-L7 App Services tab will be disabled and unavailable
+
+Create a VLAN for HA setup
+```````````````````````````
+1. Click the L2-L3 Network Management tab.
+
+2. From the Logical Device list, click the logical device (LDEV) that you want to perform L2-L3 stitching on (for the current BIG-IP device).
+
+3. The APIC information is displayed: Tenant, Concrete Devices and Interfaces, and Device Type (Physical/Virtual). You can also view a list of VLANs configured under the APIC Logical Device in the Available box.
+
+4. Select one or more VLANs and move them to the Selected box.
+
+5. The details of all VLANs in the selected box are displayed below. The details consist of the APIC logical interface name. After selecting the VLANS click Manage Selected.
+
+.. note::
+    - A VLAN configuration form is displayed to add VLANs and information for one or more self IPs. For VLAN, the fields to be configured are: (1) Name (2) Tag (3) Interface.
+    - If a configuration with 2 Tenants on separate rSeries/VELOS hosts in HA configuration has to be supported, the 2 rSeries/VELOS hosts will need to have the same VLAN name. Hence please add the same VLAN Name for such rSeries/VELOS Hosts - guests of which hosts are going to form HA pair. The steps to do so are as follows:
+    
+      - Create a VLAN on rSeries/VELOS host 1
+      
+      - Copy the VLAN name from host 1 and create VLAN on host 2 with same name
+      
+      - Assign these VLANs to the corresponding Tenants Tenant 1 (on host 1) and Tenant 2 (on host 2)
+      
+      - Create local and floating IPs for these VLANs. The VLAN and local Self IP should be present on both the BIG-IP devices of the HA pair before Floating Self IPs can be created.
+      
+      - Click Submit.
+
+6. The BIG-IP device has the same VLANs configured as the APIC LDEV VLAN and L2-L3 stitching is complete.
+
+
+F5OS Tenant Tasks
+----------------------------------------
+
+L2-L3 Network Management workflows for Tenants will be different since VLAN configuration will be unavailable. Only Self IP configuration and Default Gateway configuration will be available. Default configuration workflows will be same as mentioned in the VLAN workflows. SelfIP workflows will be as below.
+
+
+Create Self IPs
+```````````````````````````
+
+1. Click the L2-L3 Network Management tab.
+2. Select one or more available VLANs and move them to the Selected box. These VLANs are already present on the vCMP Guest BIG-IP device. After selecting the VLANS click Manage Selected.
+
+.. note::
+    - A VLAN configuration form is displayed to add Self IPs. For VLAN, the fields to be configured are (1) Partition and (2) Route Domain. For self IPs, the fields to be configured are (1) Address (2) Netmask (3) Traffic-group (4) Port-lockdown.
+    - Partitions and Route Domains should be created from BIG-IP UI
+    - If the Partition and Route Domain is not selected during creation of VLAN/Self IP, it will be assumed to be Common Partition and Route Domain 0 by default.
+    - Route Domain dropdown would display Route Domains present in the selected partition.
     - The only options available for port lockdown are All, None, and Default.
     - ACI ServiceCenter doesn’t support custom port lockdown (which is supported by BIG-IP).
     - For an HA setup, the floating self IPs will automatically sync to the BIG-IP peer device.
