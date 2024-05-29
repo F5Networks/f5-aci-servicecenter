@@ -396,14 +396,12 @@ The L2-L3 Network Management Tab on FASC application does not support creating a
 
 -----
 
-**Q. Why do I see duplicate VLAN entries with the same VLAN name and different VLAN tag when the L2-L3 Stitching Tab is loaded on the vCMP Guest/Tenant device?**
+**Q. Why do I see duplicate VLAN entries with the same VLAN name but different VLAN tags?**
 
-A VLAN is created using the L2-L3 Network Management Tab on the vCMP/F5OS Host device. This VLAN can be assigned to a vCMP Guest/Tenant device present on its Host. Here, both the vCMP/F5OS  Host and the vCMP Guest/Tenant share the same name and tag of the VLAN. When the tag of this VLAN is modified from the vCMP/F5OS Host device, the new VLAN tag gets updated on the Host however vCMP Guest/Tenant device creates a duplicate VLAN configuration with the new tag. This is an expected behaviour from the BIG-IP. To properly update the VLAN tag on a vCMP/F5OS device, it is recommended to follow the below steps:
+When the VLAN tag is modified from the vCMP/F5OS Host device, the new VLAN tag gets updated on the Host device but creates a duplicate VLAN configuration with the new tag on the vCMP Guest/Tenant. This is an expected behavior on the BIG-IP. To properly update the VLAN tag on a vCMP/F5OS Guest/Tenant, it is recommended to follow the below steps:
 
-1. Within the vCMP Guest/Tenant, delete the relevant VLAN from within the Guest/Tenant.
-2. On the vCMP/F5OS Host, remove the VLAN publication from the Guest/Tenant.
-3. On the Host, modify the tag of the host-based VLAN.
-4. On the Host, publish the VLAN to the Guest/Tenant.
-5. Within the Guest/Tenant, view the VLAN from within the Guest/Tenant.
+1. On the vCMP/F5OS Guest/Tenant, delete the existing/old VLAN.
+2. On the vCMP/F5OS Host device, remove the VLAN assignment from the Guest/Tenant.
+3. On the vCMP/F5OS Host, modify the VLAN tag and assign this new VLAN to the vCMP/F5OS Guest/Tenant.
 
 
