@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "fa1be9a6-6c38-4f06-a2cb-03b83b716317",
-		"name": "F5 ACI ServiceCenter API v2.8",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "89fe74da-9fed-478f-80ba-43291049d247",
+		"name": "F5 ACI ServiceCenter API v2.12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29823868"
 	},
 	"item": [
 		{
@@ -21,14 +22,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -61,14 +59,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA=="
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -101,14 +96,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -146,13 +138,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQxNDMwNSwiZXhwIjoxNjIxNDE3MzA1LCJzZXNzaW9uaWQiOiJ4eG9FRU51Y1JPaTNycXBUTTllTDZnPT0ifQ.ba_IwzW0AP7dH6Tw9dBoA8J5dNZzkmtyxudVSmgRvssVowNrrhl8DM_Xo3k2yaxg--yL5-apt3AYwiY181Jl2hbysT7biPGSBCAQMTjNWwoXOt867dzKgceK7Cg65bOtp37XWDzS0wiHtPBk2yU431BQpcQ0sbZ9ZFM5VY-EvaU6BuaHggzs9IxVm43ChpNqfjH1rAJR9Wq0lgrI4znam5t-idNLEiH2XL6YyevhNO0GcYr2c7LUGhLaVLQtZU5PB73ZdSAMgzrh5rX3ZgEShbH4inWg283dAlfqHlPKOZskxMUQOebRaF6mr6qcLlDOium3jLqhV-rzF5GHmIZrXg",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -190,13 +180,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQxNDMwNSwiZXhwIjoxNjIxNDE3MzA1LCJzZXNzaW9uaWQiOiJ4eG9FRU51Y1JPaTNycXBUTTllTDZnPT0ifQ.ba_IwzW0AP7dH6Tw9dBoA8J5dNZzkmtyxudVSmgRvssVowNrrhl8DM_Xo3k2yaxg--yL5-apt3AYwiY181Jl2hbysT7biPGSBCAQMTjNWwoXOt867dzKgceK7Cg65bOtp37XWDzS0wiHtPBk2yU431BQpcQ0sbZ9ZFM5VY-EvaU6BuaHggzs9IxVm43ChpNqfjH1rAJR9Wq0lgrI4znam5t-idNLEiH2XL6YyevhNO0GcYr2c7LUGhLaVLQtZU5PB73ZdSAMgzrh5rX3ZgEShbH4inWg283dAlfqHlPKOZskxMUQOebRaF6mr6qcLlDOium3jLqhV-rzF5GHmIZrXg",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -229,13 +217,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQxNDMwNSwiZXhwIjoxNjIxNDE3MzA1LCJzZXNzaW9uaWQiOiJ4eG9FRU51Y1JPaTNycXBUTTllTDZnPT0ifQ.ba_IwzW0AP7dH6Tw9dBoA8J5dNZzkmtyxudVSmgRvssVowNrrhl8DM_Xo3k2yaxg--yL5-apt3AYwiY181Jl2hbysT7biPGSBCAQMTjNWwoXOt867dzKgceK7Cg65bOtp37XWDzS0wiHtPBk2yU431BQpcQ0sbZ9ZFM5VY-EvaU6BuaHggzs9IxVm43ChpNqfjH1rAJR9Wq0lgrI4znam5t-idNLEiH2XL6YyevhNO0GcYr2c7LUGhLaVLQtZU5PB73ZdSAMgzrh5rX3ZgEShbH4inWg283dAlfqHlPKOZskxMUQOebRaF6mr6qcLlDOium3jLqhV-rzF5GHmIZrXg",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -268,13 +254,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQxNDMwNSwiZXhwIjoxNjIxNDE3MzA1LCJzZXNzaW9uaWQiOiJ4eG9FRU51Y1JPaTNycXBUTTllTDZnPT0ifQ.ba_IwzW0AP7dH6Tw9dBoA8J5dNZzkmtyxudVSmgRvssVowNrrhl8DM_Xo3k2yaxg--yL5-apt3AYwiY181Jl2hbysT7biPGSBCAQMTjNWwoXOt867dzKgceK7Cg65bOtp37XWDzS0wiHtPBk2yU431BQpcQ0sbZ9ZFM5VY-EvaU6BuaHggzs9IxVm43ChpNqfjH1rAJR9Wq0lgrI4znam5t-idNLEiH2XL6YyevhNO0GcYr2c7LUGhLaVLQtZU5PB73ZdSAMgzrh5rX3ZgEShbH4inWg283dAlfqHlPKOZskxMUQOebRaF6mr6qcLlDOium3jLqhV-rzF5GHmIZrXg"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -307,13 +291,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQxNDMwNSwiZXhwIjoxNjIxNDE3MzA1LCJzZXNzaW9uaWQiOiJ4eG9FRU51Y1JPaTNycXBUTTllTDZnPT0ifQ.ba_IwzW0AP7dH6Tw9dBoA8J5dNZzkmtyxudVSmgRvssVowNrrhl8DM_Xo3k2yaxg--yL5-apt3AYwiY181Jl2hbysT7biPGSBCAQMTjNWwoXOt867dzKgceK7Cg65bOtp37XWDzS0wiHtPBk2yU431BQpcQ0sbZ9ZFM5VY-EvaU6BuaHggzs9IxVm43ChpNqfjH1rAJR9Wq0lgrI4znam5t-idNLEiH2XL6YyevhNO0GcYr2c7LUGhLaVLQtZU5PB73ZdSAMgzrh5rX3ZgEShbH4inWg283dAlfqHlPKOZskxMUQOebRaF6mr6qcLlDOium3jLqhV-rzF5GHmIZrXg"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -346,13 +328,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQyNTcyNSwiZXhwIjoxNjIxNDI4NzI1LCJzZXNzaW9uaWQiOiI2enlWem9vNVJpNllEQ1lUeDJtOWZRPT0ifQ.Bm5GuvL595m82LmqzGChcdoFFbOtlJLRqvznis2k0H9eQ8PQ6RyzAHPBxeQkbdwEf0-CYHh8ar8l_zYsuI3JsUZmSat4H09LclQPU0bTfsiKdqBDN8jCHEi0DHIy7lCnT8K1SmItUwOIAy51dg3eC3toZUe4IilSNp-dTd5XCGAWyZSpQL7WA9ljs8NsMCrcQnrWQcb-JWd0JHjee2gQ0u6ZMNNeMBASrCIwk9WYarDQNwSmMe4--gg36O3MjGUL1m1kjLZPnLbeXpxt7033yo888iEY25JswXCnOfi5oitQxzboVt6bBrn2OOpW_3Afr3OdMn8LfgDIoQeFm3mchw"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -385,13 +365,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQyNTcyNSwiZXhwIjoxNjIxNDI4NzI1LCJzZXNzaW9uaWQiOiI2enlWem9vNVJpNllEQ1lUeDJtOWZRPT0ifQ.Bm5GuvL595m82LmqzGChcdoFFbOtlJLRqvznis2k0H9eQ8PQ6RyzAHPBxeQkbdwEf0-CYHh8ar8l_zYsuI3JsUZmSat4H09LclQPU0bTfsiKdqBDN8jCHEi0DHIy7lCnT8K1SmItUwOIAy51dg3eC3toZUe4IilSNp-dTd5XCGAWyZSpQL7WA9ljs8NsMCrcQnrWQcb-JWd0JHjee2gQ0u6ZMNNeMBASrCIwk9WYarDQNwSmMe4--gg36O3MjGUL1m1kjLZPnLbeXpxt7033yo888iEY25JswXCnOfi5oitQxzboVt6bBrn2OOpW_3Afr3OdMn8LfgDIoQeFm3mchw"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -439,15 +417,12 @@
 								"method": "POST",
 								"header": [
 									{
-										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQyODgyOSwiZXhwIjoxNjIxNDMxODI5LCJzZXNzaW9uaWQiOiJabXMwTkE0MlJ5dTJncTBPK2dzdE13PT0ifQ.OMG6wpniSVhgB2j0TRYHNC5c8ODkE5YgkazYdaNEOoCmy46X6r39s9buNoc8LyeI4EEfwBgadIGDhTT10CJpFXdmmWbywmRfHovusYkhPUnIPQHsi6sn8pHjQGbcL77L8j9W567Grwt66nfSwiXPXIEmIRFO1n8DuNCKGZtY9DHfnaSr5RR8nke8rT1EO8Pl6HrLAzseKaAwGIHO6dmYtp5IbMJ-Zc6rkRG-MfnocWCCx_KKOeinBfkSx3w3K1bCOIdNEh4qaBLG2IQrrzvMtpc5ESlCkL_c3zbelJyFgn_GEOtjHC0qsEPqlkPL2gDR2blbEbaclc2OpuaA7BPwNA"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -491,13 +466,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQyNTcyNSwiZXhwIjoxNjIxNDI4NzI1LCJzZXNzaW9uaWQiOiI2enlWem9vNVJpNllEQ1lUeDJtOWZRPT0ifQ.Bm5GuvL595m82LmqzGChcdoFFbOtlJLRqvznis2k0H9eQ8PQ6RyzAHPBxeQkbdwEf0-CYHh8ar8l_zYsuI3JsUZmSat4H09LclQPU0bTfsiKdqBDN8jCHEi0DHIy7lCnT8K1SmItUwOIAy51dg3eC3toZUe4IilSNp-dTd5XCGAWyZSpQL7WA9ljs8NsMCrcQnrWQcb-JWd0JHjee2gQ0u6ZMNNeMBASrCIwk9WYarDQNwSmMe4--gg36O3MjGUL1m1kjLZPnLbeXpxt7033yo888iEY25JswXCnOfi5oitQxzboVt6bBrn2OOpW_3Afr3OdMn8LfgDIoQeFm3mchw"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -532,19 +505,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"as3Declaration\": {\n    \"class\": \"AS3\",\n    \"action\": \"deploy\",\n    \"persist\": true,\n    \"declaration\": {\n      \"class\": \"ADC\",\n      \"schemaVersion\": \"3.0.0\",\n      \"id\": \"urn:uuid:33045210-3ab8-4636-9b2a-c98d22ab915d\",\n      \"label\": \"Sample 122\",\n      \"remark\": \"Simple HTTP application with RR pool\",\n      \"Sample_01\": {\n        \"class\": \"Tenant\",\n        \"A1\": {\n          \"class\": \"Application\",\n          \"template\": \"http\",\n          \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n              \"10.0.1.10\"\n            ],\n            \"pool\": \"web_pool\"\n          },\n          \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n              \"http\"\n            ],\n            \"members\": [\n              {\n                \"servicePort\": 80,\n                \"serverAddresses\": [\n                  \"192.0.1.10\",\n                  \"192.0.1.11\"\n                ]\n              }\n            ]\n          }\n        }\n      }\n    }\n  }\n}"
+							"raw": "{\n  \"url\": \"10.107.0.40:443\",\n  \"as3Declaration\": {\n    \"class\": \"AS3\",\n    \"action\": \"deploy\",\n    \"persist\": true,\n    \"declaration\": {\n      \"class\": \"ADC\",\n      \"schemaVersion\": \"3.0.0\",\n      \"id\": \"urn:uuid:33045210-3ab8-4636-9b2a-c98d22ab915d\",\n      \"label\": \"Sample 122\",\n      \"remark\": \"Simple HTTP application with RR pool\",\n      \"Sample_01\": {\n        \"class\": \"Tenant\",\n        \"A1\": {\n          \"class\": \"Application\",\n          \"template\": \"http\",\n          \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n              \"10.0.1.10\"\n            ],\n            \"pool\": \"web_pool\"\n          },\n          \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n              \"http\"\n            ],\n            \"members\": [\n              {\n                \"servicePort\": 80,\n                \"serverAddresses\": [\n                  \"192.0.1.10\",\n                  \"192.0.1.11\"\n                ]\n              }\n            ]\n          }\n        }\n      }\n    }\n  }\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/dryrunas3declaration.json",
@@ -572,19 +542,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "oDABAAAAAAAAAAAAAAAAAPYCOS2RuiOMDhzYXAyWdVmZJyzKBOFFhICwelKMSxKW+TebyGBpxsRil1+9zJytazwzpuhRH3gcHX0xDlKJs9WiSmpsWA048yVLs3R4ArAEnRUPZxXEvPb5YeaTooJJzeC+UmP6NYcxUTRjVslgMVX03opM4xW9h6CIiLGPGr6m3Gg3/io+/SyaCX+Mjy0AnA==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"as3Declaration\": {\n    \"class\": \"AS3\",\n    \"action\": \"deploy\",\n    \"persist\": true,\n    \"declaration\": {\n      \"class\": \"ADC\",\n      \"schemaVersion\": \"3.0.0\",\n      \"id\": \"urn:uuid:33045210-3ab8-4636-9b2a-c98d22ab915d\",\n      \"label\": \"Sample 122\",\n      \"remark\": \"Simple HTTP application with RR pool\",\n      \"Sample_01\": {\n        \"class\": \"Tenant\",\n        \"A1\": {\n          \"class\": \"Application\",\n          \"template\": \"http\",\n          \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n              \"10.0.1.10\"\n            ],\n            \"pool\": \"web_pool\"\n          },\n          \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n              \"http\"\n            ],\n            \"members\": [\n              {\n                \"servicePort\": 80,\n                \"serverAddresses\": [\n                  \"192.0.1.10\",\n                  \"192.0.1.11\"\n                ]\n              }\n            ]\n          }\n        }\n      }\n    }\n  }\n}"
+							"raw": "{\n  \"url\": \"10.107.0.23:443\",\n  \"as3Declaration\": {\n    \"class\": \"AS3\",\n    \"action\": \"deploy\",\n    \"persist\": true,\n    \"declaration\": {\n      \"class\": \"ADC\",\n      \"schemaVersion\": \"3.0.0\",\n      \"id\": \"urn:uuid:33045210-3ab8-4636-9b2a-c98d22ab915d\",\n      \"label\": \"Sample 122\",\n      \"remark\": \"Simple HTTP application with RR pool\",\n      \"Sample_01\": {\n        \"class\": \"Tenant\",\n        \"A1\": {\n          \"class\": \"Application\",\n          \"template\": \"http\",\n          \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n              \"10.0.1.10\"\n            ],\n            \"pool\": \"web_pool\"\n          },\n          \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n              \"http\"\n            ],\n            \"members\": [\n              {\n                \"servicePort\": 80,\n                \"serverAddresses\": [\n                  \"192.0.1.10\",\n                  \"192.0.1.11\"\n                ]\n              }\n            ]\n          }\n        }\n      }\n    }\n  }\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/submitas3declaration.json",
@@ -612,19 +579,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "i9IAAAAAAAAAAAAAAAAAAEvs57DLDp28V2NiqiPzXcgWe0P/lEY6GTpLeHt7/HiTatOR1Vaj2MEPG9RPbq67JVp3RBRkoMfjSM1pXfMMRI4xiylrX15zkEQTh8hX/BkI+eWRaPqZFmCaCjPd9cBotMu3Zw75V87RoUt2H6BjBdzIUS2NC9IBEBKFo1FUMWb9GqsZr4VefhGZrylJVnbn+g==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"url\":\"10.107.0.22:443\"}\r\n"
+							"raw": "{\"url\":\"10.107.0.23:443\"}\r\n"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getas3declaration.json",
@@ -652,19 +616,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"url\" :\"10.107.0.22\"\r\n}\r\n"
+							"raw": "{\r\n   \"url\" :\"10.107.0.23\"\r\n}\r\n"
 						},
 						"url": {
 							"raw": "https://10.107.0.36/appcenter/F5Networks/F5ACIServiceCenter/deleteas3declaration.json",
@@ -692,19 +653,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "3BwBAAAAAAAAAAAAAAAAAO9tqMppNbpsRbJUT7kt/ftT9LJK4nHcKezFRJCV4b8Z4Yn8kpy79unWExI4KVFVbo9PlTQBjo9qBge+iLkM7//TuzONdmRuBT0pmTHCS5fKkUKbKYancGgQyTQXpx7y4si6rV6tv+EafESlBPd4gARY0Nx7+gTPbbAjXMyj5hKiFAlTKw+AOS4N9W3tzAuEXA==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\":\"10.107.0.22:443\"\n}"
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getas3data.json",
@@ -732,19 +690,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
 								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"DemoPartition1\",\n    \"application\": \"DemoApp1\",\n    \"json\": {\n        \"class\": \"Application\",\n        \"template\": \"http\",\n        \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n                \"10.10.10.20\"\n            ],\n            \"pool\": \"web_pool\"\n        },\n        \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n                \"http\"\n            ],\n            \"members\": [\n                {\n                    \"servicePort\": 80,\n                    \"serverAddresses\": [\n                        \"10.10.10.21\"\n                    ]\n                }\n            ]\n        }\n    }\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"partition\": \"Sample_sd_01\",\n    \"application\": \"A1\",\n    \"json\": {\n        \"class\": \"Application\",\n        \"template\": \"http\",\n        \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n                \"192.168.22.231%245\"\n            ],\n            \"pool\": \"web_pool\"\n        },\n        \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n                \"http\"\n            ],\n            \"members\": [\n                {\n                    \"servicePort\": 80,\n                    \"serverAddresses\": []\n                },\n                {\n                    \"addressDiscovery\": \"event\",\n                    \"servicePort\": 80,\n                    \"routeDomain\": 245\n                }\n            ]\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/updateas3data.json",
@@ -772,19 +727,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"DemoPartition1\",\n    \"application\": \"DemoApp1\"\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"partition\": \"DemoPartition1\",\n    \"application\": \"DemoApp1\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deleteas3application.json",
@@ -812,25 +764,21 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "i9IAAAAAAAAAAAAAAAAAAEvs57DLDp28V2NiqiPzXcgWe0P/lEY6GTpLeHt7/HiTatOR1Vaj2MEPG9RPbq67JVp3RBRkoMfjSM1pXfMMRI4xiylrX15zkEQTh8hX/BkI+eWRaPqZFmCaCjPd9cBotMu3Zw75V87RoUt2H6BjBdzIUS2NC9IBEBKFo1FUMWb9GqsZr4VefhGZrylJVnbn+g==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
 								"value": "",
-								"type": "text",
 								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"DemoPartition2\",\n    \"application\": \"DemoApp21\",\n    \"json\": {\n        \"class\": \"Application\",\n        \"template\": \"http\",\n        \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n                \"10.30.10.20\"\n            ],\n            \"pool\": \"web_pool\"\n        },\n        \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n                \"http\"\n            ],\n            \"members\": [\n                {\n                    \"servicePort\": 80,\n                    \"serverAddresses\": [\n                        \"10.30.10.21\"\n                    ]\n                }\n            ]\n        }\n    }\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"partition\": \"Sample_sd_01\",\n    \"application\": \"A1\",\n    \"json\": {\n        \"class\": \"Application\",\n        \"template\": \"http\",\n        \"serviceMain\": {\n            \"class\": \"Service_HTTP\",\n            \"virtualAddresses\": [\n                \"192.168.22.231%245\"\n            ],\n            \"pool\": \"web_pool\"\n        },\n        \"web_pool\": {\n            \"class\": \"Pool\",\n            \"monitors\": [\n                \"http\"\n            ],\n            \"members\": [\n                {\n                    \"servicePort\": 80,\n                    \"serverAddresses\": []\n                },\n                {\n                    \"addressDiscovery\": \"event\",\n                    \"servicePort\": 80,\n                    \"routeDomain\": 245\n                }\n            ]\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/updateas3data.json",
@@ -858,19 +806,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"DemoPartition2\"\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"partition\": \"DemoPartition2\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deleteas3partition.json",
@@ -898,14 +843,11 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "xz8HAAAAAAAAAAAAAAAAAPEyZAAq3UJ0PnWEAbIKgu1YDEYa5OrM4iLMxQ5kGEraBS0JlitXGCpqU2fXsMBgCdZhXLIkr8L8Co6UZ/Yze2fHioC3ntiyOSE8G1adgjYLou9r4LC06V6Ss9SWfsAIjvLjF3Ii5W6XMbvQhSWXDnen+52f1Pu6ZMbBXPPMxV77NAHNQwQdRDxVI0tkwFTclg==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
@@ -951,19 +893,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w=="
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-f5-gsldev\",\n  \"devtype\": \"PHYSICAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External\",\n      \"name\": \"apic-vlan-8ac36350\",\n      \"lIfCtxDn\": null,\n      \"tag\": 300,\n      \"interfaces\": [\n        \"1.1\"\n      ],\n      \"selfips\": [\n        {\n          \"address\": \"192.198.4.4\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"traffic-group-local-only\",\n          \"allow_service\": \"none\"\n        },\n        {\n          \"address\": \"192.198.4.9\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"traffic-group-local-only\",\n          \"allow_service\": \"all\"\n        }\n      ]\n    }\n  ]\n}"
+									"raw": "{\n  \"url\": \"10.107.0.23:443\",\n  \"ldev\": \"uni/tn-Demo1/lDevVip-test12\",\n  \"devtype\": \"PHYSICAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-Demo1/lDevVip-test12/lIf-external\",\n      \"name\": \"apic-vlan-8ac36350\",\n      \"lIfCtxDn\": null,\n      \"tag\": 300,\n      \"interfaces\": [\n        \"1.1\"\n      ],\n      \"partition\": \"Common\",\n      \"route_domain\": 0,\n      \"selfips\": [\n        {\n          \"address\": \"192.198.4.4\",\n          \"partition\": \"Common\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"/Common/traffic-group-local-only\",\n          \"allow_service\": \"none\"\n        },\n        {\n          \"address\": \"192.198.4.9\",\n          \"partition\": \"Common\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"/Common/traffic-group-local-only\",\n          \"allow_service\": \"all\"\n        }\n      ]\n    }\n  ]\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/createbigipvlans.json",
@@ -991,19 +930,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-f5-gsldev\",\n  \"devtype\": \"PHYSICAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External\",\n      \"name\": \"apic-vlan-8ac36350\",\n      \"lIfCtxDn\": null,\n      \"selfips\": [\n        {\n          \"name\": \"apic-selfip-192.198.4.8\"\n        }\n      ]\n    }\n  ]\n}"
+									"raw": "{\n  \"url\": \"10.107.0.23:443\",\n  \"ldev\": \"uni/tn-Demo1/lDevVip-test12\",\n  \"devtype\": \"PHYSICAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-Demo1/lDevVip-test12/lIf-external\",\n      \"name\": \"apic-vlan-8ac36350\",\n      \"lIfCtxDn\": null,\n      \"selfips\": [\n        {\n          \"name\": \"apic-selfip-192.198.4.9\",\n          \"partition\": \"Common\",\n          \"traffic_group\": \"/Common/traffic-group-local-only\"\n        }\n      ]\n    }\n  ]\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deletebigipselfips.json",
@@ -1031,19 +967,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-f5-gsldev\",\n  \"lif\": \"uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External\",\n  \"devtype\": \"PHYSICAL\",\n  \"name\": \"apic-vlan-8ac36350\",\n  \"lIfCtxDn\": null\n}"
+									"raw": "{\n\"devtype\": \"PHYSICAL\",\n\"lIfCtxDn\": null,\n\"ldev\": \"uni/tn-Demo1/lDevVip-Autoldev10\",\n\"lif\": \"uni/tn-Demo1/lDevVip-Autoldev10/lIf-External\",\n\"name\": \"apic-vlan-233c675c\",\n\"partition\": \"testpart1\",\n\"url\": \"10.107.0.23:443\"\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/vlansynctobigip.json",
@@ -1071,19 +1004,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-f5-gsldev\",\n  \"lif\": \"uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External\",\n  \"devtype\": \"PHYSICAL\",\n  \"name\": \"apic-vlan-8ac36350\",\n  \"lIfCtxDn\": null\n}"
+									"raw": "{\n  \"url\": \"10.107.0.23:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-f5-gsldev\",\n  \"lif\": \"uni/tn-f5-gs/lDevVip-f5-gsldev/lIf-External\",\n  \"devtype\": \"PHYSICAL\",\n  \"name\": \"apic-vlan-8ac36350\",\n  \"lIfCtxDn\": null,\n  \"partition\": \"Common\"\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/vlansynctodb.json",
@@ -1111,19 +1041,16 @@
 								"header": [
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w=="
+										"value": "{{DevCookie}}"
 									},
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"ldev\": \"uni/tn-Demo/lDevVip-SA-BIGIPPhy-10500-10.107.0.22\",\n    \"devtype\": \"PHYSICAL\",\n    \"vlans\": [\n        {\n            \"lif\": \"uni/tn-Demo/lDevVip-SA-BIGIPPhy-10500-10.107.0.22/lIf-External_123\",\n            \"name\": \"apic-vlan-e736a66f\",\n            \"lIfCtxDn\": null\n        }\n    ]\n}"
+									"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"ldev\": \"uni/tn-Demo1/lDevVip-test12\",\n    \"devtype\": \"PHYSICAL\",\n    \"vlans\": [\n        {\n            \"lif\": \"uni/tn-Demo1/lDevVip-test12/lIf-external\",\n            \"name\": \"apic-vlan-8ac36350\",\n            \"lIfCtxDn\": null,\n            \"partition\": \"Common\",\n            \"route_domain\": 0,\n            \"selfips\": [\n                {\n                    \"name\": \"apic-selfip-10.168.18.200\", \n                    \"address\": \"10.168.18.200\", \n                    \"netmask\": \"255.255.255.0\",\n                    \"allow_service\": \"all\",\n                    \"traffic_group\": \"traffic-group-local-only\"\n                }\n            ]\n        }\n    ]\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deletebigipvlans.json",
@@ -1156,19 +1083,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w=="
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.151:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"devtype\": \"VIRTUAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n      \"name\": \"\",\n      \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\",\n      \"tag\": \"375\",\n      \"interfaces\": [\n        \"1.1\"\n      ],\n      \"selfips\": [\n        {\n          \"address\": \"192.168.14.201\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"traffic-group-local-only\",\n          \"allow_service\": \"all\"\n        },\n        {\n          \"address\": \"192.168.14.202\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"traffic-group-local-only\",\n          \"allow_service\": \"all\"\n        }\n      ]\n    }\n  ]\n}"
+									"raw": "{\n  \"url\": \"10.107.0.159:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"devtype\": \"VIRTUAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n      \"name\": \"\",\n      \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\",\n      \"tag\": \"375\",\n      \"interfaces\": [\n        \"1.1\"\n      ],\n      \"partition\": \"Common\",\n      \"route_domain\": 0,\n      \"selfips\": [\n        {\n          \"address\": \"192.168.14.201\",\n          \"partition\": \"Common\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"traffic-group-local-only\",\n          \"allow_service\": \"all\"\n        },\n        {\n          \"address\": \"192.168.14.202\",\n          \"partition\": \"Common\",\n          \"netmask\": \"255.255.255.0\",\n          \"traffic_group\": \"traffic-group-local-only\",\n          \"allow_service\": \"all\"\n        }\n      ]\n    }\n  ]\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/createbigipvlans.json",
@@ -1196,19 +1120,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.151:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"devtype\": \"VIRTUAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n      \"name\": \"apic-vlan-f69ac7e0\",\n      \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\",\n      \"selfips\": [\n        {\n          \"name\": \"apic-selfip-192.168.14.202\"\n        }\n      ]\n    }\n  ]\n}"
+									"raw": "{\n  \"url\": \"10.107.0.159:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"devtype\": \"VIRTUAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n      \"name\": \"apic-vlan-f69ac7e0\",\n      \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\",\n      \"selfips\": [\n        {\n          \"name\": \"apic-selfip-192.168.14.202\",\n          \"partition\": \"Common\",\n          \"traffic_group\": \"/Common/traffic-group-local-only\"\n        }\n      ]\n    }\n  ]\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deletebigipselfips.json",
@@ -1236,18 +1157,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.151:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n  \"devtype\": \"VIRTUAL\",\n  \"name\": \"apic-vlan-f69ac7e0\",\n  \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\"\n}"
+									"raw": "{\n  \"url\": \"10.107.0.159:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n  \"devtype\": \"VIRTUAL\",\n  \"name\": \"apic-vlan-f69ac7e0\",\n  \"partition\": \"Common\",\n  \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\"\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/vlansynctobigip.json",
@@ -1275,19 +1194,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w=="
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.151:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n  \"devtype\": \"VIRTUAL\",\n  \"name\": \"apic-vlan-f69ac7e0\",\n  \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\"\n}"
+									"raw": "{\n  \"url\": \"10.107.0.159:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n  \"devtype\": \"VIRTUAL\",\n  \"name\": \"apic-vlan-f69ac7e0\",\n  \"partition\": \"Common\",\n  \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\"\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/vlansynctodb.json",
@@ -1315,19 +1231,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w=="
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"url\": \"10.107.0.151:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"devtype\": \"VIRTUAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n      \"name\": \"apic-vlan-f69ac7e0\",\n      \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\"\n    }\n  ]\n}"
+									"raw": "{\n  \"url\": \"10.107.0.159:443\",\n  \"ldev\": \"uni/tn-f5-gs/lDevVip-VE-151\",\n  \"devtype\": \"VIRTUAL\",\n  \"vlans\": [\n    {\n      \"lif\": \"uni/tn-f5-gs/lDevVip-VE-151/lIf-Internal\",\n      \"name\": \"apic-vlan-f69ac7e0\",\n      \"lIfCtxDn\": \"uni/tn-f5-gs/GraphInst_C-[uni/tn-f5-gs/brc-ve151-ctx]-G-[uni/tn-f5-gs/AbsGraph-VE-151]-S-[uni/tn-f5-gs]/NodeInst-N1/LegVNode-0/EPgDef-provider\"\n    }\n  ]\n}"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deletebigipvlans.json",
@@ -1360,19 +1273,16 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "\r\n{\r\n  \"url\": \"10.107.0.47:443\",\r\n  \"vlans\": [\r\n    {\r\n      \"name\": \"apic-vlan-3dc1d93a\",\r\n      \"tag\": 25,\r\n      \"selfips\": [\r\n        {\r\n          \"address\": \"10.10.10.35\",\r\n          \"netmask\": \"255.255.255.0\",\r\n          \"traffic_group\": \"traffic-group-local-only\",\r\n          \"allow_service\": \"all\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n"
+									"raw": "\r\n{\r\n  \"url\": \"10.107.0.47:443\",\r\n  \"vlans\": [\r\n    {\r\n      \"name\": \"apic-vlan-3dc1d93a\",\r\n      \"tag\": 25,\r\n      \"partition\":\"Common\",\r\n      \"route_domain\":0,\r\n      \"selfips\": [\r\n        {\r\n          \"address\": \"10.10.10.35\",\r\n          \"partition\":\"Common\",\r\n          \"netmask\": \"255.255.255.0\",\r\n          \"traffic_group\": \"traffic-group-local-only\",\r\n          \"allow_service\": \"all\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n"
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/createbigipselfips.json",
@@ -1407,18 +1317,21 @@
 								"header": [
 									{
 										"key": "Content-Type\n",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA=="
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"url\": \"10.107.0.47:443\",\r\n  \"name\": \"apic-vlan-3dc1d93a\"\r\n}\r\n"
+									"raw": "{\r\n  \"url\": \"10.107.0.47:443\",\r\n  \"name\": \"apic-vlan-3dc1d93a\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/selfipsynctodb.json",
@@ -1446,13 +1359,11 @@
 								"header": [
 									{
 										"key": "Content-Type\n",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -1485,14 +1396,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -1525,14 +1433,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -1570,14 +1475,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -1610,14 +1512,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"value": "o2EDAAAAAAAAAAAAAAAAAJTXifP8Vv601IziDfLVszXendSavwYzVNqvCgWej5twVwgn+ZkGwHdv2SyX9xbKjauS5Gw8h8tBxs3d7RNLDTaELVaADtoLJUursbMdbkjs3qYOsvaA6KNC3VUeigeo0NXAJ3QqN4umUVUpSCiTV8RBR+Zi+jT9hVd9QxdP6HuiHA1pBmhen2S9nLchQ65WcA==",
-										"type": "text"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -1652,19 +1551,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\":\"10.107.0.22:443\"\n}"
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getldevs.json",
@@ -1692,19 +1588,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\":\"10.107.0.22:443\",\n\t\"ldev\":\"uni/tn-f5-gs/lDevVip-f5-gsldev\"\n}"
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\",\n\t\"ldev\":\"uni/tn-Traffic_flow_tenant_1/lDevVip-TFLdev\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getldevinfo.json",
@@ -1732,19 +1625,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\":\"10.107.0.22:443\"\n}"
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getinterfaces.json",
@@ -1772,19 +1662,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\":\"10.107.0.22:443\"\n}"
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getportlockdown.json",
@@ -1812,19 +1699,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\":\"10.107.0.22:443\"\n}"
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\"\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/gettrafficgroups.json",
@@ -1846,25 +1730,59 @@
 					"response": []
 				},
 				{
+					"name": "L2-L3 - Get BIG-IP Route Domains",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "DevCookie",
+								"value": "{{DevCookie}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\"\n}"
+						},
+						"url": {
+							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getroutedomains.json",
+							"protocol": "https",
+							"host": [
+								"10",
+								"107",
+								"0",
+								"24"
+							],
+							"path": [
+								"appcenter",
+								"F5Networks",
+								"F5ACIServiceCenter",
+								"getroutedomains.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "L2-L3 - Get Default Gateway Information",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\":\"10.107.0.22:443\"\n\t\n}"
+							"raw": "{\n\t\"url\":\"10.107.0.23:443\"\n\t\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getrouteinfo.json",
@@ -1892,19 +1810,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"routes\": [\n        {\n            \"gateway\": \"192.198.4.19\",\n            \"netmask\": \"0.0.0.0\",\n            \"destination\": \"0.0.0.0\",\n            \"name\": \"apic-default-gateway\"\n        }\n    ]\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"routes\": [\n        {\n            \"gateway\": \"192.198.4.19\",\n            \"netmask\": \"0.0.0.0\",\n            \"destination\": \"0.0.0.0\",\n            \"name\": \"\",\n            \"partition\": \"Partition1\",\n            \"route_domain\":\"1\"\n        }\n    ]\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/createbigiproutes.json",
@@ -1932,19 +1847,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"routes\": [\n        {\n            \"name\": \"apic-default-gateway\"\n        }\n    ]\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"routes\": [\n        {\n            \"name\": \"apic-default-gateway\",\n            \"partition\": \"Partition1\",\n            \"route_domain\": 1\n\n        }\n    ]\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deletebigiproutes.json",
@@ -1972,19 +1884,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"route\": {\n    \"name\": \"apic-default-gateway\"\n  }\n}"
+							"raw": "{\n  \"url\": \"10.107.0.23:443\",\n  \"route\": {\n    \"name\": \"apic-default-gateway\"\n  }\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/routesynctobigip.json",
@@ -2012,19 +1921,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "pS8BAAAAAAAAAAAAAAAAAKXVCmFMcnWkyShxtgetxok9eXVMK3ggerRif+GpHXNJk1bcynmaAxuo1OVvonyZBCm8gA2aWcq/1mck/BRFx7tj4uJxnMkrnl9zvJbSA62nrQJsLpTahrkFMNKLJiJt/xcOp+vYcWurLC86VjziG0EUTe6pAzTdNMg9pKqPklWfamJ8VyYUWNLivXx//HZx+w==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"url\": \"10.107.0.22:443\",\n  \"route\": {\n    \"name\": \"apic-default-gateway\"\n  }\n}"
+							"raw": "{\n  \"url\": \"10.107.0.23:443\",\n  \"route\": {\n    \"name\": \"apic-default-gateway\"\n  }\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/routesynctodb.json",
@@ -2060,13 +1966,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQyNTcyNSwiZXhwIjoxNjIxNDI4NzI1LCJzZXNzaW9uaWQiOiI2enlWem9vNVJpNllEQ1lUeDJtOWZRPT0ifQ.Bm5GuvL595m82LmqzGChcdoFFbOtlJLRqvznis2k0H9eQ8PQ6RyzAHPBxeQkbdwEf0-CYHh8ar8l_zYsuI3JsUZmSat4H09LclQPU0bTfsiKdqBDN8jCHEi0DHIy7lCnT8K1SmItUwOIAy51dg3eC3toZUe4IilSNp-dTd5XCGAWyZSpQL7WA9ljs8NsMCrcQnrWQcb-JWd0JHjee2gQ0u6ZMNNeMBASrCIwk9WYarDQNwSmMe4--gg36O3MjGUL1m1kjLZPnLbeXpxt7033yo888iEY25JswXCnOfi5oitQxzboVt6bBrn2OOpW_3Afr3OdMn8LfgDIoQeFm3mchw"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -2104,13 +2008,11 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"type": "text",
 										"value": "application/json"
 									},
 									{
 										"key": "DevCookie",
-										"type": "text",
-										"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNhMDA4ZnpzbXRhdTF4d20xNGZiMmNzd3hkejl6M280IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYyMTQyNTcyNSwiZXhwIjoxNjIxNDI4NzI1LCJzZXNzaW9uaWQiOiI2enlWem9vNVJpNllEQ1lUeDJtOWZRPT0ifQ.Bm5GuvL595m82LmqzGChcdoFFbOtlJLRqvznis2k0H9eQ8PQ6RyzAHPBxeQkbdwEf0-CYHh8ar8l_zYsuI3JsUZmSat4H09LclQPU0bTfsiKdqBDN8jCHEi0DHIy7lCnT8K1SmItUwOIAy51dg3eC3toZUe4IilSNp-dTd5XCGAWyZSpQL7WA9ljs8NsMCrcQnrWQcb-JWd0JHjee2gQ0u6ZMNNeMBASrCIwk9WYarDQNwSmMe4--gg36O3MjGUL1m1kjLZPnLbeXpxt7033yo888iEY25JswXCnOfi5oitQxzboVt6bBrn2OOpW_3Afr3OdMn8LfgDIoQeFm3mchw"
+										"value": "{{DevCookie}}"
 									}
 								],
 								"body": {
@@ -2145,19 +2047,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"url\":\"10.107.0.22:443\"}"
+							"raw": "{\"url\":\"10.107.0.23:443\"}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getbigippartitions.json",
@@ -2185,14 +2084,11 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
 								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTczMTA4MiwiZXhwIjoxNTk5NzM0MDgyLCJzZXNzaW9uaWQiOiJoWmpWbzlvblFrT29JdXVTWjRHNnFBPT0ifQ.to7BeAAhzsRSqXUGB3dZFZehbFDb7VMXZ1BIySnuP5_nqk_AsoS8Y9Drarv-CtwunMc4DBdh2ZNHqnskmRBpaX4qsaWVJN1whCbvlauanxSq86POOgKNuE9daQijWHaVW26jua-tPde26XnQ3VpvRNUEV8gqdMjknMoS5hxY6n8uDTwFbTr5uPMAJFiQFsdSI5EMjW3kN_V7axncXGnHu7_6jbQrw8Xrap3NwR6LVdDPZljVba8G5AEagQzAZxuErpV-_zL6Snw9OY5m7v6qoUay6ErQmu9Gd6PsMoNjkSdlZ6jbtKq5hu4M6f8o5QwZ6FaBIIQKD0jbNvRVcGqx4A",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
@@ -2225,14 +2121,11 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTczMTA4MiwiZXhwIjoxNTk5NzM0MDgyLCJzZXNzaW9uaWQiOiJoWmpWbzlvblFrT29JdXVTWjRHNnFBPT0ifQ.to7BeAAhzsRSqXUGB3dZFZehbFDb7VMXZ1BIySnuP5_nqk_AsoS8Y9Drarv-CtwunMc4DBdh2ZNHqnskmRBpaX4qsaWVJN1whCbvlauanxSq86POOgKNuE9daQijWHaVW26jua-tPde26XnQ3VpvRNUEV8gqdMjknMoS5hxY6n8uDTwFbTr5uPMAJFiQFsdSI5EMjW3kN_V7axncXGnHu7_6jbQrw8Xrap3NwR6LVdDPZljVba8G5AEagQzAZxuErpV-_zL6Snw9OY5m7v6qoUay6ErQmu9Gd6PsMoNjkSdlZ6jbtKq5hu4M6f8o5QwZ6FaBIIQKD0jbNvRVcGqx4A",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
@@ -2265,19 +2158,16 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "DevCookie",
-								"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\": \"10.107.0.22:443\",\n    \"partition\": \"Common\",\n    \"download\": false\n}"
+							"raw": "{\n    \"url\": \"10.107.0.23:443\",\n    \"partition\": \"Common\",\n    \"download\": false\n}"
 						},
 						"url": {
 							"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getnodestats.json",
@@ -2305,12 +2195,10 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"type": "text",
-								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ=="
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"type": "text",
 								"value": "application/json"
 							}
 						],
@@ -2349,17 +2237,14 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"type": "text",
-								"value": "gSsAAAAAAAAAAAAAAAAAAC2ggCNhZjjEH2MkkiSj8hTpubI5Vge8B0kltU3JSebn49Sm2VIMxhm8Fw/nT7W2HBssPxcLGbPK8EqMCGP1hJwsFo4extLifkYUHqjt1u92ezKSfy8cLpk0+W5DtbDmyO5UB77NkvmtAdl+n/NIRhYHQuU61HUtkzsh6JUGlM9pbyVFwcpOrxOobUIrjTr2OA=="
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"type": "text",
 								"value": "application/json"
 							},
 							{
 								"key": "",
-								"type": "text",
 								"value": "",
 								"disabled": true
 							}
@@ -2394,13 +2279,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -2453,13 +2336,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -2497,13 +2378,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -2536,13 +2415,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdndHg2MzBqendtYTl5aGM4d3N6c3J2YmExdHQ1dG5lIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYxMDk2MjQ4NCwiZXhwIjoxNjEwOTY1NDg0LCJzZXNzaW9uaWQiOiJYdm5lSEV0aFNaS053MmIrUnZtcDh3PT0ifQ.WULq2kjGcuVG_deqfFR1xV1EqaBMfJeC_C7-I67rO7NAk_H7C-XW26uqAAk66iWPvvCNfdV8izD0616AevVh58E9_4fNJKo2VJNConBPNnBaCLaoenXTOMpKA4UqjCmLW9NQ_i2_ZLlHMc64j3QyApqOtuNnM3KAcI_06Jy_C7Y4P8WKMdBZ8GK_o321qhJHcRS0Wwv_4rMJ9dOM_neB0E1o7y5R2taWPFhN3VsHAXs12zCUAgDy5Do9cQjest-e64xvon-V9TJAzt9mzGlpyj0h5JcbB521OA5T1SJsoKltNwrfgzpzezbswk-Cw3l0nc6WM4K3lf8Ke38i24dxyg",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -2595,23 +2472,20 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "OXMAAAAAAAAAAAAAAAAAADe75te8ZMwdEOvd/01Q//b1gUg5krdNrOH6+wF1fU4FAlWVq6pYAuWb/KPDuYqjxggVPb/oVRZDyn9QIdaRB86aAVvkh1gm3njvr8MT6+oEsIVSFRkN6rJq4pKe3LFqwKosNClH6yZviR/96F5EAlCv+6HWb28gNHTLf52UH6f2HImak1Q1JUid5Tg+5tzvQQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							},
 							{
 								"key": "",
-								"value": "",
-								"type": "text"
+								"value": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"url\":\"10.107.0.159:443\",\r\n    \"ip\":\"192.168.11.23\",\r\n    \"partition\":\"Common\",\r\n    \"type\":\"vip\"\r\n}",
+							"raw": "{\r\n    \"url\":\"10.107.0.23:443\",\r\n    \"ip\":\"192.168.11.23\",\r\n    \"partition\":\"Common\",\r\n    \"type\":\"vip\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2659,13 +2533,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdndHg2MzBqendtYTl5aGM4d3N6c3J2YmExdHQ1dG5lIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTYxMDk2MjQ4NCwiZXhwIjoxNjEwOTY1NDg0LCJzZXNzaW9uaWQiOiJYdm5lSEV0aFNaS053MmIrUnZtcDh3PT0ifQ.WULq2kjGcuVG_deqfFR1xV1EqaBMfJeC_C7-I67rO7NAk_H7C-XW26uqAAk66iWPvvCNfdV8izD0616AevVh58E9_4fNJKo2VJNConBPNnBaCLaoenXTOMpKA4UqjCmLW9NQ_i2_ZLlHMc64j3QyApqOtuNnM3KAcI_06Jy_C7Y4P8WKMdBZ8GK_o321qhJHcRS0Wwv_4rMJ9dOM_neB0E1o7y5R2taWPFhN3VsHAXs12zCUAgDy5Do9cQjest-e64xvon-V9TJAzt9mzGlpyj0h5JcbB521OA5T1SJsoKltNwrfgzpzezbswk-Cw3l0nc6WM4K3lf8Ke38i24dxyg",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -2711,8 +2583,7 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "epAAAAAAAAAAAAAAAAAAACG5+9ALQVkA4nZuLeRyHc/gcwikdm0/T6CxdYApDDrz9pDxDrrVoLWHRk+26wG9hIKW1sbAPZittaYrVCkAeUeY/vEEB4QlJ1xb1PvOc8Wm/eVrGE08/8rOP0vGgRLYLrRwfoM71f7IU7k6+2wJpQSJt628/5ohDrCsBYaDo9xl+4Gp3rDuAME2vmmTfPcAXQ==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
@@ -2750,8 +2621,7 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "OZEAAAAAAAAAAAAAAAAAALXVkm6Xb7+0825o5+ttOMe2fsvNljnA+Dz3W4Vf7K6MPnmwjV1jAokjxu+UzVxokTEvQavnx9g30Rpk7SExXjJeDXwhrj7iWHzLMCiadYAvu5JEzx0IC1NX0ZuL2hxAMLUf+oeoWJKJ8AmwZlt5FSq45/C0ps8RRbl/cZHuRMDj458mqEZIBf5Av7J1z8ourg==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
@@ -2789,8 +2659,7 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "OZEAAAAAAAAAAAAAAAAAALXVkm6Xb7+0825o5+ttOMe2fsvNljnA+Dz3W4Vf7K6MPnmwjV1jAokjxu+UzVxokTEvQavnx9g30Rpk7SExXjJeDXwhrj7iWHzLMCiadYAvu5JEzx0IC1NX0ZuL2hxAMLUf+oeoWJKJ8AmwZlt5FSq45/C0ps8RRbl/cZHuRMDj458mqEZIBf5Av7J1z8ourg==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							}
 						],
 						"body": {
@@ -2833,13 +2702,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "+oICAAAAAAAAAAAAAAAAAAi4UEdo4tz3JLelxCywrKy8DZVqoJcTVQ7ISwwsD048lZ4/pocmRE+f/qzqncs8TBTeJ7BtfnKD6eFApPg364WK7vUKL8EKjuzm1JSm2vyTMyn1ApAhWHo43qmOp4DDYw0dVa4iMiFyLB+fIGwJkqxGXYS+4CXDariIADPs4AbC4JLV0LQ5OdlvDXu4xhgl5w==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"url": {
@@ -2869,18 +2736,16 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "+oICAAAAAAAAAAAAAAAAAAi4UEdo4tz3JLelxCywrKy8DZVqoJcTVQ7ISwwsD048lZ4/pocmRE+f/qzqncs8TBTeJ7BtfnKD6eFApPg364WK7vUKL8EKjuzm1JSm2vyTMyn1ApAhWHo43qmOp4DDYw0dVa4iMiFyLB+fIGwJkqxGXYS+4CXDariIADPs4AbC4JLV0LQ5OdlvDXu4xhgl5w==",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"url\": \"10.107.0.154:443\"\n}",
+							"raw": "{\n\t\"url\": \"10.107.0.159:443\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2919,13 +2784,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"url": {
@@ -2956,13 +2819,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"url": {
@@ -2993,13 +2854,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"url": {
@@ -3034,13 +2893,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"url": {
@@ -3082,13 +2939,11 @@
 						"header": [
 							{
 								"key": "DevCookie",
-								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImR3YXF3ZGpoOTcxa250YmZlb2w4Z2EyN3V3cTQzY2FrIiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5MjIyMTEzMCwiZXhwIjoxNTkyMjI0MTMwLCJzZXNzaW9uaWQiOiJQTkNyUk94NlNhMlVoRkJ1R1A5cnhRPT0ifQ.RNc-OTifgzgcprGoZRD3Lc5L5IT_LO1gSmbA1blX4o5iYDEzLYzr11mdRp2eTal0EfA2jPQMrzLM_gjLlvjBD_S45QttnvteoQbprNu9duUAD1vZfQNhb572x1VaFxBK9u8xrxqxkRHbpoR-fTgfGwIXLQK5UPq_bGKFvAjEa4p2gqXXTAvio1KXVjMWxIwcZmt3QK31L02ZAf_7lMc5Kz1BK_JHmr5qnsGK7Iz1nMyUqVQgXoNe6cQuPhc--PjL39qfx620M7ztusaXOoBGR6g8cE2sJxbhcH57ugCf0F5S0ATe4FbRmR3u3LPFYHepO067qWq7mYgQmLW2nJy8SA",
-								"type": "text"
+								"value": "{{DevCookie}}"
 							},
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -3124,14 +2979,26 @@
 		},
 		{
 			"name": "APIC Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var headerValue = pm.response.headers.get(\"Set-Cookie\").split(\"APIC-cookie=\")[1]\r",
+							"var token = headerValue.split(\";\")[0]\r",
+							"pm.environment.set(\"DevCookie\", token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"type": "text"
+						"value": "application/x-www-form-urlencoded"
 					}
 				],
 				"body": {
@@ -3169,8 +3036,8 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
 								"value": "application/x-www-form-urlencoded",
+								"name": "Content-Type",
 								"type": "text"
 							}
 						],
@@ -3262,18 +3129,16 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
 						"value": "application/json"
 					},
 					{
 						"key": "DevCookie",
-						"value": "i9IAAAAAAAAAAAAAAAAAAEvs57DLDp28V2NiqiPzXcgWe0P/lEY6GTpLeHt7/HiTatOR1Vaj2MEPG9RPbq67JVp3RBRkoMfjSM1pXfMMRI4xiylrX15zkEQTh8hX/BkI+eWRaPqZFmCaCjPd9cBotMu3Zw75V87RoUt2H6BjBdzIUS2NC9IBEBKFo1FUMWb9GqsZr4VefhGZrylJVnbn+g==",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"url\": \"10.107.0.22:443\",\n    \"user\": \"admin\",\n    \"password\": \"admin\"\n}"
+					"raw": "{\n\t\"url\": \"10.107.0.246\",\n    \"user\": \"admin\",\n    \"password\": \"f5in$1eme\",\n    \"velosController\": \"\"\n}"
 				},
 				"url": {
 					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/loginbigip.json",
@@ -3302,25 +3167,154 @@
 			"response": []
 		},
 		{
+			"name": "BIG-IP Login (VELOS)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "DevCookie",
+						"value": "{{DevCookie}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"10.107.0.238\",\n    \"user\": \"admin\",\n    \"password\": \"f5in$1eme\",\n    \"velosController\": \"10.107.0.246\"\n}"
+				},
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/loginbigip.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"loginbigip.json"
+					],
+					"query": [
+						{
+							"key": "DevCookie",
+							"value": "DevCookie",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get VELOS Chassis Partition",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "DevCookie",
+						"value": "{{DevCookie}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"10.107.0.246\"\n}"
+				},
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/getveloschassispartitions.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"getveloschassispartitions.json"
+					],
+					"query": [
+						{
+							"key": "DevCookie",
+							"value": "DevCookie",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "DevCookie",
+						"value": "{{DevCookie}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"10.107.0.241\"\n}"
+				},
+				"url": {
+					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/refreshBigipToken.json",
+					"protocol": "https",
+					"host": [
+						"10",
+						"107",
+						"0",
+						"24"
+					],
+					"path": [
+						"appcenter",
+						"F5Networks",
+						"F5ACIServiceCenter",
+						"refreshBigipToken.json"
+					],
+					"query": [
+						{
+							"key": "DevCookie",
+							"value": "DevCookie",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "BIG-IP Logout",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					},
 					{
 						"key": "DevCookie",
-						"value": "i9IAAAAAAAAAAAAAAAAAAEvs57DLDp28V2NiqiPzXcgWe0P/lEY6GTpLeHt7/HiTatOR1Vaj2MEPG9RPbq67JVp3RBRkoMfjSM1pXfMMRI4xiylrX15zkEQTh8hX/BkI+eWRaPqZFmCaCjPd9cBotMu3Zw75V87RoUt2H6BjBdzIUS2NC9IBEBKFo1FUMWb9GqsZr4VefhGZrylJVnbn+g==",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"url\": \"10.107.0.22:443\"\n}"
+					"raw": "{\n\t\"url\": \"10.107.0.23:443\"\n}"
 				},
 				"url": {
 					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/logoutbigip.json",
@@ -3348,19 +3342,16 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					},
 					{
 						"key": "DevCookie",
-						"value": "EC4BAAAAAAAAAAAAAAAAABZYPxq5rfxbUat0EBe85bOnipsBmY7XAnetBAi3gpab+8AycPQIWyaQaV0f8BqncDBIBJSCymSI2Uoh669UVMpdNOYJ4ebo/U74hEjedRIVmbJZFqjlAOVWhO5v7w4QXAo22k+aRDSJZI3fhjuV+W5ijOeZG8gYvE53VqVjigxVbOfW49vy6/J0vWlrwialbQ==",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"url\": \"10.107.0.22:443\"\n}"
+					"raw": "{\n    \"url\": \"10.107.0.23:443\"\n}"
 				},
 				"url": {
 					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/deletebigip.json",
@@ -3388,19 +3379,16 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					},
 					{
 						"key": "DevCookie",
-						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTc0NTcxNCwiZXhwIjoxNTk5NzQ4NzE0LCJzZXNzaW9uaWQiOiJQdVEwclRvdlRUMlRrQ0xnWXU2c1BBPT0ifQ.dVyZJQ6W_tfZi-zA4Z7lljJE7C1bU1afO1_o1t0JN02Yd5_aLSB_qbgcDWrtvcVje3e8LXXD1DV_QNMn6epw46k-WPjsCqdxI2b2jmxEmeFCldXZC-eaeOQjASBDtUmThhvusjslY46nHIC8DpuPyVW-XOzXtCvOSr-0QrKLGN1rOTpCzJtXGtXD0F5eg_l2XNkXajMJVmzOcO3DnbxbgDGbnxWg0GswzvZ94cg5OHuqLXCen3kxRUZwU7aOeQ0776BL44aXJPKQa2AQogU6zqWZEUgYBHaCYFRlYMs_C0Db4WUBVfnZ0A76f4TOlqNKirSYe0T01xBo3nNrrALbeA",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"clustername\":\"cluster20_21\",\n    \"urls\":[\"bigip20:443\",\"10.107.0.20\"],\n    \"peerhostname\":\"bigip21\",\n    \"peerusername\":\"admin\",\n    \"peerpassword\":\"admin\"\n    }"
+					"raw": "{\n    \"clustername\":\"cluster20_21\",\n    \"urls\":[\"bigip20:443\",\"10.107.0.20\"],\n    \"peerhostname\":\"bigip21\",\n    \"peerusername\":\"admin\",\n    \"peerpassword\":\"f5in$1eme\"\n    }"
 				},
 				"url": {
 					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/setclustername.json",
@@ -3428,19 +3416,16 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
 						"value": "application/json"
 					},
 					{
 						"key": "DevCookie",
-						"type": "text",
-						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjNkOTh6MWtsYWNlMTRqczBhbmo0M2dhc2lkZWw2NW52IiwidHlwIjoiand0In0.eyJyYmFjIjpbeyJkb21haW4iOiJhbGwiLCJyb2xlc1IiOjAsInJvbGVzVyI6MX1dLCJpc3MiOiJBQ0kgQVBJQyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ1c2VyaWQiOjE1Mzc0LCJ1c2VyZmxhZ3MiOjAsImlhdCI6MTU5OTgwMDI3NiwiZXhwIjoxNTk5ODAzMjc2LCJzZXNzaW9uaWQiOiJXdmtSM201SVIrcWVEbkpTQmdPOGpBPT0ifQ.M_KN_sTs0u2bHqfDhytQ-qJiN8yDwH1U_-3aDahcH8gi-4YwzshkY_QCcZpxiaFYnXEEwhO9dXUvf77gkY0QvssO29dJUwPRMUNNDL7k5xFxei7uomlKlC53ZPrfgMOJoVzsTTLIRD3tFa6-p2LRdZZgvfWeVSo1grTWJQ7xMKXpu2CQh_J74GZcVdBdQNBcOQva63IpI6WTvsG0AYFdhb3yeIX07ilqpxpFxgQNna1rzKDPoO7JIqe5MwO1xBXhclTwgVQjnDlri2TEdHSBI1BhIAzXrriGgcwS8mh796EoL3QZysJrmXi5qMLkbInR8kY9ZxSqirRPROIlYkt9mw"
+						"value": "{{DevCookie}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"clustername\":\"cluster20_21\",\n    \"urls\":[\n            \"10.107.0.20\",\n            \"10.107.0.21\"\n        ]\n    }"
+					"raw": "{\n    \"clustername\":\"cluster46_47\",\n    \"urls\":[\n            \"10.107.0.46\",\n            \"10.107.0.47\"\n        ]\n    }"
 				},
 				"url": {
 					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/setclustername.json",
@@ -3471,14 +3456,11 @@
 				"header": [
 					{
 						"key": "DevCookie",
-						"value": "RUYBAAAAAAAAAAAAAAAAABGBNhla2QdZnXg6P9Y6o8B4k/xaMq1z5bESzBda9DgXd3PVCtd6cuVRWdnHJ9EgJ5IsW8dvTWROm7JBN8uiXoIWVvmKOsCuZ5Cw49kATHZvDwQNsmjzBSIGIbrN4U1DEMefAdGNcH0rgr5hlPBveyU4luLUyE5ufCN/i8ICsifSt5EyScdNJOPW80FDyd4P5Q==",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					},
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -3511,8 +3493,7 @@
 				"header": [
 					{
 						"key": "DevCookie",
-						"value": "upEAAAAAAAAAAAAAAAAAADZCmlFOMnxKtatv5cQiTFtWaiDDU2EgPAVpc5yg/UdE0jUBqsFIExze58z5VSOxvzCrinlMpr2Cw8yijyIRW8U6R6h4zNe1RvXBGnpr/EgHkwGIVXeCsT+kFehy0z5/w8b5/CHk76KO6JCqTkFrSgkaLDq2JXFuKqAqI2dmjDHyjAt2C65+k7TlmtTtxykYjg==",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					}
 				],
 				"body": {
@@ -3550,19 +3531,16 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
 						"value": "application/json"
 					},
 					{
 						"key": "DevCookie",
-						"type": "text",
-						"value": "/2QDAAAAAAAAAAAAAAAAAJflSMGFM0WtvRWIL/hZQv68A9l2nArEUz26m4Bi7FrumhJF+zHv/PWO3va4n7I0aCn4mKnc2KBJcj9z8oDpXeT+KT64t4Ncpid6Op7ZirZ4BWPuR7z0UTcw4NmLi8RdVmYqeNCpbcyKhWpkd299HHkM5CMZ3LY4hqSlhy+qKH+o0/s+RsXXJOMrK9O3bt36Lg=="
+						"value": "{{DevCookie}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"url\": \"10.107.0.22:443\"\n}"
+					"raw": "{\n    \"url\": \"10.107.0.23:443\"\n}"
 				},
 				"url": {
 					"raw": "https://10.107.0.24/appcenter/F5Networks/F5ACIServiceCenter/checkbigipstatus.json",
@@ -3590,13 +3568,11 @@
 				"header": [
 					{
 						"key": "DevCookie",
-						"value": "8QgDAAAAAAAAAAAAAAAAABAC4qSSII5cU/WxdkjKqtzxonWTkYezzHJen2fGidkWJTZqlXEL0q86dE1EyOePCRdQIQf1vgzOa9JFktJgivtWbuP3XTJedFE5ilp5O265z9AC0IJGmQ/fSyFYjfCdc9SwkqlM5j4N46ydXPJ/iB2yqgf97bxR0DeSAxxwsYaJ/4KUqxfOPmbuHdCCez/8cQ==",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					},
 					{
 						"key": "Content-Type",
-						"value": "application/x-sqlite3",
-						"type": "text"
+						"value": "application/x-sqlite3"
 					}
 				],
 				"body": {
@@ -3635,13 +3611,11 @@
 				"header": [
 					{
 						"key": "DevCookie",
-						"value": "gOgIAAAAAAAAAAAAAAAAABep/DEgwXarmwc0WN7iwtF2nMMX9q+JlFP1BN1oEbD3c/fAb0eH+943HTFyfyC1wj2XNpAiDe5+bhGe3MsrsH9HtQGX+p4kRndtBVJYuQvlKsv+hDiC6KBBKdi9W8NR5lDQN8RgJv9vb/WFav92/BKcrCsaS1E2B9aU0nWbiE6qAUvrGj0lMw+ipLDYIU5fvg==",
-						"type": "text"
+						"value": "{{DevCookie}}"
 					},
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					}
 				],
 				"url": {
