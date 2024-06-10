@@ -404,4 +404,9 @@ When the VLAN tag is modified from the vCMP/F5OS Host device, the new VLAN tag g
 2. On the vCMP/F5OS Host device, remove the VLAN assignment from the Guest/Tenant.
 3. On the vCMP/F5OS Host, modify the VLAN tag and assign this new VLAN to the vCMP/F5OS Guest/Tenant.
 
+-----
+
+**Q. Why do I see  "illegal reference 'fdb mac-table entries entry XX:XX:XX:XX:XX:XX XX tag_type_vid vlan'" error when trying to delete a VLAN from a  F5OS Host device?**
+
+This is an expected behavior of BIG-IP as the VLAN you are trying to delete is being used by a tenant. To learn more, refer https://my.f5.com/manage/s/article/K000133653.
 
