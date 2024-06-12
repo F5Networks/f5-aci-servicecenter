@@ -1,12 +1,8 @@
-What's New in Version 2.11
+What's New in Version 2.12
 ===========================
 
-
-**Multi-tenancy Support** which includes:
-
-1. VRF to Route Domain Mapping Support for Tenant|Application|EPG Mapping in Visibility Tables, Visibility Dashboards and L4-L7 Application Services.
-2. Partition and Route Domain Support for L2-L3 Network Management including VLANs, Self IPs & Default Routes
-3. Default Routes Support for each Route Domain
+- Fully support BIG-IP tenants on F5’s next-generation hardware platforms of rSeries and VELOS.
+- Partition and Route Domain support for vCMP guests.
 
 ------
 
