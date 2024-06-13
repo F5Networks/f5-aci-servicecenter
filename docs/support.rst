@@ -12,7 +12,7 @@ F5 ACI ServiceCenter **supports the currently supported** BIG-IP releases from F
 +-----------------+------------------------------+------------------------------------------------------------+
 
 .. note::
-2.10 and prior are deprecated and no longer supported.
+    2.10 and prior are deprecated and no longer supported.
 
 Please always check the Cisco and F5 sites for the current supported release information.
 
