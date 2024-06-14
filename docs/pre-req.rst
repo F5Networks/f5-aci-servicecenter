@@ -23,5 +23,5 @@ Pre-requisites for the F5 ACI ServiceCenter:
   +-----------------------------+------------------------+--------------------------------+---------------------------------------+
 
 .. note::
-- 2.10 and prior are deprecated and no longer supported.
-- It is **highly recommended** to always install the latest plugin version on the BIG-IP device.
+    - 2.10 and prior are deprecated and no longer supported.
+    - It is **highly recommended** to always install the latest plugin version on the BIG-IP device.
