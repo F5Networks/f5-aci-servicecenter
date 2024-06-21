@@ -7,6 +7,17 @@ What's New in Version 2.12
 ------
 
 
+Open Caveats in v2.12
+===========================
+
+
+**1. APIC information is not displayed in the VIP Visibility Table or VIP Visibility Dashboard for applications created  in BIG-IP Common partition**
+
+Though an application is created successfully on the BIG-IP in the Common Partition, APIC information is not shown in the VIP Visibility Table or VIP Visibility Dashboard. This issue is not seen in non-Common partitions.
+
+------
+
+
 Fixed Caveats in v2.11.3
 ===========================
 
