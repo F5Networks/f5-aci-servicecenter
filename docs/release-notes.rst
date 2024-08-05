@@ -1,12 +1,19 @@
-What's New in Version 2.11
+What's New in Version 2.12
+===========================
+
+- Fully support BIG-IP tenants on F5’s next-generation hardware platforms of rSeries and VELOS.
+- Partition and Route Domain support for vCMP guests.
+
+------
+
+
+Open Caveats in v2.12
 ===========================
 
 
-**Multi-tenancy Support** which includes:
+**1. APIC information is not displayed in the VIP Visibility Table or VIP Visibility Dashboard for applications created  in BIG-IP Common partition**
 
-1. VRF to Route Domain Mapping Support for Tenant|Application|EPG Mapping in Visibility Tables, Visibility Dashboards and L4-L7 Application Services.
-2. Partition and Route Domain Support for L2-L3 Network Management including VLANs, Self IPs & Default Routes
-3. Default Routes Support for each Route Domain
+Though an application is created successfully on the BIG-IP in the Common Partition, APIC information is not shown in the VIP Visibility Table or VIP Visibility Dashboard. This issue is not seen in non-Common partitions.
 
 ------
 
