@@ -18,6 +18,34 @@ Though an application is created successfully on the BIG-IP in the Common Partit
 ------
 
 
+**2. APIC and BIG-IP information is not displayed in the VIP Visibility Table if the  application is  deployed  manually from the BIG-IP in the non-Common partition BIG-IP**
+
+If an application is deployed manually from the BIG-IP in the non-Common partition, neither via AS3 nor FAST, APIC and BIG-IP- information is not shown in the VIP Visibility Table. This issue is not seen if the application is deployed manually in the Common partition. This issue is also not seen if the application is deployed using AS3 or FAST.
+
+------
+
+
+**3. F5OS Tenant is not displayed under Multitenancy**
+
+While a F5OS tenant is successfully added to the FASC app under Standalone or HA,  "No Tenants Detected" message appears under Multitenancy.
+
+------
+
+
+**4. VLAN Visibility Table displays VRF info**
+
+VLAN Visibility Table should not display VRF information.
+
+------
+
+
+**5. VIP Visibility Dashboard does not display BIG-IP Endpoint Details**
+
+VIP Visibility Dashboard only displays APIC Endpoint Details.
+
+------
+
+
 Fixed Caveats in v2.11.3
 ===========================
 
