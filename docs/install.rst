@@ -119,10 +119,16 @@ Add a new BIG-IP device (Device Login)
    - If the device is a part of an HA pair to which the user wants to login to using hostnames instead of IPs, there will be an additional prompt for peer BIG-IP's hostname and credentials. Once they are entered in the displayed form, both the devices will be logged-in from the F5 ACI ServiceCenter. 
    
    - The active device will be indicated using a Green icon. The standby device will be indicated using a Yellow icon. A logged out device or any device for which failover state cannot be determined will be displayed with a Gray icon. Any device for which the failover state is not Active OR Standby will be indicated with a Green icon.
+   
+   - vCMP  and F5OS devices are visible under  Multitenancy 
 
-4. Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
+   - F5OS devices are : rSeries and VELOS. Once a F5OS device is added, F5 ACI ServiceCenter will retrieve the list of all tenants deployed on that device. 
 
-5. F5 ACI ServiceCenter (v2.9+) supports LDAP authentication for BIG-IP login. Admin LDAP users will be able to use all the features of the application.
+   - To add a VELOS Chassis Partition, it is required to first log in to the System Controller (the floating IP).  Once the login is successful, an additional prompt will be displayed for selecting the desired Chassis Partition.  After submitting the prompt with the correct credentials, the Chassis partition will be added successfully to the F5 ACI ServiceCenter. 
+
+   - Log in to the BIG-IP device. The device hostname, redundancy state, and config sync state are displayed at the top of the page, along with three tabs: Visibility, L2-L3 Stitching, and L4-L7 Configuration.
+ 
+4. F5 ACI ServiceCenter (v2.9+) supports LDAP authentication for BIG-IP login. Admin LDAP users will be able to use all the features of the application.
 
 .. note::
    
@@ -357,3 +363,18 @@ Note: To enable the Telemetry Statistics, you must be using Telemetry plugin ver
 +--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
 | vCMP Guest High Availability   | Yes             | Self IP/Default Gateway only | Yes                | No                             |
 +--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+| rSeries/VELOS Host Standalone  | VLAN table only | VLAN only                    | No                 | No                             |  
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+| rSeries/VELOS Tenant Standalone| Yes             | Self IP/Default Gateway only | Yes                | Yes (BIG-IP v13.0 and above)   |
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+| rSeries/VELOS Tenant High      | Yes             | Self IP/Default Gateway only | Yes                | No                             |
+|                                |                 |                              |                    |                                |
+| Availability                   |                 |                              |                    |                                |
+|                                |                 |                              |                    |                                |
++--------------------------------+-----------------+------------------------------+--------------------+--------------------------------+
+
+------
+
+**Q. How do I add a VELOS Chassis Partition to the F5 ACI ServiceCenter?**
+
+To add a VELOS Chassis Partition to the F5 ACI ServiceCenter for the first time, you are mandatorily required to log in to the System Controller (the floating IP) . Once the login is successful, an additional prompt will be displayed for selecting the desired Chassis Partition. After submitting the prompt with the correct credentials, the Chassis partition will be added successfully to the F5 ACI ServiceCenter.
