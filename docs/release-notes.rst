@@ -13,7 +13,7 @@ Fixed Caveats in v2.12.2
 
 **1. APIC and BIG-IP information is not displayed in the VIP Visibility Table if the application is deployed manually from the BIG-IP in the non-Common partition BIG-IP**
 
-If an application is deployed manually from the BIG-IP in the non-Common partition, neither via AS3 nor FAST, APIC and BIG-IP- information is not shown in the VIP Visibility Table. This issue isn't seen if the application gets deployed manually in the Common partition. This issue is also not seen if the application is deployed using AS3 or FAST.
+If an application is deployed manually from the BIG-IP in the non-Common partition, neither via AS3 nor FAST, APIC and BIG-IP- information is not shown in the VIP Visibility Table. This issue is not visible if the application is deployed manually in the Common partition. This issue is also not seen if the application is deployed using AS3 or FAST.
 
 ------
 
